@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Data Types - String in detail</title>
+  </head>
+  <body>
+    <!--Container-->
+    <div class="container-fluid my-3">
+      <div class="row g-0 text-center bg-primary">
+        <h1 class="text-center text-light p-5">Data Types - String in detail</h1>
+      </div>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">String in detail</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Secondary table head</td>
+          </tr>
+          <tr>
+            <td>Quotes in quotes</td>
+            <td><span class="badge bg-danger">required</span> Not match each other</td>
+            <td>
+              let answer1 = "He is called 'Johnny'";<br>
+              let answer2 = 'He is called "Johnny"';<br>
+              let answer2 = "He is called "Johnny""; <span class="badge bg-danger">error</span><br>
+            </td>
+          </tr>
+          <tr>
+            <td>Special Characters</td>
+            <td colspan="2">
+              <table class="table table-bordered">
+                <tr>
+                  <th>Characters</th>
+                  <th>Code</th>
+                  <th>Result</th>
+                  <th>Example</th>
+                </tr>
+                <tr>
+                  <td>Single quote</td>
+                  <td>\'</td>
+                  <td>'</td>
+                  <td>let text= 'It\'s alright.';</td>
+                </tr>
+                <tr>
+                  <td>Double quote</td>
+                  <td>\"</td>
+                  <td>"</td>
+                  <td>let text = "We are the so-called \"Vikings\"";</td>
+                </tr>
+                <tr>
+                  <td>Backslash</td>
+                  <td>\\</td>
+                  <td>\</td>
+                  <td>let text = "The character \\ is called backslash.";</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>Long Code</td>
+            <td colspan="2">
+              <table class="table table-bordered">
+                <tr>
+                  <th>Characters</th>
+                  <th>Example</th>
+                </tr>
+                <tr>
+                  <td>Break after an operator</td>
+                  <td>
+                    document.getElementById("demo").innerHTML =<br>
+                    "Hello Dolly!";<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Break within a text string with a single backslash</td>
+                  <td>
+                    document.getElementById("demo").innerHTML = "Hello \<br>
+                    Dolly!";<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Use string addition</td>
+                  <td>
+                    document.getElementById("demo").innerHTML = "Hello " +
+                    "Dolly!";
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>String as Object</td>
+            <td>When defined with the keyword <strong>new</strong></td>
+            <td>
+              let x = "John"; // string<br>
+              let y = new String("John"); <span class="text-success">// object</span><br>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>length</strong> property</td>
+            <td>Find the length of a string</td>
+            <td>
+              let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";<br>
+              text.length; <span class="text-success">// return 26</span><br>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">String method: return a new string, not modify the original string</td>
+          </tr>
+          <tr>
+            <td>slice()</td>
+            <td>
+              Extract a part of a string and return in a new string<br>
+              <span class="text-success">start from 0</span>
+            </td>
+            <td>
+              <h6>Positive parameter: left to right</h6>
+              let sliceEx = "Apple, Banana, Kiwi";<br>
+              sliceEx.slice(7, 13)  <span class="text-success">// result: <span id="slice1"></span></span><br>
+              
+              <h6 class="mt-2">Negative parameter: right to left</h6>
+              let sliceEx = "Apple, Banana, Kiwi";<br>
+              sliceEx.slice(-12, -6)  <span class="text-success">// result: <span id="slice2"></span></span><br>
+
+              <h6 class="mt-2">2nd parameter omitted => slice out the rest</h6>
+              let sliceEx = "Apple, Banana, Kiwi";<br>
+              sliceEx.slice(7)  <span class="text-success">// result: <span id="slice3"></span></span><br>
+
+              <script>
+                let sliceEx = "Apple, Banana, Kiwi";
+                document.getElementById("slice1").innerHTML=sliceEx.slice(7,13);
+                document.getElementById("slice2").innerHTML=sliceEx.slice(-12,-6);
+                document.getElementById("slice3").innerHTML=sliceEx.slice(7);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>substring()</td>
+            <td>Similar to <strong>slice()</strong>, but not accept negative indexes.</td>
+            <td>
+              <h6>Positive parameter: left to right</h6>
+              let substringEx = "Apple, Banana, Kiwi";<br>
+              substringEx.substring(7, 13)  <span class="text-success">// result: <span id="substring1"></span></span><br>
+
+              <h6 class="mt-2">2nd parameter omitted => slice out the rest</h6>
+              let substringEx = "Apple, Banana, Kiwi";<br>
+              substringEx.substring(7)  <span class="text-success">// result: <span id="substring2"></span></span><br>
+
+              <script>
+                let substringEx = "Apple, Banana, Kiwi";
+                document.getElementById("substring1").innerHTML=substringEx.substring(7,13);
+                document.getElementById("substring2").innerHTML=substringEx.substring(7);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>substr()</td>
+            <td>Similar to <strong>slice()</strong>, but the 2nd parameter specifies the length of the extracted part</td>
+            <td>
+              <h6>Positive parameter: left to right</h6>
+              let substrEx = "Apple, Banana, Kiwi";<br>
+              substrEx.substr(7, 6)  <span class="text-success">// result: <span id="substr1"></span></span><br>
+
+              <h6 class="mt-2">2nd parameter omitted => slice out the rest</h6>
+              let substrEx = "Apple, Banana, Kiwi";<br>
+              substrEx.substr(7)  <span class="text-success">// result: <span id="substr2"></span></span><br>
+
+              <script>
+                let substrEx = "Apple, Banana, Kiwi";
+                document.getElementById("substr1").innerHTML=substrEx.substr(7,6);
+                document.getElementById("substr2").innerHTML=substrEx.substr(7);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>replace()</td>
+            <td>Replace a specified value with another value</td>
+            <td>
+              <h6></h6>
+              let replaceEx = "Apple, Banana, Kiwi";<br>
+              replaceEx.replace("Apple", "Mango") <span class="text-success">// result: <span id="replace1"></span></span><br>
+
+              <script>
+                let replaceEx = "Apple, Banana, Kiwi";
+                document.getElementById("replace1").innerHTML=replaceEx.replace("Apple", "Mango");
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>By default, case sensitive<br>
+              => use a regular expression (without quotes) with an /i flag (insensitive)<br>
+              </td>
+            <td>
+              let replaceEx2 = "Apple, Banana, Kiwi";<br>
+              replaceEx2.replace(/APPLE/i, "Mango") <span class="text-success">// result: <span id="replace2"></span></span><br>
+
+              <script>
+                let replaceEx2 = "Apple, Banana, Kiwi";
+                document.getElementById("replace2").innerHTML=replaceEx2.replace(/APPLE/i, "Mango");
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              toUpperCase()<br>
+              toLowerCase()<br>
+            </td>
+            <td>Convert to upper case or lower case</td>
+            <td>
+              let convertEx = "Apple, Banana, Kiwi";<br>
+              convertEx.toUpperCase() <span class="text-success">// result: <span id="convert1"></span></span><br>
+              convertEx.toLowerCase() <span class="text-success">// result: <span id="convert2"></span></span><br>
+
+              <script>
+                let convertEx = "Apple, Banana, Kiwi";
+                document.getElementById("convert1").innerHTML=convertEx.toUpperCase();
+                document.getElementById("convert2").innerHTML=convertEx.toLowerCase();
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>concat()</td>
+            <td>Join strings together (concatenate)</td>
+            <td>
+              let concatEx = "Hello";<br>
+              concatEx.concat(" World") <span class="text-success">// result: <span id="concat1"></span></span><br>
+              concatEx.concat(" ","World") <span class="text-success">// result: <span id="concat2"></span></span><br>
+
+              <script>
+                let concatEx = "Hello";
+                document.getElementById("concat1").innerHTML=concatEx.concat(" World");
+                document.getElementById("concat2").innerHTML=concatEx.concat(" ","World");
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>trim()</td>
+            <td>Remove whitespace from both sides</td>
+            <td>
+              let trimEx = " &nbsp;&nbsp;Hello World&nbsp;&nbsp; ";<br>
+              trimEx.trim() <span class="text-success">// result: <span id="trim1"></span></span><br>
+
+              <script>
+                let trimEx = "   Hello World   ";
+                document.getElementById("trim1").innerHTML=trimEx.trim();
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              padStart()<br>
+              padEnd()<br>
+            </td>
+            <td>Add padding at the beginning or end of a string</td>
+            <td>
+              let padEx = "5";
+              padEx.padStart(5,3); <span class="text-success">// result: <span id="pad1"></span></span><br>
+              padEx.padEnd(5,3); <span class="text-success">// result: <span id="pad2"></span></span><br>
+
+              <script>
+                let padEx = "5";
+                document.getElementById("pad1").innerHTML=padEx.padStart(5,3);
+                document.getElementById("pad2").innerHTML=padEx.padEnd(5,3);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>charAt()</td>
+            <td>Return the character at a specified index</td>
+            <td>
+              let charAtEx = "hello world";<br>
+              charAtEx.charAt(0); <span class="text-success">// result: <span id="charAt1"></span></span><br>
+              charAtEx.charAt(1); <span class="text-success">// result: <span id="charAt2"></span></span><br>
+
+              <script>
+                let charAtEx = "hello world";
+                document.getElementById("charAt1").innerHTML=charAtEx.charAt(0);
+                document.getElementById("charAt2").innerHTML=charAtEx.charAt(1);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              Using [] to access characters<br>
+              <span class="text-success">
+                makes strings look like arrays but they are not<br>
+                no character is found, return undefined<br>
+                It is read only<br>
+              </span>
+            </td>
+            <td>
+              let accessEx = "hello world";<br>
+              accessEx[0]; <span class="text-success">// result: <span id="access1"></span></span><br>
+              accessEx[2]; <span class="text-success">// result: <span id="access2"></span></span><br>
+
+              <script>
+                let accessEx = "hello world";
+                document.getElementById("access1").innerHTML=accessEx[0];
+                document.getElementById("access2").innerHTML=accessEx[2];
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>charCodeAt()</td>
+            <td>Return the UTF-16 code of the character at a specified index</td>
+            <td>
+              let charCodeEx = "hello world";<br>
+              charCodeEx.charCodeAt(0); <span class="text-success">// result: <span id="charCode1"></span></span><br>
+              charCodeEx.charCodeAt(2); <span class="text-success">// result: <span id="charCode2"></span></span><br>
+              
+              <script>
+                let charCodeEx = "Hello World";
+                document.getElementById("charCode1").innerHTML=charCodeEx.charCodeAt(0);
+                document.getElementById("charCode2").innerHTML=charCodeEx.charCodeAt(2);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>split()</td>
+            <td>Convert a string to an array</td>
+            <td>
+              let splitEx = "How are you today?";<br>
+              <span class="text-success">// Split the character</span><br>
+              splitEx.split(""); <span class="text-success">// result: <span id="split1"></span></span><br>
+              <span class="text-success">// Split the words (based on space)</span><br>
+              splitEx.split(" "); <span class="text-success">// result: <span id="split2"></span></span><br>
+              <span class="text-success">// Split the words and return the second word</span><br>
+              myArray = splitEx.split(" ")<br>
+              myArray[1]; <span class="text-success">// result: <span id="split3"></span></span><br>
+              <span class="text-success">// Use the limit parameter</span><br>
+              splitEx.split(" ", 3); <span class="text-success">// result: <span id="split4"></span></span><br>
+              <script>
+                let splitEx = "How are you today?";
+                let myArray = splitEx.split(" ")
+                document.getElementById("split1").innerHTML=splitEx.split("");
+                document.getElementById("split2").innerHTML=splitEx.split(" ");
+                document.getElementById("split3").innerHTML= myArray[1];
+                document.getElementById("split4").innerHTML=splitEx.split(" ", 3);
+              </script>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">String search method</td>
+          </tr>
+          <tr>
+            <td>indexOf()</td>
+            <td>
+              <i>string</i>.indexOf(<i>searchvalue</i>, <i>start</i>)<br>
+              Return the index of the first occurrence of a specified text<br>
+              <span class="text-success">
+                Return -1 if the text is not found<br>
+                Can't take powerful search values (regular expressions)) like <strong>search()</strong><br>
+              </span>
+            </td>
+            <td>
+              let indexOfEx = "How are you today? Are you ok?";<br>
+
+              <span class="text-success">// Find the 1st occurrence of "you"</span><br>
+              indexOfEx.indexOf("you"); <span class="text-success">// result: <span id="indexOf1"></span></span><br>
+              
+              <span class="text-success">// Find the 1st occurrence of "you" (start at index 15)</span><br>
+              indexOfEx.indexOf("you", 15); <span class="text-success">// result: <span id="indexOf2"></span></span><br>
+
+              <span class="text-success">// Find the 1st occurrence of "me"</span><br>
+              indexOfEx.indexOf("me"); <span class="text-success">// result: <span id="indexOf3"></span></span><br>
+
+              <script>
+                let indexOfEx = "How are you today? Are you ok?";
+                document.getElementById("indexOf1").innerHTML=indexOfEx.indexOf("you");
+                document.getElementById("indexOf2").innerHTML=indexOfEx.indexOf("you", 15);
+                document.getElementById("indexOf3").innerHTML=indexOfEx.indexOf("me");
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>lastIndexOf()</td>
+            <td>
+              Return the index of the last occurrence of a specified text<br>
+              <span class="text-success">
+                Return -1 if the text is not found<br>
+                Can't take powerful search values (regular expressions)) like <strong>search()</strong><br>
+              </span>
+            </td>
+            <td>
+              let lastIndexOfEx = "How are you today? Are you ok?";<br>
+
+              <span class="text-success">// Find the 1st occurrence of "you" (from end to start)</span><br>
+              lastIndexOfEx.lastIndexOf("you"); <span class="text-success">// result: <span id="lastIndexOf1"></span></span><br>
+              
+              <span class="text-success">// Find the 1st occurrence of "you" (start at index 15, from end to start)</span><br>
+              lastIndexOfEx.lastIndexOf("you", 15); <span class="text-success">// result: <span id="lastIndexOf2"></span></span><br>
+
+              <span class="text-success">// Find the 1st occurrence of "me"</span><br>
+              lastIndexOfEx.lastIndexOf("me"); <span class="text-success">// result: <span id="lastIndexOf3"></span></span><br>
+
+              <script>
+                let lastIndexOfEx = "How are you today? Are you ok?";
+                document.getElementById("lastIndexOf1").innerHTML=lastIndexOfEx.lastIndexOf("you");
+                document.getElementById("lastIndexOf2").innerHTML=lastIndexOfEx.lastIndexOf("you", 15);
+                document.getElementById("lastIndexOf3").innerHTML=lastIndexOfEx.lastIndexOf("me");
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>search()</td>
+            <td>
+              <i>string</i>.search(<i>searchValue</i>)<br>
+              Return the index of a specified text<br>
+              <span class="text-success">
+                Return -1 if the text is not found<br>
+                Can't take a second parameter like <strong>indexOf()</strong>
+              </span>
+            </td>
+            <td>
+              let searchEx = "How are you today? You ok?";<br>
+
+              <span class="text-success">// Find the 1st occurrence of "you"</span><br>
+              searchEx.search("you"); <span class="text-success">// result: <span id="search1"></span></span><br>
+              
+              <span class="text-success">// Find the 1st occurrence of "You"</span><br>
+              searchEx.search("you", 15); <span class="text-success">// result: <span id="search2"></span></span><br>
+
+              <span class="text-success">// Find the 1st occurrence of "me"</span><br>
+              searchEx.search("me"); <span class="text-success">// result: <span id="search3"></span></span><br>
+
+              <script>
+                let searchEx = "How are you today? You ok?";
+                document.getElementById("search1").innerHTML=searchEx.search("you");
+                document.getElementById("search2").innerHTML=searchEx.search("You");
+                document.getElementById("search3").innerHTML=searchEx.search("me");
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>match()</td>
+            <td>
+              <i>string</i>.match(<i>regexp</i>)<br>
+              Search for a match against a regular expression, and return the matches, as an Array object<br>
+            </td>
+            <td>
+              let matchEx = "The rain in SPAIN stays mainly in the plain";<br>
+
+              <span class="text-success">// Without g modifier (global search), return the first match</span><br>
+              matchEx.match(/ain/); <span class="text-success">// result: <span id="match1"></span></span><br>
+              
+              <span class="text-success">// With g modifier, return the array</span><br>
+              matchEx.match(/ain/g); <span class="text-success">// result: <span id="match2"></span></span><br>
+
+              <span class="text-success">// With gi - global search and case-insensitive</span><br>
+              matchEx.match(/ain/gi); <span class="text-success">// result: <span id="match3"></span></span><br>
+
+              <span class="text-success">// Using a string "ain", not regexp</span><br>
+              matchEx.match("ain"); <span class="text-success">// result: <span id="match4"></span></span><br>
+
+              <script>
+                let matchEx = "The rain in SPAIN stays mainly in the plain";
+                document.getElementById("match1").innerHTML=matchEx.match(/ain/);
+                document.getElementById("match2").innerHTML=matchEx.match(/ain/g);
+                document.getElementById("match3").innerHTML=matchEx.match(/ain/gi);
+                document.getElementById("match4").innerHTML=matchEx.match("ain");
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>includes()</td>
+            <td>
+              string.includes(searchvalue, start)<br>
+              Return true if a string contains a specified value<br>
+            </td>
+            <td>
+              let includesEx = "The rain in SPAIN stays mainly in the plain";<br>
+
+              <span class="text-success">// Check if a string includes "SPAIN"</span><br>
+              includesEx.includes("SPAIN"); <span class="text-success">// result: <span id="includes1"></span></span><br>
+              
+              <span class="text-success">// Check if a string includes "SPAIN" from start 15</span><br>
+              includesEx.includes("SPAIN"); <span class="text-success">// result: <span id="includes2"></span></span><br>
+
+              <script>
+                let includesEx = "The rain in SPAIN stays mainly in the plain";
+                document.getElementById("includes1").innerHTML=includesEx.includes("SPAIN");
+                document.getElementById("includes2").innerHTML=includesEx.includes("SPAIN", 15);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>startsWith()</td>
+            <td>
+              string.startsWith(searchvalue, start)<br>
+              Return true if a string begins with a specified value<br>
+            </td>
+            <td>
+              let startsWithEx = "The rain in SPAIN stays mainly in the plain";<br>
+
+              <span class="text-success">// Check if a string start with "rain"</span><br>
+              startsWithEx.startsWith("rain"); <span class="text-success">// result: <span id="startsWith1"></span></span><br>
+              
+              <span class="text-success">// Check if a string start with "rain" from start 4</span><br>
+              startsWithEx.startsWith("rain"); <span class="text-success">// result: <span id="startsWith2"></span></span><br>
+
+              <script>
+                let startsWithEx = "The rain in SPAIN stays mainly in the plain";
+                document.getElementById("startsWith1").innerHTML=startsWithEx.startsWith("rain");
+                document.getElementById("startsWith2").innerHTML=startsWithEx.startsWith("rain", 4);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>endsWith()</td>
+            <td>
+              string.endswith(searchvalue, length)<br>
+              Return true if a string ends with a specified value<br>
+            </td>
+            <td>
+              let endsWithEx = "Hello World, welcome to the universe";<br>
+
+              <span class="text-success">// Check if a string ends with "universe"</span><br>
+              endsWithEx.endsWith("universe"); <span class="text-success">// result: <span id="endsWith1"></span></span><br>
+              
+              <span class="text-success">// Check if a string ends with "World" with length 11</span><br>
+              endsWithEx.endsWith("World"); <span class="text-success">// result: <span id="endsWith2"></span></span><br>
+
+              <script>
+                let endsWithEx = "Hello World, welcome to the universe";
+                document.getElementById("endsWith1").innerHTML=endsWithEx.endsWith("universe");
+                document.getElementById("endsWith2").innerHTML=endsWithEx.endsWith("World", 11);
+              </script>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Template Literals</td>
+          </tr>
+          <tr>
+            <td>General</td>
+            <td>
+              <ul><strong>Synonyms:</strong> Template Literals/ Template Strings/ String Templates/ Back-Tics Syntax.
+              </ul>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Back-Tics Syntax</td>
+            <td>Use back-ticks (``) rather than the quotes ("")</td>
+            <td>let text = `Hello World!`;</td>
+          </tr>
+          <tr>
+            <td>Quotes</td>
+            <td>Quotes inside are more flexible</td>
+            <td>
+              let text = `He's often called 'Johnny'`;<br>
+              let text = `He's often called "Johnny"`;<br>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Multiline</td>
+            <td>Allow multiline strings</td>
+            <td>
+              let text =<br>
+              `The quick<br>
+              brown fox<br>
+              jumps over<br>
+              the lazy dog`;<br>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-danger">Interpolation</td>
+            <td>
+              ${...}<br>
+              Easy to interpolate variables and expressions into strings<br>
+              <span class="text-success">Automatic replacing of variables with real values is called string interpolation</span><br>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Variable Substitutions: allow variables in strings</td>
+            <td>
+              let firstName = "John";<br>
+              let lastName = "Doe";<br>
+              let text = `Welcome ${firstName}, ${lastName}!`; <span class="text-success">// Result: <span id="variable"></span></span><br>
+
+              <script>
+                let firstName = "John";
+                let lastName = "Doe";
+                let text = `Welcome ${firstName} ${lastName}!`;
+                document.getElementById("variable").innerHTML= text;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Expression Substitutions: allow expressions in strings</td>
+            <td>
+              let price = 10;<br>
+              let VAT = 0.25;<br>
+              let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`; <span class="text-success">// Result: <span id="expression"></span></span><br>
+
+              <script>
+                let price = 10;
+                let VAT = 0.25;
+                let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+                document.getElementById("expression").innerHTML= total;
+              </script>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--Close the container-->
+  </body>
+</html>

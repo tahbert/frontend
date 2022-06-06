@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    
+    <title>Transform</title>
+  </head>
+  <body>
+    <!--Container--------------------------------------------------------------------------------------------------------------->
+    <div class="container-fluid my-3">
+      <div>
+        <h1>Transform</h1>
+      </div>
+      <!--Title here------------------------------------------------------------------------------------------------------------>
+      <h2>General</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>transform</td>
+            <td>
+              <strong>transform</strong>: <span class="text-danger">none</span>|<i>transform-functions</i>|initial|inherit;<br>
+              Apply a transformation to an element<br>
+            </td>
+            <td>
+              -ms-transform: rotate(45deg); <span class="text-success">// for IE 9</span><br>
+              transform: rotate(45deg);
+            </td>
+          </tr>
+          <tr>
+            <td>transform-origin</td>
+            <td>
+              <strong>transform-origin</strong>: <i>x-axis y-axis z-axis</i>|initial|inherit;<br>
+              Specify the origin position of transformed elements<br>
+              <span class="text-danger">
+                (default: 50% 50%  for 2D transfromation)<br>
+                (default: 50% 50% 0 for 3D transfromation)<br>
+              </span>
+              <span class="text-success"><span class="badge bg-danger">required</span> transfrom property</span>
+            </td>
+            <td>transform-origin: 20% 40%;</td>
+          </tr>
+          <tr>
+            <td>transform-style</td>
+            <td>
+              <strong>transform-style</strong>: <span class="text-danger">flat</span>|preserve-3d|initial|inherit;<br>
+              Specify how nested elements are rendered in 3D space<br>
+              <span class="text-success"><span class="badge bg-danger">required</span> transfrom property</span>
+              <br>
+            </td>
+            <td>
+              <div class="style1">
+                <div class="style2">GREEN
+                  <div class="style3">LIGHTSALMON</div>
+                </div>
+              </div>
+              <style>
+                .style1 {
+                  position: relative;
+                  height: 200px;
+                  padding: 10px;
+                  border: 1px solid black;
+                }
+                .style2 {
+                  position: absolute;
+                  padding: 60px;
+                  border: 1px solid black;
+                  background-color: #04AA6D;
+                  transform: rotateY(60deg);
+                  transform-style: preserve-3d;
+                }
+                .style3 {
+                  position: absolute;
+                  padding: 30px;
+                  border: 1px solid black;
+                  background-color: lightsalmon;
+                  transform: rotateY(-60deg);
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              perspective<br>
+              <span class="text-success">(3D transform)</span>
+            </td>
+            <td>
+              <strong>perspective</strong>: <span class="text-danger">none</span>|<i>length</i><br>
+              Define how far the object is away from the user<br>
+              lower value will result in a more intensive 3D effect<br>
+              <br>
+            </td>
+            <td>
+              <table>
+                <tr>
+                  <td>
+                    <h6>perspective: none;</h6>
+                    <div class="perspective-relative a">
+                      <div class="perspective-absolute"></div>
+                    </div>
+                  </td>
+                  <td>
+                    <h6>perspective: 100px;</h6>
+                    <div class="perspective-relative b">
+                      <div class="perspective-absolute"></div>
+                    </div>
+                  </td>
+                  <td>
+                    <h6>perspective: 400px;</h6>
+                    <div class="perspective-relative c">
+                      <div class="perspective-absolute"></div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+
+              <style>
+                .perspective-relative {
+                  position: relative;
+                  height: 150px;
+                  width: 150px;
+                  margin-right: 60px;
+                  border: 1px solid blue;
+                }
+                .perspective-relative.a{
+                  perspective: none;
+                }
+                .perspective-relative.b{
+                  perspective: 100px;
+                }
+                .perspective-relative.c{
+                  perspective: 400px;
+                }
+                .perspective-absolute {
+                  padding: 60px;
+                  position: absolute;
+                  border: 1px solid black;
+                  background-color: red;
+                  background: rgba(100,100,100,0.5); 
+                  transform-style: preserve-3d;
+                  transform: rotateX(45deg);
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              perspective-origin<br>
+              <span class="text-success">(3D transform)</span>
+            </td>
+            <td>
+              <strong>perspective-origin</strong>: <i>x-axis y-axis</i>|initial|inherit; <span class="text-danger">(default: 50% 50%)</span><br>
+              Define at from which position the user is looking at the 3D-positioned element<br>
+              <span class="text-success"><span class="badge bg-danger">required</span> perspective property</span><br>
+              <ul class="text-success">Possible values:
+                <li>position words</li>
+                <li>length</li>
+                <li>%</li>
+              </ul>
+              <br>
+            </td>
+            <td>
+              <table>
+                <tr>
+                  <td>
+                    <h6>perspective-origin: left;</h6>
+                    <div class="origin-relative a">
+                      <div class="origin-absolute"></div>
+                    </div>
+                  </td>
+                  <td>
+                    <h6>perspective-origin: bottom right;</h6>
+                    <div class="origin-relative b">
+                      <div class="origin-absolute"></div>
+                    </div>
+                  </td>
+                  <td>
+                    <h6>perspective-origin: -90%;</h6>
+                    <div class="origin-relative c">
+                      <div class="origin-absolute"></div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+
+              <style>
+                .origin-relative {
+                  position: relative;
+                  height: 150px;
+                  width: 150px;
+                  margin-right: 60px;
+                  border: 1px solid blue;
+                  perspective: 100px;
+                }
+                .origin-relative.a{
+                  perspective-origin: left;
+                }
+                .origin-relative.b{
+                  perspective-origin: bottom right;
+                }
+                .origin-relative.c{
+                  perspective-origin: -90%;
+                }
+                .origin-absolute {
+                  padding: 60px;
+                  position: absolute;
+                  border: 1px solid black;
+                  background-color: red;
+                  background: rgba(100,100,100,0.5); 
+                  transform-style: preserve-3d;
+                  transform: rotateX(45deg);
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              backface-visibility<br>
+              <span class="text-success">(3D transform)</span>
+            </td>
+            <td>
+              <strong>backface-visibility</strong>: <span class="text-danger">visible</span>|hidden|initial|inherit;<br>
+              Define whether or not the back face of an element should be visible when facing the user<br>
+              <span class="text-success">
+                <strong>backface</strong>: mirror image of the front face<br>
+                <strong>Useful</strong>: when an element is rotated. It lets you choose if the user should see the back face or not<br>
+                Safari: -webkit- prefix
+              </span>
+              <br>
+            </td>
+            <td>
+              <h6>backface-visibility: hidden;</h6>
+              <div class="backface a">BACKFACE</div>
+              <h6>backface-visibility: vision;</h6>
+              <div class="backface b">BACKFACE</div>
+              
+              <style>
+              .backface {
+                position: relative;
+                height: 40px;
+                width: 80px;
+                background-color: #04AA6D;
+                transform: rotateY(180deg);
+              }
+              
+              .backface.a {
+                -webkit-backface-visibility: hidden; /* Safari */
+                backface-visibility: hidden;
+              }
+              
+              .backface.b {
+                -webkit-backface-visibility: visible; /* Safari */
+                backface-visibility: visible;
+              }
+              </style>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--Title here------------------------------------------------------------------------------------------------------------>
+      <h2>2D Transform Methods</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>translate(x,y)</td>
+            <td>
+              Move an element from its current position<br>
+            </td>
+            <td>
+              <table style="height: 100px;">
+                <tr>
+                  <td><div class="translate2d a">normal</div></td>
+                  <td><div class="translate2d b">translate(50px,20px);</div></td>
+                </tr>
+              </table>
+              <style>
+                .translate2d {
+                  width: 150px;
+                  height: 50px;
+                }
+                .translate2d.a {
+                  background-color: #04AA6D;
+                }
+                .translate2d.b {
+                  background-color: blanchedalmond;
+                  transform: translate(50px,20px);
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>translateX(x)</td>
+            <td></td>
+            <td>
+              <table style="height: 100px;">
+                <tr>
+                  <td><div class="translateX a">normal</div></td>
+                  <td><div class="translateX b">translateX(50px);</div></td>
+                </tr>
+              </table>
+              <style>
+                .translateX {
+                  width: 150px;
+                  height: 50px;
+                }
+                .translateX.a {
+                  background-color: #04AA6D;
+                }
+                .translateX.b {
+                  background-color: blanchedalmond;
+                  transform: translateX(50px);
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>translateY(y)</td>
+            <td></td>
+            <td>
+              <table style="height: 100px;">
+                <tr>
+                  <td><div class="translateY a">normal</div></td>
+                  <td><div class="translateY b">translateY(20px);</div></td>
+                </tr>
+              </table>
+              <style>
+                .translateY {
+                  width: 150px;
+                  height: 50px;
+                }
+                .translateY.a {
+                  background-color: #04AA6D;
+                }
+                .translateY.b {
+                  background-color: blanchedalmond;
+                  transform: translateY(20px);
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>rotate(angle)</td>
+            <td>
+              Rotate an element clockwise or counter-clockwise<br>
+              <span class="text-success">
+                Possitive value: clockwise<br>
+                Negative value: counter-clockwise
+              </span>
+            </td>
+            <td>
+              <table style="height: 120px;">
+                <tr>
+                  <td><div class="rotate2d a">normal</div></td>
+                  <td><div class="rotate2d b">rotate(45deg);</div></td>
+                  <td><div class="rotate2d c">rotate(-90deg);</div></td>
+                </tr>
+              </table>
+              <style>
+                .rotate2d {
+                  width: 120px;
+                  height: 50px;
+                }
+                .rotate2d.a {
+                  background-color: #04AA6D;
+                }
+                .rotate2d.b {
+                  background-color: blanchedalmond;
+                  transform: rotate(45deg);
+                } 
+                .rotate2d.c {
+                  background-color: lightsalmon;
+                  transform: rotate(-90deg);
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>scale(x,y)</td>
+            <td>
+              Increase or decrease the width and height of an element
+            </td>
+            <td>
+              <table style="height: 120px;">
+                <tr>
+                  <td><div class="scale2d a">normal</div></td>
+                  <td><div class="scale2d b">scale(2,2);</div></td>
+                  <td><div class="scale2d c">scale(0.8,0.8);</div></td>
+                </tr>
+              </table>
+              <style>
+                .scale2d {
+                  width: 120px;
+                  height: 50px;
+                }
+                .scale2d.a {
+                  background-color: #04AA6D;
+                }
+                .scale2d.b {
+                  background-color: blanchedalmond;
+                  transform: scale(2,2);
+                } 
+                .scale2d.c {
+                  background-color: lightsalmon;
+                  transform: scale(0.8,0.8);
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>scaleX(x)</td>
+            <td>
+              Increase or decrease the width of an element
+            </td>
+            <td>
+              <table style="height: 120px;">
+                <tr>
+                  <td><div class="scaleX a">normal</div></td>
+                  <td><div class="scaleX b">scaleX(2);</div></td>
+                  <td><div class="scaleX c">scaleX(0.8);</div></td>
+                </tr>
+              </table>
+              <style>
+                .scaleX {
+                  width: 120px;
+                  height: 50px;
+                }
+                .scaleX.a {
+                  background-color: #04AA6D;
+                }
+                .scaleX.b {
+                  background-color: blanchedalmond;
+                  transform: scaleX(2);
+                } 
+                .scaleX.c {
+                  background-color: lightsalmon;
+                  transform: scaleX(0.8);
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>scaleY(y)</td>
+            <td>
+              Increase or decrease the height of an element
+            </td>
+            <td>
+              <table style="height: 120px;">
+                <tr>
+                  <td><div class="scaleY a">normal</div></td>
+                  <td><div class="scaleY b">scaleY(2);</div></td>
+                  <td><div class="scaleY c">scaleY(0.8);</div></td>
+                </tr>
+              </table>
+              <style>
+                .scaleY {
+                  width: 120px;
+                  height: 50px;
+                }
+                .scaleY.a {
+                  background-color: #04AA6D;
+                }
+                .scaleY.b {
+                  background-color: blanchedalmond;
+                  transform: scaleY(2);
+                } 
+                .scaleY.c {
+                  background-color: lightsalmon;
+                  transform: scaleY(0.8);
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>skew(x,y)</td>
+            <td>
+              Skew an element along the X and Y-axis by the given angles
+            </td>
+            <td>
+              <table style="height: 120px;">
+                <tr>
+                  <td><div class="skew2d a">normal</div></td>
+                  <td><div class="skew2d b">skew(45deg,10deg);</div></td>
+                  <td><div class="skew2d c">skew(-45deg,10deg);</div></td>
+                  <td><div class="skew2d d">skew(45deg,-10deg);</div></td>
+                </tr>
+              </table>
+              <style>
+                .skew2d {
+                  width: 150px;
+                  height: 50px;
+                }
+                .skew2d.a {
+                  background-color: #04AA6D;
+                }
+                .skew2d.b {
+                  background-color: blanchedalmond;
+                  transform: skew(45deg,10deg);
+                } 
+                .skew2d.c {
+                  background-color: lightsalmon;
+                  transform: skew(-45deg,10deg);
+                }
+                .skew2d.d {
+                  background-color: lightpink;
+                  transform: skew(45deg,-10deg);
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>skewX(x)</td>
+            <td>
+              Skew an element along the X-axis by the given angles
+            </td>
+            <td>
+              <table style="height: 120px;">
+                <tr>
+                  <td><div class="skewX a">normal</div></td>
+                  <td><div class="skewX b">skewX(45deg);</div></td>
+                  <td><div class="skewX c">skewX(-45deg);</div></td>
+                </tr>
+              </table>
+              <style>
+                .skewX {
+                  width: 150px;
+                  height: 50px;
+                }
+                .skewX.a {
+                  background-color: #04AA6D;
+                }
+                .skewX.b {
+                  background-color: blanchedalmond;
+                  transform: skewX(45deg);
+                } 
+                .skewX.c {
+                  background-color: lightsalmon;
+                  transform: skewX(-45deg);
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>skewY(y)</td>
+            <td>
+              Skew an element along the Y-axis by the given angles.
+            </td>
+            <td>
+              <table style="height: 120px;">
+                <tr>
+                  <td><div class="skewY a">normal</div></td>
+                  <td><div class="skewY b">skewY(10deg);</div></td>
+                  <td><div class="skewY c">skewY(-10deg);</div></td>
+                </tr>
+              </table>
+              <style>
+                .skewY {
+                  width: 150px;
+                  height: 50px;
+                }
+                .skewY.a {
+                  background-color: #04AA6D;
+                }
+                .skewY.b {
+                  background-color: blanchedalmond;
+                  transform: skewY(10deg);
+                } 
+                .skewY.c {
+                  background-color: lightsalmon;
+                  transform: skewY(-10deg);
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>matrix()</td>
+            <td>
+              <strong>matrix</strong>(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())<br>
+              Combine all the 2D transform methods into one.
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>matrix(n,n,n,n,n,n)</td>
+            <td>
+              <table style="height: 120px;">
+                <tr>
+                  <td><div class="matrix a">normal</div></td>
+                  <td><div class="matrix b">matrix(1, 0, 0.1, 1, 10, 0);</div></td>
+                  <td><div class="matrix c">matrix(1, -0.3, 0, 1, 0, 0);</div></td>
+                </tr>
+              </table>
+              <style>
+                .matrix {
+                  width: 170px;
+                  height: 50px;
+                }
+                .matrix.a {
+                  background-color: #04AA6D;
+                }
+                .matrix.b {
+                  background-color: blanchedalmond;
+                  transform: matrix(1, 0, 0.1, 1, 10, 0);
+                } 
+                .matrix.c {
+                  background-color: lightsalmon;
+                  transform: matrix(1, -0.3, 0, 1, 0, 0);
+                }
+              </style>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--Title here------------------------------------------------------------------------------------------------------------>
+      <h2>3D Transform <span class="badge bg-warning">later</span></h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </body>
+</html>

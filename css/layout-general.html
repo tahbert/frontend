@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <title>Layout</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Layout</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Website Layout</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="4">Common Layout</td>
+                        <td><strong>Header</strong>: at the top of the website (or right below a top navigation menu)</td>
+                        <td rowspan="4"><img src="imgs/layout-common.png" width="600px" height="auto"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Navigation Bar</strong>: list of links to help visitors navigating through your website</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Content</strong>
+                            <ul>Most common:
+                                <li>1-column (often used for mobile browsers) (width: 100%)</li>
+                                <li>2-column (often used for tablets and laptops) (width: 50%)</li>
+                                <li>3-column layout (only used for desktops) (width: 33.33%)</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Footer</strong>: often contains information like copyright and contact info</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Width and Max-width</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Without width|max-width</td>
+                        <td>A block element without <strong>width|max-width</strong> => full-width</td>
+                        <td>
+                            <div style="background-color: #04AA6D;">This is a full-width element</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Width</td>
+                        <td>
+                            Prevent the element from stretching out to the edges of its container<br>
+                            <span class="note">a horizontal scrollbar appears when the browser is smaller than
+                                500px;</span>
+                        </td>
+                        <td>
+                            <div style="background-color: #04AA6D; width: 300px; margin: auto;">width: 300px; margin: auto;
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Max-width</td>
+                        <td>Improve the browser's handling of small windows</td>
+                        <td>
+                            <div style="background-color: #04AA6D; max-width: 400px; margin: auto;">max-width: 400px; margin:
+                                auto;</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>CSS Display</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>display</td>
+                        <td>
+                            <strong>display</strong>: <i>value</i>; <span class="text-danger">(default: depend on element
+                                types)</span><br>
+                            Specify if/how an element is displayed <a target="_blank"
+                                href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_display&preval=inline">play
+                                it</a><br>
+                            <span class="note">
+                                The most important CSS property for controlling layout<br>
+                                Note: The values "flex" and "inline-flex" requires the <strong>-webkit-</strong> prefix to work
+                                in Safari
+                            </span>
+                        </td>
+                        <td rowspan="4">
+                            <h5>display: inline;</h5>
+                            <div> This is <span class="display-test">Tahbert</span> <span class="display-test">Nguyen</span>
+                                from Vietnam</div><br>
+        
+                            <h5>display: none;</h5>
+                            <div> This is <span class="display-test none">Tahbert</span> <span
+                                    class="display-test none">Nguyen</span> from Vietnam</div><br>
+        
+                            <h5>display: block;</h5>
+                            <div> This is <span class="display-test block">Tahbert</span> <span
+                                    class="display-test block">Nguyen</span> from Vietnam</div><br>
+        
+                            <h5 style="display: inline-block;">display: block;</h5> <span class="note">(without width
+                                specified)</span>
+                            <div> This is <span class="block-test block">Tahbert</span> <span
+                                    class="block-test block">Nguyen</span> from Vietnam</div><br>
+        
+                            <h5>display: inline-block;</h5>
+                            <div> This is <span class="display-test inline-block">Tahbert</span> <span
+                                    class="display-test inline-block">Nguyen</span> from Vietnam</div><br>
+        
+                            <style>
+                                .display-test {
+                                    background: #04AA6D;
+                                    width: 100px;
+                                    height: 50px;
+                                    border: 1px solid #333;
+                                }
+        
+                                .block-test {
+                                    background: #04AA6D;
+                                    height: 50px;
+                                    border: 1px solid #333;
+                                }
+        
+                                .none {
+                                    display: none;
+                                }
+        
+                                .block {
+                                    display: block;
+                                }
+        
+                                .inline-block {
+                                    display: inline-block;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <strong>display: none;</strong> commonly used to hide elements<br>
+                            <span class="note"><strong>display: none;</strong> hidden and not take up space<br>
+                                <strong>visibility:hidden;</strong> hidden and still take up space</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <strong>display: inline-block;</strong> commonly used for list items horizontally instead of
+                            vertically<br>
+                            <span class="note">
+                                <strong>Compared to display: inline;</strong>
+                                <ul>
+                                    <li>Allow to set a width and height as display: block;</li>
+                                    <li>The top and bottom margins/paddings are respected</li>
+                                </ul>
+                                <strong>Compared to display: block;</strong>
+                                <ul>
+                                    <li>Not stretch to the edges and add a line-break after the element</li>
+                                </ul>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            Overriding the default value<br>
+                            <span class="note">Only change how the element is displayed, NOT what kind of element it
+                                is<br>
+                                => an inline element with display: block; is not allowed to have other block elements inside
+                                it</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>CSS Position</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>position</td>
+                        <td>
+                            <strong>position</strong>: <span
+                                class="text-danger">static</span>|absolute|fixed|relative|sticky|initial|inherit;<br>
+                            Specify the type of positioning method used for an element <a target="_blank"
+                                href="misc/position-examples.html">see more</a><br>
+                        </td>
+                        <td rowspan="6" style="min-width: 800px;">
+                            <iframe src="misc/position-examples.html"
+                                style="width: 100%; height: 800px; overflow: auto;"></iframe>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            position: static;<br>
+                            <span class="note">Relative to the normal flow of the page.
+                                <ul>
+                                    <li>top, right, bottom, left: no effect</li>
+                                    <li>Not act as <strong>anchor point</strong> for the absolute child</li>
+                                    <li>Not removed from normal flow</li>
+                                </ul>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            position: relative;<br>
+                            <span class="note">Relative to its original position.
+                                <ul>
+                                    <li>top, right, bottom, left: have effect</li>
+                                    <li>Act as <strong>anchor point</strong> for the absolute child</li>
+                                    <li>Not removed from normal flow => leave the gap unfilled | Can overlap elements</li>
+                                </ul>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            position: absolute;<br>
+                            <span class="note">Relative to the nearest positioned ancestor.
+                                <ul>
+                                    <li>top, right, bottom, left: have effect</li>
+                                    <li>Act as <strong>anchor point</strong> for the absolute child</li>
+                                    <li>Removed from normal flow => leave the gap filled by next elements | Can overlap elements
+                                    </li>
+                                </ul>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            position: fixed;<br>
+                            <span class="note">Relative to the viewport (always in the same place when scrolled)
+                                <ul>
+                                    <li>top, right, bottom, left: have effect</li>
+                                    <li>Act as <strong>anchor point</strong> for the absolute child</li>
+                                    <li>Removed from normal flow => leave the gap filled by next elements | Can overlap elements
+                                    </li>
+                                </ul>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            position: sticky;<br>
+                            <span class="note">Based on the user's scroll position<br>
+                                (toggles between relative and fixed: relative until a given offset position is met in the
+                                viewport - then fixed)<br>
+                                position: -webkit-sticky; /* Safari */
+                                <ul>
+                                    <li>top, right, bottom, left: have effect</li>
+                                    <li>Act as <strong>anchor point</strong> for the absolute child</li>
+                                    <li>Removed from normal flow => leave the gap filled by next elements | Can overlap elements
+                                    </li>
+                                </ul>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>z-index</td>
+                        <td>
+                            <strong>z-index</strong>: <span class="text-danger">auto</span>|number|initial|inherit;<br>
+                            Specify the stack order of an element (which is in front of the others)<br>
+                            <span class="note">
+                                (Higher number in front of lower number)<br>
+                                (Auto: the one positioned last is shown in front of the others)
+                            </span>
+                        </td>
+                        <td>
+                            <div style="display: inline-block; position: relative;">
+                                <h5>z-index: auto;</h5>
+                                <div class="index-test div1">.div1</div>
+                                <div class="index-test div2">.div2</div>
+                                <div class="index-test div3">.div3</div>
+                            </div>
+        
+                            <div style="display: inline-block; position: relative; margin-left: 100px;">
+                                <h5>.div2 {z-index: 1;}</h5>
+                                <div class="index-test div1">.div1</div>
+                                <div class="index-test div2 front">.div2</div>
+                                <div class="index-test div3">.div3</div>
+                            </div>
+        
+                            <style>
+                                .index-test {
+                                    position: absolute;
+                                    width: 100px;
+                                    height: 100px;
+                                }
+        
+                                .index-test.div1 {
+                                    top: 30px;
+                                    left: 30px;
+                                    background-color: #04AA6D;
+                                }
+        
+                                .index-test.div2 {
+                                    top: 60px;
+                                    left: 60px;
+                                    background-color: lightcoral;
+                                }
+        
+                                .index-test.div3 {
+                                    top: 90px;
+                                    left: 90px;
+                                    background-color: lightsalmon;
+                                }
+        
+                                .front {
+                                    z-index: 1;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="note"><strong>More Specific</strong></td>
+                        <td>
+                            <strong>top</strong>: <span class="text-danger">auto</span>|length|initial|inherit;<br>
+                            <strong>right</strong>: <span class="text-danger">auto</span>|length|initial|inherit;<br>
+                            <strong>bottom</strong>: <span class="text-danger">auto</span>|length|initial|inherit;<br>
+                            <strong>left</strong>: <span class="text-danger">auto</span>|length|initial|inherit;<br>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>CSS Overflow</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>overflow</td>
+                        <td>
+                            <strong>overflow</strong>: <span
+                                class="text-danger">visible</span>|hidden|scroll|auto|initial|inherit;<br>
+                            Specify what happens to content too big to fit into an area<br>
+                            <span class="note">Applied only to block elements with a specified height</span>
+                        </td>
+                        <td>
+                            <div style="position: relative; min-width: 400px; height: 160px;">
+                                <div style="display: inline-block; position: absolute; top: 0; left: 0;">
+                                    <h5>overflow: visible;</h5>
+                                    <div class="overflow a">
+                                        This is Tahbert Nguyen from Vietnam working in IT.
+                                    </div>
+                                </div>
+        
+                                <div style="display: inline-block; position: absolute; top: 0; left: 150px">
+                                    <h5>overflow: hidden;</h5>
+                                    <div class="overflow b">
+                                        This is Tahbert Nguyen from Vietnam working in IT.
+                                    </div>
+                                </div>
+        
+                                <div style="display: inline-block; position: absolute; top: 0; left: 300px;">
+                                    <h5>overflow: scrool;</h5>
+                                    <div class="overflow c">
+                                        This is Tahbert Nguyen from Vietnam working in IT.
+                                    </div>
+                                </div>
+        
+                                <div style="display: inline-block; position: absolute; top: 0; left: 450px;">
+                                    <h5>overflow: auto;</h5>
+                                    <div class="overflow d">
+                                        This is Tahbert Nguyen from Vietnam working in IT.
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <style>
+                                .overflow {
+                                    background: #04AA6D;
+                                    width: 100px;
+                                    height: 100px;
+                                }
+        
+                                .overflow.a {
+                                    overflow: visible;
+                                }
+        
+                                .overflow.b {
+                                    overflow: hidden;
+                                }
+        
+                                .overflow.c {
+                                    overflow: scroll;
+                                }
+        
+                                .overflow.d {
+                                    overflow: auto;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>More Specific</td>
+                        <td>
+                            <strong>overflow-x</strong>: <span
+                                class="text-danger">visible</span>|hidden|scroll|auto|initial|inherit;<br>
+                            <strong>overflow-y</strong>: <span
+                                class="text-danger">visible</span>|hidden|scroll|auto|initial|inherit;<br>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>CSS Float and Clear</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>float</td>
+                        <td>
+                            <strong>float</strong>: <span class="text-danger">none</span>|left|right|initial|inherit;<br>
+                            Specify how an element should float<br>
+                            <ul class="note">
+                                <li>position: absolute; => no effect</li>
+                                <li>Affect other content to fill the gap</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <table class="table table-bordered float-test">
+                                <tr>
+                                    <td>
+                                        <h5>float: none;</h5>
+                                        <div class="div1">.div1 (contain .div1-1)
+                                            <div class="div1-1">
+                                                .div1-1 {<br>
+                                                &nbsp;&nbsp;float: none;<br>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="div2">.div2 {float: none; clear: none;}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>float: left;</h5>
+                                        <div class="div1">.div1 (contain .div1-1)
+                                            <div class="div1-1" style="float: left;">
+                                                .div1-1 {<br>
+                                                &nbsp;&nbsp;float: left;<br>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="div2">.div2 {float: none; clear: none;}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>float: right;</h5>
+                                        <div class="div1">.div1 (contain .div1-1)
+                                            <div class="div1-1" style="float: right;">
+                                                .div1-1 {<br>
+                                                &nbsp;&nbsp;float: right ;<br>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="div2">.div2 {float: none; clear: none;}</div>
+                                    </td>
+                                </tr>
+                            </table>
+        
+                            <style>
+                                .float-test .div1 {
+                                    background: lightsalmon;
+                                    border: 2px solid #333;
+                                }
+        
+                                .float-test .div1-1 {
+                                    background: #04AA6D;
+                                    width: 200px;
+                                    height: 100px;
+                                    float: none;
+                                }
+        
+                                .float-test .div2 {
+                                    background: lightpink;
+                                    border: 2px solid #333;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>clear</td>
+                        <td>
+                            <strong>clear</strong>: <span class="text-danger">none</span>|left|right|both|initial|inherit;<br>
+                            Specify what should happen with the next element<br>
+                            <span class="note">
+                                After using float property, we want the next element continue to flow, but below (not on right
+                                or left)<br>
+                                Should match the clear to the float<br>
+                                <ul>
+                                    <li>left - The element is pushed below left floated elements</li>
+                                    <li>right - The element is pushed below right floated elements</li>
+                                    <li>both - The element is pushed below both left and right floated elements</li>
+                                </ul>
+                            </span>
+                        </td>
+                        <td>
+                            <table class="table table-bordered float-test">
+                                <tr>
+                                    <td>
+                                        <h5>clear: left;</h5>
+                                        <div class="div1">.div1 (contain .div1-1)
+                                            <div class="div1-1" style="float: left;">
+                                                .div1-1 {<br>
+                                                &nbsp;&nbsp;float: left;<br>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="div2" style="clear: left;">.div2 {float: none; clear: left;}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>clear: right;</h5>
+                                        <div class="div1">.div1 (contain .div1-1)
+                                            <div class="div1-1" style="float: right;">
+                                                .div1-1 {<br>
+                                                &nbsp;&nbsp;float: right ;<br>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="div2" style="clear: right;">.div2 {float: none; clear: right;}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>clear: both;</h5>
+                                        <div class="div1">.div1 (contain .div1-1)
+                                            <div class="div1-1" style="float: left;">
+                                                .div1-1 {<br>
+                                                &nbsp;&nbsp;float: left ;<br>
+                                                }
+                                            </div>
+                                            <div style="float: right; background: lightgray; width: 200px; height: 100px;">
+                                                .div1-2 {<br>
+                                                &nbsp;&nbsp;float: right ;<br>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="div2" style="clear: both;">.div2 {float: none; clear: both;}</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Clearfix</td>
+                        <td>
+                            <strong>Problem</strong>: the floated element is taller than the container<br>
+                            <div class="note">
+                                <strong>Solution 1</strong>: Using overflow property (no need to use <strong>clear</strong>
+                                property)<br>
+                                scrollbars may appear if not controlling well paddings and margins<br>
+                                .clearfix {<br>
+                                &nbsp;&nbsp;overflow: auto;<br>
+                                }<br><br>
+        
+                                <strong>Solution 2</strong>: Using the modern clearfix hack (no need to use
+                                <strong>clear</strong> property)<br>
+                                .clearfix::after {<br>
+                                &nbsp;&nbsp;content: "";<br>
+                                &nbsp;&nbsp;clear: both;<br>
+                                &nbsp;&nbsp;display: table;<br>
+                                }<br>
+                            </div>
+                        </td>
+                        <td>
+                            <table class="table table-bordered float-test">
+                                <tr>
+                                    <td>
+                                        <h5>Solution 1</h5>
+                                        <div class="div1 clearfix1">.div1 (contain .div1-1)
+                                            <div class="div1-1" style="float: left;">
+                                                .div1-1 {<br>
+                                                &nbsp;&nbsp;float: left;<br>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="div2">.div2 {float: none; clear: none;}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5>Solution 2</h5>
+                                        <div class="div1 clearfix2">.div1 (contain .div1-1)
+                                            <div class="div1-1" style="float: right;">
+                                                .div1-1 {<br>
+                                                &nbsp;&nbsp;float: right ;<br>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="div2">.div2 {float: none; clear: none;}</div>
+                                    </td>
+                                </tr>
+        
+                                <style>
+                                    .clearfix1 {
+                                        overflow: auto;
+                                    }
+        
+                                    .clearfix2::after {
+                                        /*modern clearfix */
+                                        content: "";
+                                        clear: both;
+                                        display: table;
+                                    }
+                                </style>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>CSS Align</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary Heading------------------------------------------------------------------------------------------------->
+                    <tr class="sub-head">
+                        <td colspan="3">Center horizontally</td>
+                    </tr>
+                    <tr>
+                        <td>block element</td>
+                        <td>
+                            margin: auto; <span class="note">/* in fact, margin-right and margin-left */</span><br>
+                            <span class="note"><span class="badge red">required</span> specified width, not
+                                full-width</span>
+                        </td>
+                        <td style="min-width: 500px;">
+                            <div style="width: 50%; margin: 10px auto; background-color: #04AA6D;">margin : auto;</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>image</td>
+                        <td>
+                            display: block; <span class="note">/* from inline to block */</span><br>
+                            margin: auto; <span class="note">/* in fact, margin-right and margin-left */</span>
+                        </td>
+                        <td>
+                            <img src="imgs/tahbert.png" width="100px" height="100px" style="display: block; margin: 0 auto;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>text</td>
+                        <td>text-align: center</td>
+                        <td>
+                            <div style="width: 50%; margin: auto; background-color: #04AA6D; text-align: center;">text-align: center;</div>
+                        </td>
+                    </tr>
+                    <!--Secondary Heading------------------------------------------------------------------------------------------------->
+                    <tr class="sub-head">
+                        <td colspan="3">Center vertically</td>
+                    </tr>
+                    <tr>
+                        <td>padding</td>
+                        <td>padding-top and padding-bottom</td>
+                        <td>
+                            <div class="padding">padding: 20px 0;</div>
+        
+                            <style>
+                                .padding {
+                                    width: 50%;
+                                    background-color: #04AA6D;
+                                    padding: 20px 0;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>line-height</td>
+                        <td>
+                            <span class="note"><span class="badge red">required</span> equal value to the
+                                <strong>height</strong> property if specified</span>
+                        </td>
+                        <td>
+                            <div class="line-height">height: 60px; line-height: 60px;</div>
+        
+                            <style>
+                                .line-height {
+                                    width: 50%;
+                                    background-color: #04AA6D;
+                                    line-height: 60px;
+                                    height: 60px;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>multiple lines: </td>
+                        <td>
+                            <div class="line-height-many">
+                                <p>
+                                    div {height: 100px;}<br>
+                                    div {line-height: 100px;}<br><br>
+                                    p {display: inline-block;}<br>
+                                    p {line-height: 1.5;}<br>
+                                    p {vertical-align: middle;}<br>
+                                </p>
+                            </div>
+        
+                            <style>
+                                .line-height-many {
+                                    width: 50%;
+                                    background-color: #04AA6D;
+                                    line-height: 200px;
+                                    height: 200px;
+                                }
+        
+                                .line-height-many p {
+                                    display: inline-block;
+                                    line-height: 1.5;
+                                    vertical-align: middle;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>position & transform</td>
+                        <td>
+                            This trick center horizontally and vertically<br>
+                            <span class="note">Applied to the content</span>
+                            <ul>
+                                <li>position: absolute;</li>
+                                <li>top: 50%; left: 50%; <span class="note">find the center of the container</span></li>
+                                <li>
+                                    -ms-transform: translate(-50%, -50%);<br>
+                                    transform: translate(-50%, -50%); <span class="note">center the content</span>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="containter-transform">position: relative;
+                                <div class="transform">position: absolute;</div>
+                            </div>
+        
+                            <style>
+                                .containter-transform {
+                                    position: relative;
+                                    width: 50%;
+                                    background-color: #04AA6D;
+                                    height: 120px;
+                                }
+        
+                                .transform {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    -ms-transform: translate(-50%, -50%);
+                                    transform: translate(-50%, -50%);
+                                    width: 50%;
+                                    background-color: lightsalmon;
+                                    height: 60px;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Flexbox</td>
+                        <td>
+                            This trick center horizontally and vertically<br>
+                            <span class="note">Applied to the content</span>
+                            <ul>
+                                <li>display: flex; <span class="note"></span></li>
+                                <li>justify-content: center; <span class="note">center content horrizontally</span></li>
+                                <li>align-items: center; <span class="note">center content vertically</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="containter-flexbox">
+                                <div class="content-flexbox"></div>
+                            </div>
+        
+                            <style>
+                                .containter-flexbox {
+                                    width: 50%;
+                                    background-color: #04AA6D;
+                                    height: 120px;
+        
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+        
+                                .content-flexbox {
+                                    width: 50%;
+                                    background-color: lightsalmon;
+                                    height: 60px;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <!--Secondary Heading------------------------------------------------------------------------------------------------->
+                    <tr class="sub-head">
+                        <td colspan="3">Left and Right Alignment</td>
+                    </tr>
+                    <tr>
+                        <td>position</td>
+                        <td>
+                            <ul>
+                                <li>position: absolute; <span class="note"></span></li>
+                                <li>right: 0; <span class="note">using top/right/bottom/left property</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="containter-position">position: relative;
+                                <div class="content-position">position: absolute;</div>
+                            </div>
+        
+                            <style>
+                                .containter-position {
+                                    width: 50%;
+                                    background-color: #04AA6D;
+                                    height: 120px;
+        
+                                    position: relative;
+                                }
+        
+                                .content-position {
+                                    width: 50%;
+                                    background-color: lightsalmon;
+                                    height: 60px;
+        
+                                    position: absolute;
+                                    right: 0;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>float</td>
+                        <td>
+                            <ul>
+                                <li>float: right; <span class="note"></span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="containter-float ">container
+                                <div class="content-float">float: right;</div>
+                            </div>
+        
+                            <style>
+                                .containter-float {
+                                    width: 50%;
+                                    background-color: #04AA6D;
+                                    height: 120px;
+                                }
+        
+                                .content-float {
+                                    width: 50%;
+                                    background-color: lightsalmon;
+                                    height: 60px;
+                                    float: right;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

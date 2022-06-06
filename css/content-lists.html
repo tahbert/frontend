@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+
+    <title>Lists</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Lists</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Lists</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>list-style <span class="badge green">shorthand</span></td>
+                        <td>
+                            <strong>list-style</strong>: <i>list-style-type list-style-position list-style-image</i>| initial| inherit;<br>
+                        </td>
+                        <td>
+                            <ul class="shorthand">
+                                <li>German</li>
+                                <li>Chinese</li>
+                                <li>Jew</li>
+                            </ul>
+        
+                            <style>
+                                ul.shorthand {
+                                    list-style: square inside url("imgs/tahbert-thumbnail.png");
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>list-style-type</td>
+                        <td>
+                            <strong>list-style-type</strong>: <i>value</i>;<br>
+                            The type of list-item marker<br>
+                        </td>
+                        <td>
+                            <style>
+                                ul.a {
+                                    list-style-type: circle;
+                                }
+        
+                                ul.b {
+                                    list-style-type: disc;
+                                }
+        
+                                ul.c {
+                                    list-style-type: square;
+                                }
+        
+                                ol.d {
+                                    list-style-type: armenian;
+                                }
+        
+                                ol.e {
+                                    list-style-type: cjk-ideographic;
+                                }
+        
+                                ol.f {
+                                    list-style-type: decimal;
+                                }
+        
+                                ol.g {
+                                    list-style-type: decimal-leading-zero;
+                                }
+        
+                                ol.h {
+                                    list-style-type: georgian;
+                                }
+        
+                                ol.i {
+                                    list-style-type: hebrew;
+                                }
+        
+                                ol.j {
+                                    list-style-type: hiragana;
+                                }
+        
+                                ol.k {
+                                    list-style-type: hiragana-iroha;
+                                }
+        
+                                ol.l {
+                                    list-style-type: katakana;
+                                }
+        
+                                ol.m {
+                                    list-style-type: katakana-iroha;
+                                }
+        
+                                ol.n {
+                                    list-style-type: lower-alpha;
+                                }
+        
+                                ol.o {
+                                    list-style-type: lower-greek;
+                                }
+        
+                                ol.p {
+                                    list-style-type: lower-latin;
+                                }
+        
+                                ol.q {
+                                    list-style-type: lower-roman;
+                                }
+        
+                                ol.r {
+                                    list-style-type: upper-alpha;
+                                }
+        
+                                ol.s {
+                                    list-style-type: upper-greek;
+                                }
+        
+                                ol.t {
+                                    list-style-type: upper-latin;
+                                }
+        
+                                ol.u {
+                                    list-style-type: upper-roman;
+                                }
+        
+                                ol.v {
+                                    list-style-type: none;
+                                }
+        
+                                ol.w {
+                                    list-style-type: inherit;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Most common</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <ul class="a">
+                                            <li>circle</li>
+                                            <li>circle</li>
+                                            <li>circle</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="b">
+                                            <li>disc</li>
+                                            <li>disc</li>
+                                            <li>disc</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="c">
+                                            <li>square</li>
+                                            <li>square</li>
+                                            <li>square</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ol class="v">
+                                            <li>none</li>
+                                            <li>none</li>
+                                            <li>none</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <ol class="f">
+                                            <li>decimal</li>
+                                            <li>decimal</li>
+                                            <li>decimal</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ol class="g">
+                                            <li>decimal-leading-zero</li>
+                                            <li>decimal-leading-zero</li>
+                                            <li>decimal-leading-zero</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ol class="s">
+                                            <li>upper-greek</li>
+                                            <li>upper-greek</li>
+                                            <li>upper-greek</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <ol class="n">
+                                            <li>lower-alpha</li>
+                                            <li>lower-alpha</li>
+                                            <li>lower-alpha</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ol class="p">
+                                            <li>lower-latin</li>
+                                            <li>lower-latin</li>
+                                            <li>lower-latin</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ol class="r">
+                                            <li>upper-alpha</li>
+                                            <li>upper-alpha</li>
+                                            <li>upper-alpha</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ol class="t">
+                                            <li>upper-latin</li>
+                                            <li>upper-latin</li>
+                                            <li>upper-latin</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <ol class="q">
+                                            <li>lower-roman</li>
+                                            <li>lower-roman</li>
+                                            <li>lower-roman</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ol class="u">
+                                            <li>upper-roman</li>
+                                            <li>upper-roman</li>
+                                            <li>upper-roman</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ol class="o">
+                                            <li>lower-greek</li>
+                                            <li>lower-greek</li>
+                                            <li>lower-greek</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Less common</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <ol class="d">
+                                            <li>armenian</li>
+                                            <li>armenian</li>
+                                            <li>armenian</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ol class="e">
+                                            <li>cjk-ideographic</li>
+                                            <li>cjk-ideographic</li>
+                                            <li>cjk-ideographic</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ol class="h">
+                                            <li>georgian</li>
+                                            <li>georgian</li>
+                                            <li>georgian</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ol class="i">
+                                            <li>hebrew</li>
+                                            <li>hebrew</li>
+                                            <li>hebrew</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <ol class="j">
+                                            <li>hiragana</li>
+                                            <li>hiragana</li>
+                                            <li>hiragana</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ol class="k">
+                                            <li>hiragana-iroha</li>
+                                            <li>hiragana-iroha</li>
+                                            <li>hiragana-iroha</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ol class="l">
+                                            <li>katakana</li>
+                                            <li>katakana</li>
+                                            <li>katakana</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ol class="m">
+                                            <li>katakana-iroha</li>
+                                            <li>katakana-iroha</li>
+                                            <li>katakana-iroha</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>list-style-position</td>
+                        <td>
+                            <strong>list-style-position</strong>: inside| <span class="text-red">outside</span>| initial| inherit;<br>
+                            Position the markers (inside or outside the list items)
+                        </td>
+                        <td>
+                            <ul class="position outside">Outside
+                                <li>outside</li>
+                                <li>outside</li>
+                                <li>outside</li>
+                            </ul>
+
+                            <ul class="position inside">Inside
+                                <li>inside</li>
+                                <li>inside</li>
+                                <li>inside</li>
+                            </ul>
+        
+                            <style>
+                                .position.outside li {
+                                    background: lightpink;
+                                    list-style-position: outside;
+                                }
+                                .position.inside li {
+                                    background: lightpink;
+                                    list-style-position: inside;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>list-style-image</td>
+                        <td>
+                            <strong>list-style-image</strong>: <span class="text-red">none</span>|<i>url</i>| initial| inherit;<br>
+                            Replace the marker with an image<br>
+                            <span class="text-green">
+                                Always specify the <strong>list-style-type</strong> in case the image is unavailable<br>
+                                Fontawesome is a better way
+                            </span>
+                        </td>
+                        <td>
+                            <ul style="list-style-image: url(imgs/check-square-solid.svg);">
+                                <li>check-square-solid.svg</li>
+                                <li>check-square-solid.svg</li>
+                                <li>check-square-solid.svg</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

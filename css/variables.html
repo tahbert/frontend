@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <title>Variables</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Variables</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Variables</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="sub-head">
+                        <td colspan="3">Secondary Heading</td>
+                    </tr>
+                    <tr>
+                        <td>CSS variable</td>
+                        <td>
+                            <ul>
+                                <li>Make the code easier to read (more understandable)</li>
+                                <li>Make it much easier to change the color values</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>Global variable</strong>: Can be accessed/used through the entire document, declared inside
+                            the :root selector</td>
+                        <td>
+                            :root {<br>
+                            &nbsp;&nbsp;--main-bg-color: coral;<br>
+                            &nbsp;&nbsp;--blue: #0000ff;<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>Local variable</strong>: Used only inside the selector where it is declared</td>
+                        <td>
+                            button {<br>
+                            &nbsp;&nbsp;--main-bg-color: coral; <br>
+                            &nbsp;&nbsp;--blue: #0000ff;<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>var() function</td>
+                        <td>
+                            <strong>var</strong>(<i>--name, value</i>)<br>
+                            Used to insert the value of a CSS variable<br>
+                            <ul class="note">
+                                <li>name <span class="badge red">required</span> the variable name (must start with two
+                                    dashes)</li>
+                                <li>value <span class="badge yellow">optional</span> the fallback value if the variable is
+                                    not found</li>
+                            </ul>
+                        </td>
+                        <td>
+                            #div {<br>
+                            &nbsp;&nbsp;color: var(--blue);<br>
+                            &nbsp;&nbsp;background-color: var(--main-bg-color);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Overriding Variables</td>
+                        <td>Specify local variable to override Global Variable</td>
+                        <td>
+                            :root {<br>
+                            &nbsp;&nbsp;<strong>--blue</strong>: #1e90ff;<br>
+                            &nbsp;&nbsp;--white: #ffffff; <br>
+                            }<br><br>
+        
+                            body {<br>
+                            &nbsp;&nbsp;background-color: var(<strong>--blue</strong>); <span class="note">&lt;!--
+                                #1e90ff --&gt;</span><br>
+                            }<br><br>
+        
+                            button {<br>
+                            &nbsp;&nbsp;<strong>--blue</strong>: #0000ff;<br>
+                            &nbsp;&nbsp;border: 1px solid var(<strong>--blue</strong>); <span class="note">&lt;!--
+                                #0000ff --&gt;</span><br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Specify local variable to be used in that local element</td>
+                        <td>
+                            button {<br>
+                            <strong>--button-blue</strong>: #0000ff;<br>
+                            border: 1px solid var(<strong>--button-blue</strong>); <span class="note">&lt;!-- #0000ff
+                                --&gt;</span><br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>
+                            CSS variables have access to the DOM<br>
+                            => We can change them with JS.
+                        </td>
+                        <td>
+                            <div class="JStest">
+                                <h6>Change the variable with JS</h6>
+                                <div></div>
+                                <button type="button" onclick="myFunction_set()"
+                                    style="position: absolute; right: 0; bottom: 0;">click here</button>
+                            </div>
+        
+                            <style>
+                                .JStest {
+                                    --green: #04AA6D;
+                                    position: relative;
+                                }
+        
+                                .JStest h6 {
+                                    padding: 10px;
+                                    color: white;
+                                    background-color: var(--green);
+                                }
+        
+                                .JStest div {
+                                    width: 100%;
+                                    height: 100px;
+                                    border: 2px solid var(--green);
+                                }
+                            </style>
+        
+                            <script>
+                                // Get the div element
+                                var r = document.querySelector('.JStest');
+        
+                                // Create a function for setting a variable value
+                                function myFunction_set() {
+                                    r.style.setProperty('--green', 'lightsalmon');
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Media Queries <span class="text-red">later</span></td>
+                        <td>Change variables Media Queries <a
+                                href="https://www.w3schools.com/css/css3_variables_mediaqueries.asp">see more</a></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

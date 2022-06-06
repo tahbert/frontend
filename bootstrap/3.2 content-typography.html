@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Content - Typography</title>
+  </head>
+  <body>
+    <!--Container-->
+    <div class="container-fluid my-3">
+      <div class="row g-0 text-center bg-primary">
+        <h1 class="text-center text-light p-5">Content - Typography</h1>
+      </div>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">Content - Typography</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Main</td>
+          </tr>
+          <tr>
+            <td>font</td>
+            <td>
+              font-size: 1rem (16px)<br>
+              line-height: 1.5<br>
+            </td>
+            <td></td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Paragraph</td>
+          </tr>
+          <tr>
+            <td>&lt;p&gt;</td>
+            <td>
+              margin-top: 0;<br>
+              margin-bottom: 1rem; (16px)<br>
+            </td>
+            <td>
+              <p>this is a paragraph</p>
+              <p>this is another paragraph</p>
+            </td>
+          </tr>
+          <tr>
+            <td>.lead</td>
+            <td>make a paragraph stand out</td>
+            <td>
+              <p>This is a regular paragraph</p>
+              <p class="lead">This paragraph stands out</p>
+              <p>This is a regular paragraph</p>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Heading</td>
+          </tr>
+          <tr>
+            <td>&lt;h1&gt; to &lt;h6&gt;</td>
+            <td>
+              bolder font-weight<br>
+              responsive font-size<br>
+            </td>
+            <td>
+              <h1>h1 Bootstrap heading</h1>
+              <h2>h2 Bootstrap heading</h2>
+              <h3>h3 Bootstrap heading</h3>
+              <h4>h4 Bootstrap heading</h4>
+              <h5>h5 Bootstrap heading</h5>
+              <h6>h6 Bootstrap heading</h6>     
+            </td>
+          </tr>
+          <tr>
+            <td>.display-*</td>
+            <td>
+              larger font-size and lighter font-weight<br>
+              <span class="text-success">the star: from 1 - 6</span>
+            </td>
+            <td>
+              <h1>Normal Heading</h1>
+              <h1 class="display-1">Display 1</h1>
+              <h1 class="display-2">Display 2</h1>
+              <h1 class="display-3">Display 3</h1>
+              <h1 class="display-4">Display 4</h1>
+              <h1 class="display-5">Display 5</h1>
+              <h1 class="display-6">Display 6</h1>
+            </td>
+          </tr>
+          <tr>
+            <td>&lt;small&gt; or .small</td>
+            <td>smaller, secondary text in any heading</td>
+            <td>
+              <h1>h1 heading <small>secondary text</small></h1>
+              <h2>h2 heading <small>secondary text</small></h2>
+              <h3>h3 heading <small>secondary text</small></h3>
+              <h4>h4 heading <small>secondary text</small></h4>
+              <h5>h5 heading <small>secondary text</small></h5>
+              <h6>h6 heading <small>secondary text</small></h6>            
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Abbreviation</td>
+          </tr>
+          <tr>
+            <td>&lt;abbr&gt;</td>
+            <td>dotted border bottom and a cursor with question mark on hover</td>
+            <td><abbr title="World Health Organization">WHO</abbr></td>
+          </tr>
+          <tr>
+            <td>.initialism</td>
+            <td>Make the text inside an &lt;abbr&gt; slightly smaller</td>
+            <td>The <abbr title="World Health Organization" class="initialism">WHO</abbr></td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">List</td>
+          </tr>
+          <tr>
+            <td>&lt;dl&gt;</td>
+            <td></td>
+            <td>
+              <dl>
+                <dt>Coffee</dt>
+                <dd>black hot drink</dd>
+                <dt>Milk</dt>
+                <dd>white cold drink</dd>
+              </dl>            
+            </td>
+          </tr>
+          <tr>
+            <td>.list-unstyled</td>
+            <td>
+              Remove the default list-style and left margin on list items<br>
+              <span class="text-success">on  &lt;ul&gt; or &lt;ol&gt;, only applies to immediate children list items</span>
+            </td>
+            <td>
+              <ul class="list-unstyled">
+                <li>Coffee</li>
+                <li>Tea
+                  <ul>
+                    <!-- not applied here-->
+                    <li>Black tea</li>
+                    <li>Green tea</li>
+                  </ul>
+                </li>
+                <li>Milk</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              .list-inline<br>
+              .list-inline-item<br>
+            </td>
+            <td>Place all list items on a single line</td>
+            <td>
+              <ul class="list-inline">
+                <li class="list-inline-item">Coffee</li>
+                <li class="list-inline-item">Tea</li>
+                <li class="list-inline-item">Milk</li>
+              </ul>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Text Alignment</td>
+          </tr>
+          <tr>
+            <td>
+              .text-left<br>
+              .text-end<br>
+              .text-center<br>
+            </td>
+            <td></td>
+            <td>
+              <div class="text-left">Left-aligned text.</div>
+              <div class="text-end">Right-aligned text.</div>
+              <div class="text-center">Center-aligned text.</div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Wrap or Break</td>
+          </tr>
+          <tr>
+            <td>.text-nowrap</td>
+            <td></td>
+            <td>
+              <div class="text-nowrap" style="width: 250px; background: #04AA6D;">
+                No wrap text. No wrap text. No wrap text
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>.text-break</td>
+            <td>Prevent long text from breaking layout</td>
+            <td>
+              <div class="text-break" style="width: 250px; background: #04AA6D;">
+                AaBNnOoPpQqRasdfasfsfsafsASDFAS
+              </div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Others</td>
+          </tr>
+          <tr>
+            <td>.text-decoration-none</td>
+            <td>remove the underline from a link</td>
+            <td><a href="#" class="text-decoration-none">this is a link</a></td>
+          </tr>
+          <tr>
+            <td>
+              .text-lowercase<br>
+              .text-uppercase<br>
+              .text-capitalize<br>
+            </td>
+            <td></td>
+            <td>
+              <div class="text-lowercase">lowercased text.</div>
+              <div class="text-uppercase">uppercased text.</div>
+              <div class="text-capitalize">capitalized text.</div>
+            </td>
+          </tr>
+          <tr>
+            <td>&lt;mark&gt; or .mark</td>
+            <td>yellow background color and some padding</td>
+            <td>
+              <mark>highlight</mark>
+              <span class ="mark">another highlight</span>
+            </td>
+          </tr>
+          <tr>
+            <td>&lt;code&gt;</td>
+            <td></td>
+            <td>The following HTML elements: <code>span</code>, <code>section</code></td>
+          </tr>
+          <tr>
+            <td>&lt;kbd&gt;</td>
+            <td></td>
+            <td>Use <kbd>ctrl + p</kbd> to open the Print dialog box</td>
+          </tr>
+          <tr>
+            <td>&lt;pre&gt;</td>
+            <td></td>
+            <td>
+              <pre>
+                Text in a pre element
+                is displayed in a fixed-width
+                font, and it preserves
+                both      spaces and
+                line breaks.
+                </pre>                
+            </td>
+          </tr>
+          <tr>
+            <td>&lt;blockquote&gt;</td>
+            <td>
+              <strong>.blockquote</strong>  to &lt;blockquote&gt; to quote blocks of content<br>
+              <strong>.blockquote-footer</strong> to &lt;footer&gt; to name a source<br>
+            </td>
+            <td>
+              <blockquote class="blockquote">
+                <p>For 50 years, WWF .... </p>
+                <footer class="blockquote-footer">From WWF's website</footer>
+              </blockquote>            
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--Close the container-->
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

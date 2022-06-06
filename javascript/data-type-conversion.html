@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Type Conversion</title>
+  </head>
+  <body>
+    <!--Container-->
+    <div class="container-fluid my-3">
+      <div class="row g-0 text-center" style="background: #00AA6D;">
+        <h1 class="text-center text-light p-5">Type Conversion</h1>
+      </div>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">Type Conversion</h5>
+      <table class="table">
+        <thead class="text-light" style="background: #00AA6D;">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>General</td>
+            <td>
+              JS variables can be converted to a new variable or another data type:
+              <ol>
+                <li>Automatically by itself</li>
+                <li>By the use of a function</li>
+              </ol>
+            </td>
+            <td></td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">String to Number</td>
+          </tr>
+          <tr>
+            <td>Number()</td>
+            <td>Convert a value to a number if possible</td>
+            <td class="row">
+              <div class="col-sm-6">
+                Number("3.14");<br>
+                Number(" ");<br>
+                Number("") ;<br>
+                Number("99 88");<br>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-success" id="tc1ID"></span><br>
+                <script>
+                  document.getElementById("tc1ID").innerHTML= 
+                  "// result: " + Number("3.14") + "<br>" +
+                  "// result: " + Number(" ") + "<br>" +
+                  "// result: " + Number("") + "<br>" +
+                  "// result: " + Number("99 88");
+                </script>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>parseInt()</td>
+            <td>Parse a string and return the first integer recognised</td>
+            <td class="row">
+              <div class="col-sm-6">
+                parseInt("10")<br>
+                parseInt("10.00")<br>
+                parseInt("10.33")<br>
+                parseInt("34 45 66")<br>
+                parseInt("   60   ")<br>
+                parseInt("40 years")<br>
+                parseInt("He was 40");
+              </div>
+              <div class="col-sm-6">
+                <span class="text-success" id="tc2ID"></span><br>
+
+                <script>
+                  document.getElementById("tc2ID").innerHTML =
+                  parseInt("10") + "<br>" +
+                  parseInt("10.00") + "<br>" +
+                  parseInt("10.33") + "<br>" +
+                  parseInt("34 45 66") + "<br>" +
+                  parseInt("   60   ") + "<br>" +
+                  parseInt("40 years") + "<br>" +
+                  parseInt("He was 40");
+                </script>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>parseFloat()</td>
+            <td>Parse a string and return the first floating point number recognised</td>
+            <td class="row">
+              <div class="col-sm-6">
+                parseFloat(10);<br>
+                parseFloat("10");<br>
+                parseFloat("10.33");<br>
+                parseFloat("34 45 66");<br>
+                parseFloat("He was 40");<br>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-success" id="tc3ID"></span><br>
+
+                <script>
+                  document.getElementById("tc3ID").innerHTML =
+                  parseFloat(10) + "<br>" +
+                  parseFloat("10") + "<br>" +
+                  parseFloat("10.33") + "<br>" +
+                  parseFloat("34 45 66") + "<br>" +
+                  parseFloat("He was 40");
+                </script>
+              </div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Variable to Number</td>
+          </tr>
+          <tr>
+            <td>Unary + Operator</td>
+            <td>Convert a variable to a number</td>
+            <td class="row">
+              <div class="col-sm-6">
+                let x = "5";<br>
+                let y = +x;<br><br>
+                let a = "Tahbert";<br>
+                let b = +a;<br>
+              </div>
+
+              <div class="col-sm-6">
+                <span class="text-success" id="tc4ID"></span><br>
+                <script>
+                  let x = "5";
+                  let y = +x;
+                  let a = "Tahbert";
+                  let b = +a;
+                  document.getElementById("tc4ID").innerHTML =
+                  x + " // x is a " + typeof x + "<br>" +
+                  y + " // y is a " + typeof y + "<br><br>" +
+                  a + " // a is a " + typeof a + "<br>" +
+                  b + " // b is a " + typeof b;
+                </script>
+              </div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Numbers to Strings</td>
+          </tr>
+          <tr>
+            <td>String()</td>
+            <td>
+              String(<i>value</i>)<br>
+              Return a string<br>
+            </td>
+            <td class="row">
+              <div class="col-sm-6">
+                String(123);<br>
+                String(100 + 23);<br>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-success" id="tc5ID"></span><br>
+                <script>
+                  document.getElementById("tc5ID").innerHTML =
+                  String(123) + "<br>" +
+                  String(100 + 23);
+                </script>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>toString()</td>
+            <td>
+              <i>number</i>.toString(<i>radix</i>)<br>
+              Return a string<br>
+            </td>
+            <td class="row">
+              <div class="col-sm-6">
+                (123).toString();<br>
+                (100+23).toString();<br>
+                (100+23).toString(2);<br>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-success" id="tc6ID"></span><br>
+                <script>
+                  document.getElementById("tc6ID").innerHTML =
+                  (123).toString() + "<br>" + // 123.toString(); will not work
+                  (100+23).toString() + "<br>" +
+                  (100+23).toString(2); // Binary
+                </script>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>toExponential()</td>
+            <td>
+              <i>number</i>.toExponential(<i>x</i>) <span class="text-success">(x: optional, an integer between 0 and 20)</span><br>
+              Return a string,<br>
+              <span class="text-success">With a number rounded and written using exponential notation.</span>
+            </td>
+            <td class="row">
+              <div class="col-sm-6">
+                (5.56789).toExponential();<br>
+                (5.56789).toExponential(3);<br>
+                (5.56789).toExponential(2);<br>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-success" id="tc7ID"></span><br>
+                <script>
+                  document.getElementById("tc7ID").innerHTML =
+                  (5.56789).toExponential() + "<br>" + 
+                  (5.56789).toExponential(3) + "<br>" + 
+                  (5.56789).toExponential(2);
+                </script>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>toFixed()</td>
+            <td>
+              <i>number</i>.toFixed(<i>x</i>) <span class="text-success">(x: optional, number of decimals, default: 0)</span><br>
+              Return a string,<br>
+              <span class="text-success">With a number rounded and written with a specified number of decimals.</span>
+            </td>
+            <td class="row">
+              <div class="col-sm-6">
+                (5.56789).toFixed();<br>
+                (5.56789).toFixed(3);<br>
+                (5.56789).toFixed(2);<br>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-success" id="tc8ID"></span><br>
+                <script>
+                  document.getElementById("tc8ID").innerHTML =
+                  (5.56789).toFixed() + "<br>" + 
+                  (5.56789).toFixed(3) + "<br>" + 
+                  (5.56789).toFixed(2);
+                </script>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>toPrecision()</td>
+            <td>
+              <i>number</i>.toPrecision(<i>x</i>)<br>
+              <span class="text-success">(x: optional, number of digits.If omitted, the number is returned without any formatting.)</span><br>
+              Return a string,<br>
+              <span class="text-success">With a number written with a specified length</span>
+            </td>
+            <td class="row">
+              <div class="col-sm-6">
+                (5.56789).toPrecision();<br>
+                (5.56789).toPrecision(3);<br>
+                (5.56789).toPrecision(2);<br>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-success" id="tc9ID"></span><br>
+                <script>
+                  document.getElementById("tc9ID").innerHTML =
+                  (5.56789).toPrecision() + "<br>" + 
+                  (5.56789).toPrecision(3) + "<br>" + 
+                  (5.56789).toPrecision(2);
+                </script>
+              </div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Date to Number</td>
+          </tr>
+          <tr>
+            <td>Number()</td>
+            <td>
+              Number(<i>value</i>)<br>
+              Return the number of milliseconds since January 1, 1970 00:00:00<br>
+            </td>
+            <td>
+              <div class="row">
+                <div class="col-sm-6">
+                  Number(new Date());
+                </div>
+                <div class="col-sm-6">
+                  <span class="text-success" id="tc10ID"></span>
+                  <script>
+                    document.getElementById("tc10ID").innerHTML =Number(new Date());
+                  </script>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>getTime()</td>
+            <td>
+              <i>date</i>.getTime()<br>
+              Return the number of milliseconds since January 1, 1970 00:00:00<br>
+            </td>
+            <td>
+              <div class="row">
+                <div class="col-sm-6">
+                  new Date().getTime();
+                </div>
+                <div class="col-sm-6">
+                  <span class="text-success" id="tc11ID"></span>
+                  <script>
+                    document.getElementById("tc11ID").innerHTML =new Date().getTime();
+                  </script>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Date to String</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              String(<i>value</i>)<br>
+              Return date as string<br>
+            </td>
+            <td>
+              <div class="row">
+                <div class="col-sm-6">
+                  String(new Date());
+                </div>
+                <div class="col-sm-6">
+                  <span class="text-success" id="tc12ID"></span>
+                  <script>
+                    document.getElementById("tc12ID").innerHTML =String(new Date());
+                  </script>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <i>date</i>.toString()<br>
+              Return date as string<br>
+            </td>
+            <td>
+              <div class="row">
+                <div class="col-sm-6">
+                  new Date().toString();
+                </div>
+                <div class="col-sm-6">
+                  <span class="text-success" id="tc13ID"></span>
+                  <script>
+                    document.getElementById("tc13ID").innerHTML =new Date().toString();
+                  </script>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Get Date Methods</td>
+            <td><a target="_blank" href="object-dates.html">see more</a></td>
+            <td></td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Boolean to Number</td>
+          </tr>
+          <tr>
+            <td>Number()</td>
+            <td>
+              Number(<i>value</i>)<br>
+            </td>
+            <td>
+              <div class="row">
+                <div class="col-sm-6">
+                  Number(true);<br>
+                  Number(fase);<br>
+                </div>
+                <div class="col-sm-6">
+                  <span class="text-success" id="tc14ID"></span>
+                  <script>
+                    document.getElementById("tc14ID").innerHTML =
+                    Number(true) + "<br>" +
+                    Number(false);
+                  </script>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Boolean to String</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              String(<i>value</i>)<br>
+              Return Boolean as string<br>
+            </td>
+            <td>
+              <div class="row">
+                <div class="col-sm-6">
+                  String(true);<br>
+                  String(false);<br>
+                </div>
+                <div class="col-sm-6">
+                  <span class="text-success" id="tc15ID"></span>
+                  <script>
+                    document.getElementById("tc15ID").innerHTML =
+                    String(true) + "<br>" +
+                    String(false);
+                  </script>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <i>boolean</i>.toString()<br>
+              Return Boolean as string<br>
+            </td>
+            <td>
+              <div class="row">
+                <div class="col-sm-6">
+                  (true).toString();<br>
+                  (false).toString();<br>
+                </div>
+                <div class="col-sm-6">
+                  <span class="text-success" id="tc16ID"></span>
+                  <script>
+                    document.getElementById("tc16ID").innerHTML =
+                    (true).toString() + "<br>" +
+                    (false).toString();
+                  </script>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Automatic Type Conversion</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              JS automatically calls the variable's toString() function<br>
+              when you try to "output" an object or a variable<br>
+            </td>
+            <td>
+              <div class="row">
+                <div class="col-sm-6">
+                  {name:"Tahbert"};<br>
+                  [1,2,3,4];<br>
+                  new Date();<br>
+                </div>
+                <div class="col-sm-6">
+                  <span class="text-success" id="tc17ID"></span>
+                  <script>
+                    document.getElementById("tc17ID").innerHTML =
+                    {name:"Tahbert"} + "<br>" + 
+                    [1,2,3,4] + "<br>" + 
+                    new Date();
+                  </script>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              Numbers and booleans are also converted, but this is not very visible
+            </td>
+            <td>
+              <div class="row">
+                <div class="col-sm-6">
+                  123;<br>
+                  true;<br>
+                  false;<br>
+                </div>
+                <div class="col-sm-6">
+                  <span class="text-success" id="tc18ID"></span>
+                  <script>
+                    document.getElementById("tc18ID").innerHTML =
+                    123 + "<br>" + 
+                    true + "<br>" + 
+                    false;
+                  </script>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              When JS operate on a "wrong" data type,<br>
+              it will try to convert the value to a "right" type<br>
+            </td>
+            <td>
+              <span class="text-success">// The result is not always what you expect:</span>
+              <div class="row">
+                <div class="col-sm-6">
+                  5 + null;<br>
+                  "5" + null;<br>
+                  "5" + 2;<br>
+                  "5" - 2;<br>
+                  "5" * "2";<br>
+                </div>
+                <div class="col-sm-6">
+                  <span class="text-success" id="tc19ID"></span>
+                  <script>
+                    document.getElementById("tc19ID").innerHTML =
+                    (5 + null) + "<br>" + 
+                    ("5" + null) + "<br>" + 
+                    ("5" + 2) + "<br>" + 
+                    ("5" - 2) + "<br>" +
+                    ("5" * "2");
+                  </script>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--Close the container-->
+  </body>
+</html>

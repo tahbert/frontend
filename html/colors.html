@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <title>Colors</title>
+    <style>
+        .colorTable {
+            border-collapse: collapse;
+            width: 100%;
+        }   
+        .colorTable tr td {
+            width: 33.33% !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Colors</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Colors</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Color Values</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Color Names</td>
+                        <td>140 standard color names</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td style="color:red;">red</td>
+                                    <td style="color:green;">green</td>
+                                    <td style="color:blue;">blue</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>HEX</td>
+                        <td>
+                            <strong>#rrggbb</strong><br>
+                            rr - red | gg - green | bb - blue (from 00 to ff)
+                        </td>
+                        <td>
+                            <table class="colorTable">
+                                <tr>
+                                    <th>red</th>
+                                    <th>green</th>
+                                    <th>blue</th>
+                                </tr>
+                                <tr>
+                                    <td style="color:#ff0000;">#ff0000</td>
+                                    <td style="color:#00ff00;">#00ff00</td>
+                                    <td style="color:#0000ff;">#0000ff</td>
+                                </tr>
+                                <tr>
+                                    <th>black</th>
+                                    <th>white</th>
+                                    <th>gray</th>
+                                </tr>
+                                <tr>
+                                    <td style="color:#000000;">#000000</td>
+                                    <td style="color:#ffffff; background-color:#2D2D2D;">#ffffff</td>
+                                    <td style="color:#2d2d2d;">#2d2d2d</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>RGB</td>
+                        <td>
+                            <strong>rgb(red, green, blue)</strong><br>
+                            256 x 256 x 256 = 16777216 possible colors!
+                        </td>
+                        <td>
+                            <table class="colorTable">
+                                <tr>
+                                    <th>red</th>
+                                    <th>green</th>
+                                    <th>blue</th>
+                                </tr>
+                                <tr>
+                                    <td style="color:rgb(255,0,0);">rgb(255,0,0)</td>
+                                    <td style="color:rgb(0,255,0);">rgb(0,255,0)</td>
+                                    <td style="color:rgb(0,0,255);">rgb(0,0,255)</td>
+                                </tr>
+                                <tr>
+                                    <th>black</th>
+                                    <th>white</th>
+                                    <th>gray</th>
+                                </tr>
+                                <tr>
+                                    <td style="color:rgb(0,0,0);">rgb(0,0,0)</td>
+                                    <td style="color:rgb(255,255,255); background-color:#2D2D2D;">rgb(255,255,255)</td>
+                                    <td style="color:rgb(50,50,50);">rgb(50,50,50)</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>RGBA</td>
+                        <td>
+                            <strong>rgb(red, green, blue, alpha)</strong><br>
+                            Alpha (opacity: 0.0 to 1.0)
+                        </td>
+                        <td>
+                            <table class="colorTable">
+                                <tr>
+                                    <th>red</th>
+                                    <th>green</th>
+                                    <th>blue</th>
+                                </tr>
+                                <tr>
+                                    <td style="color:rgb(255,0,0,0.5);">rgb(255,0,0,0.5)</td>
+                                    <td style="color:rgb(0,255,0,0.5);">rgb(0,255,0,0.5)</td>
+                                    <td style="color:rgb(0,0,255,0.5);">rgb(0,0,255,0.5)</td>
+                                </tr>
+                                <tr>
+                                    <th>black</th>
+                                    <th>white</th>
+                                    <th>gray</th>
+                                </tr>
+                                <tr>
+                                    <td style="color:rgb(0,0,0,0.5);">rgb(0,0,0)</td>
+                                    <td style="color:rgb(255,255,255,0.5); background-color:#2D2D2D;">rgb(255,255,255,0.5)</td>
+                                    <td style="color:rgb(50,50,50,0.5);">rgb(50,50,50,0.5)</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>HSL</td>
+                        <td>
+                            <strong>hsl(hue, saturation, lightness)</strong><br>
+                            <strong>Hue</strong>: a degree on the color wheel from 0 -> 360<br>
+                            (0-red, 120-green, 240-blue)<br>
+                            <strong>Saturation</strong>: a percentage value<br>
+                            (0%-shade of gray, 100%-full color)<br>
+                            <strong>Lightness</strong>: a percentage value<br>
+                            (0%-black, 100%-white)
+                        </td>
+                        <td>
+                            <table class="colorTable">
+                                <tr>
+                                    <th>red</th>
+                                    <th>green</th>
+                                    <th>blue</th>
+                                </tr>
+                                <tr>
+                                    <td style="color:hsl(0,100%,50%);">hsl(0,100%,50%)</td>
+                                    <td style="color:hsl(120,100%,50%);">hsl(120,100%,50%)</td>
+                                    <td style="color:hsl(240,100%,50%);">hsl(240,100%,50%)</td>
+                                </tr>
+                                <tr>
+                                    <th>black</th>
+                                    <th>white</th>
+                                    <th>gray</th>
+                                </tr>
+                                <tr>
+                                    <td style="color:hsl(0,100%,0%);">hsl(0,100%,0%)</td>
+                                    <td style="color:hsl(0,100%,100%); background-color:#2D2D2D;">hsl(0,100%,100%)</td>
+                                    <td style="color:hsl(0,0%,20%);">hsl(0,0%,20%)</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>HSLA</td>
+                        <td>
+                            <strong>hsla(hue, saturation, lightness, alpha)</strong><br>
+                            Alpha channel (opacity: 0.0 to 1.0)
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Opacity</td>
+                        <td>Set the opacity for the whole element<br>
+                            <span class="note">both background color and text. (from 0.0 to 1.0)</span>
+                        </td>
+                        <td>
+                            <p>hover to see the effect:</p>
+                            <span id="opacity" style="color:white; background-color:green; padding: 10px;">color:white;
+                                background-color:green; opacity:0.3</span>
+                            <style>
+                                #opacity:hover {
+                                    opacity: 0.3;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Color Keyword Values</td>
+                        <td><strong>transparent</strong>: Often used to make a transparent background<br>
+                            <span class="note">Equivalent to rgba(0,0,0,0)</span>
+                        </td>
+                        <td>
+                            <div class="ex">
+                                <div class="ex1">This div has a light green background.</div><br>
+                                <div class="ex2">This div has a transparent background.</div>
+                            </div>
+                            <style>
+                                div.ex {
+                                    background-image: url("imgs/bg-pattern.png");
+                                }
+    
+                                div.ex1 {
+                                    background-color: lightgreen;
+                                    border: 2px solid black;
+                                    padding: 10px;
+                                }
+    
+                                div.ex2 {
+                                    background-color: transparent;
+                                    border: 2px solid black;
+                                    padding: 10px;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>currentcolor</strong>: Like a variable that holds the current value of the color
+                            property of an element<br>
+                            <span class="note">Useful if you want a specific color to be consistent in an element or a
+                                page</span>
+                        </td>
+                        <td>
+                            <div style="color: green; border:5px solid currentColor;">This div element has a green text and
+                                border</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>inherit</strong>: Inherit its value from its parent element.</td>
+                        <td>
+                            <div style="border: 2px solid green;">Here, the <span style="border: inherit;">span
+                                    element's</span> border settings will be inherited from the parent element.</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Gradient</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Linear Gradient</td>
+                    </tr>
+                    <tr>
+                        <td>General</td>
+                        <td>Defined by its direction or angle <span class="note">(Stops: at least two)</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Using Direction</td>
+                        <td>
+                            linear-gradient(to side/corner, color-stop1, color-stop2, ...)<br>
+                            <span class="note">(Default direction: to bottom)<br>
+                                (Stops: at least two)
+                            </span>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td style="background-image: linear-gradient(green, yellow);">linear-gradient(green,
+                                        yellow);</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-image: linear-gradient(to right, green, yellow); ">
+                                        linear-gradient(to right, green, yellow)</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-image: linear-gradient(to bottom right, green, yellow);">
+                                        linear-gradient(to bottom right, green, yellow)</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-image: linear-gradient(green, yellow, orange);">
+                                        linear-gradient(green, yellow, orange)</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Using Angles</td>
+                        <td>
+                            linear-gradient(angle, color-stop1, color-stop2, ...)<br>
+                            <span class="note">
+                                (Default angle: 180deg -> to bottom)<br>
+                                (0deg: to top | 90deg: to right | 180deg: to bottom | 270deg: to left)<br>
+                                (Stops: at least two)
+                            </span>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td style="background-image: linear-gradient(green, yellow);">linear-gradient(180deg,
+                                        green, yellow);</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-image: linear-gradient(90deg, green, yellow); ">
+                                        linear-gradient(90deg, green, yellow)</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-image: linear-gradient(270deg, green, yellow);">
+                                        linear-gradient(270deg, green, yellow)</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-image: linear-gradient(green, yellow, orange);">
+                                        linear-gradient(green, yellow, orange)</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Using Transparency</td>
+                        <td>Using RGBA color as stops</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td style="background-image: linear-gradient(rgba(0,255,0,0), rgba(0,255,0,1));">
+                                        linear-gradient(rgba(255,0,0,0), rgba(255,0,0,1))</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-red">Repeating</td>
+                        <td>repeating-linear-gradient()</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td style="background-image: repeating-linear-gradient(red, yellow 10%, green 20%);">
+                                        repeating-linear-gradient(red, yellow 10%, green 20%)</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Radial Gradient</td>
+                    </tr>
+                    <tr>
+                        <td>General</td>
+                        <td>Defined by its center. <span class="note">(Stops: at least two color stops)</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Syntax</td>
+                        <td>radial-gradient(<strong>shape size</strong> at position, start-color, ..., last-color)</td>
+                        <td>
+                            <table>
+                                <tr class="note">
+                                    <td>Default: evenly spaced color stops</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-image: radial-gradient(red, yellow, green);">radial-gradient(red,
+                                        yellow, green)</td>
+                                </tr>
+                                <tr class="note">
+                                    <td>Differently spaced color stops</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-image: radial-gradient(red 5%, yellow 15%, green 60%);">
+                                        radial-gradient(red 5%, yellow 15%, green 60%)</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>shape</strong>: ellipse <span class="note">(default)</span> or circle</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td style="background-image: radial-gradient(circle, red, yellow, green);">
+                                        radial-gradient(circle, red, yellow, green)</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>size</strong>: closest-side | farthest-side | closest-corner | farthest-corner <span
+                                class="note">(default)</span></td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td
+                                        style="background-image: radial-gradient(closest-side at 50% 50%, red, yellow, green);">
+                                        radial-gradient(closest-side at 10% 50%, red, yellow, black)</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>position</strong>: 50% 50% - center <span class="note">(default)</span></td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td
+                                        style="background-image: radial-gradient(closest-side at 50% 50%, red, yellow, green);">
+                                        radial-gradient(closest-side at 50% 50%, red, yellow, black)</td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="background-image: radial-gradient(closest-side at 70% 50%, red, yellow, green);">
+                                        radial-gradient(closest-side at 70% 50%, red, yellow, black)</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Repeating</td>
+                        <td>repeating-radial-gradient()</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td style="background-image: repeating-radial-gradient(red, yellow 10%, green 15%);">
+                                        repeating-radial-gradient(red, yellow 10%, green 15%)</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

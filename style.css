@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Resetting the default ------------------------------------------------------------------------------------------------ */
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root {
+    --green: #04AA6D;
+    --lightgreen: #D9EEE1;
+    --superlightgreen: #F2F9F1;
+    --grey: #ccc;
+    --darkgrey: #282A35;
+    --lightgrey: #F1F1F1;
+    --lightpink: #FFC0C7;
+    --red: #DC3545;
+    --yellow: #FFE162;
+}
+body {
+    margin: 0; padding: 0;
+}
+ul, ol {margin: 0; padding: 0;}
+li {
+    list-style-position: inside;
+}
+
+/* Style some default ------------------------------------------------------------------------------------------------ */
+.note {color: #198754;}
+.badge {
+    display: inline-block;
+    color: white; 
+    background: var(--red);
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 8px;
+}
+.badge.red {
+    background: var(--red);
+}
+.badge.green {
+    background: #198754;
+}
+.badge.yellow {
+    color: black;
+    background: var(--yellow);
+}
+.sub-head {
+    background: var(--lightgreen)
+}
+.text-red {color: var(--red)}
+.text-green {color: #198754;}
+.code {
+    font-family: monospace;
+    font-size: 16px;
+}
+/* Style the header ------------------------------------------------------------------------------------------------ */
+.header {
+    height: 160px;
+    background: var(--lightgreen);
+}
+.header h1 {
+    margin: 0;
+    text-align: center;
+    line-height: 160px;
+    font-family: "Source San Pro", sans-serif;
+    font-weight: 600;
+    color: var(--darkgrey)
+}   
+/* Style the main ------------------------------------------------------------------------------------------------ */
+.main .section {
+    margin-top: 16px;
+    padding: 16px;
+    background: var(--superlightgreen);
+}
+.main .section h2 {
+    margin: 5px 0;
+    color: var(--red);
+    font-size: 18px;
+    font-weight: 500;
+}
+.section > table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.section > table th {
+    padding: 6px;
+    font-weight: 400;
+    text-align: left;
+    color: white;
+    background: var(--green);
+}
+.section table td {
+    padding: 6px;
+}
+.section table td:nth-of-type(1) {
+    width: 20%;
+}
+.section table td:nth-of-type(2) {
+    width: 40%;
+}
+.section table td:nth-of-type(3) {
+    width: 40%;
+}
+.section table tr:not(:last-child) {
+    border-bottom: 2px solid #eee;
+}
+/* Small Devices ------------------------------------------------------------------------------------------------ */
+@media screen and (max-width: 768px) {
+    .header {
+        height: 100px;
+    }
+    .header h1 {
+        line-height: 100px;
+    }
+    .main .section {
+        padding: 8px 0;
+    }
+    .main .section h2 {
+        padding-left: 6px;
+    }
+    .section table th {
+        font-size: 14px;
+    }
+    .section table td {
+        font-size: 12px;
+    }
+}

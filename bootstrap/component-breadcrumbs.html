@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Component - Breadcrumb</title>
+  </head>
+  <body>
+    <!--Container-->
+    <div class="container-fluid my-3">
+      <div class="row g-0 text-center bg-primary">
+        <h1 class="text-center text-light p-5">Component - Breadcrumb</h1>
+      </div>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">Component - Breadcrumb</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Secondary table head</td>
+          </tr>
+          <tr>
+            <td>
+              .breadcrumb<br>
+              .breadcrumb-item<br>
+            </td>
+            <td>
+              <strong>.breadcrumb</strong> on &lt;ul&gt; or &lt;ol&gt;<br>
+              <strong>.breadcrumb-item</strong> on &lt;li&gt;<br>
+              <strong>.active</strong> on active &lt;li&gt;<br>
+            </td>
+            <td>
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Photos</a></li>
+                <li class="breadcrumb-item"><a href="#">2020</a></li>
+                <li class="breadcrumb-item"><a href="#">Italy</a></li>
+                <li class="breadcrumb-item active">Rome</li>
+              </ul>      
+            </td>
+          </tr>
+          <tr>
+            <td>accessibility</td>
+            <td>
+              aria-label="breadcrumb" on &lt;nav&gt;<br>
+              aria-current="page" on active &lt;li&gt;<br>
+            </td>
+            <td>
+              <nav class="breadcrumb" aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Photos</a></li>
+                  <li class="breadcrumb-item"><a href="#">2020</a></li>
+                  <li class="breadcrumb-item"><a href="#">Italy</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Rome</li>
+                </ul>
+              </nav>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--Close the container-->
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

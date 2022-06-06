@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Dates Object</title>
+  </head>
+  <body>
+    <!--Container-->
+    <div class="container-fluid my-3">
+      <div class="row g-0 text-center bg-primary">
+        <h1 class="text-center text-light p-5">Dates Object</h1>
+      </div>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">Dates Object</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Creating</td>
+          </tr>
+          <tr>
+            <td>new Date()</td>
+            <td>Create a new date object with the current date and time</td>
+            <td>
+              const do1 = new Date();<br>
+              do1; <span class="text-success">// result: <span id="do1_id"></span></span>
+
+              <script>
+              const do1 = new Date();
+              document.getElementById("do1_id").innerHTML = do1;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td style="white-space: nowrap;">new Date(year, month, ...)</td>
+            <td>
+              Create a new date object with a specified date and time.<br>
+              <span class="text-success">Note: JS counts months from 0 to 11</span>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>7 parameters: year, month, day, hour, minute, second, millisecond</td>
+            <td>
+              const do2 = new Date(2018, 11, 24, 10, 33, 30, 0);<br>
+              do2; <span class="text-success">// result: <span id="do2_id"></span></span>
+
+              <script>
+              const do2 = new Date(2018, 11, 24, 10, 33, 30, 0);
+              document.getElementById("do2_id").innerHTML = do2;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>6 parameters: year, month, day, hour, minute, second</td>
+            <td>
+              const do3 = new Date(2018, 11, 24, 10, 33, 30);<br>
+              do3; <span class="text-success">// result: <span id="do3_id"></span></span>
+
+              <script>
+              const do3 = new Date(2018, 11, 24, 10, 33, 30);
+              document.getElementById("do3_id").innerHTML = do3;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>5 parameters: year, month, day, hour, minute</td>
+            <td>
+              const do4 = new Date(2018, 11, 24, 10, 33);<br>
+              do4; <span class="text-success">// result: <span id="do4_id"></span></span>
+
+              <script>
+              const do4 = new Date(2018, 11, 24, 10, 33);
+              document.getElementById("do4_id").innerHTML = do4;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>4 parameters: year, month, day, hour</td>
+            <td>
+              const do5 = new Date(2018, 11, 24, 10);<br>
+              do5; <span class="text-success">// result: <span id="do5_id"></span></span>
+
+              <script>
+              const do5 = new Date(2018, 11, 24, 10);
+              document.getElementById("do5_id").innerHTML = do5;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>3 parameters: year, month, day</td>
+            <td>
+              const do6 = new Date(2018, 11, 24);<br>
+              do6; <span class="text-success">// result: <span id="do6_id"></span></span>
+
+              <script>
+              const do6 = new Date(2018, 11, 24);
+              document.getElementById("do6_id").innerHTML = do6;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>2 parameters: year, month</td>
+            <td>
+              const do7 = new Date(2018, 11);<br>
+              do7; <span class="text-success">// result: <span id="do7_id"></span></span>
+
+              <script>
+              const do7 = new Date(2018, 11);
+              document.getElementById("do7_id").innerHTML = do7;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>1 and 2 digit years will be interpreted as 19xx:</td>
+            <td>
+              const do8 = new Date(99, 11,);<br>
+              do8; <span class="text-success">// result: <span id="do8_id"></span></span><br>
+              const do9 = new Date(9, 11,);<br>
+              do9; <span class="text-success">// result: <span id="do9_id"></span></span><br>
+
+              <script>
+              const do8 = new Date(99, 11,);
+              document.getElementById("do8_id").innerHTML = do8;
+              const do9 = new Date(9, 11,);
+              document.getElementById("do9_id").innerHTML = do9;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>new Date(dateString)</td>
+            <td>Create a new date object from a date string</td>
+            <td>
+              const do10 = new Date("October 13, 2014 11:13:00");<br>
+              do10; <span class="text-success">// result: <span id="do10_id"></span></span>
+
+              <script>
+              const do10 = new Date("October 13, 2014 11:13:00");
+              document.getElementById("do10_id").innerHTML = do10;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>new Date(milliseconds)</td>
+            <td>
+              Create a new date object as zero time plus milliseconds<br>
+              <span class="text-success">Start: January 1, 1970, 00:00:00 Universal Time (UTC)</span>
+            </td>
+            <td>
+              const do11 = new Date(0);<br>
+              do11; <span class="text-success">// result: <span id="do11_id"></span></span><br>
+              const do12 = new Date(100000000000);<br>
+              do12; <span class="text-success">// result: <span id="do12_id"></span></span><br>
+              <script>
+              const do11 = new Date(0); 
+              document.getElementById("do11_id").innerHTML = do11;
+              const do12 = new Date(100000000000); 
+              document.getElementById("do12_id").innerHTML = do12;
+              </script>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Displaying Dates</td>
+          </tr>
+          <tr>
+            <td>toString()</td>
+            <td>
+              Output dates in full text string format<br>
+              <span class="text-success">Automatically converted to a string, with the <strong>toString()</strong> method</span>
+            </td>
+            <td>
+              const do13 = new Date();<br>
+              do13; <span class="text-success">// result: <span id="do13_id"></span></span><br>
+              <span class="text-success">// the same as using <strong>toString()</strong></span><br>
+              const do14 = new Date();<br>
+              do14.toString(); <span class="text-success">// result: <span id="do14_id"></span></span><br>
+
+              <script>
+              const do13 = new Date();
+              document.getElementById("do13_id").innerHTML = do13;
+              const do14 = new Date();
+              document.getElementById("do14_id").innerHTML = do14.toString();
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>toUTCString()</td>
+            <td>Convert a date to a UTC string (standard)</td>
+            <td>
+              const do15 = new Date();<br>
+              do15.toUTCString(); <span class="text-success">// result: <span id="do15_id"></span></span><br>
+
+              <script>
+              const do15 = new Date();
+              document.getElementById("do15_id").innerHTML = do15.toUTCString();
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>toISOString()</td>
+            <td>Convert a Date object to a ISO string (standard)</td>
+            <td>
+              const do16 = new Date();<br>
+              do16.toISOString(); <span class="text-success">// result: <span id="do16_id"></span></span><br>
+
+              <script>
+              const do16 = new Date();
+              document.getElementById("do16_id").innerHTML = do16.toISOString();
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>toDateString()</td>
+            <td>Convert a date to a more readable format</td>
+            <td>
+              const do17 = new Date();<br>
+              do17.toDateString(); <span class="text-success">// result: <span id="do17_id"></span></span><br>
+
+              <script>
+              const do17 = new Date();
+              document.getElementById("do17_id").innerHTML = do17.toDateString();
+              </script>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Date Formats</td>
+          </tr>
+          <tr>
+            <td>Date Input|Output</td>
+            <td>
+              <h6>Date Input</h6>
+              <table class="table table-bordered">
+                <tr>
+                  <th>Type</th>
+                  <th>Example</th>
+                </tr>
+                <tr>
+                  <td>ISO Date</td>
+                  <td>"2015-03-25" (International Standard)</td>
+                </tr>
+                <tr>
+                  <td>Short Date</td>
+                  <td>"03/25/2015"</td>
+                </tr>
+                <tr>
+                  <td>Long Date</td>
+                  <td>"Mar 25 2015" or "25 Mar 2015"</td>
+                </tr>
+              </table>
+            </td>
+            <td>
+              <h6>Date Output</h6>
+              Independent of input format, JS outputs dates in full text string format:<br>
+              Ex: Wed Mar 25 2015 07:00:00 GMT+0700 (Indochina Time)
+            </td>
+          </tr>
+          <tr>
+            <td>ISO Dates</td>
+            <td>The preferred JS date format</td>
+            <td>
+              const do18 = new Date("2015-03-25");<br>
+              do18; <span class="text-success">// result: <span id="do18_id"></span></span><br>
+
+              <script>
+              const do18 = new Date("2015-03-25");
+              document.getElementById("do18_id").innerHTML = do18;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>ISO Dates (Year and Month)</td>
+            <td>
+              const do19 = new Date("2015-03");<br>
+              do19; <span class="text-success">// result: <span id="do19_id"></span></span><br>
+
+              <script>
+              const do19 = new Date("2015-03");
+              document.getElementById("do19_id").innerHTML = do19;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>ISO Dates (Year only)</td>
+            <td>
+              const do20 = new Date("2015");<br>
+              do20; <span class="text-success">// result: <span id="do20_id"></span></span><br>
+
+              <script>
+              const do20 = new Date("2015");
+              document.getElementById("do20_id").innerHTML = do20;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              ISO Dates (Date-Time)<br>
+              <span class="text-success">
+                Date and time is separated with a capital T<br>
+                UTC time is defined with a capital letter Z<br>
+              </span>
+
+            </td>
+            <td>
+              const do21 = new Date("2015-03-25T12:00:00Z");<br>
+              do21; <span class="text-success">// result: <span id="do21_id"></span></span><br><br>
+
+              <span class="text-success">// Relative to UTC, remove the Z and add +HH:MM or -HH:MM instead:</span><br>
+              const do22 = new Date("2015-03-25T12:00:00-06:30");<br>
+              do22; <span class="text-success">// result: <span id="do22_id"></span></span><br>
+
+              <script>
+              const do21 = new Date("2015-03-25T12:00:00Z");
+              document.getElementById("do21_id").innerHTML = do21;
+              const do22 = new Date("2015-03-25T12:00:00-06:30");
+              document.getElementById("do22_id").innerHTML = do22;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>Short Dates</td>
+            <td>"MM/DD/YYYY" syntax</td>
+            <td>const d = new Date("03/25/2015");</td>
+          </tr>
+          <tr>
+            <td>Long Dates</td>
+            <td>"MMM DD YYYY" <span class="text-success">syntax (most often)</span></td>
+            <td>
+              <span class="text-success">// Month first or Day first</span><br>
+              const d = new Date("Mar 25 2015");<br>
+              const d = new Date("25 Mar 2015");<br>
+              <span class="text-success">// month can be in full or abbreviated</span><br>
+              const d = new Date("January 25 2015");<br>
+            </td>
+          </tr>
+          <tr>
+            <td>Date.parse()</td>
+            <td>Return the number of milliseconds between the date and January 1, 1970:</td>
+            <td>
+              let do23 = Date.parse("March 21, 2012");<br>
+              do23; <span class="text-success">// result: <span id="do23_id"></span></span><br>
+
+              <script>
+              let do23 = Date.parse("March 21, 2012");
+              document.getElementById("do23_id").innerHTML = do23;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-danger">new Date(msec)</td>
+            <td>Convert it to a date object</td>
+            <td>
+              let do24 = Date.parse("March 21, 2012");<br>
+              const do25 = new Date(msec);<br>
+              do25; <span class="text-success">// result: <span id="do25_id"></span></span><br>
+
+              <script>
+              let do24 = Date.parse("March 21, 2012");
+              const do25 = new Date(msec);
+              document.getElementById("do25_id").innerHTML = do25;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>Time Zones</td>
+            <td>By default, the browser's time zone</td>
+            <td></td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Get Date Methods</td>
+          </tr>
+          <tr>
+            <td>getTime()</td>
+            <td>Return the number of milliseconds (since Jan 1, 1970)</td>
+            <td>
+              const do26 = new Date();<br>
+              do26.getTime(); <span class="text-success">// result: <span id="do26_id"></span></span><br>
+
+              <script>
+              const do26 = new Date();
+              document.getElementById("do26_id").innerHTML = do26.getTime();
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>getFullYear()</td>
+            <td>Return the year of a date as a four digit number</td>
+            <td>
+              const do27 = new Date();<br>
+              do27.getFullYear(); <span class="text-success">// result: <span id="do27_id"></span></span><br>
+
+              <script>
+              const do27 = new Date();
+              document.getElementById("do27_id").innerHTML = do27.getFullYear();
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>getMonth()</td>
+            <td>
+              Return the month of a date as a number (0-11)<br>
+              <span class="text-success">(Add 1 to get the correct month)</span>
+            </td>
+            <td>
+              const do28 = new Date();<br>
+              do28.getMonth(1) + 1; <span class="text-success">// result: <span id="do28_id"></span></span><br>
+
+              <script>
+              const do28 = new Date();
+              document.getElementById("do28_id").innerHTML = do28.getMonth(1) + 1;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Using an array of names to return the month as a name</td>
+            <td>
+              const do29 = new Date();<br>
+              const do30 = ["January",...];<br>
+              do30[do29.getMonth()]; <span class="text-success">// result: <span id="do30_id"></span></span><br>
+
+              <script>
+              const do29 = new Date();
+              const do30 = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+              document.getElementById("do30_id").innerHTML = do30[do29.getMonth()];
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>getDate()</td>
+            <td>Return the day of a date as a number (1-31)</td>
+            <td>
+              const do31 = new Date();<br>
+              do31.getDate(); <span class="text-success">// result: <span id="do31_id"></span></span><br>
+
+              <script>
+              const do31 = new Date();
+              document.getElementById("do31_id").innerHTML = do31.getDate();
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>getHours()</td>
+            <td>Return the hours of a date as a number (0-23)</td>
+            <td>
+              const do32 = new Date();<br>
+              do32.getHours(); <span class="text-success">// result: <span id="do32_id"></span></span><br>
+
+              <script>
+              const do32 = new Date();
+              document.getElementById("do32_id").innerHTML = do32.getHours();
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>getMinutes()</td>
+            <td>Return the minutes of a date as a number (0-59)</td>
+            <td>
+              const do33 = new Date();<br>
+              do33.getMinutes(); <span class="text-success">// result: <span id="do33_id"></span></span><br>
+
+              <script>
+              const do33 = new Date();
+              document.getElementById("do33_id").innerHTML = do33.getMinutes();
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>getSeconds()</td>
+            <td>Return the seconds of a date as a number (0-59)</td>
+            <td>
+              const do34 = new Date();<br>
+              do34.getSeconds(); <span class="text-success">// result: <span id="do34_id"></span></span><br>
+
+              <script>
+              const do34 = new Date();
+              document.getElementById("do34_id").innerHTML = do34.getSeconds();
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>getMilliseconds()</td>
+            <td>Return the milliseconds of a date as a number (0-999)</td>
+            <td>
+              const do35 = new Date();<br>
+              do35.getMilliseconds(); <span class="text-success">// result: <span id="do35_id"></span></span><br>
+
+              <script>
+              const do35 = new Date();
+              document.getElementById("do35_id").innerHTML = do35.getMilliseconds();
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>getDay()</td>
+            <td>
+              Return the weekday of a date as a number (0-6)<br>
+              <span class="text-success">(Add 1 to get the correct day)</span>
+            </td>
+            <td>
+              const do36 = new Date();<br>
+              do36.getDay() + 1; <span class="text-success">// result: <span id="do36_id"></span></span><br>
+
+              <script>
+              const do36 = new Date();
+              document.getElementById("do36_id").innerHTML = do36.getDay() + 1;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Using an array of names to return the weekday as a name</td>
+            <td>
+              const do37 = new Date();<br>
+              const do38 = ["Sunday", ..., "Saturday"];<br>
+              do38[do37.getDay()] <span class="text-success">// result: <span id="do37_id"></span></span><br>
+
+              <script>
+              const do37 = new Date();
+              const do38 = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+              document.getElementById("do37_id").innerHTML = do38[do37.getDay()];
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>UTC Date Methods</td>
+            <td>
+              Used for working with UTC dates (Universal Time Zone dates):<br>
+              getUTCFullYear(), getUTCMonth(), getUTCDate(), getUTCDay()<br>
+              getUTCHours(), getUTCMinutes(), getUTCSeconds(), getUTCMilliseconds()<br>
+            </td>
+            <td></td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Set Date Methods</td>
+          </tr>
+          <tr>
+            <td>setTime()</td>
+            <td>Set the time (milliseconds since January 1, 1970)</td>
+            <td>
+              const do39 = new Date();<br>
+              do39.setTime(1332403882588);<br>
+              do39; <span class="text-success">// result: <span id="do39_id"></span></span><br>
+
+              <script>
+              const do39 = new Date();
+              do39.setTime(1332403882588);
+              document.getElementById("do39_id").innerHTML = do39;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>setDate()</td>
+            <td>Set the day as a number (1-31)</td>
+            <td>
+              const do40 = new Date();<br>
+              do40.setDate(15);<br>
+              do40; <span class="text-success">// result: <span id="do40_id"></span></span><br><br>
+
+              <span class="text-success">// Can also be used to add days to a date:</span><br>
+              const do41 = new Date();<br>
+              do41.setDate(do41.getDate()+5);<br>
+              do41; <span class="text-success">// result: <span id="do41_id"></span></span><br>
+
+              <script>
+              const do40 = new Date();
+              do40.setDate(15);
+              document.getElementById("do40_id").innerHTML = do40;
+
+              const do41 = new Date();
+              do41.setDate(do41.getDate()+5);
+              document.getElementById("do41_id").innerHTML = do41;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>setFullYear()</td>
+            <td>Set the year (optionally month and day)</td>
+            <td>
+              const do42 = new Date();<br>
+              do42.setFullYear(1994);<br>
+              do42; <span class="text-success">// result: <span id="do42_id"></span></span><br><br>
+
+              <span class="text-success">// Can optionally set month and day:</span><br>
+              const do43 = new Date();<br>
+              do43.setFullYear(1994, 0, 19);<br>
+              do43; <span class="text-success">// result: <span id="do43_id"></span></span><br>
+
+              <script>
+              const do42 = new Date();
+              do42.setFullYear(1994);
+              document.getElementById("do42_id").innerHTML = do42;
+
+              const do43 = new Date();
+              do43.setFullYear(1994, 0, 19);
+              document.getElementById("do43_id").innerHTML = do43;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>setMonth()</td>
+            <td>Set the month (0-11)</td>
+            <td>
+              const do44 = new Date();<br>
+              do44.setMonth(0);<br>
+              do44; <span class="text-success">// result: <span id="do44_id"></span></span><br><br>
+
+              <script>
+              const do44 = new Date();
+              do44.setMonth(0);
+              document.getElementById("do44_id").innerHTML = do44;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>setHours()</td>
+            <td>Set the hour (0-23)</td>
+            <td>
+              const do45 = new Date();<br>
+              do45.setHours(0);<br>
+              do45; <span class="text-success">// result: <span id="do45_id"></span></span><br><br>
+
+              <script>
+              const do45 = new Date();
+              do45.setHours(0);
+              document.getElementById("do45_id").innerHTML = do45;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>setMinutes()</td>
+            <td>Set the minutes (0-59)</td>
+            <td>
+              const do46 = new Date();<br>
+              do46.setMinutes(0);<br>
+              do46; <span class="text-success">// result: <span id="do46_id"></span></span><br><br>
+
+              <script>
+              const do46 = new Date();
+              do46.setMinutes(0);
+              document.getElementById("do46_id").innerHTML = do46;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>setSeconds()</td>
+            <td>Set the seconds (0-59)</td>
+            <td>
+              const do47 = new Date();<br>
+              do47.setSeconds(0);<br>
+              do47; <span class="text-success">// result: <span id="do47_id"></span></span><br><br>
+
+              <script>
+              const do47 = new Date();
+              do47.setSeconds(0);
+              document.getElementById("do47_id").innerHTML = do47;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>setMilliseconds()</td>
+            <td>Set the milliseconds (0-999)</td>
+            <td>
+              const do48 = new Date();<br>
+              do48.setMilliseconds(0);<br>
+              do48; <span class="text-success">// result: <span id="do48_id"></span></span><br><br>
+
+              <script>
+              const do48 = new Date();
+              do48.setMilliseconds(0);
+              document.getElementById("do48_id").innerHTML = do48;
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>Compare Dates</td>
+            <td></td>
+            <td>
+              let do49 = "";<br>
+              const today = new Date();<br>
+              const someday = new Date();<br>
+              someday.setFullYear(2100, 0, 14);<br><br>
+
+              if (someday > today) {do49 = "Today is before January 14, 2100.";}<br>
+              else {do49 = "Today is after January 14, 2100.";}<br><br>
+
+              document.getElementById("do49_id").innerHTML = do49;<br>
+              <span class="text-success">// result: <span id="do49_id"></span></span>
+
+              <script>
+              let do49 = "";
+              const today = new Date();
+              const someday = new Date();
+              someday.setFullYear(2100, 0, 14);
+
+              if (someday > today) {
+                do49 = "Today is before January 14, 2100.";
+              } else {
+                do49 = "Today is after January 14, 2100.";
+              }
+              document.getElementById("do49_id").innerHTML = do49;
+            </script>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--Close the container-->
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Layout Containers</title>
+  </head>
+  <body>
+    <!--Container-->
+    <div class="container-fluid my-3">
+      <div class="row g-0 text-center bg-primary">
+        <h1 class="text-center text-light p-5">Layout Containers</h1>
+      </div>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">Layout Containers</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Class</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Genearl</td>
+            <td>
+              <span class="badge bg-danger">required</span> to wrap site contents<br>
+              <span class="text-danger">(default: left, right padding.)</span>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>.container</td>
+            <td>
+              <p><strong>max-width</strong> at each responsive breakpoint</p>
+              <table class="table table-bordered">
+                <tr>
+                  <th>Breakpoint</th>
+                  <th>Class infix</th>
+                  <th>Dimensions</th>
+                  <th>Max-width</th>
+                </tr>
+                <tr>
+                  <td>X-small</td>
+                  <td>None</td>
+                  <td>&lt;576px</td>
+                  <td>100%</td>
+                </tr>
+                <tr>
+                  <td>Small</td>
+                  <td>sm</td>
+                  <td>&ge;576px</td>
+                  <td>540px</td>
+                </tr>
+                <tr>
+                  <td>Medium</td>
+                  <td>md</td>
+                  <td>&ge;768px</td>
+                  <td>720px</td>
+                </tr>
+                <tr>
+                  <td>Large</td>
+                  <td>lg</td>
+                  <td>&ge;992px</td>
+                  <td>960px</td>
+                </tr>
+                <tr>
+                  <td>Extra Large</td>
+                  <td>xl</td>
+                  <td>&ge;1200px</td>
+                  <td>1140px</td>
+                </tr>
+                <tr>
+                  <td>Extra extra large</td>
+                  <td>xxl</td>
+                  <td>&ge;1400px</td>
+                  <td>1320px</td>
+                </tr>
+              </table>
+            </td>
+            <td style="width: 500px;">
+              <iframe src="misc/layout-containers-ex.html" style="width: 500px; height: 300px; overflow: auto;"></iframe>
+              <a target="_blank" href="misc/layout-containers-ex.html">see more</a>
+            </td>
+          </tr>
+          <tr>
+            <td>.container-*</td>
+            <td colspan="2">
+              <p><strong>full-width</strong> until the specified breakpoint => <strong>max-width</strong> at each responsive breakpoint</p>
+              <table class="table table-bordered">
+                <tr>
+                  <th>Breakpoint</th>
+                  <th>Class infix</th>
+                  <th>Dimensions</th>
+                  <th>.container-sm</th>
+                  <th>.container-me</th>
+                  <th>.container-lg</th>
+                  <th>.container-xl</th>
+                  <th>.container-xxl</th>
+                </tr>
+                <tr>
+                  <td>X-small</td>
+                  <td>None</td>
+                  <td>&lt;576px</td>
+                  <td>100%</td>
+                  <td>100%</td>
+                  <td>100%</td>
+                  <td>100%</td>
+                  <td>100%</td>
+                </tr>
+                <tr>
+                  <td>Small</td>
+                  <td>sm</td>
+                  <td>&ge;576px</td>
+                  <td>540px</td>
+                  <td>100%</td>
+                  <td>100%</td>
+                  <td>100%</td>
+                  <td>100%</td>
+                </tr>
+                <tr>
+                  <td>Medium</td>
+                  <td>md</td>
+                  <td>&ge;768px</td>
+                  <td>720px</td>
+                  <td>720px</td>
+                  <td>100%</td>
+                  <td>100%</td>
+                  <td>100%</td>
+                </tr>
+                <tr>
+                  <td>Large</td>
+                  <td>lg</td>
+                  <td>&ge;992px</td>
+                  <td>960px</td>
+                  <td>960px</td>
+                  <td>960px</td>
+                  <td>100%</td>
+                  <td>100%</td>
+                </tr>
+                <tr>
+                  <td>Extra Large</td>
+                  <td>xl</td>
+                  <td>&ge;1200px</td>
+                  <td>1140px</td>
+                  <td>1140px</td>
+                  <td>1140px</td>
+                  <td>1140px</td>
+                  <td>100%</td>
+                </tr>
+                <tr>
+                  <td>Extra extra large</td>
+                  <td>xxl</td>
+                  <td>&ge;1400px</td>
+                  <td>1320px</td>
+                  <td>1320px</td>
+                  <td>1320px</td>
+                  <td>1320px</td>
+                  <td>1320px</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>.container-fluid</td>
+            <td><strong>full-width</strong> at all breakpoints (always 100%)</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--Close the container-->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

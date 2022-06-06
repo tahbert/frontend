@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Component - Cards</title>
+  </head>
+  <body>
+    <!--Container-->
+    <div class="container-fluid my-3">
+      <div class="row g-0 text-center bg-primary">
+        <h1 class="text-center text-light p-5">Component - Cards</h1>
+      </div>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">Component - Cards</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>.card</td>
+            <td colspan="2">A card is a flexible and extensible content container</td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Basic Content</td>
+          </tr>
+          <tr>
+            <td>
+              .card-header<br>
+              .card-body<br>
+              .card-footer<br>
+            </td>
+            <td></td>
+            <td>
+              <div class="card">
+                <div class="card-header">Feature</div>
+                <div class="card-body">This is some text within a card body</div>
+                <div class="card-footer text-muted">Feature</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              .card-title<br>
+              .card-subtitle<br>
+            </td>
+            <td>on &lt;h1&gt; to &lt;h6&gt;</td>
+            <td rowspan="3">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p class="card-text">Card text bla bla bla bla bla bla bla</p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>.card-text</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>.card-link</td>
+            <td>on &lt;a&gt;</td>
+          </tr>
+          <tr>
+            <td>List groups</td>
+            <td>
+              list-group<br>
+              list-group-flush<br>
+            </td>
+            <td>
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">An item</li>
+                      <li class="list-group-item">A second item</li>
+                      <li class="list-group-item">A third item</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                      Featured
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">An item</li>
+                      <li class="list-group-item">A second item</li>
+                      <li class="list-group-item">A third item</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">An item</li>
+                      <li class="list-group-item">A second item</li>
+                      <li class="list-group-item">A third item</li>
+                    </ul>
+                    <div class="card-footer">
+                      Featured
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Images</td>
+          </tr>
+          <tr>
+            <td style="white-space: nowrap;">
+              .car-img<br>
+              .card-img-top<br>
+              .card-img-bottom<br>
+            </td>
+            <td></td>
+            <td>
+              <div class="row">
+                <div class="col-sm-4">
+                  <h6>.card-img & card-img-overlay</h6>
+                  <div class="card" style="width: 18rem;">
+                    <img src="imgs/tahbert.png" class="card-img" alt="Tahbert">
+                    <div class="card-img-overlay">
+                      <p class="card-text">Card text bla bla bla bla bla bla bla</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <h6>.card-img-top</h6>
+                  <div class="card" style="width: 18rem;">
+                    <img src="imgs/tahbert.png" class="card-img-top" alt="Tahbert">
+                    <div class="card-body">
+                      <p class="card-text">Card text bla bla bla bla bla bla bla</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <h6>.card-img-bottom</h6>
+                  <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <p class="card-text">Card text bla bla bla bla bla bla bla</p>
+                    </div>
+                    <img src="imgs/tahbert.png" class="card-img-bottom" alt="Tahbert">
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Sizing</td>
+          </tr>
+          <tr>
+            <td>Default</td>
+            <td>width: 100%;</td>
+            <td>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Grid Markup</td>
+            <td>Wrap cards in columns and rows</td>
+            <td>
+              <div class="row">
+                <div class="col-sm-6">
+                  <h6>col-sm-6</h6>
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <h6>col-sm-6</h6>
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Utilities</td>
+            <td>Using various sizing utilities</td>
+            <td>
+              <h6>w-50</h6>
+              <div class="card w-50">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Button</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Custom CSS</td>
+            <td>Using custom CSS</td>
+            <td>
+              <h6>width: 18rem;</h6>
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Text alignment</td>
+            <td>Using text align classes</td>
+            <td>
+              <div class="card text-center" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Navigation</td>
+            <td>
+              nav<br>
+              nav-tabs<br>
+              card-header-tabs<br>
+            </td>
+            <td>
+              <div class="card text-center">
+                <div class="card-header">
+                  <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="true" href="#link">Active</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#link">Link</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled">Disabled</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              nav<br>
+              nav-pills<br>
+              card-header-pills<br>
+            </td>
+            <td>
+              <div class="card text-center">
+                <div class="card-header">
+                  <ul class="nav nav-pills card-header-pills">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#link">Active</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#link">Link</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled">Disabled</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Horizontal</td>
+            <td>Using a combination of grid and utility classes</td>
+            <td>
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="imgs/tahbert.png" class="img-fluid rounded-start" alt="Tahbert">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Card styles</td>
+            <td>Using text color, background, border utilities</td>
+            <td>
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Header</div>
+                    <div class="card-body">
+                      <h5 class="card-title">Success card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-sm-4">
+                  <div class="card border-success mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Header</div>
+                    <div class="card-body text-success">
+                      <h5 class="card-title">Success card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-sm-4">
+                  <div class="card border-success mb-3" style="max-width: 18rem;">
+                    <div class="card-header bg-transparent border-success">Header</div>
+                    <div class="card-body text-success">
+                      <h5 class="card-title">Success card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-success">Footer</div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">Component - Card Groups</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Card groups</td>
+            <td>Using .card-group</td>
+            <td>
+              <div class="card-group">
+                <div class="card">
+                  <img src="imgs/tahbert.png" class="card-img-top" alt="Tahbert">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="imgs/tahbert.png" class="card-img-top" alt="Tahbert">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="imgs/tahbert.png" class="card-img-top" alt="Tahbert">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Grid cards</td>
+            <td>Use grid system and its .row-cols classes</td>
+            <td>
+              <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="imgs/tahbert.png" class="card-img-top" alt="Tahbert">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="imgs/tahbert.png" class="card-img-top" alt="Tahbert">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="imgs/tahbert.png" class="card-img-top" alt="Tahbert">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div> <!--Close the container-->
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

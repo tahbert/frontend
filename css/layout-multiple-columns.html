@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <title>Multiple Columns</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Multiple Columns</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Multiple Columns</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td colspan="2">The CSS multi-column layout allows easy definition of multiple columns of text - just
+                            like in newspapers</td>
+                    </tr>
+                    <tr>
+                        <td>columns <span class="badge green">shorthand</span>
+                        </td>
+                        <td>
+                            <strong>columns</strong> <span class="text-red">auto</span>|<i>column-width column-count</i>| initial| inherit;<br>
+                            Shorthand for <strong>column-width</strong> and <strong>column-count</strong><br>
+                        </td>
+                        <td rowspan="3">
+                            <h4 style="display: inline-block;">columns: auto;</h4>
+                            <div class="columns auto">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                                nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                            </div>
+        
+                            <h4 class="mt-3" style="display: inline-block;">columns: 100px 3;</h4> <span
+                                class="text-green">/*minimum width for each column: 100px; maximum number of columns:
+                                3;*/</span>
+                            <div class="columns a">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                                nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                            </div>
+        
+                            <h4 class="mt-3" style="display: inline-block;">columns: 50px 4;</h4> <span
+                                class="text-green">/*minimum width for each column: 50px; maximum number of columns:
+                                4;*/</span>
+                            <div class="columns b">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                                nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                            </div>
+        
+                            <style>
+                                .columns {
+                                    background: #f1f1f1;
+                                }
+        
+                                .columns.auto {
+                                    columns: auto;
+                                }
+        
+                                .columns.a {
+                                    columns: 100px 3;
+                                }
+        
+                                .columns.b {
+                                    columns: 50px 4;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>column-width</td>
+                        <td>
+                            <strong>column-width</strong> <span class="text-red">auto</span>|<i> length</i>| initial| inherit;<br>
+                            Specify a suggested, optimal minimum width for the columns<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>column-count</td>
+                        <td>
+                            <strong>column-count</strong> <span class="text-red">auto</span>| <i>number</i>| initial| inherit;<br>
+                            Specify the number of columns<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>column-fill</td>
+                        <td>
+                            <strong>column-fill</strong> <span class="text-red">balance</span>| auto| initial| inherit;<br>
+                            Specify how to fill columns, balanced or not<br>
+                            <span class="text-green">In these examples:<br>
+                                <pre>
+        column-count: 3;
+        height: 150px;
+                                </pre>
+                            </span>
+                        </td>
+                        <td>
+                            <h4 style="display: inline-block;">column-fill: balance;</h4> 
+                                <span class="text-green">/* fill about the same, but the columns is not taller than the height */</span>
+                            <div class="column-fill a">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim
+                            </div>
+        
+                            <h4 style="display: inline-block;">column-fill: auto;</h4> 
+                                <span class="text-green">/* fill each column until reaching the height */</span>
+                            <div class="column-fill b">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim
+                            </div>
+        
+                            <style>
+                                .column-fill {
+                                    height: 150px;
+                                    column-count: 3;
+                                    background: #f1f1f1;
+                                }
+        
+                                .column-fill.a {
+                                    column-fill: balance;
+                                }
+        
+                                .column-fill.b {
+                                    column-fill: auto;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>column-span</td>
+                        <td>
+                            <strong>column-span</strong>: <span class="text-red">none</span>|all|initial|inherit;<br>
+                            How many columns to span<br>
+                        </td>
+                        <td>
+                            <h4 style="display: inline-block;">h4 {column-span: none;}</h4> <span class="text-green"></span>
+                            <div class="column-span a">
+                                <h4>This is a testing title heading h4 element inside the div element</h4>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                                nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                            </div>
+        
+                            <h4 class="mt-3" style="display: inline-block;">h4 {column-span: all;}</h4>
+                            <div class="column-span b">
+                                <h4>This is a testing title heading h4 element inside the div element</h4>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                                nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                            </div>
+        
+                            <style>
+                                .column-span {
+                                    columns: 100px 3;
+                                    background: #f1f1f1;
+                                }
+        
+                                .column-span.a h4 {
+                                    column-span: none;
+                                    background: yellowgreen;
+                                }
+        
+                                .column-span.b h4 {
+                                    column-span: all;
+                                    background: yellowgreen;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>column-gap</td>
+                        <td>
+                            <strong>column-gap</strong>: <span
+                                class="text-red">normal</span>|<i>length</i>|initial|inherit;<br>
+                            Specify the gap between the columns<br>
+                        </td>
+                        <td>
+                            <h4 style="display: inline-block;">column-gap: normal;</h4> <span class="text-green"></span>
+                            <div class="column-gap a">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                                nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                            </div>
+        
+                            <h4 class="mt-3" style="display: inline-block;">column-gap: 50px;</h4>
+                            <div class="column-gap b">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                                nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                            </div>
+        
+                            <style>
+                                .column-gap {
+                                    columns: 100px 3;
+                                    background: #f1f1f1;
+                                }
+        
+                                .column-gap.a {
+                                    column-gap: normal;
+                                }
+        
+                                .column-gap.b {
+                                    column-gap: 50px;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>column-rule <span class="badge green">shorthand</span></td>
+                        <td>
+                            <strong>column-rule</strong>: <i>column-rule-width column-rule-style
+                                column-rule-color</i>|initial|inherit;<br>
+                            Shorthand for <strong>column-rule-width</strong>, <strong>column-rule-style</strong>,
+                            <strong>column-rule-color</strong>
+                        </td>
+                        <td>
+                            <h4 style="display: inline-block;">column-rule: 1.5px solid #333;</h4> <span
+                                class="text-green"></span>
+                            <div class="column-rule">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                            </div>
+        
+                            <style>
+                                .column-rule {
+                                    columns: 100px 3;
+                                    column-rule: 1.5px solid #333;
+                                    background: #f1f1f1;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>column-rule-width</td>
+                        <td>
+                            <strong>column-rule-width</strong>: <span
+                                class="text-red">medium</span>|thin|thick|<i>length</i>|initial|inherit;<br>
+                        </td>
+                        <td>
+                            <h4 style="display: inline-block;">column-rule: medium solid #333;</h4> <span
+                                class="text-green"></span>
+                            <div class="column-rule-width a">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                            </div>
+        
+                            <h4 class="mt-3" style="display: inline-block;">column-rule: thin solid #333;</h4> <span
+                                class="text-green"></span>
+                            <div class="column-rule-width b">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                            </div>
+        
+                            <h4 class="mt-3" style="display: inline-block;">column-rule: thick solid #333;</h4> <span
+                                class="text-green"></span>
+                            <div class="column-rule-width c">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                            </div>
+        
+                            <style>
+                                .column-rule-width {
+                                    columns: 100px 3;
+                                    background: #f1f1f1;
+                                }
+        
+                                .column-rule-width.a {
+                                    column-rule: medium solid #333;
+                                }
+        
+                                .column-rule-width.b {
+                                    column-rule: thin solid #333;
+                                }
+        
+                                .column-rule-width.c {
+                                    column-rule: thick solid #333;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>column-rule-style</td>
+                        <td>
+                            <strong>column-rule-style</strong>: <span
+                                class="text-red">none</span>| hidden| dotted| dashed| solid| double| groove| ridge| inset| outset| initial| inherit;<br>
+                        </td>
+                        <td>
+                            <h4 style="display: inline-block;">column-rule: 1.5px hidden #333;</h4> <span
+                                class="text-green"></span>
+                            <div class="column-rule-style a">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                            </div>
+        
+                            <h4 class="mt-3" style="display: inline-block;">column-rule: 1.5px dotted #333;</h4> <span
+                                class="text-green"></span>
+                            <div class="column-rule-style b">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                            </div>
+        
+                            <h4 class="mt-3" style="display: inline-block;">column-rule: 1.5px dashed #333;</h4> <span
+                                class="text-green"></span>
+                            <div class="column-rule-style c">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                            </div>
+        
+                            <h4 class="mt-3" style="display: inline-block;">column-rule: 4px double #333;</h4> <span
+                                class="text-green"></span>
+                            <div class="column-rule-style d">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                            </div>
+        
+                            <h4 class="mt-3" style="display: inline-block;">column-rule: 1.5px groove #333;</h4> <span
+                                class="text-green"></span>
+                            <div class="column-rule-style e">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                            </div>
+        
+                            <h4 class="mt-3" style="display: inline-block;">column-rule: 1.5px ridge #333;</h4> <span
+                                class="text-green"></span>
+                            <div class="column-rule-style f">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                            </div>
+        
+                            <h4 class="mt-3" style="display: inline-block;">column-rule: 1.5px inset #333;</h4> <span
+                                class="text-green"></span>
+                            <div class="column-rule-style g">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                            </div>
+        
+                            <h4 class="mt-3" style="display: inline-block;">column-rule: 1.5px outset #333;</h4> <span
+                                class="text-green"></span>
+                            <div class="column-rule-style k">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                            </div>
+        
+                            <style>
+                                .column-rule-style {
+                                    columns: 100px 3;
+                                    background: #f1f1f1;
+                                }
+        
+                                .column-rule-style.a {
+                                    column-rule: 1.5px hidden #333;
+                                }
+        
+                                .column-rule-style.b {
+                                    column-rule: 1.5px dotted #333;
+                                }
+        
+                                .column-rule-style.c {
+                                    column-rule: 1.5px dashed #333;
+                                }
+        
+                                .column-rule-style.d {
+                                    column-rule: 4px double #333;
+                                }
+        
+                                .column-rule-style.e {
+                                    column-rule: 1.5px groove #333;
+                                }
+        
+                                .column-rule-style.f {
+                                    column-rule: 1.5px ridge #333;
+                                }
+        
+                                .column-rule-style.g {
+                                    column-rule: 1.5px inset #333;
+                                }
+        
+                                .column-rule-style.k {
+                                    column-rule: 1.5px outset #333;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>column-rule-color</td>
+                        <td>
+                            <strong>column-rule-color</strong>: <i>color</i>| initial| inherit; <span
+                                class="text-red">(default: element color)</span><br>
+                        </td>
+                        <td>
+                            <h4 style="display: inline-block;">column-rule: 1.5px solid #04AA6D;</h4> <span
+                                class="text-green"></span>
+                            <div class="column-rule-color k">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                            </div>
+        
+                            <style>
+                                .column-rule-color {
+                                    columns: 100px 3;
+                                    background: #f1f1f1;
+                                    column-rule: 1.5px solid #04AA6D;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

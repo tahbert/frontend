@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    
+    <title>Shadow</title>
+  </head>
+  <body>
+    
+      <div>
+        <h1>Shadow</h1>
+      </div>
+      <!--Title here------------------------------------------------------------------------------------------------------------>
+      <h2>Shadow</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>text-shadow</td>
+            <td>
+              <strong>text-shadow</strong>: <i>h-shadow v-shadow blur-radius color</i>|<span class="text-danger">none</span>|initial|inherit;<br>
+              <span class="text-success">
+                <span class="badge bg-danger">required</span> h-shadow, v-shadow<br>
+                Multiple: seperated by commas
+              </span> 
+            </td>
+            <td>
+              <p style="text-shadow: 2px 2px;">text-shadow: 2px 2px;</p>
+              <p style="text-shadow: 2px 2px green;">text-shadow: 2px 2px green;</p>
+              <p style="text-shadow: 2px 2px 5px green;">text-shadow: 2px 2px 5px green (with 5px blur);</p>
+              <p style="text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;">text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; (multiple)</p>
+            </td>
+          </tr>
+          <tr>
+            <td>box-shadow</td>
+            <td>
+              <strong>box-shadow</strong>: <span class="text-danger">none</span>|<i>h-offset v-offset blur spread color</i>|inset|initial|inherit;<br>
+              <span class="text-success">
+                <span class="badge bg-danger">required</span> h-offset, v-offset<br>
+                Multiple: seperated by commas
+              </span>
+            </td>
+            <td rowspan="3">
+              <div class="boxshadow a">box-shadow: 10px 10px;</div>
+              <div class="boxshadow b">box-shadow: 10px 10px grey;</div>
+              <div class="boxshadow c">box-shadow: 10px 10px 5px grey;</div>
+              <div class="boxshadow d">box-shadow: 10px 10px 5px 10px grey;</div>
+              <div class="boxshadow e">box-shadow: 10px 10px 5px -10px grey;</div>
+              <div class="boxshadow f">
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),<br>
+                0 6px 20px 0 rgba(0, 0, 0, 0.19); (multiple)
+              </div>
+
+              <style>
+                .boxshadow {
+                  width: 70%; 
+                  padding: 10px; 
+                  margin: 20px; 
+                  background-color: lightgrey;
+                }
+                .boxshadow.a {
+                  box-shadow: 10px 10px;
+                }
+                .boxshadow.b {
+                  box-shadow: 10px 10px grey;
+                }
+                .boxshadow.c {
+                  box-shadow: 10px 10px 5px grey;
+                }
+                .boxshadow.d {
+                  box-shadow: 10px 10px 5px 10px grey; 
+                }
+                .boxshadow.e {
+                  box-shadow: 10px 10px 5px -10px grey;
+                }
+                .boxshadow.f {
+                  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><strong>spread</strong> optional value: increase or decrease the size of shadow</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><strong>inset</strong> optional value: change the shadow from an outer shadow (outset) to an inner shadow
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </body>
+</html>

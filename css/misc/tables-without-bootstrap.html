@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tables Without Bootstrap</title>
+  </head>
+  <body>
+<!----------------------------------------------------------------------------------------------------------------------------->
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 33%;">
+          <h3>Table Border</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <table id="border">
+            <tr>
+              <th>Head</th>
+              <th>Head</th>
+              <th>Head</th>
+            </tr>
+            <tr>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+            </tr>
+            <tr>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+            </tr>
+          </table>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+    <style>
+      #border, #border th, #border td {
+        border: 2px solid #5d5d5d;
+      }
+      #border {
+        width: 100%; 
+        border-collapse: collapse;
+        background: #f2f2f2;
+      }
+      #border th {
+        padding: 10px;
+        color: white;
+        background-color: #04AA6D;
+      }
+      #border td {
+        padding: 10px;
+      }
+    </style>
+<!----------------------------------------------------------------------------------------------------------------------------->
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 33%;">
+          <h3>Table Border > around the table only</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <table id="borderaround">
+            <tr>
+              <th>Head</th>
+              <th>Head</th>
+              <th>Head</th>
+            </tr>
+            <tr>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+            </tr>
+            <tr>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+            </tr>
+          </table>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+    <style>
+      #borderaround {
+        width:100%;
+        background: #f2f2f2;
+        border: 2px solid #5d5d5d;
+        border-collapse: collapse;
+      }
+
+      #borderaround th {
+        background-color: #04AA6D;
+        color: white;
+        padding: 10px;
+      }
+      
+      #borderaround td {
+        padding: 10px;
+      }
+    </style>
+<!----------------------------------------------------------------------------------------------------------------------------->
+    
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 33%;">
+          <h3>Table Border > empty cells</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <table id="emptycells">
+            <tr>
+              <th>Head</th>
+              <th>Head</th>
+              <th>Head</th>
+            </tr>
+            <tr>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td></td>
+              <td>border: 1px solid #5d5d5d;</td>
+            </tr>
+            <tr>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td></td>
+            </tr>
+          </table>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+    <style>
+      #emptycells, #emptycells th, #emptycells td {
+        border: 2px solid #5d5d5d;
+      }
+
+      #emptycells {
+        width:100%; 
+        empty-cells: hide;
+        background: #f2f2f2;
+      }
+
+      #emptycells th {
+        padding: 10px;
+        color: white;
+        background-color: #04AA6D;
+      }
+
+      #emptycells td {
+        padding: 10px;
+      }
+    </style>
+<!----------------------------------------------------------------------------------------------------------------------------->
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 33%;">
+          <h3>Table Border > border-spacing</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <table id="borderspacing">
+            <tr>
+              <th>Head</th>
+              <th>Head</th>
+              <th>Head</th>
+            </tr>
+            <tr>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+            </tr>
+            <tr>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+            </tr>
+          </table>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+    <style>
+      #borderspacing, #borderspacing th, #borderspacing td {
+        border: 2px solid #5d5d5d;
+      }
+
+      #borderspacing {
+        width:100%; 
+        border-spacing: 15px;
+        background: #f2f2f2;
+      }
+
+      #borderspacing th {
+        padding: 10px;
+        color: white;
+        background-color: #04AA6D;
+      }
+
+      #borderspacing td {
+        padding: 10px;
+      }
+    </style>
+<!----------------------------------------------------------------------------------------------------------------------------->
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 33%;">
+          <h3>Table Size</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <table id="size">
+            <tr>
+              <th>Head</th>
+              <th>Head</th>
+              <th>Head</th>
+            </tr>
+            <tr>
+              <td>width: 100%;</td>
+              <td>width: 100%;</td>
+              <td>width: 100%;</td>
+            </tr>
+            <tr>
+              <td>height: 150px;</td>
+              <td>height: 150px;</td>
+              <td>height: 150px;</td>
+            </tr>
+          </table>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+    <style>
+    #size, #size th, #size td {
+      border: 2px solid #5d5d5d;
+    }
+    #size {
+      width: 100%;
+      height: 150px;
+      background: #f2f2f2; 
+      border-collapse: collapse;
+    }
+    #size th {
+      background-color: #04AA6D;
+      color: white;
+    }
+    </style>
+<!----------------------------------------------------------------------------------------------------------------------------->
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 33%;">
+          <h3>Table Alignment</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <table id="align">
+            <tr>
+              <th>Head</th>
+              <th>Head</th>
+              <th>Head</th>
+            </tr>
+            <tr>
+              <td>text-align: right;</td>
+              <td>text-align: right;</td>
+              <td>text-align: right;</td>
+            </tr>
+            <tr>
+              <td>vertical-align: bottom;</td>
+              <td>vertical-align: bottom;</td>
+              <td>vertical-align: bottom;</td>
+            </tr>
+          </table>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+    <style>
+      #align, #align th, #align td {
+        border: 2px solid #5d5d5d;
+      }
+      #align {
+        width: 100%;
+        height: 150px;
+        background: #f2f2f2; 
+        border-collapse: collapse;
+      }
+      #align th {
+        background-color: #04AA6D;
+        color: white;
+        text-align: left;
+        vertical-align: top;
+      }
+      #align td {
+        text-align: right;
+        vertical-align: bottom;
+      }
+    </style>
+<!----------------------------------------------------------------------------------------------------------------------------->
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 33%;">
+          <h3>Table Padding</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <table id="padding">
+            <tr>
+              <th>Head</th>
+              <th>Head</th>
+              <th>Head</th>
+            </tr>
+            <tr>
+              <td>padding: 10px;</td>
+              <td>padding: 10px;</td>
+              <td>padding: 10px;</td>
+            </tr>
+            <tr>
+              <td>padding: 10px;</td>
+              <td>padding: 10px;</td>
+              <td>padding: 10px;</td>
+            </tr>
+          </table>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+    <style>
+      #padding {
+        width:100%; 
+        background: #f2f2f2; 
+        border-collapse: collapse;
+      }
+      #padding th, #padding td {
+        padding: 10px;
+      }
+      #padding th {
+        background-color: #04AA6D;
+        color: white;
+        padding: 10px;
+      }
+    </style>
+<!----------------------------------------------------------------------------------------------------------------------------->
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 33%;">
+          <h3>Horizontal Dividers</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <table id="divider">
+            <tr>
+              <th>Head</th>
+              <th>Head</th>
+              <th>Head</th>
+            </tr>
+            <tr>
+              <td>border-bottom</td>
+              <td>border-bottom</td>
+              <td>border-bottom</td>
+            </tr>
+            <tr>
+              <td>border-bottom</td>
+              <td>border-bottom</td>
+              <td>border-bottom</td>
+            </tr>
+          </table>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+    <style>
+      #divider {
+        width:100%;
+        background: #f2f2f2; 
+        border-collapse: collapse;
+      }
+      #divider th {
+        background-color: #04AA6D;
+        color: white;
+        padding: 10px;
+      }
+      #divider td {
+        border-bottom: 2px solid #5d5d5d;
+        padding: 10px;
+      }
+    </style>
+<!----------------------------------------------------------------------------------------------------------------------------->
+      <table style="width: 100%;">
+      <tr>
+        <td style="width: 33%;">
+          <h3>Hoverable Table</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <table id="hover">
+            <tr>
+              <th>Head</th>
+              <th>Head</th>
+              <th>Head</th>
+            </tr>
+            <tr>
+              <td>:hover</td>
+              <td>:hover</td>
+              <td>:hover</td>
+            </tr>
+            <tr>
+              <td>:hover</td>
+              <td>:hover</td>
+              <td>:hover</td>
+            </tr>
+          </table>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+    <style>
+      #hover {
+        width: 100%;
+        background: #f2f2f2; 
+        border-collapse: collapse;
+      }
+      #hover tr:hover {
+        background-color: yellow;
+      }
+      #hover th {
+        background-color: #04AA6D;
+        color: white;
+        padding: 10px;
+      }
+      #hover td {
+        padding: 10px;
+      }
+    </style>
+<!----------------------------------------------------------------------------------------------------------------------------->
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 33%;">
+          <h3>Striped Tables</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <table id="striped">
+            <tr>
+              <th>Head</th>
+              <th>Head</th>
+              <th>Head</th>
+            </tr>
+            <tr>
+              <td>:nth-child(odd)</td>
+              <td>:nth-child(odd)</td>
+              <td>:nth-child(odd)</td>
+            </tr>
+            <tr>
+              <td>:nth-child(even)</td>
+              <td>:nth-child(even)</td>
+              <td>:nth-child(even)</td>
+            </tr>
+          </table>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+    <style>
+      #striped {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      #striped th {
+        background-color: #04AA6D;
+        color: white;
+        padding: 10px;
+      }
+      #striped td {
+        padding: 10px;
+      }
+      #striped tr:nth-child(odd) {
+        background-color: #f2f2f2;
+      }
+    </style>
+<!----------------------------------------------------------------------------------------------------------------------------->
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 33%;">
+          <h3>Colored Tables</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <table id="colored">
+            <tr>
+              <th>Head</th>
+              <th>Head</th>
+              <th>Head</th>
+            </tr>
+            <tr>
+              <td>color|background-color</td>
+              <td>color|background-color</td>
+              <td>color|background-color</td>
+            </tr>
+            <tr>
+              <td>color|background-color</td>
+              <td>color|background-color</td>
+              <td>color|background-color</td>
+            </tr>
+          </table>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+    <style>
+      #colored {
+        width: 100%;
+        background-color: #f2f2f2;
+        border-collapse: collapse;
+      }
+      #colored th, #colored td {
+        padding: 10px;
+      }
+      #colored th {
+        background-color: #04AA6D;
+        color: white;
+      }
+    </style>
+<!----------------------------------------------------------------------------------------------------------------------------->
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 20%;">
+          <h3>Responsive Tables</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <div style="overflow-x: auto;">
+            <table id="responsive">
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Points</th>
+                <th>Points</th>
+                <th>Points</th>
+                <th>Points</th>
+                <th>Points</th>
+                <th>Points</th>
+                <th>Points</th>
+                <th>Points</th>
+                <th>Points</th>
+                <th>Points</th>
+                <th>Points</th>
+                <th>Points</th>
+                <th>Points</th>
+                <th>Points</th>
+                <th>Points</th>
+              </tr>
+              <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+                <td>94</td>
+              </tr>
+              <tr>
+                <td>Adam</td>
+                <td>Johnson</td>
+                <td>67</td>
+                <td>67</td>
+                <td>67</td>
+                <td>67</td>
+                <td>67</td>
+                <td>67</td>
+                <td>67</td>
+                <td>67</td>
+                <td>67</td>
+                <td>67</td>
+                <td>67</td>
+                <td>67</td>
+                <td>67</td>
+                <td>67</td>
+                <td>67</td>
+              </tr>
+            </table>
+          </div>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+    <style>
+      #responsive {
+        width: 100%;
+        background-color: #f2f2f2;
+        border-collapse: collapse;
+      }
+      #responsive th, #responsive td {
+        padding: 10px;
+      }
+      #responsive th {
+        background-color: #04AA6D;
+        color: white;
+        text-align: left;
+      }
+    </style>
+<!----------------------------------------------------------------------------------------------------------------------------->
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 33%;">
+          <h3>Table Caption</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <table id="captionside">
+            <caption>Caption Here</caption>
+            <tr>
+              <th>Head</th>
+              <th>Head</th>
+              <th>Head</th>
+            </tr>
+            <tr>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+            </tr>
+            <tr>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+              <td>border: 1px solid #5d5d5d;</td>
+            </tr>
+          </table>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+    <style>
+      #captionside {
+        width: 100%; 
+        border-collapse: collapse;
+        background: #f2f2f2;
+        caption-side: bottom;
+      }
+      #captionside th, #captionside td {
+        padding: 10px;
+      }
+      #captionside th {
+        padding: 10px;
+        color: white;
+        background-color: #04AA6D;
+      }
+    </style>
+<!----------------------------------------------------------------------------------------------------------------------------->
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 33%;">
+          <h3>table-layout: auto; width: 180px:</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <table id="tablelayout" class="a">
+            <tr>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Country</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Island Trading</td>
+              <td>Helen Bennett</td>
+              <td>UK</td>
+            </tr>
+          </table>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+<!----------------------------------------------------------------------------------------------------------------------------->
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 33%;">
+          <h3>table-layout: fixed; width: 180px:</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <table id="tablelayout" class="b">
+            <tr>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Country</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Island Trading</td>
+              <td>Helen Bennett</td>
+              <td>UK</td>
+            </tr>
+          </table>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+<!----------------------------------------------------------------------------------------------------------------------------->
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 33%;">
+          <h3>table-layout: auto; width: 50%;</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <table id="tablelayout" class="c">
+            <tr>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Country</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Island Trading</td>
+              <td>Helen Bennett</td>
+              <td>UK</td>
+            </tr>
+          </table>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+<!----------------------------------------------------------------------------------------------------------------------------->
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 33%;">
+          <h3>table-layout: fixed; width: 50%;</h3>
+        </td>
+        <td>
+          <!------------------------>
+          <table id="tablelayout" class="d">
+            <tr>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Country</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Island Trading</td>
+              <td>Helen Bennett</td>
+              <td>UK</td>
+            </tr>
+          </table>
+          <!------------------------>
+        </td>
+      </tr>
+    </table>
+
+    <style>
+      #tablelayout, #tablelayout th, #tablelayout td {
+        border: 2px solid #5d5d5d;
+      }
+
+      #tablelayout {
+        border-collapse: collapse;
+        background: #f2f2f2;
+      }
+
+      .a {
+        table-layout: auto;
+        width: 180px;
+      }
+
+      .b {
+        table-layout: fixed;
+        width: 180px;
+      }
+
+      .c {
+        table-layout: auto;
+        width: 50%;
+      }
+
+      .d {
+        table-layout: fixed;
+        width: 50%;
+      }
+
+      #tablelayout th {
+        padding: 10px;
+        color: white;
+        background-color: #04AA6D;
+      }
+
+      #tablelayout td {
+        padding: 10px;
+      }
+    </style>
+  </body>
+</html>

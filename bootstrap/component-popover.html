@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>Component - Popover</title>
+  </head>
+  <body>
+    <!--Container-->
+    <div class="container-fluid my-3">
+      <div class="row g-0 text-center bg-primary">
+        <h1 class="text-center text-light p-5">Component - Popover</h1>
+      </div>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">heading</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Definition</td>
+            <td colspan="2">A pop-up box that appears when the user clicks on an element (similar tooltip but can contain much more content)</td>
+          </tr>
+          <tr>
+            <td>Basic</td>
+            <td>
+              <strong>data-bs-toggle="popover"</strong> to the element<br>
+              <strong>title</strong> attribute to specify the header<br>
+              <strong>data-bs-content</strong> attribute to specify the content<br>
+              <span class="text-success">Note: Must be initialized with JS to work</span>
+            </td>
+            <td>
+              <button type="button" class="btn btn-success" data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">
+                Default popover
+              </button>
+
+              <script>
+                var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+                var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                  return new bootstrap.Popover(popoverTriggerEl)
+                })
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>Direction</td>
+            <td>
+              data-bs-placement="top"<br>
+              data-bs-placement="bottom"<br>
+              data-bs-placement="left"<br>
+              data-bs-placement="right"<br>
+            </td>
+            <td>
+              <button type="button" class="btn btn-success" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+                Popover on top
+              </button>
+              <button type="button" class="btn btn-success" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
+                Popover on right
+              </button>
+              <button type="button" class="btn btn-success" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
+                Popover on bottom
+              </button>
+              <button type="button" class="btn btn-success" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Left popover">
+                Popover on left
+              </button>
+
+              <script>
+                var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+                var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                  return new bootstrap.Popover(popoverTriggerEl)
+                })
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>Dismiss on next click</td>
+            <td>
+              data-bs-trigger="focus"<br>
+            </td>
+            <td>
+              <a tabindex="0" class="btn btn-success" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Dismissible popover" data-bs-content="And here's some amazing content. It's very engaging. Right?">
+                Dismissible popover
+              </a>
+              
+              <script>
+                var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+                var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                  return new bootstrap.Popover(popoverTriggerEl)
+                })
+                var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
+                  trigger: 'focus'
+                })
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>Disabled elements</td>
+            <td>
+              data-bs-trigger="hover focus"<br>
+              tabindex="0"<br>
+            </td>
+            <td>
+              <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Disabled popover">
+                <button class="btn btn-primary" type="button" disabled>Disabled button</button>
+              </span>
+
+              <script>
+                var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+                var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                  return new bootstrap.Popover(popoverTriggerEl)
+                })
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" class="text-danger">Don't know why not work for the all poperovers in a page</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--Close the container-->
+  </body>
+</html>

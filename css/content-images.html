@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <title>Images</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Images</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>General</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rounded Images</td>
+                        <td>border-radius: 10px;</td>
+                        <td>
+                            <img src="imgs/paris.jpg" alt="Paris"
+                                style="border-radius: 10px; height: 200px; margin-right: 20px;">
+                            <img src="imgs/paris.jpg" alt="Paris" style="border-radius: 10px; height: 200px; width: 200px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>border-radius: 50%;</td>
+                        <td>
+                            <img src="imgs/paris.jpg" alt="Paris"
+                                style="border-radius: 50%; height: 200px; margin-right: 20px;">
+                            <img src="imgs/paris.jpg" alt="Paris" style="border-radius: 50%; height: 200px; width: 200px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Thumbnail Images</td>
+                        <td>
+                            <ul>
+                                <strong>Basic Example</strong>
+                                <li>padding: 5px;</li>
+                                <li>border: 1px solid #ccc;</li>
+                                <li>border-radius: 4px;</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <img class="thumbnail" src="imgs/paris.jpg" alt="Paris">
+                            <style>
+                                .thumbnail {
+                                    width: 150px;
+                                    padding: 5px;
+                                    border: 1px solid #ccc;
+                                    border-radius: 4px;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <ul>
+                                <strong>Thumbnail image as a link</strong>
+                                <li>&lt;a&gt;&lt;img&gt;&lt;/a&gt;</li>
+                                <li>.thumbnail:hover {box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a target="_blank" href="imgs/paris.jpg">
+                                <img class="thumbnail2" src="imgs/paris.jpg" alt="Paris">
+                            </a>
+                            <style>
+                                .thumbnail2 {
+                                    width: 150px;
+                                    padding: 5px;
+                                    border: 1px solid #ccc;
+                                    border-radius: 4px;
+                                }
+        
+                                .thumbnail2:hover {
+                                    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Center Aligned</td>
+                        <td>
+                            <ul>
+                                <li>display: block; <span class="text-success">change from inline to block;</span></li>
+                                <li>margin: 0 auto; <span class="text-success">margin-left and margin-right;</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <img class="center" src="imgs/paris.jpg" alt="Paris">
+        
+                            <style>
+                                .center {
+                                    display: block;
+                                    margin: 0 auto;
+                                    width: 150px;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Polaroid Cards</td>
+                        <td>
+                            <ul>
+                                <li>img {width: 100%;}<span class="text-success"></span></li>
+                                <li><span class="text-success"></span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="polaroid">
+                                <img src="imgs/paris.jpg" alt="Paris">
+                                <div class="caption">
+                                    Eiffel Tower in Paris
+                                </div>
+                            </div>
+        
+                            <style>
+                                .polaroid {
+                                    width: 50%;
+                                    background-color: #f8f8f8;
+                                    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                                }
+        
+                                .polaroid img {
+                                    width: 100%;
+                                }
+        
+                                .polaroid .caption {
+                                    padding: 14px;
+                                    text-align: center;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Transparent</td>
+                        <td>
+                            <ul>
+                                <li>opacity<span class="text-success"></span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <img src="imgs/paris.jpg" alt="Paris" style="opacity: 1; width: 30%;">
+                            <img src="imgs/paris.jpg" alt="Paris" style="opacity: 0.5; width: 30%;">
+                            <img src="imgs/paris.jpg" alt="Paris" style="opacity: 0.2; width: 30%;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Image Text</td>
+                        <td>
+                            <ul>
+                                <strong>Container:</strong>
+                                <li>.container {position: relative;} <span class="text-success">need to for absolute
+                                        position</span></li>
+                                <strong>Top-left:</strong>
+                                <li>.top-left {position: absolute; top 10px; left: 10px;}<span class="text-success"></span></li>
+                                <strong>Center:</strong>
+                                <li>.center {position: absolute;} <span class="text-success"></span></li>
+                                <li>.center {top: 50%; left: 50%;} <span class="text-success">find the center of the
+                                        container</span></li>
+                                <li>.center {transfrom: translate(-50%,-50%);} <span class="text-success">center</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="text">
+                                <img src="imgs/img_5terre_wide.jpg" alt="Cinque Terre" width="500">
+        
+                                <div class="top-left">top left</div>
+                                <div class="top-right">top right</div>
+                                <div class="bottom-right">bottom right</div>
+                                <div class="bottom-left">bottom left</div>
+                                <div class="center-align">center text</div>
+                            </div>
+        
+                            <style>
+                                .text {
+                                    position: relative;
+                                    width: 100%;
+                                }
+        
+                                .text img {
+                                    width: 100%;
+                                }
+        
+                                .text div {
+                                    position: absolute;
+                                    background: lightpink;
+                                }
+        
+                                .top-left {
+                                    top: 10px;
+                                    left: 10px;
+                                }
+        
+                                .top-right {
+                                    top: 10px;
+                                    right: 10px;
+                                }
+        
+                                .bottom-right {
+                                    bottom: 10px;
+                                    right: 10px;
+                                }
+        
+                                .bottom-left {
+                                    bottom: 10px;
+                                    left: 10px;
+                                }
+        
+                                .center-align {
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Image Filters<br>
+                            <span class="badge bg-warning">not important</span>
+                        </td>
+                        <td>
+                            <strong>filter</strong>: <span class="text-danger">none</span> | blur() | brightness() | contrast()
+                            | drop-shadow() | grayscale() | hue-rotate() | invert() | opacity() | saturate() | sepia() |
+                            url();<br>
+                            Define visual effects (like blur and saturation) to an element (often &lt;img&gt;).
+                        </td>
+                        <td><a href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_filter&preval=none">play
+                                it</a></td>
+                    </tr>
+                    <tr>
+                        <td>Flip an Image</td>
+                        <td>
+                            <ul>
+                                <li>transform: scaleX(-1);</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <img class="flip" src="imgs/tahbert.png" alt="Tahbert">
+        
+                            <style>
+                                .flip {
+                                    width: 200px;
+                                }
+        
+                                .flip:hover {
+                                    transform: scaleX(-1);
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Image Reflection</td>
+                        <td>
+                            <strong>box-reflect</strong>: <span
+                                class="text-danger">none</span>|below|above|left|right|initial|inherit;<br>
+                            <span class="text-success">Not supported by Firfox => -webkit- </span>
+                        </td>
+                        <td>
+                            <div class="reflection-left">
+                                <h4>left reflection</h4>
+                                <img src="imgs/tahbert.png">
+                            </div>
+        
+                            <div class="reflection-right">
+                                <h4>right reflection</h4>
+                                <img src="imgs/tahbert.png">
+                            </div>
+        
+                            <style>
+                                .reflection-left,
+                                .reflection-right {
+                                    display: inline-block;
+                                    position: relative;
+                                    height: 150px;
+                                    width: 200px;
+                                }
+        
+                                .reflection-left img {
+                                    position: absolute;
+                                    left: 100px;
+                                    width: 100px;
+                                    -webkit-box-reflect: left;
+                                }
+        
+                                .reflection-right img {
+                                    position: absolute;
+                                    width: 100px;
+                                    -webkit-box-reflect: right;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div class="reflection-above">
+                                <h4>above reflection</h4>
+                                <img src="imgs/tahbert.png">
+                            </div>
+        
+                            <div class="reflection-below">
+                                <h4>below reflection</h4>
+                                <img src="imgs/tahbert.png">
+                            </div>
+        
+                            <style>
+                                .reflection-above,
+                                .reflection-below {
+                                    display: inline-block;
+                                    position: relative;
+                                    height: 250px;
+                                }
+        
+                                .reflection-above img {
+                                    width: 100px;
+                                    -webkit-box-reflect: above;
+                                    position: absolute;
+                                    top: 125px;
+        
+                                }
+        
+                                .reflection-below img {
+                                    width: 100px;
+                                    -webkit-box-reflect: below;
+                                    position: absolute;
+                                    top: 25px;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <strong>Reflection offset</strong>
+                            <ul>
+                                <li>-webkit-box-reflect: right 20px; <span class="text-success">add the gap 20px</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="reflection-offset">
+                                <h4>right reflection with Offset</h4>
+                                <img src="imgs/tahbert.png">
+                            </div>
+        
+                            <style>
+                                .reflection-offset {
+                                    display: inline-block;
+                                    position: relative;
+                                    height: 150px;
+                                    width: 250px;
+                                }
+        
+                                .reflection-offset img {
+                                    position: absolute;
+                                    width: 100px;
+                                    -webkit-box-reflect: right 20px;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <strong>Reflection with gradient</strong>
+                            <ul>
+                                <li>-webkit-box-reflect: right 0 linear-gradient(to right, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="reflection-gradient">
+                                <h4>right reflection with gradient</h4>
+                                <img src="imgs/tahbert.png">
+                            </div>
+        
+                            <style>
+                                .reflection-gradient {
+                                    display: inline-block;
+                                    position: relative;
+                                    height: 150px;
+                                    width: 250px;
+                                }
+        
+                                .reflection-gradient img {
+                                    position: absolute;
+                                    width: 100px;
+                                    -webkit-box-reflect: right 0 linear-gradient(to right, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Responsive Image Gallery</td>
+                        <td>
+                            <ul>
+                                <strong>The big contaner</strong>
+                                <li>.responsive {float: left; width: 24.99999%; padding: 0 6px;}<span
+                                        class="text-success"></span></li>
+                                <strong>The smaller contaner</strong>
+                                <li>.gallery {border: 1px solid #ccc}<span class="text-success"></span></li>
+                                <li>.gallery:hover {border: 1px solid #777}<span class="text-success"></span></li>
+                                <strong>Media query for 2 breaks:</strong>
+                                <li> @media only screen and (max-width: 700px) {width: 49.99999%; margin: 6px 0;}<span
+                                        class="text-success"></span></li>
+                                <li> @media only screen and (max-width: 500) {width: 100%;}<span class="text-success"></span>
+                                </li>
+                            </ul>
+                            <a href="misc/responsive-image-gallery.html">see more</a>
+                        </td>
+                        <td>
+                            <iframe src="misc/responsive-image-gallery.html" width="500" height="250"
+                                style="overflow: auto;"></iframe>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Image Modal</td>
+                        <td>
+                            <ul>
+                                <li>Using JavaScript to get the modal onclick</li>
+                                <li>Using Media Query to have full-width image on small screen</li>
+                                <li>Using animation-name: zoom; to zoom out the image</li>
+                            </ul>
+                            <a href="misc/image-modal.html">see more</a>
+                        </td>
+                        <td>
+                            <iframe src="misc/image-modal.html" width="500" height="250" style="overflow: auto;"></iframe>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Image Hover Overlay</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fade in text</td>
+                        <td></td>
+                        <td>
+                            <div class="fadeintext">
+                                <img src="imgs/tahbert.png" alt="Tahbert">
+                                <div class="overlay">
+                                    <div class="overlay-text">Hello Tahbert</div>
+                                </div>
+                            </div>
+        
+                            <style>
+                                .fadeintext {
+                                    position: relative;
+                                    width: 200px;
+                                }
+        
+                                .fadeintext img {
+                                    display: block;
+                                    /* dont know why */
+                                    width: 100%;
+                                    height: auto;
+                                }
+        
+                                .fadeintext .overlay {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    background: #04AA6D;
+                                    opacity: 0;
+                                    transition: 0.5s;
+                                }
+        
+                                .fadeintext:hover .overlay {
+                                    opacity: 1;
+                                }
+        
+                                .fadeintext .overlay .overlay-text {
+                                    position: absolute;
+                                    color: white;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    white-space: nowrap;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>fade in box</td>
+                        <td></td>
+                        <td>
+                            <div style="display: inline-block;">
+                                <h4>Tahbert's code</h4>
+                                <div class="fadeinbox1">
+                                    <img src="imgs/tahbert.png" alt="Tahbert">
+                                    <div class="overlay">
+                                        <div class="overlay-text">Hello Tahbert</div>
+                                    </div>
+                                </div>
+        
+                                <style>
+                                    .fadeinbox1 {
+                                        position: relative;
+                                        width: 200px;
+                                    }
+        
+                                    .fadeinbox1 img {
+                                        display: block;
+                                        /* dont know why */
+                                        width: 100%;
+                                        height: auto;
+                                    }
+        
+                                    .fadeinbox1 .overlay {
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        background: rgba(255, 255, 255, 0.5);
+                                        opacity: 0;
+                                        transition: 0.5s;
+                                    }
+        
+                                    .fadeinbox1:hover .overlay {
+                                        opacity: 1;
+                                    }
+        
+                                    .fadeinbox1 .overlay .overlay-text {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        color: white;
+                                        background: #04AA6D;
+                                        padding: 10px;
+                                        white-space: nowrap;
+                                        transform: translate(-50%, -50%);
+                                    }
+                                </style>
+                            </div>
+        
+                            <div style="display: inline-block;">
+                                <h4>W3schools code</h4>
+                                <div class="fadeinbox2">
+                                    <img src="imgs/tahbert.png" alt="Tahbert">
+                                    <div class="overlay">
+                                        <div class="overlay-text">Hello Tahbert</div>
+                                    </div>
+                                </div>
+        
+                                <style>
+                                    .fadeinbox2 {
+                                        position: relative;
+                                        width: 200px;
+                                    }
+        
+                                    .fadeinbox2 img {
+                                        display: block;
+                                        /* dont know why */
+                                        width: 100%;
+                                        height: auto;
+                                        opacity: 1;
+                                        transition: 0.5s;
+                                        backface-visibility: hidden;
+                                        /* dont know why */
+                                    }
+        
+                                    .fadeinbox2:hover img {
+                                        opacity: 0.3;
+                                    }
+        
+                                    .fadeinbox2 .overlay {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        -ms-transform: translate(-50%, -50%);
+                                        opacity: 0;
+                                        transition: 0.5s;
+                                    }
+        
+                                    .fadeinbox2:hover .overlay {
+                                        opacity: 1;
+                                    }
+        
+                                    .fadeinbox2 .overlay .overlay-text {
+                                        color: white;
+                                        background: #04AA6D;
+                                        padding: 10px;
+                                        white-space: nowrap;
+                                    }
+                                </style>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Slide in</td>
+                        <td></td>
+                        <td>
+                            <!-- Slide in - From Top ------------------------------------------->
+                            <div style="display: inline-block;">
+                                <h4>From top to bottom</h4>
+                                <div class="slidein-top">
+                                    <img src="imgs/tahbert.png" alt="Tahbert">
+                                    <div class="overlay">
+                                        <div class="overlay-text">Hello Tahbert</div>
+                                    </div>
+                                </div>
+        
+                                <style>
+                                    .slidein-top {
+                                        position: relative;
+                                        width: 200px;
+                                    }
+        
+                                    .slidein-top img {
+                                        display: block;
+                                        /* dont know why */
+                                        width: 100%;
+                                        height: auto;
+                                    }
+        
+                                    .slidein-top .overlay {
+                                        position: absolute;
+                                        left: 0;
+                                        width: 100%;
+                                        background: #04AA6D;
+                                        transition: 0.5s;
+                                        /* hide the overlay */
+                                        bottom: 100%;
+                                        height: 0;
+                                        overflow: hidden;
+                                    }
+        
+                                    .slidein-top:hover .overlay {
+                                        /* show the overlay */
+                                        bottom: 0;
+                                        height: 100%
+                                    }
+        
+                                    .slidein-top .overlay .overlay-text {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        color: white;
+                                        overflow: hidden;
+                                        /* dont know why */
+                                        white-space: nowrap;
+                                    }
+                                </style>
+                            </div>
+        
+                            <!-- Slide in - From Bottom ------------------------------------------->
+                            <div style="display: inline-block;">
+                                <h4>From bottom to top</h4>
+                                <div class="slidein-bottom">
+                                    <img src="imgs/tahbert.png" alt="Tahbert">
+                                    <div class="overlay">
+                                        <div class="overlay-text">Hello Tahbert</div>
+                                    </div>
+                                </div>
+        
+                                <style>
+                                    .slidein-bottom {
+                                        position: relative;
+                                        width: 200px;
+                                    }
+        
+                                    .slidein-bottom img {
+                                        display: block;
+                                        /* dont know why */
+                                        width: 100%;
+                                        height: auto;
+                                    }
+        
+                                    .slidein-bottom .overlay {
+                                        position: absolute;
+                                        left: 0;
+                                        width: 100%;
+                                        background: #04AA6D;
+                                        transition: 0.5s;
+                                        /* hide the overlay */
+                                        top: 100%;
+                                        height: 0;
+                                        overflow: hidden;
+                                    }
+        
+                                    .slidein-bottom:hover .overlay {
+                                        /* show the overlay */
+                                        top: 0;
+                                        height: 100%
+                                    }
+        
+                                    .slidein-bottom .overlay .overlay-text {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        color: white;
+                                        overflow: hidden;
+                                        /* dont know why */
+                                        white-space: nowrap;
+                                    }
+                                </style>
+                            </div>
+        
+                            <!-- Slide in - From Left ------------------------------------------->
+                            <div style="display: inline-block;">
+                                <h4>From left to right</h4>
+                                <div class="slidein-left">
+                                    <img src="imgs/tahbert.png" alt="Tahbert">
+                                    <div class="overlay">
+                                        <div class="overlay-text">Hello Tahbert</div>
+                                    </div>
+                                </div>
+        
+                                <style>
+                                    .slidein-left {
+                                        position: relative;
+                                        width: 200px;
+                                    }
+        
+                                    .slidein-left img {
+                                        display: block;
+                                        /* dont know why */
+                                        width: 100%;
+                                        height: auto;
+                                    }
+        
+                                    .slidein-left .overlay {
+                                        position: absolute;
+                                        top: 0;
+                                        height: 100%;
+                                        background: #04AA6D;
+                                        transition: 0.5s;
+                                        /* hide the overlay */
+                                        right: 100%;
+                                        width: 0;
+                                        overflow: hidden;
+                                    }
+        
+                                    .slidein-left:hover .overlay {
+                                        /* show the overlay */
+                                        right: 0;
+                                        width: 100%
+                                    }
+        
+                                    .slidein-left .overlay .overlay-text {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        color: white;
+                                        overflow: hidden;
+                                        /* dont know why */
+                                        white-space: nowrap;
+                                    }
+                                </style>
+                            </div>
+        
+                            <!-- Slide in - From Right ------------------------------------------->
+                            <div style="display: inline-block;">
+                                <h4>From right to left</h4>
+                                <div class="slidein-right">
+                                    <img src="imgs/tahbert.png" alt="Tahbert">
+                                    <div class="overlay">
+                                        <div class="overlay-text">Hello Tahbert</div>
+                                    </div>
+                                </div>
+        
+                                <style>
+                                    .slidein-right {
+                                        position: relative;
+                                        width: 200px;
+                                    }
+        
+                                    .slidein-right img {
+                                        display: block;
+                                        /* dont know why */
+                                        width: 100%;
+                                        height: auto;
+                                    }
+        
+                                    .slidein-right .overlay {
+                                        position: absolute;
+                                        top: 0;
+                                        height: 100%;
+                                        background: #04AA6D;
+                                        transition: 0.5s;
+                                        /* hide the overlay */
+                                        left: 100%;
+                                        width: 0;
+                                        overflow: hidden;
+                                    }
+        
+                                    .slidein-right:hover .overlay {
+                                        /* show the overlay */
+                                        left: 0;
+                                        width: 100%
+                                    }
+        
+                                    .slidein-right .overlay .overlay-text {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        color: white;
+                                        overflow: hidden;
+                                        /* dont know why */
+                                        white-space: nowrap;
+                                    }
+                                </style>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Object-fit and Object-position property (for &lt;img&gt; and &gt;video&gt;)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>object-fit</td>
+                        <td>
+                            <strong>object-fit</strong>: <span
+                                class="text-danger">fill</span>|contain|cover|scale-down|none|initial|inherit;<br>
+                            Specify how an &lt;img&gt; or &lt;video&gt; should be resized to fit its container<br>
+                        </td>
+                        <td>
+                            <div style="display: inline-block;">
+                                <h4>Original image: width: 400px; height: 300px;</h4>
+                                <img src="imgs/paris.jpg" alt="Paris">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <ul>
+                                <strong>With width: 200px; height: 250px;</strong>
+                                <li>fill: keep aspect ratio, stretch or squish if necessary</li>
+                                <li>none: the image is not resized</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="fill" style="display: inline-block;">
+                                <h4>object-fit: fill; (default)</h4>
+                                <img src="imgs/paris.jpg" alt="Paris" width="200" height="250">
+                            </div>
+        
+                            <div class="none" style="display: inline-block;">
+                                <h4>object-fit: none;</h4>
+                                <img src="imgs/paris.jpg" alt="Paris" width="200" height="250">
+                            </div>
+        
+                            <style>
+                                .fill img {
+                                    object-fit: fill;
+                                }
+        
+                                .none img {
+                                    object-fit: none;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <ul>
+                                <strong>With width: 200px; height: 250px;</strong>
+                                <li>contain: keep aspect ratio, resized to fit</li>
+                                <li>cover: keep aspect ratio, clipped to fit</li>
+                                <li>scale-down: scale down to the smallest version of none or contain</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="contain" style="display: inline-block;">
+                                <h4>object-fit: contain;</h4>
+                                <div style="width: 200px; height: 250px; background-color: #04AA6D;">
+                                    <img src="imgs/paris.jpg" alt="Paris" width="200" height="250">
+                                </div>
+                            </div>
+        
+                            <div class="cover" style="display: inline-block;">
+                                <h4>object-fit: cover;</h4>
+                                <img src="imgs/paris.jpg" alt="Paris" width="200" height="250">
+                            </div>
+        
+                            <div class="scale-down" style="display: inline-block;">
+                                <h4>object-fit: scale-down;</h4>
+                                <div style="width: 200px; height: 250px; background-color: #04AA6D;">
+                                    <img src="imgs/paris.jpg" alt="Paris" width="200" height="250">
+                                </div>
+                            </div>
+        
+                            <style>
+                                .contain img {
+                                    object-fit: contain;
+                                }
+        
+                                .cover img {
+                                    object-fit: cover;
+                                }
+        
+                                .scale-down img {
+                                    object-fit: scale-down;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>object-position</td>
+                        <td>
+                            <strong>object-position</strong>: <i>position</i>|initial|inherit;<br>
+                            Used with object-fit to specify how an &lt;img&gt; or &lt;video&gt; should be positioned with x/y
+                            coordinates inside its "own content box" <span class="text-danger">(default: 50% 50%)</span><br>
+                            <span class="text-success">Negative value <span class="badge bg-success">allowed</span></span>
+                        </td>
+                        <td>
+        
+                            <div class="position" style="display: inline-block;">
+                                <h4>object-fit: cover; object-position: 0 0;</h4>
+                                <img src="imgs/paris.jpg" alt="Paris" width="200" height="250">
+                            </div>
+        
+                            <style>
+                                .position img {
+                                    object-fit: cover;
+                                    object-position: 0 0;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <!--Secondary Heading------------------------------------------------------------------------------------------------->
+                    <tr class="sub-head">
+                        <td colspan="3">Responsive Images</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><a href="responsive design.html">see more</a> in Responsive Design</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

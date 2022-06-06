@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Regular Expressions</title>
+  </head>
+  <body>
+    <!--Container-->
+    <div class="container-fluid my-3">
+      <div class="row g-0 text-center bg-primary">
+        <h1 class="text-center text-light p-5">Regular Expressions</h1>
+      </div>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">General</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Keywords</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>General</td>
+            <td>
+              /pattern/modifier(s);<br>
+              A sequence of characters that forms a search pattern, make your search much more powerful<br>
+            </td>
+            <td>
+              <span class="text-success">A case-insensitive pattern</span><br>
+              let pattern = /w3schools/i;
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">Modifiers (Flags )</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Keywords</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>i</td>
+            <td><strong>Insensitive</strong>: perform a case insensitive match (ignores case of [a-zA-Z])</td>
+            <td>
+              let m1 = "Is this all there is?";<br>
+              m1.match(/is/i); <span class="text-success">// Result: <span id="m1Id"></span></span><br>
+              <script>
+                let m1 = "Is this all there is?";
+                document.getElementById("m1Id").innerHTML=m1.match(/is/i);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>g</td>
+            <td><strong>Global</strong>: perform a global match, not only the first match<br>
+            </td>
+            <td>
+              let m2 = "Is this all there is?";<br>
+              m2.match(/is/g); <span class="text-success">// Result: <span id="m2Id1"></span></span><br>
+              m2.match(/is/gi); <span class="text-success">// Result: <span id="m2Id2"></span></span><br>
+              <script>
+                let m2 = "Is this all there is?";
+                document.getElementById("m2Id1").innerHTML=m2.match(/is/g);
+                document.getElementById("m2Id2").innerHTML=m2.match(/is/gi);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>m</td>
+            <td><strong>Multiline</strong>: cause ^ and $ to match the begin/end of each line (not only begin/end of string)<br>
+              <ul class="text-success">Affect the behavior of start ^ and end $ only:
+                <li>^ specifies a match at the start of each line.</li>
+                <li>$ specifies a match at the end of each line.</li>
+              </ul>
+            </td>
+            <td>
+              let m3 = <span style="background: yellow;"><br>`Is this<br>all there<br>is`;<br></span>
+              m3.match(/^is/gim); <span class="text-success">// Result: <span id="m3Id1"></span></span><br>
+              m3.match(/is$/gim); <span class="text-success">// Result: <span id="m3Id2"></span></span><br>
+              m3.match(/^is$/gim); <span class="text-success">// Result: <span id="m3Id3"></span></span><br>
+              <script>
+                let m3 = 
+`Is this
+all there
+is`;
+                document.getElementById("m3Id1").innerHTML=m3.match(/^is/gim);
+                document.getElementById("m3Id2").innerHTML=m3.match(/is$/gim);
+                document.getElementById("m3Id3").innerHTML=m3.match(/^is$/gim);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>u</td>
+            <td><strong>Unicode</strong>: pattern strings are treated as UTF-16. Also causes escape sequences to match unicode characters</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">Patterns</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Keywords</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Matching Symbol</td>
+          </tr>
+          <tr>
+            <td>.</td>
+            <td>Match any character</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>tahbert</td>
+            <td>Match a block of characters: <span class="text-danger">tahbert</span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>^tahbert</td>
+            <td>Match the block <span class="text-danger">tahbert</span> at the begining of each line</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>tahbert$</td>
+            <td>Match the block <span class="text-danger">tahbert</span> at the end of each line</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>\btahbert\b</td>
+            <td><strong>Boundary</strong>: Match the word <span class="text-danger">tahbert</span></td>
+            <td></td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Meta Character</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Metacharacters</td>
+            <td>Characters with a special meaning:</td>
+            <td>
+              <span class="text-success">\d Find a digi</span><br>
+              let r13 = "Give 100%!";<br>
+              r13.match(/\d/g); <span class="text-success">// Result: <span id="r13id1"></span></span><br>
+              <script>
+                let r13 = "Give 100%!";
+                document.getElementById("r13id1").innerHTML=r13.match(/\d/g);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <span class="text-success">\s Find a whitespace character</span><br>
+              let r14 = "This is Tahbert Nguyen";<br>
+              r14.match(/\s/g); <span class="text-success">// Result: <span id="r14id1"></span></span><br>
+              <script>
+                let r14 = "This is Tahbert Nguyen";
+                document.getElementById("r14id1").innerHTML=r14.match(/\s/g);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <span class="text-success">\b - Find a match at the beginning of a word like this: \bWORD</span><br>
+              let r15 = "This is Tahbert Nguyen";<br>
+              r15.search(/\bis/); <span class="text-success">// Result: <span id="r15id1"></span></span><br>
+              <span class="text-success">\b - Find a match at the end of a word like this: WORD\b</span><br>
+              r15.search(/is\b/); <span class="text-success">// Result: <span id="r15id2"></span></span><br>
+
+              <script>
+                let r15 = "This is Tahbert Nguyen";
+                document.getElementById("r15id1").innerHTML=r15.search(/\bis/);
+                document.getElementById("r15id2").innerHTML=r15.search(/is\b/);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <span class="text-success">\uxxxx - Find the Unicode character specified by the hexadecimal number xxxx</span><br>
+              let r16 = "Visit W3Schools. Hello World!";<br>
+              r16.match(/\u0057/g); <span class="text-success">// Result: <span id="r16id1"></span></span><br>
+              <script>
+                let r16 = "Visit W3Schools. Hello World!";
+                document.getElementById("r16id1").innerHTML=r16.match(/\u0057/g);
+              </script>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Quantifier</td>
+          </tr>
+          <tr>
+            <td>Quantifiers</td>
+            <td>Define quantities</td>
+            <td>
+              <span class="text-success">n+ - Matches any string that contains at least one n</span><br>
+              let r17 = "Hellooo World! Hello W3Schools!";<br>
+              r17.match(/o+/g); <span class="text-success">// Result: <span id="r17id1"></span></span><br>
+              <script>
+                let r17 = "Hellooo World! Hello W3Schools!";
+                document.getElementById("r17id1").innerHTML=r17.match(/o+/g);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <span class="text-success">n? - Matches any string that contains zero or one occurrences of n</span><br>
+                let r19 = "1, 100 or 1000?";<br>
+                r19.match(/10?/g); <span class="text-success">// Result: <span id="r19id1"></span></span><br>
+                <script>
+                  let r19 = "1, 100 or 1000?";
+                  document.getElementById("r19id1").innerHTML=r19.match(/10?/g);
+                </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <span class="text-success">n* - Matches any string that contains zero or more occurrences of n</span><br>
+                let r18 = "Hellooo World! Hello W3Schools!";<br>
+                r18.match(/lo*/g); <span class="text-success">// Result: <span id="r18id1"></span></span><br>
+                <script>
+                  let r18 = "Hellooo World! Hello W3Schools!";
+                  document.getElementById("r18id1").innerHTML=r18.match(/lo*/g);
+                </script>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Range and Group</td>
+          </tr>
+          <tr>
+            <td>Range []</td>
+            <td>A range of alternative characters</td>
+            <td>
+              <span class="text-success">[abc] - Find any of the characters between the brackets</span><br>
+              let r10 = "Is this all there is?";<br>
+              r10.match(/[hs]/g); <span class="text-success">// Result: <span id="r10id1"></span></span><br>
+              <script>
+                let r10 = "Is this all there is?";
+                document.getElementById("r10id1").innerHTML=r10.match(/[hs]/g);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <span class="text-success">[0-9] - Find any of the digits between the brackets</span><br>
+              let r11 = "123456789";<br>
+              r11.match(/[1-4]/g); <span class="text-success">// Result: <span id="r11id1"></span></span><br>
+              <script>
+                let r11 = "123456789";
+                document.getElementById("r11id1").innerHTML=r11.match(/[1-4]/g);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>Group ()</td>
+            <td>Alternative blocks of characters</td>
+            <td>
+              <span class="text-success">(x|y) Find any of the alternatives separated with |</span><br>
+              let r12 = "re, green, red, green, gren, gr, blue, yellow";<br>
+              r12.match(/(red|green)/g); <span class="text-success">// Result: <span id="r12id1"></span></span><br>
+              <script>
+                let r12 = "re, green, red, green, gren, gr, blue, yellow";
+                document.getElementById("r12id1").innerHTML=r12.match(/(red|green)/g);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>() can contain []</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">Extended</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Keywords</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>search()</td>
+            <td>With a string</td>
+            <td>
+              let re1 = "My name is Tahbert Nguyen";<br>
+              <span class="text-success">//  Do a search for "W3schools" in a string:</span><br>
+              re1.search("Tahbert"); <span class="text-success">// Result: <span id="re1id"></span></span><br>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>With a regular expression</td>
+            <td>
+              let re1 = "My name is Tahbert Nguyen";<br>
+              <span class="text-success">//  Do a case-insensitive search for "w3schools" in a string:</span><br>
+              re1.search(/tahbert/i); <span class="text-success">// Result: <span id="re2id"></span></span><br>
+              <script>
+                let re1 = "My name is Tahbert Nguyen";
+                document.getElementById("re1id").innerHTML=re1.search("Tahbert");
+                document.getElementById("re2id").innerHTML=re1.search(/tahbert/i);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>replace()</td>
+            <td>With a string</td>
+            <td>
+              let re3 = "My name is Tahbert Nguyen";<br>
+              <span class="text-success">// Replace a specified value with another value</span><br>
+              re3.replace("Tahbert", "Duong"); <span class="text-success">// Result: <span id="re3id"></span></span><br>
+              <script>
+                let re3 = "My name is Tahbert Nguyen";
+                document.getElementById("re3id").innerHTML=re3.replace("Tahbert", "Duong");
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>With a regular expression</td>
+            <td>
+              let re4 = "My name is Tahbert Nguyen";<br>
+              <span class="text-success">// Use a case insensitive regular expression to replace</span><br>
+              re4.replace(/tahbert/i, "Duong"); <span class="text-success">// Result: <span id="re4id"></span></span><br>
+              <script>
+                let re4 = "My name is Tahbert Nguyen";
+                document.getElementById("re4id").innerHTML=re4.replace(/tahbert/i, "Duong");
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>test()</td>
+            <td>Search a string for a pattern, and return true or false</td>
+            <td>
+              /e/.test("The best things in life are free!"); <span class="text-success">// Result: <span id="re5id"></span></span><br>
+              <script>
+                document.getElementById("re5id").innerHTML=/e/.test("The best things in life are free!");
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>exec()</td>
+            <td>Search a string for a pattern, and return the found text as an object.</td>
+            <td>
+              /e/.exec("The best things in life are free!"); <span class="text-success">// Result: <span id="re6id"></span></span><br>
+              <script>
+                document.getElementById("re6id").innerHTML=/e/.exec("The best things in life are free!");
+              </script>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--Close the container-->
+  </body>
+</html>

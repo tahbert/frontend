@@ -1,0 +1,1739 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <title>Attributes</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Attributes (errors)</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Global Attributes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td>Class or Id</td>
+                        <td>Class</td>
+                        <td>Id</td>
+                    </tr>
+                    <tr>
+                        <td>Difference</td>
+                        <td>
+                            Specify one or more Class name for an element<br>
+                            <span class="note">
+                                case sensitive, can't start with a number,
+                            </span>
+                        </td>
+                        <td>Specify a unique ID for an element<br>
+                            <span class="note">
+                                case sensitive!, can't start with a number, at least 1 character, no whitespace.
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sytax</td>
+                        <td>
+                            CSS: <strong>.class</strong><br>
+                            JS: <strong>getKeywordsByClassName()</strong>
+                        </td>
+                        <td>
+                            CSS: <strong>#id</strong><br>
+                            JS: <strong>getElementById()</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            1 Element with<br>
+                            multiple Classes or IDs
+                        </td>
+                        <td>
+                            Separated by a space<br>
+                            &lt;h2 class="<strong>city main</strong>"&gt;London&lt;/h2&gt;
+                        </td>
+                        <td>No use</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Many Keywords with<br>
+                            the same Class or ID
+                        </td>
+                        <td>
+                            Different HTML Keywords can point to the same class:<br>
+                            &lt;h2 class="<strong>city</strong>"&gt;Paris&lt;/h2&gt;<br>
+                            &lt;p class="<strong>city</strong>"&gt;Paris is the capital of France&lt;/p&gt;
+                        </td>
+                        <td>Unique</td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Other Attributes</td>
+                    </tr>
+                    <tr>
+                        <td>title</td>
+                        <td>
+                            &lt;element <strong>title</strong>="text"&gt;<br>
+                            Specify extra information about an element<br>
+                            <span class="note">Most often shown as a tooltip text on hover</span>
+                        </td>
+                        <td>
+                            <p title="Free Web tutorials">W3Schools.com</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>accesskey</td>
+                        <td>
+                            &lt;element <strong>accesskey</strong>="<i>single character (letter or digit)</i>"&gt;<br>
+                            Specify a shortcut key to activate/ focus an element
+                        </td>
+                        <td>
+                            <p>Chrome: [Alt] + accesskey</p>
+                            <a href="https://www.w3schools.com/html/" accesskey="h">HTML</a><br>
+                            <a href="https://www.w3schools.com/css/" accesskey="c">CSS</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>contenteditable</td>
+                        <td>
+                            &lt;element <strong>contenteditable</strong>="true|false"&gt; <span class="note">(default:
+                                inherit)</span><br>
+                            Specify whether the content is editable or not
+                        </td>
+                        <td contenteditable="true">This is an editable paragraph</td>
+                    </tr>
+                    <tr>
+                        <td>data-*</td>
+                        <td>
+                            Store custom data private to the page or application
+                        </td>
+                        <td>
+                            <p>Click on a species to see what type it is:</p>
+                            <ul>
+                                <li onclick="showDetails(this)" id="owl" data-animal-type="bird">Owl</li>
+                                <li onclick="showDetails(this)" id="salmon" data-animal-type="fish">Salmon</li>
+                                <li onclick="showDetails(this)" id="tarantula" data-animal-type="spider">Tarantula</li>
+                            </ul>
+        
+                            <script>
+                                function showDetails(animal) {
+                                    var animalType = animal.getAttribute("data-animal-type");
+                                    alert("The " + animal.innerHTML + " is a " + animalType + ".");
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>dir</td>
+                        <td>
+                            &lt;element <strong>dir</strong>="ltr|rtl|auto"&gt; <span class="note">(default:
+                                ltr)</span><br>
+                            Specify the text direction for the content in an element
+                        </td>
+                        <td dir="rtl">Write this text right-to-left!</td>
+                    </tr>
+                    <tr>
+                        <td>draggable</td>
+                        <td>
+                            &lt;element <strong>draggable</strong>="true|false|auto"&gt;<br>
+                            Specify whether an element is draggable or not<br>
+                            <span class="note">Links and Images are draggable by default<br>
+                                Often used in drag and drop operations</span>
+                        </td>
+                        <td>
+                            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        
+                            <p id="drag1" draggable="true" ondragstart="drag(event)">Drag this element into the rectangle.</p>
+        
+                            <style>
+                                #div1 {
+                                    width: 350px;
+                                    height: 70px;
+                                    padding: 10px;
+                                    border: 1px solid #aaaaaa;
+                                }
+                            </style>
+        
+                            <script>
+                                function allowDrop(ev) {
+                                    ev.preventDefault();
+                                }
+        
+                                function drag(ev) {
+                                    ev.dataTransfer.setData("Text", ev.target.id);
+                                }
+        
+                                function drop(ev) {
+                                    var data = ev.dataTransfer.getData("Text");
+                                    ev.target.appendChild(document.getElementById(data));
+                                    ev.preventDefault();
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>hidden</td>
+                        <td>
+                            &lt;element <strong>hidden</strong>&gt;
+                            Specify that an element is not yet, or is no longer, relevant<br>
+                            <span class="note">Can be used to keep a user from seeing an element until some other
+                                condition has been met</span>
+                        </td>
+                        <td>
+                            <p hidden>This paragraph should be hidden.</p>
+                            <p>This is a visible paragraph.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>lang</td>
+                        <td>
+                            &lt;element <strong>lang</strong>="<i>language_code</i>"&gt;<br>
+                            Specify the language of the element's content
+                        </td>
+                        <td>
+                            <p>This is a paragraph.</p>
+                            <p lang="fr">Ceci est un paragraphe.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>spellcheck</td>
+                        <td>
+                            &lt;element <strong>spellcheck</strong>="true|false"&gt;<br>
+                            Specify whether the element is to have its spelling and grammar checked or not<br>
+                            <span class="note">(Text values in input Keywords (not password),<br>Text in
+                                &lt;textarea&gt; Keywords, Text in editable Keywords)</span>
+                        </td>
+                        <td>
+                            <p contenteditable="true" spellcheck="true">This is a paragraphe.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>style</td>
+                        <td>
+                            &lt;element <strong>style</strong>="<i>style_definitions</i>"&gt;<br>
+                            Specify an inline CSS style for an element
+                        </td>
+                        <td>
+                            <p style="color:green;">This is a paragraph.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>tabindex</td>
+                        <td>
+                            &lt;element <strong>tabindex</strong>="number"&gt;<br>
+                            Specify the tabbing order of an element (1 is first)
+                        </td>
+                        <td>
+                            <p>Try navigating the Keywords by using the "Tab" button</p>
+        
+                            <div tabindex="1">W3Schools</div><br>
+                            <div tabindex="3">Google</div><br>
+                            <div tabindex="2">Microsoft</div>
+        
+                            <script>
+                                // At start, set focus on the first div
+                                document.getKeywordsByTagName('div')[0].focus();
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Event Attributes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Window Event</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            onafterprint<br>
+                            onbeforeprint
+                        </td>
+                        <td>
+                            After/Before the document is printed<br>
+                            <span class='note'>
+                                &lt;body&gt;<br>
+                                Not supported by Safari, Opera
+                            </span>
+                        </td>
+                        <td>
+                            <!-- <body onbeforeprint="myFunction1()" onafterprint="myFunction2()">
+                                <p>Press Ctrl+P to check</p>
+    
+                                <script>
+                                    function myFunction1() {
+                                        alert("You are about to print this document!");
+                                    }
+                                </script>
+    
+                                <script>
+                                    function myFunction2() {
+                                        alert("This document is now being printed");
+                                    }
+                                </script>
+                            </body> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onbeforeunload</td>
+                        <td>
+                            When the document is about to be unloaded<br>
+                            <span class='note'>
+                                &lt;body&gt;<bR>
+                                Inform the user whether they want to stay or leave the current page
+                            </span>
+                        </td>
+                        <td>
+                            <!-- <body onbeforeunload="return myFunction()">
+                                <p>Remove comment to see the effect</p>
+                                <a href="https://www.w3schools.com">Click here to go to w3schools.com</a>
+                                <script>
+                                    /*
+                                    function myFunction() {
+                                      return "Write something clever here...";
+                                    }*/
+                                </script>
+                            </body> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onerror</td>
+                        <td>
+                            When an error occurs while loading an external file<br>
+                            <span class='note'>&lt;audio&gt;, &ltbody&gt;, &ltembed&gt;, &ltimg&gt;, &ltobject&gt;,
+                                &ltscript&gt;, &ltstyle&gt;, &ltvideo&gt;</span>
+                        </td>
+                        <td>
+                            <p>Remove comment to see the effect</p>
+                            <img src="image.gif" onerror="myFunction_error()">
+
+                            <script>
+                                /*function myFunction_error() {
+                                  alert('The image could not be loaded.');
+                                }*/
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onhashchange</td>
+                        <td>
+                            When there has been changes to the anchor part of the a URL<br>
+                            <span class='note'>&lt;body&gt;</span>
+                        </td>
+                        <td>
+                            <div onhashchange="myFunction()">
+                                <p>Click the button to change the anchor part of the current URL to #part5</p>
+    
+                                <button onclick="changePart()">Try it</button>
+    
+                                <p id="demo"></p>
+    
+                                <script>
+                                    // Using the location.hash property to change the anchor part
+                                    function changePart() {
+                                        location.hash = "part5";
+                                        var x = "The anchor part is now: " + location.hash;
+                                        document.getElementById("demo").innerHTML = x;
+                                    }
+    
+                                    // Alert some text if there has been changes to the anchor part
+                                    function myFunction() {
+                                        alert("The anchor part has changed!");
+                                    }
+                                </script>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onload</td>
+                        <td>
+                            &lt;element <strong>onload</strong>="<i>script</i>"&gt;<br>
+                            When the element has been loaded<br>
+                            <span class='note'>
+                                &lt;body&gt;, &lt;iframe&gt;, &lt;img&gt;, &lt;input&gt;, &lt;link&gt;, &lt;script&gt;,
+                                &lt;style&gt;<br>
+                                Most often used within &lt;body&gt; for a page has completely loaded all content<br>
+                                Can be used to check the visitor's browser type/version to load the proper version of the
+                                web page<br>
+                                Can also be used to deal with cookie
+                            </span>
+                        </td>
+                        <td>
+                            <p>Remove comment to see the effect</p>
+                            <!--<body onload="myFunction()">
+                            <h1>Hello World!</h1>
+                            <script>
+                            function myFunction() {
+                            alert("Page is loaded");
+                            }
+                            </script>
+                            </body>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onpageshow</td>
+                        <td>
+                            &lt;body <strong>onpageshow</strong>="<i>script</i>"&gt;<br>
+                            When a user navigates to a page<br>
+                            <span class='note'>
+                                &lt;body&gt;<br>
+                                Similar to the onload event, except that:<br>
+                                - it occurs after the onload event when the page first loads<br>
+                                - the onpageshow event occurs every time the page is loaded
+                            </span>
+                        </td>
+                        <td>
+                            <p>Remove comment to see the effect</p>
+                            <!--<body onpageshow="myFunction()">
+    
+                                <h1>Hello World!</h1>
+                                
+                                <script>
+                                function myFunction() {
+                                alert("Welcome!");
+                                }
+                                </script>
+                                
+                            </body>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onunload</td>
+                        <td>
+                            &lt;body <strong>onunload</strong>="<i>script</i>"&gt;<br>
+                            When a page has unloaded (or the browser window has been closed)<br>
+                            <span class='note'>
+                                &lt;body&gt;<br>
+                            </span>
+                        </td>
+                        <td>
+                            <!--<body onunload="myFunction_unload()">
+                            <p>Remove comment to see the effect</p>
+                            <p><strong>Note:</strong> Due to different browser settings, this event may not always work as expected.</p>
+                            
+                            <script>
+                            function myFunction_unload() {
+                            alert("Thank you for visiting W3Schools!");
+                            }
+                            </script>
+                            
+                            </body>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-danger">onmessage</td>
+                        <td>
+                            When the message is triggered<br>
+                            <span class='note'>
+                                Not supported by Edge
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-danger">ononline</td>
+                        <td>
+                            When the browser starts to work online<br>
+                            <span class='note'>
+                                &lt;body&gt;<br>
+                                Not supported by many browsers
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-danger">onoffline</td>
+                        <td>
+                            When the browser starts to work offline<br>
+                            <span class='note'>
+                                &lt;body&gt;<br>
+                                Not supported by many browsers
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>onpagehide</td>
+                        <td>
+                            &lt;body <strong>onpagehide</strong>="myScript"&gt;<br>
+                            When a user navigates away from a page<br>
+                            <span class='note'>
+                                &lt;body&gt;<br>
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>onpopstate</td>
+                        <td>
+                            &lt;body <strong>onpopstate</strong>="myScript"&gt;<br>
+                            When the window's history changes<br>
+                            <span class='note'>
+                                &lt;body&gt;<br>
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>onresize</td>
+                        <td>
+                            &lt;body <strong>onresize</strong>="myScript"&gt;<br>
+                            When the browser window is being resized<br>
+                            <span class='note'>
+                                &lt;body&gt;<br>
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>onstorage</td>
+                        <td>
+                            &lt;body <strong>onstorage</strong>="myScript"&gt;<br>
+                            When a Web Storage area is updated<br>
+                            <span class='note'>
+                                &lt;body&gt;<br>
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td>Form Events</td>
+                        <td colspan="2">Events triggered by actions inside a HTML form 
+                            (applies to almost all HTML Keywords, but most used in Form Keywords)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onfocus</td>
+                        <td>
+                            &lt;element <strong>onfocus</strong>="<i>script</i>"&gt;<br>
+                            When the element gets focus<br>
+                            <span class='note'>
+                                Except: &lt;base&gt;, &lt;bdo&gt;, &lt;br&gt;, &lt;head&gt;, &lt;html&gt;, &lt;iframe&gt;,
+                                &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, &lt;title&gt;<br>
+                                Most often with: &lt;input&gt;, &lt;select&gt;, &lt;a&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <lable name="fname">First name:</lable>
+                            <input type="text" id="fname" onfocus="myFunction_onfocus(this.id)"><br>
+                            <lable name="lname"> Last name:</lable>
+                            <input class="mt-1" type="text" id="lname" onfocus="myFunction_onfocus(this.id)">
+    
+                            <script>
+                                function myFunction_onfocus(x) {
+                                    document.getElementById(x).style.background = "yellow";
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onblur</td>
+                        <td>
+                            &lt;element <strong>onblur</strong>="<i>script</i>"&gt;<br>
+                            When the element loses focus<br>
+                            <span class='note'>
+                                Except: &lt;base&gt;, &lt;bdo&gt;, &lt;br&gt;, &lt;head&gt;, &lt;html&gt;, &lt;iframe&gt;,
+                                &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, &lt;title&gt;<br>
+                                Most often with form validation code
+                            </span>
+                        </td>
+                        <td>
+                            <lable name="name">Enter your name:</lable>
+                            <input type="text" name="name" id="name" onblur="myFunction_onblur()">
+                            <script>
+                                function myFunction_onblur() {
+                                    var x = document.getElementById("name");
+                                    x.value = x.value.toUpperCase();
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onchange</td>
+                        <td>
+                            &lt;element <strong>onchange</strong>="<i>script</i>"&gt;<br>
+                            When the value of the element is changed<br>
+                            <span class='note'>
+                                &lt;select&gt;, &lt;textarea&gt;, &lt;input&gt; type: checkbox, file, password, radio,
+                                range, search, text<br>
+                            </span>
+                        </td>
+                        <td>
+                            <p>Select a new car from the list.</p>
+    
+                            <select id="mySelect" onchange="myFunction_onchange()">
+                                <option value="Audi">Audi
+                                <option value="BMW">BMW
+                                <option value="Mercedes">Mercedes
+                                <option value="Volvo">Volvo
+                            </select>
+    
+                            <p id="onchange">dđ</p>
+    
+                            <script>
+                                function myFunction_onchange() {
+                                    var x = document.getElementById("mySelect").value;
+                                    document.getElementById("onchange").innerHTML = "You selected: " + x;
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>oninput</td>
+                        <td>
+                            When the element gets user input<br>
+                            &lt;element <strong>oninput</strong>="<i>script</i>"&gt;<br>
+                            <span class='note'>
+                                &lt;textarea&gt;, &lt;input&gt; type: text, password, search
+                            </span>
+                        </td>
+                        <td>
+                            <p>Write something in the text field to trigger a function.</p>
+    
+                            <input type="text" id="myInput" oninput="myFunction_oninput()">
+    
+                            <p id="oninput"></p>
+    
+                            <script>
+                                function myFunction_oninput() {
+                                    var x = document.getElementById("myInput").value;
+                                    document.getElementById("oninput").innerHTML = "You wrote: " + x;
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onsearch</td>
+                        <td>
+                            &lt;element <strong>onsearch</strong>="<i>script</i>"&gt;<br>
+                            When the user writes something in a search field<br>
+                            <span class='note'>
+                                &lt;input type="search"&gt;<br>
+                                Not supported by Firefox, Edge
+                            </span>
+                        </td>
+                        <td>
+                            <p>Write something in the search field and press "ENTER".</p>
+    
+                            <input type="search" id="onsearchInput" onsearch="myFunction_onsearch()">
+    
+                            <p id="onsearch"></p>
+    
+                            <script>
+                                function myFunction_onsearch() {
+                                    var x = document.getElementById("onsearchInput");
+                                    document.getElementById("onsearch").innerHTML = "You are searching for: " + x.value;
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onselect</td>
+                        <td>
+                            &lt;element <strong>onfocus</strong>="onselect"&gt;<br>
+                            When some text has been selected in an element<br>
+                            <span class='note'>
+                                &lt;textarea&gt;, &lt;input&gt; type: text, file, password<br>
+                            </span>
+                        </td>
+                        <td>
+                            Some text: <input type="text" value="Select me!!" onselect="mySelection()">
+                            <script>
+                                function mySelection() {
+                                    alert("You have selected some text!");
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onreset</td>
+                        <td>
+                            &lt;element <strong>onreset</strong>="<i>script</i>"&gt;<br>
+                            When a reset button in a form is clicked<br>
+                            <span class='note'>&lt;form&gt;</span>
+                        </td>
+                        <td>
+                            <p>When you reset the form, a function is triggered which alerts some text.</p>
+    
+                            <form onreset="myOnreset()">
+                                Enter name: <input type="text">
+                                <input type="reset">
+                            </form>
+    
+                            <script>
+                                function myOnreset() {
+                                    alert("The form was reset");
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onsubmit</td>
+                        <td>
+                            &lt;element <strong>onsubmit</strong>="<i>script</i>"&gt;<br>
+                            When a form is submitted<br>
+                            <span class='note'>&lt;form&gt;</span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php" onsubmit="mySubmit()">
+                                Enter name: <input type="text" name="fname">
+                                <input type="submit" value="Submit">
+                            </form>
+    
+                            <script>
+                                function mySubmit() {
+                                    alert("The form was submitted");
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>oninvalid</td>
+                        <td>
+                            &lt;element <strong>oninvalid</strong>="<i>script</i>"&gt;<br>
+                            When the element is invalid<br>
+                            <span class='note'>
+                                &lt;input&gt;<br>
+                                Not supported by Safari
+                            </span>
+                        </td>
+                        <td>
+                            <p>Submiting without filling out the text field, an alert message will occur.</p>
+    
+                            <form action="/action_page.php" method="get">
+                                Name: <input type="text" oninvalid="alert('You must fill out the form!');" name="fname"
+                                    required>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-danger">oncontextmenu</td>
+                        <td>
+                            &lt;element <strong>oncontextmenu</strong>="<i>script</i>"&gt;<br>
+                            When a context menu is triggered<br>
+                            <span class='note'>
+                                Although the oncontextmenu event is supported in all browsers<br>
+                                the contextmenu attribute is currently only supported in Firefox
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Keyboard Events</td>
+                    </tr>
+                    <tr>
+                        <td>onkeypress</td>
+                        <td>
+                            &lt;element <strong>onkeypress</strong>="<i>script</i>"&gt;<br>
+                            When a user presses a key<br>
+                            <span class='note'>
+                                Except: &lt;base&gt;, &lt;bdo&gt;, &lt;br&gt;, &lt;head&gt;, &lt;html&gt;, &lt;iframe&gt;,
+                                &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, &lt;title&gt;<br>
+                                Not work for all keys, eg ALT, CTRL, SHIFT, ESC
+                            </span>
+                        </td>
+                        <td>
+                            Input your text: <input type="text" onkeypress="myFunction_keypress()">
+                            <script>
+                                function myFunction_keypress() {
+                                    alert("You pressed a key inside the input field");
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onkeydown</td>
+                        <td>
+                            &lt;element <strong>onkeydown</strong>="<i>script</i>"&gt;<br>
+                            When a user is pressing a key<br>
+                            <span class='note'>
+                                Except: &lt;base&gt;, &lt;bdo&gt;, &lt;br&gt;, &lt;head&gt;, &lt;html&gt;, &lt;iframe&gt;,
+                                &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, &lt;title&gt;<br>
+                            </span>
+                        </td>
+                        <td>
+                            Input your text: <input type="text" onkeydown="myFunction_keydown()">
+                            <script>
+                                function myFunction_keydown() {
+                                    alert("You pressed a key inside the input field");
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onkeyup</td>
+                        <td>
+                            &lt;element <strong>onkeyup</strong>="<i>script</i>"&gt;<br>
+                            When a user releases a key<br>
+                            <span class='note'>
+                                Except: &lt;base&gt;, &lt;bdo&gt;, &lt;br&gt;, &lt;head&gt;, &lt;html&gt;, &lt;iframe&gt;,
+                                &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, &lt;title&gt;<br>
+                            </span>
+                        </td>
+                        <td>
+                            Input your name: <input type="text" id="name_keyup" onkeyup="myFunction_keyup()">
+                            <script>
+                                function myFunction_keyup() {
+                                    var x = document.getElementById("name_keyup");
+                                    x.value = x.value.toUpperCase();
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Mouse Events</td>
+                    </tr>
+                    <tr>
+                        <td>onclick</td>
+                        <td>
+                            &lt;element <strong>onclick</strong>="<i>script</i>"&gt;<br>
+                            When the user clicks on an element<br>
+                            <span class='note'>
+                                Except: &lt;base&gt;, &lt;bdo&gt;, &lt;br&gt;, &lt;head&gt;, &lt;html&gt;, &lt;iframe&gt;,
+                                &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, &lt;title&gt;<br>
+                            </span>
+                        </td>
+                        <td>
+                            <button onclick="myFunction_onclick()">Click me</button>
+                            <p id="onclick"></p>
+                            <script>
+                                function myFunction_onclick() {
+                                    document.getElementById("onclick").innerHTML = "Hello World";
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ondblclick</td>
+                        <td>
+                            &lt;element <strong>ondblclick</strong>="<i>script</i>"&gt;<br>
+                            When the user double-clicks on an element<br>
+                            <span class='note'>
+                                Except: &lt;base&gt;, &lt;bdo&gt;, &lt;br&gt;, &lt;head&gt;, &lt;html&gt;, &lt;iframe&gt;,
+                                &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, &lt;title&gt;<br>
+                            </span>
+                        </td>
+                        <td>
+                            <p ondblclick="myFunction_ondblclick()">Double-click this paragraph to trigger a function.</p>
+                            <p id="ondblclick"></p>
+                            <script>
+                                function myFunction_ondblclick() {
+                                    document.getElementById("ondblclick").innerHTML = "Hello World";
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            onmousedown<br>
+                            onmouseup
+                        </td>
+                        <td>
+                            &lt;element <strong>onmousedown|onmouseup</strong>="<i>script</i>"&gt;<br>
+                            When the user presses|releases a mouse button over an element<br>
+                            <span class='note'>
+                                Except: &lt;base&gt;, &lt;bdo&gt;, &lt;br&gt;, &lt;head&gt;, &lt;html&gt;, &lt;iframe&gt;,
+                                &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, &lt;title&gt;<br>
+                            </span>
+                        </td>
+                        <td>
+                            <p id="myP" onmousedown="mouseDown()" onmouseup="mouseUp()">
+                                The mouseDown() function is triggered when the mouse button is pressed down
+                                The mouseUp() function is triggered when the mouse button is released
+                            </p>
+    
+                            <script>
+                                function mouseDown() {
+                                    document.getElementById("myP").style.color = "red";
+                                }
+    
+                                function mouseUp() {
+                                    document.getElementById("myP").style.color = "green";
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            onmouseenter<br>
+                            onmouseleave
+                        </td>
+                        <td>
+                            &lt;element <strong>onmouseenter|onmouseleave</strong>="<i>script</i>"&gt;<br>
+                            When the pointer is moved onto|out of an element<br>
+                            <span class='note'>
+                                Except: &lt;base&gt;, &lt;bdo&gt;, &lt;br&gt;, &lt;head&gt;, &lt;html&gt;, &lt;iframe&gt;,
+                                &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, &lt;title&gt;<br>
+                            </span>
+                        </td>
+                        <td>
+                            <img onmouseenter="bigImg(this)" onmouseleave="normalImg(this)" border="0"
+                                src="imgs/tahbert.png" alt="tahbert" width="50" height="50">
+                            <script>
+                                function bigImg(x) {
+                                    x.style.height = "100px";
+                                    x.style.width = "100px";
+                                }
+    
+                                function normalImg(x) {
+                                    x.style.height = "50px";
+                                    x.style.width = "50px";
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            onmouseover<br>
+                            onmouseout
+                        </td>
+                        <td>
+                            &lt;element <strong>onmouseover|onmouseout</strong>="<i>script</i>"&gt;<br>
+                            When the pointer is moved onto|out of an element, or one of its children<br>
+                            <span class='note'>
+                                Except: &lt;base&gt;, &lt;bdo&gt;, &lt;br&gt;, &lt;head&gt;, &lt;html&gt;, &lt;iframe&gt;,
+                                &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, &lt;title&gt;<br>
+                            </span>
+                        </td>
+                        <td>
+                            <img onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" border="0" src="imgs/tahbert.png"
+                                alt="Tahbert" width="50" height="50">
+    
+                            <script>
+                                function mouseOver(x) {
+                                    x.style.height = "100px";
+                                    x.style.width = "100px";
+                                }
+    
+                                function mouseOut(x) {
+                                    x.style.height = "50px";
+                                    x.style.width = "50px";
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onmousemove</td>
+                        <td>
+                            &lt;element <strong>onmousemove</strong>="<i>script</i>"&gt;<br>
+                            When the pointer is moving while it is over an element<br>
+                            <span class='note'>
+                                Except: &lt;base&gt;, &lt;bdo&gt;, &lt;br&gt;, &lt;head&gt;, &lt;html&gt;, &lt;iframe&gt;,
+                                &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, &lt;title&gt;<br>
+                            </span>
+                        </td>
+                        <td>
+                            <div class="move" onmousemove="myMoveFunction()">
+                                <p>onmousemove: <br> <span id="mousemove">Mouse over me!</span></p>
+                            </div>
+    
+                            <script>
+                                var x = 0;
+                                var y = 0;
+                                var z = 0;
+    
+                                function myMoveFunction() {
+                                    document.getElementById("mousemove").innerHTML = z += 1;
+                                }
+                            </script>
+    
+                            <style>
+                                div.move {
+                                    width: 200px;
+                                    height: 100px;
+                                    border: 1px solid black;
+                                    margin: 10px;
+                                    float: left;
+                                    padding: 30px;
+                                    text-align: center;
+                                    background-color: lightgray;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onwheel</td>
+                        <td>
+                            &lt;element <strong>onwheel</strong>="<i>script</i>"&gt;<br>
+                            When the mouse wheel rolls up or down over an element<br>
+                            <span class='note'>Not supported by Safari</span>
+                        </td>
+                        <td>
+                            <div id="myDIV" onwheel="myFunction_onwheel()">Roll the mouse wheel over me</div>
+    
+                            <script>
+                                function myFunction_onwheel() {
+                                    document.getElementById("myDIV").style.fontSize = "35px";
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onmousewheel</td>
+                        <td>
+                            &lt;element <strong>onmousewheel</strong>="<i>script</i>"&gt;<br>
+                            <span class="text-danger">Deprecated => use onwheel instead</span>
+                            <span class='note'></span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Drag Events</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ondragstart<br>
+                            ondragend
+                        </td>
+                        <td>
+                            &lt;element <strong>ondragstart|ondragend</strong>="<i>script</i>"&gt;<br>
+                            At the <strong>start|end</strong> of a drag operation
+                            <span class='note'></span>
+                        </td>
+                        <td rowspan="4">
+                            <p>Drag the p element back and forth between the two rectangles:</p>
+    
+                            <div class="droptarget">
+                                <p draggable="true" id="dragtarget">Drag me!</p>
+                            </div>
+    
+                            <div class="droptarget"></div>
+    
+                            <p style="clear:both;" id="demo_drag"></p>
+    
+                            <script>
+                                /* Events fired on the drag target */
+    
+                                document.addEventListener("dragstart", function (event) {
+                                    // ondragstart --- The dataTransfer.setData() method sets the data type and the value of the dragged data
+                                    event.dataTransfer.setData("Text", event.target.id);
+    
+                                    // ondrag --- Output some text when starting to drag the p element
+                                    document.getElementById("demo_drag").innerHTML = "Started to drag the p element.";
+    
+                                    // ondrag --- Change the opacity of the draggable element
+                                    event.target.style.opacity = "0.4";
+                                });
+    
+                                // ondrag --- While dragging the p element, change the color of the output text
+                                document.addEventListener("drag", function (event) {
+                                    document.getElementById("demo_drag").style.color = "red";
+                                });
+    
+                                // dragend --- Output some text when finished dragging the p element and reset the opacity
+                                document.addEventListener("dragend", function (event) {
+                                    document.getElementById("demo_drag").innerHTML = "Finished dragging the p element.";
+                                    event.target.style.opacity = "1";
+                                });
+    
+                                /* Events fired on the drop target */
+    
+                                // ondragenter --- When the draggable p element enters the droptarget, change the DIVS's border style
+                                document.addEventListener("dragenter", function (event) {
+                                    if (event.target.className == "droptarget") {
+                                        event.target.style.border = "3px dotted red";
+                                    }
+                                });
+    
+                                // ondragover --- By default, data/Keywords cannot be dropped in other Keywords. To allow a drop, we must prevent the default handling of the element
+                                document.addEventListener("dragover", function (event) {
+                                    event.preventDefault();
+                                });
+    
+                                // ondragleave --- When the draggable p element leaves the droptarget, reset the DIVS's border style
+                                document.addEventListener("dragleave", function (event) {
+                                    if (event.target.className == "droptarget") {
+                                        event.target.style.border = "";
+                                    }
+                                });
+    
+                                /* ondrop --- Prevent the browser default handling of the data (default is open as link on drop)
+                                   Reset the color of the output text and DIV's border color
+                                   Get the dragged data with the dataTransfer.getData() method
+                                   The dragged data is the id of the dragged element ("drag1")
+                                   Append the dragged element into the drop element
+                                */
+                                document.addEventListener("drop", function (event) {
+                                    event.preventDefault();
+                                    if (event.target.className == "droptarget") {
+                                        document.getElementById("demo_drag").style.color = "";
+                                        event.target.style.border = "";
+                                        var data = event.dataTransfer.getData("Text");
+                                        event.target.appendChild(document.getElementById(data));
+                                    }
+                                });
+                            </script>
+                            <style>
+                                .droptarget {
+                                    float: left;
+                                    width: 200px;
+                                    height: 200px;
+                                    margin: 15px;
+                                    padding: 10px;
+                                    border: 1px solid #aaaaaa;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ondrag<br>
+                            ondrop
+                        </td>
+                        <td>
+                            &lt;element <strong>ondrag|ondrop</strong>="<i>script</i>"&gt;<br>
+                            When the element <strong>is being dragged|dropped</strong><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ondragover</td>
+                        <td>
+                            &lt;element <strong>ondragover</strong>="<i>script</i>"&gt;<br>
+                            When an element <strong>is being dragged over</strong> a valid drop target<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ondragenter<br>
+                            ondragleave
+                        </td>
+                        <td>
+                            &lt;element <strong>attribute</strong>="<i>script</i>"&gt;<br>
+                            When an element <strong>has been dragged|leaves</strong> to a valid drop target<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onscroll</td>
+                        <td>
+                            &lt;element <strong>attribute</strong>="<i>script</i>"&gt;<br>
+                            When an element's scrollbar is being scrolled<br>
+                            <span class='note'>
+                                &lt;address&gt;, &lt;blockquote&gt;, &lt;body&gt;, &lt;caption&gt;, &lt;center&gt;,
+                                &lt;dd&gt;, &lt;dir&gt;, &lt;div&gt;, &lt;dl&gt;, &lt;dt&gt;,
+                                &lt;fieldset&gt;, &lt;form&gt;, &lt;h1&gt; to &lt;h6&gt;, &lt;html&gt;, &lt;li&gt;,
+                                &lt;menu&gt;,
+                                &lt;object&gt;, &lt;ol&gt;, &lt;p&gt;, &lt;pre&gt;, &lt;select&gt;, &lt;tbody&gt;,
+                                &lt;textarea&gt;, &lt;tfoot&gt;, &lt;thead&gt;, &lt;ul&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <div id="myDIV_onscroll" onscroll="myFunction_onscroll()">In my younger and more vulnerable
+                                years my father gave me some advice that I've been turning over in my mind ever since.
+                                <br><br>
+                                'Whenever you feel like criticizing anyone,' he told me, just remember that all the people
+                                in this world haven't had the advantages that you've had.'
+                            </div>
+    
+                            <script>
+                                function myFunction_onscroll() {
+                                    document.getElementById("myDIV_onscroll").style.color = "red";
+                                }
+                            </script>
+    
+                            <style>
+                                #myDIV_onscroll {
+                                    border: 1px solid black;
+                                    width: 200px;
+                                    height: 100px;
+                                    overflow: scroll;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Clipboard Events</td>
+                    </tr>
+                    <tr>
+                        <td>oncopy</td>
+                        <td>
+                            &lt;element <strong>oncopy</strong>="<i>script</i>"&gt;<br>
+                            When the content of the element is being copied<br>
+                            <span class='note'>Mostly used on &lt;input type="text"&gt;</span>
+                        </td>
+                        <td>
+                            <input type="text" oncopy="myFunction_copy()" value="Try to copy this text">
+    
+                            <p id="copy"></p>
+    
+                            <script>
+                                function myFunction_copy() {
+                                    document.getElementById("copy").innerHTML = "You copied text!"
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>oncut</td>
+                        <td>
+                            &lt;element <strong>oncut</strong>="<i>script</i>"&gt;<br>
+                            When the content of the element is being cut<br>
+                            <span class='note'>Possible if <strong>contenteditable</strong> attribute is
+                                "true"</span>
+                        </td>
+                        <td>
+                            <input type="text" oncut="myFunction_cut()" value="Try to cut this text">
+    
+                            <p id="cut"></p>
+    
+                            <script>
+                                function myFunction_cut() {
+                                    document.getElementById("cut").innerHTML = "You cut text!";
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onpaste</td>
+                        <td>
+                            &lt;element <strong>onpaste</strong>="<i>script</i>"&gt;<br>
+                            When the user pastes some content in an element<br>
+                            <span class='note'>
+                                Mostly used on &lt;input type="text"&gt;<br>
+                                Possible if <strong>contenteditable</strong> attribute is "true"
+                            </span>
+                        </td>
+                        <td>
+                            <input type="text" onpaste="myFunction_paste()" value="Try to paste something in here"
+                                size="40">
+    
+                            <p id="paste"></p>
+    
+                            <script>
+                                function myFunction_paste() {
+                                    document.getElementById("paste").innerHTML = "You pasted text!";
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td>Media Event</td>
+                        <td colspan="2">Events triggered by medias (applies to all Keywords, but most common in media
+                            Keywords, like &lt;audio&gt;, &lt;embed&gt;, &lt;img&gt;, &lt;object&gt;, &lt;video&gt;)</td>
+                    </tr>
+                    <tr>
+                        <td>oncanplay</td>
+                        <td>
+                            &lt;element <strong>oncanplay</strong>="<i>script</i>"&gt;<br>
+                            When a file is ready to start playing (when it has buffered enough to begin)<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;, &lt;embed&gt;, &lt;object&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <p>Remove comments to check</p>
+                            <audio id="canplay" controls>
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+    
+                            <!--<script>
+                            var aud = document.getElementById("canplay");
+                            aud.oncanplay = function() {
+                                alert("Can start playing audio");
+                            };
+                            </script>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>oncanplaythrough</td>
+                        <td>
+                            &lt;element <strong>oncanplaythrough</strong>="<i>script</i>"&gt;<br>
+                            When a file can be played all the way to the end without pausing for buffering<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <p>Remove comments to check</p>
+                            <audio id="playthrough" controls oncanplaythrough="myFunction_playthrough()">
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+    
+                            <!--<script>
+                            function myFunction_playthrough() {
+                                alert("Can play the audio without any buffering");
+                            }
+                            </script>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ondurationchange</td>
+                        <td>
+                            &lt;audio|video <strong>ondurationchange</strong>="<i>script</i>"&gt;<br>
+                            When the length of the media changes<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <p>Remove comments to check</p>
+                            <audio id="durationchange" controls ondurationchange="myFunction_durationchange(this)">
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+    
+                            <!--<script>
+                            function myFunction_durationchange(x) {
+                                alert("The duration of this audioclip is : " + x.duration + " seconds");
+                            }
+                            </script>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onended</td>
+                        <td>
+                            &lt;element <strong>onended</strong>="<i>script</i>"&gt;<br>
+                            When the media has reach the end (a useful event for messages like "thanks for listening")<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <audio id="onended" controls onended="myFunction_onended()">
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+    
+                            <script>
+                                function myFunction_onended() {
+                                    alert("Thank you for listening");
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>muted</td>
+                        <td>
+                            &lt;element <strong>muted</strong>&gt;<br>
+                            Specify that the audio output of the video should be muted<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <audio controls muted>
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onloadeddata</td>
+                        <td>
+                            &lt;element <strong>attribute</strong>="<i>script</i>"&gt;<br>
+                            When media data is loaded<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <p>Remove comments to check</p>
+                            <audio id="onloadeddata" controls onloadeddata="myFunction_onloadeddata()">
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+    
+                            <!--<script>
+                            function myFunction_onloadeddata() {
+                                alert("Data is loaded");
+                            }
+                            </script>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onloadedmetadata</td>
+                        <td>
+                            &lt;element <strong>onloadedmetadata</strong>="<i>script</i>"&gt;<br>
+                            When meta data (like dimensions and duration) are loaded<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <p>Remove comments to check</p>
+                            <audio id="onloadedmetadata" controls onloadedmetadata="myFunction_onloadedmetadata()">
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+    
+                            <!--<script>
+                            function myFunction_onloadedmetadata() {
+                                alert("Meta data is loaded");
+                            }
+                            </script>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onloadstart</td>
+                        <td>
+                            &lt;element <strong>onloadstart</strong>="<i>script</i>"&gt;<br>
+                            Script to be run just as the file begins to load before anything is actually loaded<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <p>Remove comments to check</p>
+                            <audio id="onloadstart" controls onloadstart="myFunction_onloadstart()">
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+    
+                            <!--<script>
+                            function myFunction_onloadstart() {
+                                alert("The media file has started loading");
+                            }
+                            </script>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onpause</td>
+                        <td>
+                            &lt;element <strong>onpause</strong>="<i>script</i>"&gt;<br>
+                            When the media is paused either by the user or programmatically<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <audio id="onpause" controls onpause="myFunction_onpause()">
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+    
+                            <script>
+                                function myFunction_onpause() {
+                                    alert("The audio file has been paused");
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onplay</td>
+                        <td>
+                            &lt;element <strong>onplay</strong>="<i>script</i>"&gt;<br>
+                            When the media has started playing<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <audio id="onplay" controls onplay="myFunction_onplay()">
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+    
+                            <script>
+                                function myFunction_onplay() {
+                                    alert("The audio file is playing");
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onplaying</td>
+                        <td>
+                            &lt;element <strong>onplaying</strong>="<i>script</i>"&gt;<br>
+                            When the media has started playing<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <audio id="playing" controls onplaying="myFunction_playing()">
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+    
+                            <script>
+                                function myFunction_playing() {
+                                    alert("The audio file has started playing");
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onprogress</td>
+                        <td>
+                            &lt;element <strong>onprogress</strong>="<i>script</i>"&gt;<br>
+                            When the browser is in the process of getting the media data<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <audio id="progress" controls onprogress="myFunction_progress()">
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+    
+                            <!--<script>
+                            function myFunction_progress() {
+                                alert("The audio file has started downloading");
+                            }
+                            </script>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onratechange</td>
+                        <td>
+                            &lt;element <strong>onratechange</strong>="<i>script</i>"&gt;<br>
+                            Script to be run each time the playback rate changes (like when a user switches to a slow motion
+                            or fast forward mode)<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <audio id="ratechange" controls onratechange="myFunction_ratechange()">
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+    
+                            <p id="demo_reatechange">Change the speed of the audio</p>
+                            <input type="range" min="0.5" max="3" step="0.1" value="1" oninput="changeRate(this)">
+    
+                            <script>
+                                function myFunction() {
+                                    document.getElementById("demo_ratechange").innerHTML = "The audio's speed is " + document.getElementById("ratechange").playbackRate;
+                                }
+    
+                                function changeRate(obj) {
+                                    document.getElementById("ratechange").playbackRate = obj.value;
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onseeked</td>
+                        <td>
+                            &lt;element <strong>onseeked</strong>="<i>script</i>"&gt;<br>
+                            When the seeking attribute is set to false indicating that seeking has ended<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <p id="demo_onseeked">Move to a new position in the audio:</p>
+    
+                            <audio id="onseeked" controls onseeked="myFunction_onseeked()">
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+    
+                            <script>
+                                function myFunction_onseeked() {
+                                    document.getElementById("demo_onseeked").innerHTML = "You moved to position " + document.getElementById("onseeked").currentTime;
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onseeking</td>
+                        <td>
+                            &lt;element <strong>onseeking</strong>="<i>script</i>"&gt;<br>
+                            When the seeking attribute is set to true indicating that seeking is active<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <p id="demo_seeking">Move to a new position in the audio:</p>
+    
+                            <audio id="seeking" controls onseeking="myFunction_seeking()">
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+    
+                            <script>
+                                function myFunction_seeking() {
+                                    document.getElementById("demo_seeking").innerHTML = "You moved to position " + document.getElementById("seeking").currentTime;
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ontimeupdate</td>
+                        <td>
+                            &lt;element <strong>ontimeupdate</strong>="<i>script</i>"&gt;<br>
+                            When the playing position has changed (like when the user fast forwards to a different point in
+                            the media)<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <p id="demo_timeupdate">Move to a new position in the audio:</p>
+    
+                            <audio id="timeupdate" controls ontimeupdate="myFunction_timeupdate()">
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+    
+                            <script>
+                                function myFunction_timeupdate() {
+                                    document.getElementById("demo_timeupdate").innerHTML = "You moved to position " + document.getElementById("timeupdate").currentTime;
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onvolumechange</td>
+                        <td>
+                            &lt;element <strong>onvolumechange</strong>="<i>script</i>"&gt;<br>
+                            Script to be run each time the volume of a video/audio has been changed<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td>
+                            <p id="demo_volumechange">Change the volume of the audio:</p>
+    
+                            <audio id="volumechange" controls onvolumechange="myFunction_volumechange()">
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+    
+                            <script>
+                                function myFunction_volumechange() {
+                                    document.getElementById("demo_volumechange").innerHTML = "You changed the volume";
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>onwaiting</td>
+                        <td>
+                            &lt;element <strong>onwaiting</strong>="<i>script</i>"&gt;<br>
+                            When the media has paused but is expected to resume (like when the media pauses to buffer more
+                            data)<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>oncuechange</td>
+                        <td>
+                            &lt;element <strong>oncuechange</strong>="<i>script</i>"&gt;<br>
+                            When the cue changes in a &lt;track&gt;<br>
+                            <span class='note'>
+                                &lt;track&gt;<br>
+                                Not supported by Firefox
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>onabort</td>
+                        <td>
+                            &lt;element <strong>onabort</strong>="<i>script</i>"&gt;<br>
+                            Script to be run on abort<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;, &lt;embed&gt;, &lt;object&gt;, &lt;img&gt;
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>onemptied</td>
+                        <td>
+                            &lt;element <strong>onemptied</strong>="<i>script</i>"&gt;<br>
+                            When sth bad happens and the file is suddenly unavailable (like unexpectedly disconnects)<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>onstalled</td>
+                        <td>
+                            &lt;element <strong>onstalled</strong>="<i>script</i>"&gt;<br>
+                            When the browser is unable to fetch the media data for whatever reason<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>onsuspend</td>
+                        <td>
+                            &lt;element <strong>attribute</strong>="<i>script</i>"&gt;<br>
+                            When fetching the media data is stopped before it is completely loaded for whatever reason<br>
+                            <span class='note'>
+                                &lt;audio&gt;, &lt;video&gt;
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+    
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Misc Events</td>
+                    </tr>
+                    <tr>
+                        <td>ontoggle</td>
+                        <td>
+                            &lt;element <strong>attribute</strong>="<i>script</i>"&gt;<br>
+                            When the user opens or closes the &lt;details&gt; element<br>
+                            <span class='note'>&lt;details&gt;</span>
+                        </td>
+                        <td>
+                            <p>Open the details.</p>
+    
+                            <details ontoggle="myFunction_toggle()">
+                                <summary>Copyright 1999-2014.</summary>
+                                <p> - by Refsnes Data. All Rights Reserved.</p>
+                                <p>All content and graphics on this web site are the property of the company Refsnes Data.
+                                </p>
+                            </details>
+    
+                            <script>
+                                function myFunction_toggle() {
+                                    alert("The ontoggle event occured");
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

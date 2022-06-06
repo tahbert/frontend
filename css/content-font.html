@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <title>Font</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Font</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Font</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Generic Font Families</td>
+                    </tr>
+                    <tr>
+                        <td>Serif</td>
+                        <td>
+                            With a small stroke at the edges of each letter<br>
+                            <span class="text-green">formal and elegant</span>
+                        </td>
+                        <td>
+                            Web safe fonts (installed on all browsers/devices):<br>
+                            <ul>
+                                <li>Times New Roman</li>
+                                <li>Georgia</li>
+                                <li>Garamond</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sans-serif</td>
+                        <td>
+                            Without small strokes attached<br>
+                            <span class="text-green">modern and minimalistic</span>
+                        </td>
+                        <td>
+                            Web safe fonts (installed on all browsers/devices):<br>
+                            <ul>
+                                <li>Arial</li>
+                                <li>Verdana</li>
+                                <li>Helvetica</li>
+                                <li>Tahoma</li>
+                                <li>Trebuchet MS</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Monospace</td>
+                        <td>
+                            With the same fixed width for all letters. They create a mechanical look<br>
+                            <span class="text-green">mechanical</span>
+                        </td>
+                        <td>
+                            Web safe fonts (installed on all browsers/devices):<br>
+                            <ul>
+                                <li>Courier New</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cursive</td>
+                        <td>Imitate human handwriting</td>
+                        <td>
+                            Web safe fonts (installed on all browsers/devices):<br>
+                            <ul>
+                                <li>Brush Script MT</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fantasy</td>
+                        <td>Decorative/playful fonts</td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Font Properties</td>
+                    </tr>
+                    <tr>
+                        <td>font <span class="badge green">shorthand</span></td>
+                        <td>
+                            <strong>font</strong>: <i>font-style font-variant font-weight font-size/line-height
+                                font-family</i>|caption|icon|menu|message-box|small-caption|status-bar|initial|inherit;<br>
+                            <span class="text-green"><span class="badge red">Required</span> font-size and
+                                font-family</span>
+                        </td>
+                        <td>
+                            <p style="font: italic bold 12px/30px Georgia, serif;">font: italic bold 12px/30px Georgia, serif;
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>font-family</td>
+                        <td>
+                            <strong>font-family</strong>: <i>family-name</i>|<i>generic-family</i>|initial|inherit;<br>
+                            Start with the font you want, and end with a generic family<br>
+                            <span class="text-green">
+                                (Multiple: separated with comma)<br>
+                                (More than one word: in quotation marks)
+                            </span>
+                        </td>
+                        <td>
+                            <p style="font-family: Georgia, serif;">font-family: Georgia, serif;</p>
+                            <p style="font-family: 'Times New Roman', Times, serif;">font-family: 'Times New Roman', Times,
+                                serif;</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>font-style</td>
+                        <td>
+                            <strong>font-style</strong>: <span
+                                class="text-red">normal</span>|italic|oblique|initial|inherit;<br>
+                            Specify the font style for a text<br>
+                            <span class="text-green">
+                                Mostly used to specify italic text<br>
+                            </span>
+                        </td>
+                        <td>
+                            <p style="font-style: italic;">font-style: italic;</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>font-weight</td>
+                        <td>
+                            <strong>font-weight</strong>: <span
+                                class="text-red">normal</span>|bold|bolder|lighter|<i>number</i>|initial|inherit;<br>
+                            Set how thick characters in text are<br>
+                            <span class="text-green">Number: 100, 200, 300, 400 (normal),...,700 (bold), 800, 900</span>
+                        </td>
+                        <td>
+                            <p style="font-weight: lighter;">font-weight: lighter;</p>
+                            <p style="font-weight: bold;">font-weight: bold;</p>
+                            <p style="font-weight: bolder;">font-weight: bolder;</p>
+                            <p style="font-weight: 400;">font-weight: 400;</p>
+                            <p style="font-weight: 700;">font-weight: 700;</p>
+                            <p style="font-weight: 900;">font-weight: 900;</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>font-variant</td>
+                        <td>
+                            <strong>font-variant</strong>: <span
+                                class="text-red">normal</span>|small-caps|initial|inherit;<br>
+                            Specify whether or not a text should be displayed in a <strong>small-caps</strong> font<br>
+                        </td>
+                        <td>
+                            <p style="font-variant: small-caps;">font-variant: small-caps;</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            font-variant-caps<br>
+                            <span class="badge yellow">not important</span>
+                        </td>
+                        <td>
+                            <strong>font-variant-caps</strong>: <span
+                                class="text-red">normal</span>|small-caps|all-small-caps|petite-caps|all-petite-caps|unicase|titling-caps|initial|inherit|unset;<br>
+                            Control the usage of alternate glyphs for capital letters<br>
+                            <span class="text-green">Not supported by Safari</span>
+                        </td>
+                        <td style="white-space: nowrap;">
+                            <p style="font-variant-caps: normal;">My name is Hege Refsnes <span
+                                    class="text-red">font-variant-caps: normal;</span></p>
+                            <p style="font-variant-caps: small-caps;">My name is Hege Refsnes <span
+                                    class="text-red">font-variant-caps: small-caps;</span></p>
+                            <p style="font-variant-caps: all-small-caps;">My name is Hege Refsnes <span
+                                    class="text-red">font-variant-caps: all-small-caps;</span></p>
+                            <p style="font-variant-caps: petite-caps;">My name is Hege Refsnes <span
+                                    class="text-red">font-variant-caps: petite-caps;</span></p>
+                            <p style="font-variant-caps: all-petite-caps;">My name is Hege Refsnes <span
+                                    class="text-red">font-variant-caps: all-petite-caps;</span></p>
+                            <p style="font-variant-caps: unicase;">My name is Hege Refsnes <span
+                                    class="text-red">font-variant-caps: unicase;</span></p>
+                            <p style="font-variant-caps: titling-caps;">My name is Hege Refsnes <span
+                                    class="text-red">font-variant-caps: titling-caps;</span></p>
+                            <p style="font-variant-caps: unset;">My name is Hege Refsnes <span
+                                    class="text-red">font-variant-caps: unset;</span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>font-size</td>
+                        <td>
+                            <strong>font-size</strong>:
+                            medium|xx-small|x-small|small|large|x-large|xx-large|smaller|larger|<i>length</i>|initial|inherit;
+                            <span class="text-red">(default: 16px)</span><br>
+                            Set the size of the text
+                        </td>
+                        <td>
+                            <p style="font-size: 16px;">font-size: 16px;</p>
+                            <p style="font-size: medium;">font-size: medium;</p>
+                            <p style="font-size: xx-small;">font-size: xx-small;</p>
+                            <p style="font-size: x-small;">font-size: x-small;</p>
+                            <p style="font-size: small;">font-size: small;</p>
+                            <p style="font-size: smaller;">font-size: smaller;</p>
+                            <p style="font-size: large;">font-size: large;</p>
+                            <p style="font-size: larger;">font-size: larger;</p>
+                            <p style="font-size: x-large;">font-size: x-large;</p>
+                            <p style="font-size: xx-large;">font-size: xx-large;</p>
+                            <p style="font-size: 250%;">font-size: 250%;</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2" class="sub-head"><strong>length</strong> value > absolute size (not
+                            allow a user to change the text size in all browsers)</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <strong>pixel</strong>: full control over the text size<br>
+                            <span class="text-green">(Still use the zoom tool to resize the entire page)</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <strong>em</strong>: 1em = 16px<br>
+                            <span class="text-green">(Possible to adjust the text size in all browsers)</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Combination of percent and em</td>
+                        <td>
+                            body {font-size: 100%;}<br>
+                            p {font-size: 0.875em;}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2" class="sub-head"><strong>length</strong> value > relative size
+                            (allow a user to change the text size in all browsers)</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <strong>vw</strong>(viewport width): follow the size of the browser window<br>
+                            1vw = 1% of viewport width
+                        </td>
+                        <td>h1 {font-size: 10vw;}</td>
+                    </tr>
+                    <tr>
+                        <td style="white-space: nowrap;">
+                            font-feature-settings<br>
+                            <span class="badge yellow">not important</span>
+                        </td>
+                        <td>
+                            <strong>font-feature-settings</strong>: <span
+                                class="text-red">normal</span>|<i>feature-value</i>;<br>
+                            Allow control over advanced typographic features in OpenType fonts <a
+                                href="https://www.w3schools.com/cssref/css3_pr_font-feature-settings.asp">see more</a>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            font-kerning<br>
+                            <span class="badge yellow">not important</span>
+                        </td>
+                        <td>
+                            <strong>font-kerning</strong>: <span class="text-red">auto</span>|normal|none;<br>
+                            Control the usage of the kerning information stored in a font <a
+                                href="https://www.w3schools.com/cssref/css3_pr_font-kerning.asp">see more</a><br>
+                            <span class="text-green">(Note: For fonts that include kerning data only)</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            font-stretch<br>
+                            <span class="badge yellow">not important</span>
+                        </td>
+                        <td>
+                            <strong>font-stretch</strong>: <span
+                                class="text-red">normal</span>|ultra-condensed|extra-condensed|condensed|semi-condensed|semi-expanded|expanded|extra-expanded|ultra-expanded|initial|inherit;<br>
+                            Make text narrower (condensed) or wider (expanded)
+                            <span class="text-green">(For fonts that offer condensed or expanded faces!)</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Google Fonts <span class="text-red">later</span></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Font Pairings</td>
+                        <td>
+                            <ol>
+                                <li>Complement: harmonize, without being too similar or too different.</li>
+                                <li>Superfamilies: within the same superfamily is safe.</li>
+                                <li>Contrast is King: combining serif with sans serif is a well known combination.</li>
+                                <li>Only One Boss: by varying the size, weight and color.</li>
+                            </ol>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Web Font</td>
+                    </tr>
+                    <tr>
+                        <td>General</td>
+                        <td>Allow us to use fonts not installed on the user's computer</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>@font-face</td>
+                        <td>
+                            Define your own fonts<br>
+                            <span class="text-green"><span class="badge red">required</span> font-family, src</span>
+                        </td>
+                        <td>
+                            @font-face {<br>
+                            &nbsp;&nbsp;font-family: myFirstFont;<br>
+                            &nbsp;&nbsp;src: url(sansation_light.woff);<br>
+                            &nbsp;&nbsp;font-weight: bold;<br>
+                            }
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

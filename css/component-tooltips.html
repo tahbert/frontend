@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    
+    <title>Tooltips</title>
+  </head>
+  <body>
+    
+      <div>
+        <h1>Tooltips</h1>
+      </div>
+      <!--Title here------------------------------------------------------------------------------------------------------------>
+      <h2>Tooltips</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>General</td>
+            <td>Often used to specify extra information about somehthing on hover</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Basic Example</td>
+            <td>
+              <ul>
+                <strong>The div container</strong>
+                <li>.tooltip {position: relative;} <span class="text-success">needed to position the tooltip text</span></li>
+                <li>.tooltip {display: inline-block;} <span class="text-success">needed to make border-bottom</span></li>
+                <strong>The span tooltiptext</strong>
+                <li>.tooltiptext {position: absolute;} <span class="text-success"></span></li>
+                <li>.tooltiptext {visibility: hidden;} <span class="text-success"><span class="badge bg-warning">?</span> how about using diplay:none;</span></li>
+                <li>.tooltip:hover .tooltiptext {visibility: visible;} <span class="text-success"></span></li>
+              </ul>
+            </td>
+            <td>
+              <div class="tooltip-basic">Hover over me
+                <span class="tooltiptext">Tooltip text</span>
+              </div>
+
+              <style>
+                .tooltip-basic {
+                  position: relative;
+                  display: inline-block;
+                  border-bottom: 1px dotted black;
+                }
+                
+                .tooltip-basic .tooltiptext {
+                  visibility: hidden;
+                  width: 120px;
+                  background-color: black;
+                  color: #fff;
+                  text-align: center;
+                  border-radius: 6px;
+                  padding: 5px 0;
+                
+                  /* Position the tooltip */
+                  position: absolute;
+                  z-index: 1;
+                }
+                
+                .tooltip-basic:hover .tooltiptext {
+                  visibility: visible;
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>Positioning</td>
+            <td>
+              <ul>
+                <strong>Right aligned</strong>
+                <li>.tooltiptext {left: 110%;} <span class="text-success"></span></li>
+                <li>.tooltiptext {top: -5px;} <span class="text-success">due to padding: 5px 0;</span></li>
+              </ul>
+            </td>
+            <td>
+              <div class="tooltip-right">Hover over me
+                <span class="tooltiptext">Tooltip text</span>
+              </div>
+
+              <style>
+                .tooltip-right {
+                  position: relative;
+                  display: inline-block;
+                  border-bottom: 1px dotted black;
+                }
+                
+                .tooltip-right .tooltiptext {
+                  visibility: hidden;
+                  width: 120px;
+                  background-color: black;
+                  color: #fff;
+                  text-align: center;
+                  border-radius: 6px;
+                  padding: 5px 0;
+                
+                  /* Position the tooltip */
+                  position: absolute;
+                  z-index: 1;
+                  top: -5px; /* due to padding: 5px 0; */
+                  left: 110%; 
+                }
+                
+                .tooltip-right:hover .tooltiptext {
+                  visibility: visible;
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <ul>
+                <strong>Left aligned</strong>
+                <li>.tooltiptext {right: 110%;} <span class="text-success"></span></li>
+                <li>.tooltiptext {top: -5px;} <span class="text-success">due to padding: 5px 0;</span></li>
+              </ul>
+            </td>
+            <td>
+              <div class="tooltip-left">Hover over me
+                <span class="tooltiptext">Tooltip text</span>
+              </div>
+
+              <style>
+                .tooltip-left {
+                  position: relative;
+                  display: inline-block;
+                  border-bottom: 1px dotted black;
+                }
+                
+                .tooltip-left .tooltiptext {
+                  visibility: hidden;
+                  width: 120px;
+                  background-color: black;
+                  color: #fff;
+                  text-align: center;
+                  border-radius: 6px;
+                  padding: 5px 0;
+                
+                  /* Position the tooltip */
+                  position: absolute;
+                  z-index: 1;
+                  top: -5px; /* due to padding: 5px 0; */
+                  right: 110%;
+                }
+                
+                .tooltip-left:hover .tooltiptext {
+                  visibility: visible;
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <ul>
+                <strong>Top aligned</strong>
+                <li>.tooltiptext {bottom: 100%;} <span class="text-success"></span></li>
+                <li>.tooltiptext {left: 50%;} <span class="text-success">find the center of the container</span></li>
+                <li>.tooltiptext {margin-left: -60%;} <span class="text-success">due to width: 120px;</span></li>
+              </ul>
+            </td>
+            <td>
+              <div class="tooltip-top">Hover over me
+                <span class="tooltiptext">Tooltip text</span>
+              </div>
+
+              <style>
+                .tooltip-top {
+                  position: relative;
+                  display: inline-block;
+                  border-bottom: 1px dotted black;
+                }
+                
+                .tooltip-top .tooltiptext {
+                  visibility: hidden;
+                  width: 120px;
+                  background-color: black;
+                  color: #fff;
+                  text-align: center;
+                  border-radius: 6px;
+                  padding: 5px 0;
+                
+                  /* Position the tooltip */
+                  position: absolute;
+                  z-index: 1;
+                  left: 50%; /*find the center of the container*/
+                  margin-left: -60px; /*due to width: 120px;*/
+                  bottom: 100%;
+                }
+                
+                .tooltip-top:hover .tooltiptext {
+                  visibility: visible;
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <ul>
+                <strong>Bottom aligned</strong>
+                <li>.tooltiptext {top: 100%;} <span class="text-success"></span></li>
+                <li>.tooltiptext {left: 50%;} <span class="text-success">find the center of the container</span></li>
+                <li>.tooltiptext {margin-left: -60%;} <span class="text-success">due to width: 120px;</span></li>
+              </ul>
+            </td>
+            <td>
+              <div class="tooltip-bottom">Hover over me
+                <span class="tooltiptext">Tooltip text</span>
+              </div>
+
+              <style>
+                .tooltip-bottom {
+                  position: relative;
+                  display: inline-block;
+                  border-bottom: 1px dotted black;
+                }
+                
+                .tooltip-bottom .tooltiptext {
+                  visibility: hidden;
+                  width: 120px;
+                  background-color: black;
+                  color: #fff;
+                  text-align: center;
+                  border-radius: 6px;
+                  padding: 5px 0;
+                
+                  /* Position the tooltip */
+                  position: absolute;
+                  z-index: 1;
+                  left: 50%; /*find the center of the container*/
+                  margin-left: -60px; /*due to width: 120px;*/
+                  top: 100%;
+                }
+                
+                .tooltip-bottom:hover .tooltiptext {
+                  visibility: visible;
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>Arrow</td>
+            <td>
+              <ul>
+                <strong>Right tooltip => Left arrow</strong>
+                <li>.tooltiptext::after {content:"";} <span class="text-success">empty content</span></li>
+                <li>.tooltiptext::after {border-width: 5px;} <span class="text-success"></span></li>
+                <li>.tooltiptext::after {border-style: solid;} <span class="text-success">now the square appears</span></li>
+                <li>.tooltiptext::after {border-color: transparent black transparent transparent;} <span class="text-success">now the arrow appears</span></li>
+                <li>.tooltiptext::after {left: 100%: } <span class="text-success">left arrow</span></li>
+                <li>.tooltiptext::after {top: 50%;} <span class="text-success">find the center of tooltiptext</span></li>
+                <li>.tooltiptext::after {margin-top: -5px;} <span class="text-success">center the arrow due to the width total is 10px</span></li>
+              </ul>
+            </td>
+            <td>
+              <div class="arrow-right">Hover over me
+                <span class="tooltiptext">Tooltip text</span>
+              </div>
+
+              <style>
+                .arrow-right {
+                  position: relative;
+                  display: inline-block;
+                  border-bottom: 1px dotted black;
+                }
+                
+                .arrow-right .tooltiptext {
+                  visibility: hidden;
+                  width: 120px;
+                  background-color: black;
+                  color: #fff;
+                  text-align: center;
+                  border-radius: 6px;
+                  padding: 5px 0;
+                
+                  /* Position the tooltip */
+                  position: absolute;
+                  z-index: 1;
+                  top: -5px; /* due to padding: 5px 0; */
+                  left: 110%; 
+                }
+                
+                .arrow-right:hover .tooltiptext {
+                  visibility: visible;
+                }
+                /* Style the arrow */
+                .arrow-right .tooltiptext::after {
+                  content: " "; /*empty content*/
+                  position: absolute; /*according to .tooltiptext*/
+                  right: 100%; /*at the top of the tooltip*/
+                  top: 50%; /*find the center of the tooltiptext*/
+                  border-width: 5px; /*the size of arrow*/
+                  margin-top: -5px; /*center the arrow due to the border width*/
+                  border-style: solid;
+                  border-color: transparent black transparent transparent; /*only color the top border*/
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <ul>
+                <strong>Left tooltip => Right arrow</strong>
+                <li>.tooltiptext {right: 110%;} <span class="text-success"></span></li>
+                <li>.tooltiptext {top: -5px;} <span class="text-success">due to padding: 5px 0;</span></li>
+              </ul>
+            </td>
+            <td>
+              <div class="arrow-left">Hover over me
+                <span class="tooltiptext">Tooltip text</span>
+              </div>
+
+              <style>
+                .arrow-left {
+                  position: relative;
+                  display: inline-block;
+                  border-bottom: 1px dotted black;
+                }
+                
+                .arrow-left .tooltiptext {
+                  visibility: hidden;
+                  width: 120px;
+                  background-color: black;
+                  color: #fff;
+                  text-align: center;
+                  border-radius: 6px;
+                  padding: 5px 0;
+                
+                  /* Position the tooltip */
+                  position: absolute;
+                  z-index: 1;
+                  top: -5px; /* due to padding: 5px 0; */
+                  right: 110%;
+                }
+                
+                .arrow-left:hover .tooltiptext {
+                  visibility: visible;
+                }
+                .arrow-left .tooltiptext::after {
+                  content: " "; /*empty content*/
+                  position: absolute; /*according to .tooltiptext*/
+                  left: 100%; /*at the top of the tooltip*/
+                  top: 50%; /*find the center of the tooltiptext*/
+                  border-width: 5px; /*the size of arrow*/
+                  margin-top: -5px; /*center the arrow due to the border width*/
+                  border-style: solid;
+                  border-color: transparent transparent transparent black; /*only color the top border*/
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <ul>
+                <strong>Top tooltip => Bottom arrow</strong>
+                <li>.tooltiptext {bottom: 100%;} <span class="text-success"></span></li>
+                <li>.tooltiptext {left: 50%;} <span class="text-success">find the center of the container</span></li>
+                <li>.tooltiptext {margin-left: -60%;} <span class="text-success">due to width: 120px;</span></li>
+              </ul>
+            </td>
+            <td>
+              <div class="arrow-top">Hover over me
+                <span class="tooltiptext">Tooltip text</span>
+              </div>
+
+              <style>
+                .arrow-top {
+                  position: relative;
+                  display: inline-block;
+                  border-bottom: 1px dotted black;
+                }
+                
+                .arrow-top .tooltiptext {
+                  visibility: hidden;
+                  width: 120px;
+                  background-color: black;
+                  color: #fff;
+                  text-align: center;
+                  border-radius: 6px;
+                  padding: 5px 0;
+                
+                  /* Position the tooltip */
+                  position: absolute;
+                  z-index: 1;
+                  left: 50%; /*find the center of the container*/
+                  margin-left: -60px; /*due to width: 120px;*/
+                  bottom: 100%;
+                }
+                
+                .arrow-top:hover .tooltiptext {
+                  visibility: visible;
+                }
+                .arrow-top .tooltiptext::after {
+                  content: " "; /*empty content*/
+                  position: absolute;
+                  top: 100%; /*at the bottom of the tooltip*/
+                  left: 50%; /*find the center of the tooltiptext*/
+                  border-width: 5px; /*the size of arrow*/
+                  margin-left: -5px; /*center the arrow due to the border width*/
+                  border-style: solid;
+                  border-color: black transparent transparent transparent; /*only color the top border*/
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <ul>
+                <strong>Bottom tooltip => Top arrow</strong>
+                <li>.tooltiptext {top: 100%;} <span class="text-success"></span></li>
+                <li>.tooltiptext {left: 50%;} <span class="text-success">find the center of the container</span></li>
+                <li>.tooltiptext {margin-left: -60%;} <span class="text-success">due to width: 120px;</span></li>
+              </ul>
+            </td>
+            <td>
+              <div class="arrow-bottom">Hover over me
+                <span class="tooltiptext">Tooltip text</span>
+              </div>
+
+              <style>
+                .arrow-bottom {
+                  position: relative;
+                  display: inline-block;
+                  border-bottom: 1px dotted black;
+                }
+                
+                .arrow-bottom .tooltiptext {
+                  visibility: hidden;
+                  width: 120px;
+                  background-color: black;
+                  color: #fff;
+                  text-align: center;
+                  border-radius: 6px;
+                  padding: 5px 0;
+                
+                  /* Position the tooltip */
+                  position: absolute;
+                  z-index: 1;
+                  left: 50%; /*find the center of the container*/
+                  margin-left: -60px; /*due to width: 120px;*/
+                  top: 100%;
+                }
+                
+                .arrow-bottom:hover .tooltiptext {
+                  visibility: visible;
+                }
+                .arrow-bottom .tooltiptext::after {
+                  content: " "; /*empty content*/
+                  position: absolute; /*according to .tooltiptext*/
+                  bottom: 100%; /*at the top of the tooltip*/
+                  left: 50%; /*find the center of the tooltiptext*/
+                  border-width: 5px; /*the size of arrow*/
+                  margin-left: -5px; /*center the arrow due to the border width*/
+                  border-style: solid;
+                  border-color: transparent transparent black transparent; /*only color the top border*/
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>Fade In</td>
+            <td>
+              <ul>
+                <li>.tooltip .tooltiptext {opacity: 0;}</li>
+                <li>.tooltip .tooltiptext {transition: opacity 1s;}</li>
+                <li>.tooltip:hover .tooltiptext {opacity: 1;}</li>
+              </ul>
+            </td>
+            <td>
+              <div class="tooltip-fadein">Hover over me
+                <span class="tooltiptext">Tooltip text</span>
+              </div>
+
+              <style>
+                .tooltip-fadein {
+                  position: relative;
+                  display: inline-block;
+                  border-bottom: 1px dotted black;
+                }
+                
+                .tooltip-fadein .tooltiptext {
+                  visibility: hidden;
+                  width: 120px;
+                  background-color: black;
+                  color: #fff;
+                  text-align: center;
+                  border-radius: 6px;
+                  padding: 5px 0;
+                
+                  /* Position the tooltip */
+                  position: absolute;
+                  z-index: 1;
+                  top: -5px; /* due to padding: 5px 0; */
+                  left: 110%; 
+
+                  /* Fade in */
+                  opacity: 0;
+                  transition: opacity 1s;
+                }
+
+                .tooltip-fadein:hover .tooltiptext {
+                  visibility: visible;
+                  opacity: 1;
+                }
+
+                /* Style the arrow */
+                .tooltip-fadein .tooltiptext::after {
+                  content: " "; /*empty content*/
+                  position: absolute; /*according to .tooltiptext*/
+                  right: 100%; /*at the top of the tooltip*/
+                  top: 50%; /*find the center of the tooltiptext*/
+                  border-width: 5px; /*the size of arrow*/
+                  margin-top: -5px; /*center the arrow due to the border width*/
+                  border-style: solid;
+                  border-color: transparent black transparent transparent; /*only color the top border*/
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </body>
+</html>

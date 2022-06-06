@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <title>CSS Borders</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>CSS Borders</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Borders</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>border <span class="badge bg-success">shorthand</span></td>
+                        <td>
+                            <strong>border</strong>: <i>border-width border-style border-color</i>|initial|inherit;<br>
+                            <span class="text-success">(Default: medium none color)</span>
+                        </td>
+                        <td>
+                            <div style="border: 5px dotted green;">border: 5px dotted green</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>border-width</td>
+                        <td>
+                            <strong>border-width</strong>: <span
+                                class="text-danger">medium</span>|thin|thick|<i>length</i>|initial|inherit;
+                            <br>
+                            Specify the width of the four borders
+                        </td>
+                        <td>
+                            <div style="border-style: dotted; border-width:5px;">border-width:5px;</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>border-style</td>
+                        <td>
+                            <strong>border-style</strong>: <span
+                                class="text-danger">none</span>|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|initial|inherit;<br>
+                            Specify what kind of border to display <a
+                                href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=none">play
+                                it</a><br>
+                            <span class="text-success"><span class="badge bg-success">required</span> for other properties to
+                                have effect</span>
+                        </td>
+                        <td>
+                            <div style="border-style: dotted;">border-style: dotted;</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>border-color</td>
+                        <td>
+                            <strong>border-color</strong>: <i>color</i>|transparent|initial|<span
+                                class="text-danger">inherit;</span><br>
+                            Specify the color of an element's four borders
+                        </td>
+                        <td>
+                            <div style="border-style: dotted; border-color:green">border-color:green;</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>border-radius <span class="badge bg-success">shorthand</span></td>
+                        <td>
+                            <strong>border-radius</strong>: <i>1-4 length</i>|<i>% / 1-4 length</i>|<i>%</i>|initial|inherit;
+                            <span class="text-danger">default: 0</span><br>
+                            Adding rounded borders to an element
+                        </td>
+                        <td>
+                            <div
+                                style="border-style: solid; border-color: green; border-radius: 15px; padding: 10px; margin: 5px;">
+                                border-radius: 15px; <span class="text-success">4 corners</span>
+                            </div>
+                            <div
+                                style="border-style: solid; border-color: green; border-radius: 15px 50px; padding: 10px; margin: 5px;">
+                                border-radius: 15px 50px;<br><span class="text-success">top-left + bottom-right | top-right +
+                                    bottom-left</span>
+                            </div>
+                            <div
+                                style="border-style: solid; border-color: green; border-radius: 15px 50px 30px; padding: 10px; margin: 5px;">
+                                border-radius: 15px 50px 30px;<br><span class="text-success">top-left | top-right + bottom-left
+                                    | bottom-right</span>
+                            </div>
+                            <div
+                                style="border-style: solid; border-color: green; border-radius: 15px 50px 30px 10px; padding: 10px; margin: 5px;">
+                                border-radius: 15px 50px 30px 10px;<br><span class="text-success">top-left | top-right |
+                                    bottom-right | bottom-left</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>elliptical border</td>
+                        <td>
+                            <div
+                                style="border-style: solid; border-color: green; border-radius: 50px / 15px; padding: 10px; margin: 5px;">
+                                border-radius: 50px / 15px;<span class="text-success">(x-axis: 50px y-axis: 15px)</span>
+                            </div>
+                            <div
+                                style="border-style: solid; border-color: green; border-radius: 30%; padding: 10px; margin: 5px;">
+                                border-radius: 30%;
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>ellipse border</td>
+                        <td>
+                            <div
+                                style="border-style: solid; border-color: green; border-radius: 50%; padding: 10px; margin: 5px;">
+                                border-radius: 50%; <span class="text-success">(ellipse)</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><span class="text-success">More Specific: 1 border only</span><br>
+                            border-top-left-radius<br>
+                            border-top-right-radius<br>
+                            border-bottom-right-radius<br>
+                            border-bottom-left-radius<br>
+                        </td>
+                        <td>
+                            <div
+                                style="border-style: solid; border-color: green; border-top-right-radius: 50px; padding: 10px; margin: 5px;">
+                                border-top-right-radius: 50px;
+                            </div>
+                            <div
+                                style="border-style: solid; border-color: green; border-top-right-radius: 50px 20px; padding: 10px; margin: 5px;">
+                                border-top-right-radius: 50px 20px; <span class="text-success">(x:50px y:20px)</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-secondary"><strong>Mixing Properties</strong></td>
+                        <td>According to clock direction</td>
+                        <td>
+                            <div
+                                style="border-style: dotted; border-color: green; border-radius: 15px; padding: 10px; margin: 5px;">
+                                border-style: dotted; <span class="text-success">4 corners</span>
+                            </div>
+                            <div
+                                style="border-style: dotted solid; border-color: green; border-radius: 15px; padding: 10px; margin: 5px;">
+                                border-style: dotted solid; <span class="text-success">top + bottom | right + left</span>
+                            </div>
+                            <div
+                                style="border-style: dotted solid double; border-color: green; border-radius: 15px; padding: 10px; margin: 5px;">
+                                border-style: dotted solid double; <span class="text-success">top | right + left | bottom</span>
+                            </div>
+                            <div
+                                style="border-style: dotted solid double dashed; border-color: green; border-radius: 15px; padding: 10px; margin: 5px;">
+                                border-style: dotted solid double dashed; <span class="text-success">top | right | bottom |
+                                    left</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-secondary"><strong>More Specific</strong></td>
+                        <td>
+                            1 specific border: insert the word between<br>
+                            <span class="text-success">border-top, border-right, border-bottom, border-left</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            1 specific style for 1 specific border: insert the word between<br>
+                            <span class="text-success">border-top-style, border-right-style, border-bottom-style,
+                                border-left-style</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Border Images <span class=" badge bg-warning">not important</span></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

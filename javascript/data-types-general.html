@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Data Types</title>
+  </head>
+  <body>
+    <!--Container-->
+    <div class="container-fluid my-3">
+      <div class="row g-0 text-center bg-primary">
+        <h1 class="text-center text-light p-5">Data Types</h1>
+      </div>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">General</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>String and Number</td>
+            <td>
+              String + Number<br>
+              Number + String<br>
+            </td>
+            <td>
+              let x = 16 + "Volvo"; <span class="text-success">// result: 16Volvo</span><br>
+              let x = 16 + 4 + "Volvo"; <span class="text-success">// result: 20Volvo</span><br>
+              let x = "Volvo" + 16; <span class="text-success">// result: Volvo16</span><br>
+              let x = "Volvo" + 16 + 4; <span class="text-success">// result: Volvo164</span><br>
+            </td>
+          </tr>
+          <tr>
+            <td>Dynamic</td>
+            <td>The same variable can be used to hold different data types</td>
+            <td>
+              let x; <span class="text-success">// Now x is undefined</span><br>
+              x = 5; <span class="text-success">// Now x is a Number</span><br>
+              x = "John"; <span class="text-success">// Now x is a String</span><br>
+            </td>
+          </tr>
+          <tr>
+            <td>String</td>
+            <td>In single or double quotes</td>
+            <td>
+              let carName1 = "Volvo XC60"; <span class="text-success">// In double quotes</span><br>
+              let carName2 = 'Volvo XC60'; <span class="text-success">// In single quotes</span><br>
+            </td>
+          </tr>
+          <tr>
+            <td>Number</td>
+            <td>With, or without decimals</td>
+            <td>
+              let x1 = 34.00; <span class="text-success">// with decimals</span><br>
+              let x2 = 34; <span class="text-success">// without decimals</span><br>             
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Extra large or small numbers with exponential notation</td>
+            <td>
+              let y = 123e5; <span class="text-success">// 12300000</span><br>
+              let z = 123e-5; <span class="text-success">// 0.00123</span><br>             
+            </td>
+          </tr>
+          <tr>
+            <td>Boolean</td>
+            <td>True or false</td>
+            <td>
+              let x = 5;<br>
+              Boolean(x == 3); <span class="text-success">// false</span><br>
+              (x == 3); <span class="text-success">// false</span><br>
+              x == 3; <span class="text-success">// false</span><br>
+            </td>
+          </tr>
+          <tr>
+            <td>Array</td>
+            <td>
+              Inside square brackets []<br>
+              Items are seperated by commas<br>
+              It's a common practice to declare arrays using const<br>
+            </td>
+            <td>
+              const cars = ["Saab", "Volvo", "BMW"];
+            </td>
+          </tr>
+          <tr>
+            <td>Object</td>
+            <td>
+               Variables that can contain many <strong>property:value</strong> pairs
+            </td>
+            <td>
+              const person = {firstName:"John"};<br>
+              <span class="text-success">// property: firstName | value: John</span><br>
+              const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};<br>
+              <span class="text-success">// 4 properties: firstName, lastName, age, and eyeColor</span><br>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>How to access object property:
+              <ol>
+                <li>objectName.propertyName</li>
+                <li>objectName["propertyName"]</li>
+              </ol>
+            </td>
+            <td>
+              person.lastName;<br>
+              person["lastName"];<br>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><strong>Object method</strong>: functions that can be performed on objects, stored as a property</td>
+            <td>
+              const person = {<br>
+                &nbsp;&nbsp;firstName: "John",<br>
+                &nbsp;&nbsp;lastName: "Doe",<br>
+                &nbsp;&nbsp;id: 5566,<br>
+                &nbsp;&nbsp;<strong>fullName: function()</strong> {<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;return this.firstName + " " + this.lastName;<br>
+                &nbsp;&nbsp;}<br>
+              };
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>How to access object method <span class="text-success">(an object property)</span>
+              <ol>
+                <li>objectName.methodName</li>
+              </ol>
+            </td>
+            <td>
+              person.fullName();<br>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <span class="badge bg-danger">avoid</span> 
+              When a JS variable is declared with the keyword <strong>new</strong><br>
+              the variable is created as an object (String, Number, Boolean objects)<br>
+              They complicate your code and slow down execution speed.
+            </td>
+            <td>
+              x = new String(); <span class="text-success">// Declares x as a String object</span><br>
+              y = new Number(); <span class="text-success">// Declares y as a Number object</span><br>
+              z = new Boolean(); <span class="text-success">// Declares z as a Boolean object</span><br>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>typeof</strong> Operator</td>
+            <td>Find the type of a JS variable</td>
+            <td>
+              typeof "" <span class="text-success">// Returns "string"</span><br>
+              typeof "John" <span class="text-success">// Returns "string"</span><br>
+              typeof (3 + 4) <span class="text-success">// Returns "number"</span><br>
+            </td>
+          </tr>
+          <tr>
+            <td>Undefined Type</td>
+            <td>Without a value => undefined value => undefined type</td>
+            <td>
+              let car; <span class="text-success">// Value is undefined, type is undefined</span><br><br>
+
+              let car = "Volvo";<br>
+              car = undefined; <span class="text-success">// Value is undefined, type is undefined</span><br>
+            </td>
+          </tr>
+          <tr>
+            <td>Empty Values</td>
+            <td>Empty string has both a legal value and type</td>
+            <td>let car = ""; <span class="text-success">// value: "" | typeof: "string"</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">Typeof</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>General</td>
+            <td>
+              <div class="row">
+                <div class="col-sm-4">
+                  Data types that CAN contain values:<br>
+                  Data types that CAN'T contain values:<br>
+                  Types of objects:<br>
+                </div>
+                <div class="col-sm-8">
+                  string | number | boolean | object | function<br>
+                  null | undefined<br>
+                  object | date | array | string | number | boolean<br>
+                </div>
+              </div>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>typeof</strong> operator</td>
+            <td>Return the data type of a variable</td>
+            <td>
+              const tp1 = "Tahbert Nguyen";<br>
+              typeof(tp1); <span class="text-success">// result: <span id="tp1ID"></span></span>
+              <script>
+                const tp1 = "Tahbert Nguyen";
+                document.getElementById("tp1ID").innerHTML=typeof(tp1);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <td>Primitive or Complex</td>
+            <td colspan="2">
+              <table class="table table-bordered">
+                <tr>
+                  <th colspan="2">Primitive: single simple data value with no additional properties and methods</th>
+                </tr>
+                <tr>
+                  <td>string</td>
+                  <td>
+                    typeof "Tahbert Nguyen"; <span class="text-success">// result: <span id="tp2ID"></span></span><br>
+                    typeof ""; <span class="text-success">// result: <span id="tp2ID_empty"></span>. (empty value)</span>
+                    <script>
+                      document.getElementById("tp2ID").innerHTML=typeof "Tahbert Nguyen";
+                      document.getElementById("tp2ID_empty").innerHTML=typeof "";
+                    </script>
+                  </td>
+                </tr>
+                <tr>
+                  <td>number</td>
+                  <td>
+                    typeof 1994; <span class="text-success">// result: <span id="tp3ID"></span></span>
+                    <script>
+                      document.getElementById("tp3ID").innerHTML=typeof 1994;
+                    </script>
+                  </td>
+                </tr>
+                <tr>
+                  <td>boolean</td>
+                  <td>
+                    typeof 10 == 9; <span class="text-success">// result: <span id="tp4ID"></span></span>
+                    <script>
+                      document.getElementById("tp4ID").innerHTML=typeof 10 == 9;
+                    </script>
+                  </td>
+                </tr>
+                <tr>
+                  <td>undefined</td>
+                  <td>
+                    typeof tp5; <span class="text-success">// result: <span id="tp5ID"></span></span>
+                    <script>
+                      document.getElementById("tp5ID").innerHTML=typeof tp5;
+                    </script>
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="2">Complex</th>
+                </tr>
+                <tr>
+                  <td>object</td>
+                  <td>
+                    typeof {fname:"Tahbert", lname:"Nguyen", age:28}; <span class="text-success">// result: <span id="tp6ID"></span></span>
+                    <script>
+                      document.getElementById("tp6ID").innerHTML=typeof {fname:"Tahbert", lname:"Nguyen", age:28};
+                    </script>
+                  </td>
+                </tr>
+                <tr>
+                  <td>array</td>
+                  <td>
+                    typeof [1,2,3,4,5]; <span class="text-success">// result: <span id="tp7ID"></span></span>
+                    <script>
+                      document.getElementById("tp7ID").innerHTML=typeof [1,2,3,4,5];
+                    </script>
+                  </td>
+                </tr>
+                <tr>
+                  <td>null</td>
+                  <td>
+                    typeof null; <span class="text-success">// result: <span id="tp8ID"></span>. It's a bug in JS that typeof null is an object. It should be null.</span>
+                    <script>
+                      document.getElementById("tp8ID").innerHTML=typeof null;
+                    </script>
+                  </td>
+                </tr>
+                <tr>
+                  <td>function</td>
+                  <td>
+                    typeof function(){}; <span class="text-success">// result: <span id="tp9ID"></span></span>
+                    <script>
+                      document.getElementById("tp9ID").innerHTML=typeof function(){};
+                    </script>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>constructor</strong> property</td>
+            <td>Return the constructor function for a variable or an object.</td>
+            <td>
+              <div class="row">
+                <div class="col-sm-6">
+                  "john".constructor;<br>
+                    (3.14).constructor;<br>
+                    false.constructor;<br>
+                    [1,2,3,4].constructor;<br>
+                    {name:'john', age:34}.constructor;<br>
+                    new Date().constructor;<br>
+                    function () {}.constructor;<br>
+                </div>
+                <div class="col-sm-6">
+                  <span class="text-success" id="tp10ID"></span>
+                  <script>
+                    document.getElementById("tp10ID").innerHTML = 
+                      "john".constructor + "<br>" +
+                      (3.14).constructor + "<br>" +
+                      false.constructor + "<br>" +
+                      [1,2,3,4].constructor + "<br>" +
+                      {name:'john', age:34}.constructor + "<br>" +
+                      new Date().constructor + "<br>" +
+                      function () {}.constructor;
+                    </script>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--Close the container-->
+  </body>
+</html>

@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <title>Media Elements</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Media Elements</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Media Elements</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <!--Secondary Heading-->
+                <tr class="sub-head">
+                    <td colspan="3">Video</td>
+                </tr>
+                <tbody>
+                    <tr>
+                        <td>&lt;video&gt;&lt;/video&gt;</td>
+                        <td>
+                            Supported formats: MP4, WebM, Ogg<br>
+                            The text between the tags: For browsers that do not support
+                        </td>
+                        <td>
+                            <video width="100%" height="auto" controls>
+                                <source src="media/video_try.mp4" typemp4="video/mp4">
+                                <source src="media/video_try.ogg" type="video/ogg">
+                                Your browser does not support the video tag.
+                            </video>
+                        </td>
+                    </tr>
+                    <!--Inside Secondary Heading-->
+                    <tr>
+                        <td></td>
+                        <td class="sub-head" colspan="3">Optional Attributes</td>
+                    </tr>
+                    <tr>
+                        <td>controls</td>
+                        <td>
+                            &lt;video <strong>controls</strong>&gt;<br>
+                            Specify that video controls should be displayed.<br>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>autoplay</td>
+                        <td>
+                            &lt;video <strong>autoplay</strong>&gt;<br>
+                            Specify that the video will automatically start playing<br>
+                            <span class="note">Chromium do not allow <strong>autoplay</strong>. However,
+                                <strong>autoplay muted</strong> is always allowed</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>muted</td>
+                        <td>
+                            &lt;video <strong>muted</strong>&gt;<br>
+                            Specify that the audio output of the video should be muted.<br>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>height|width</td>
+                        <td>
+                            <span class="badge green">always</span> &lt;video
+                            <strong>height|width</strong>="<i>pixels</i>"&gt;<br>
+                            Specify the <strong>height|width</strong> of a video player, in pixels<br>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>loop</td>
+                        <td>
+                            &lt;video <strong>loop</strong>&gt;<br>
+                            Specify that the video will start over again, every time it is finished<br>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>poster</td>
+                        <td>
+                            &lt;video <strong>poster</strong>="<i>URL</i>"&gt;<br>
+                            Specify an image to be shown while the video is downloading, or until the user hits the play
+                            button<br>
+                            <span class="note">If this is not included, the first frame of the video will be used
+                                instead</span>
+                        </td>
+                        <td>
+                            <video width="320" height="180" controls poster="media/video_try_frame.png">
+                                <source src="media/video_try.mp4" typemp4="video/mp4">
+                                <source src="media/video_try.ogg" type="video/ogg">
+                                Your browser does not support the video tag.
+                            </video>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>preload</td>
+                        <td>
+                            &lt;video <strong>preload</strong>="<i>auto|metadata|none</i>"&gt;<br>
+                            Specify if and how the author thinks that the video should be loaded when the page loads.<br>
+                            <span class="note">
+                                (load the entire video | load only metadata | NOT load the video)<br>
+                                Ignored if <strong>autoplay</strong> is set
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>src</td>
+                        <td>
+                            &lt;video <strong>src</strong>="<i>URL</i>"&gt;<br>
+                            Specify the location (URL) of the video file<br>
+                            <span class="note">Using <strong>&lt;source&gt;</strong> for sure on all browsers
+                                support</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary Heading-->
+                    <tr class="sub-head">
+                        <td colspan="3">Audio</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;audio&gt;&lt;/audio&gt;</td>
+                        <td>
+                            Supported formats: MP3, WAV, and Ogg<br>
+                            <span class="note">The text between the tags: For browsers that do not support</span>
+                        </td>
+                        <td>
+                            <audio controls>
+                                <source src="media/audio_try.ogg" type="audio/ogg">
+                                <source src="media/audio_try.mp3" type="audio/mp3">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                    </tr>
+                    <!--Inside Secondary Heading-->
+                    <tr>
+                        <td></td>
+                        <td class="sub-head" colspan="3">Optional Attributes</td>
+                    </tr>
+                    <tr>
+                        <td>autoplay</td>
+                        <td>
+                            &lt;audio <strong>autoplay</strong>&gt;<br>
+                            Specify that the audio will automatically start playing<br>
+                            <span class="note">Chromium do not allow <strong>autoplay</strong>. However,
+                                <strong>autoplay muted</strong> is always allowed</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>muted</td>
+                        <td>
+                            &lt;audio <strong>muted</strong>&gt;<br>
+                            Specify that the audio output of the audio should be muted.<br>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>loop</td>
+                        <td>
+                            &lt;audio <strong>loop</strong>&gt;<br>
+                            Specify that the audio will start over again, every time it is finished<br>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>preload</td>
+                        <td>
+                            &lt;audio <strong>preload</strong>="<i>auto|metadata|none</i>"&gt;<br>
+                            Specify if and how the author thinks that the audio should be loaded when the page loads.<br>
+                            <span class="note">
+                                (load the entire audio | load only metadata | NOT load the audio)<br>
+                                Ignored if <strong>autoplay</strong> is set
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>src</td>
+                        <td>
+                            &lt;audio <strong>src</strong>="<i>URL</i>"&gt;<br>
+                            Specify the location (URL) of the audio file<br>
+                            <span class="note">Using <strong>&lt;source&gt;</strong> for sure on all browsers
+                                support</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary Heading-->
+                    <tr class="sub-head">
+                        <td colspan="3">Tracks</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;track&gt;&lt;/track&gt;</td>
+                        <td>
+                            Specify text tracks for &lt;audio&gt; or &lt;video&gt; elements<br>
+                            <span class="note">(subtitles, caption files or other files containing text, that should
+                                be visible when the media is playing)<br>
+                                Supported format: .vtt</span>
+                        </td>
+                        <td>
+                            <video width="320" height="180" controls>
+                                <source src="media/video_try.mp4" type="video/mp4">
+                                <track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="English">
+                                <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">
+                            </video>
+                        </td>
+                    </tr>
+                    <!--Inside Secondary Heading-->
+                    <tr>
+                        <td></td>
+                        <td class="sub-head" colspan="3">Optional Attributes</td>
+                    </tr>
+                    <tr>
+                        <td>src</td>
+                        <td>
+                            &lt;track <strong>src</strong>="<i>URL</i>"&gt;<br>
+                            Specify the URL of the track file
+                        </td>
+                        <td>
+                            &lt;track <strong>src</strong>="subtitles_en.vtt" kind="subtitles" srclang="en"&gt;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>default</td>
+                        <td>
+                            &lt;track src="<i>URL</i> <strong>default</strong>"&gt;<br>
+                            Specify that the track is to be enabled if the user's preferences do not indicate that another
+                            track would be more appropriate<br>
+                            <span class="note">Only be one &lt;track&gt; element with a default attribute per
+                                &lt;media&gt;</span>
+                        </td>
+                        <td>
+                            &lt;track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="English"
+                            <strong>default</strong>&gt;<br>
+                            &lt;track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian"&gt;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>kind</td>
+                        <td>
+                            &lt;track <strong>kind</strong>="<i>value</i>"&gt;<br>
+                            Specify the kind of text track.<br>
+                            <ul class="note">
+                                <li>captions: translation of dialogue and sound effects (suitable for deaf users)</li>
+                                <li>chapters: chapter titles (suitable for navigating the media resource)</li>
+                                <li>descriptions: a textual description of the video content (suitable for blind users)</li>
+                                <li>metadata: content used by scripts. Not visible for the user</li>
+                                <li>subtitles: used to display subtitles in a video</li>
+                            </ul>
+                        </td>
+                        <td>
+                            &lt;track src="subtitles_en.vtt" <strong>kind</strong>="subtitles" srclang="en"&gt;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>srclang</td>
+                        <td>
+                            &lt;track <strong>srclang</strong>="<i>language_code</i>"&gt;<br>
+                            <span class="badge red">required</span> if kind="subtitles". Specify the language of the
+                            track text data<br>
+                        </td>
+                        <td>
+                            &lt;track src="subtitles_en.vtt" <strong>kind</strong>="subtitles"
+                            <strong>srclang</strong>="en"&gt;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>label</td>
+                        <td>
+                            &lt;track <strong>lable</strong>="<i>text</i>"&gt;<br>
+                            Specify the title of the text track, also for the browser to list available tracks</td>
+                        <td>
+                            &lt;track src="subtitles_en.vtt" kind="subtitles" srclang="en"
+                            <strong>label</strong>="English"&gt;
+                        </td>
+                    </tr>
+                    <!--Secondary Heading-->
+                    <tr class="sub-head">
+                        <td colspan="3">Source</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;source&gt;&lt;/source&gt;</td>
+                        <td>
+                            Specify multiple media resources for media elements, such as &lt;video&gt;, &lt;audio&gt;,
+                            &lt;picture&gt;<br>
+                            <span class="note">The first recognized is used</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>media</td>
+                        <td>
+                            &lt;source <strong>media</strong>="<i>media_query</i>"&gt;<br>
+                            Accept any valid media query that would normally be defined in a CSS<br>
+                            <span class="note">Multiple value are allowed with Operators:
+                                <strong>and|not|,</strong></span>
+                        </td>
+                        <td>
+                            <a href="https://www.w3schools.com/tags/att_source_media.asp">see all values here</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>src</td>
+                        <td>
+                            &lt;source <strong>src</strong>="<i>URL</i>"&gt;<br>
+                            Specify the URL of the media file<br>
+                            <span class="note"></span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>type</td>
+                        <td>
+                            &lt;source <strong>type</strong>="<i>MIME-type</i>"&gt;<br>
+                            Specify the Internet media type (formerly known as MIME type) of the media resource.<br>
+                            <span class="note"></span>
+                        </td>
+                        <td>
+                            &lt;source src="horse.ogg" <strong>type</strong>="audio/ogg"&gt;
+                        </td>
+                    </tr>
+                    <!--Secondary Heading-->
+                    <tr class="sub-head">
+                        <td colspan="3">Youtube</td>
+                    </tr>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            The easiest way to play videos in HTML<br>
+                            Using &lt;iframe&gt;&lt;/iframe&gt;
+                            <span class="note"></span>
+                        </td>
+                        <td>
+                            <iframe width="320" height="180" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>muted</td>
+                        <td>
+                            ?muted=0: disable mute <span class="note">(default)</span><br>
+                            ?muted=1: enalbe mute
+                        </td>
+                        <td>
+                            <iframe width="320" height="180"
+                                src="https://www.youtube.com/embed/tgbNymZ7vqY?mute=1"></iframe>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            autoplay and muted: <br>
+                            ?autoplay=1&mute=1
+                        </td>
+                        <td>
+                            <iframe width="320" height="180"
+                                src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"></iframe>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>loop</td>
+                        <td>
+                            ?loop=0: disable loop <span class="note">(default)</span><br>
+                            ?playlist=<i>URL ending</i>&loop=1: enalbe loop
+                        </td>
+                        <td>
+                            <iframe width="320" height="180"
+                                src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1" loop=1></iframe>
+                        </td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>controls</td>
+                        <td>
+                            ?controls=1: enable controls <span class="note">(default)</span><br>
+                            ?controls=0: disable controls
+                        </td>
+                        <td>
+                            <iframe width="320" height="180"
+                                src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"></iframe>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

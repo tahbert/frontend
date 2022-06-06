@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <title>Semantic Elements</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Semantic Elements</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Semantic Elements</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&lt;div&gt;&lt;/div&gt;</td>
+                        <td>
+                            Define a section<br>
+                            <span class="note">Used as a container for other HTML elements</span>
+                        </td>
+                        <td>
+                            <div class="myDiv">
+                                <h2>This is a heading in a div element</h2>
+                                <p>This is some text in a div element.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;span&gt;&lt;/span&gt;</td>
+                        <td>
+                            Define a section<br>
+                            <span class="note">Used to mark up a part of a text, or a part of a document</span>
+                        </td>
+                        <td>
+                            <p>My mother has <span style="color:blue">blue</span> eyes.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;header&gt;&lt;/header&gt;</td>
+                        <td>
+                            A container for introductory content or a set of navigational links<br>
+                            <ul class="note">
+                                <li>Several &lt;header&gt; in a document is allowed</li>
+                                <li>Can't be within a &lt;footer&gt;, &lt;address&gt; or another &lt;header&gt;</li>
+                                <li>Typical: authorship, heading elements, logo or icon.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <article>
+                                <header>
+                                    <h1>A heading here</h1>
+                                    <p>Posted by John Doe</p>
+                                    <p>Some additional information here</p>
+                                </header>
+                                <p>Lorem Ipsum dolor set amet....</p>
+                            </article>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;main&gt;&lt;/main&gt;</td>
+                        <td>
+                            A container for main content of a document<br>
+                            <ul class="note">
+                                <li>Only one &lt;main&gt; in a document</li>
+                                <li>Can't be inside &lt;article&gt;, &lt;aside&gt;, &lt;footer&gt;, &lt;header&gt;,
+                                    &lt;nav&gt;</li>
+                                <li>The content should be unique to the document. It should not contain any content that is
+                                    repeated across documents such as sidebars, navigation links, copyright information,
+                                    site logos, and search forms</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <main>
+                                <h1>Most Popular Browsers</h1>
+                                <p>Chrome, Firefox, and Edge are the most used browsers today.</p>
+    
+                                <article>
+                                    <h2>Google Chrome</h2>
+                                    <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the
+                                        world's most popular web browser today!</p>
+                                </article>
+    
+                                <article>
+                                    <h2>Microsoft Edge</h2>
+                                    <p>Microsoft Edge is a web browser developed by Microsoft, released in 2015. Microsoft
+                                        Edge replaced Internet Explorer.</p>
+                                </article>
+                            </main>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;footer&gt;&lt;/footer&gt;</td>
+                        <td>
+                            Define a footer for a document or section<br>
+                            <ul class="note">
+                                <li>Several &lt;footer&gt; in a document is allowed</li>
+                                <li>Can't be within a &lt;footer&gt;, &lt;address&gt; or another &lt;footer&gt;</li>
+                                <li>Typical: authorship, copyright, contact, sitemap, back to top links, related documents
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <footer>
+                                <p>Author: Hege Refsnes</p>
+                                <p><a href="mailto:hege@example.com">hege@example.com</a></p>
+                            </footer>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;section&gt;&lt;/section&gt;</td>
+                        <td>Define a section in a document</td>
+                        <td>
+                            <section>
+                                <h2>WWF History</h2>
+                                <p>The World Wide Fund for Nature (WWF) is an international organization working on issues
+                                    regarding the conservation, research and restoration of the environment, formerly named
+                                    the World Wildlife Fund. WWF was founded in 1961.</p>
+                            </section>
+    
+                            <section>
+                                <h2>WWF's Symbol</h2>
+                                <p>The Panda has become the symbol of WWF. The well-known panda logo of WWF originated from
+                                    a panda named Chi Chi that was transferred from the Beijing Zoo to the London Zoo in the
+                                    same year of the establishment of WWF.</p>
+                            </section>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;article&gt;&lt;/article&gt;</td>
+                        <td>Define independent, self-contained content<br>
+                            <span class="note">Typical : forum post, blog post, news story</span>
+                        </td>
+                        <td>
+                            <article>
+                                <h2>Google Chrome</h2>
+                                <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the
+                                    world's most popular web browser today!</p>
+                            </article>
+    
+                            <article>
+                                <h2>Microsoft Edge</h2>
+                                <p>Microsoft Edge is a web browser developed by Microsoft, released in 2015. Microsoft Edge
+                                    replaced Internet Explorer.</p>
+                            </article>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;aside&gt;&lt;/aside&gt;</td>
+                        <td>Define content aside from the page content<br>
+                            <ul class="note">
+                                <li>Should be indirectly related to the surrounding content</li>
+                                <li>Often placed as a sidebar in a document</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <p>My family and I visited The Epcot center this summer. The weather was nice, and Epcot was
+                                amazing! I had a great summer together with my family!</p>
+    
+                            <aside>
+                                <h4>Epcot Center</h4>
+                                <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
+                                    international pavilions, award-winning fireworks and seasonal special events.</p>
+                            </aside>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;details&gt;&lt;/details&gt;</td>
+                        <td>Define additional details the user can view or hide<br>
+                            <span class="note">Default: the widget is closed</span>
+                        </td>
+                        <td rowspan="2">
+                            <details>
+                                <summary>Epcot Center</summary>
+                                <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
+                                    international pavilions, award-winning fireworks and seasonal special events.</p>
+                            </details>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;summary&gt;&lt;/summary&gt;</td>
+                        <td>Define a visible heading for a &lt;details&gt;<br>
+                            <ul class="note">
+                                <li>The heading can be clicked to view/hide the details</li>
+                                <li>Position: should be the first child element</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;dialog&gt;&lt;/dialog&gt;</td>
+                        <td>Define a dialog box or subwindow<br>
+                            <ul class="note">
+                                <li>Make it easy to create popup dialogs and modals on a web page</li>
+                                <li>Not supported by Safari</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <dialog style="position:relative;" open>This is an open dialog window</dialog>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>open</strong> attribute: Specify that the dialog element is active and that the user can
+                            interact with it.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;data&gt;&lt;/data&gt;</td>
+                        <td>Add a machine-readable translation of a given content<br>
+                            <ul class="note">
+                                <li>If the content is time- or date-related, use the &lt;time&gt; instead</li>
+                                <li>Provide both a machine-readable value for data processors, and a human-readable value
+                                    for rendering in a browser</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><data value="21053">Cherry Tomato</data></li>
+                                <li><data value="21054">Beef Tomato</data></li>
+                                <li><data value="21055">Snack Tomato</data></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

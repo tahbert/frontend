@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Utilities</title>
+  </head>
+  <body>
+    <!--Container-->
+    <div class="container-fluid my-3">
+      <div class="row g-0 text-center bg-primary">
+        <h1 class="text-center text-light p-5">Utilities</h1>
+      </div>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">Utilities</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Background</td>
+          </tr>
+          <tr>
+            <td>Basic</td>
+            <td>.bg-*</td>
+            <td class="row">
+              <div class="col-sm-6">
+                <div class="p-2 mb-2 bg-primary text-white">.bg-primary</div>
+                <div class="p-2 mb-2 bg-secondary text-white">.bg-secondary</div>
+                <div class="p-2 mb-2 bg-success text-white">.bg-success</div>
+                <div class="p-2 mb-2 bg-danger text-white">.bg-danger</div>
+                <div class="p-2 mb-2 bg-warning text-dark">.bg-warning</div>
+                <div class="p-2 mb-2 bg-info text-dark">.bg-info</div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="p-2 mb-2 bg-light text-dark">.bg-light</div>
+                <div class="p-2 mb-2 bg-dark text-white">.bg-dark</div>
+                <div class="p-2 mb-2 bg-body text-dark">.bg-body</div>
+                <div class="p-2 mb-2 bg-white text-dark">.bg-white</div>
+                <div class="p-2 mb-2 bg-transparent text-dark">.bg-transparent</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Gradient</td>
+            <td>.bg-* .bg-gradient</td>
+            <td class="row">
+              <div class="col-sm-6">
+                <div class="p-2 mb-2 bg-primary bg-gradient text-white">.bg-primary .bg-gradient</div>
+                <div class="p-2 mb-2 bg-secondary bg-gradient text-white">.bg-secondary .bg-gradient</div>
+                <div class="p-2 mb-2 bg-success bg-gradient text-white">.bg-success .bg-gradient</div>
+                <div class="p-2 mb-2 bg-danger bg-gradient text-white">.bg-danger .bg-gradient</div>
+                <div class="p-2 mb-2 bg-warning bg-gradient text-dark">.bg-warning .bg-gradient</div>
+                <div class="p-2 mb-2 bg-info bg-gradient text-dark">.bg-info .bg-gradient</div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="p-2 mb-2 bg-light bg-gradient text-dark">.bg-light .bg-gradient</div>
+                <div class="p-2 mb-2 bg-dark bg-gradient text-white">.bg-dark .bg-gradient</div>
+                <div class="p-2 mb-2 bg-body bg-gradient text-dark">.bg-body .bg-gradient</div>
+                <div class="p-2 mb-2 bg-white bg-gradient text-dark">.bg-white .bg-gradient</div>
+                <div class="p-2 mb-2 bg-transparent bg-gradient text-dark">.bg-transparent .bg-gradient</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Opacity</td>
+            <td>.bg-opacity-*<br>
+              <span class="text-success">the star: percentage</span>
+            </td>
+            <td>
+              <div class="bg-success p-2 text-dark">Default</div>
+              <div class="bg-success p-2 text-dark bg-opacity-75">bg-opacity-75</div>
+              <div class="bg-success p-2 text-dark bg-opacity-50">bg-opacity-50</div>
+              <div class="bg-success p-2 text-dark bg-opacity-25">bg-opacity-25</div>
+              <div class="bg-success p-2 text-dark bg-opacity-10">bg-opacity-10</div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Border</td>
+          </tr>
+          <tr>
+            <td>Additive</td>
+            <td></td>
+            <td>
+              <div class="border d-inline-block bg-light p-3">.border</div>
+              <div class="border-top d-inline-block bg-light p-3">.border-top</div>
+              <div class="border-end d-inline-block bg-light p-3">.border-end</div>
+              <div class="border-bottom d-inline-block bg-light p-3">.border-bottom</div>
+              <div class="border-start d-inline-block bg-light p-3">.border-start</div>
+            </td>
+          </tr>
+          <tr>
+            <td>Subtractive</td>
+            <td></td>
+            <td>
+              <div class="border-0 d-inline-block bg-light p-3">.border-0</div>
+              <div class="border border-top-0 d-inline-block bg-light p-3">.border .border-top-0</div>
+              <div class="border border-end-0 d-inline-block bg-light p-3">.border .border-end-0</div>
+              <div class="border border-bottom-0 d-inline-block bg-light p-3">.border .border-bottom-0</div>
+              <div class="border border-start-0 d-inline-block bg-light p-3">.border .border-start-0</div>
+            </td>
+          </tr>
+          <tr>
+            <td>Colored</td>
+            <td>
+              .border .border-*<br>
+              <span>the star: contextual utilities</span>
+            </td>
+            <td>
+              <div class="border border-primary d-inline-block bg-light p-3">.border .border-primary</div>
+              <div class="border border-success d-inline-block bg-light p-3">.border .border-success</div>
+            </td>
+          </tr>
+          <tr>
+            <td>Width</td>
+            <td>.border .border-*</td>
+            <span class="text-success">the star: 1 to 5</span>
+            <td>
+              <div class="border border-1 d-inline-block bg-light p-3">.border .border-1</div>
+              <div class="border border-5 d-inline-block bg-light p-3">.border .border-5</div>
+            </td>
+          </tr>
+          <tr>
+            <td>Radius</td>
+            <td>
+              .rounded-*<br>
+              <span class="text-success">the star: the style</span><br>
+              .rounded-*<br>
+              <span class="text-success">the star: the size from 1 - 3</span>
+            </td>
+            <span>the star: 1 to 5</span>
+            <td>
+              <h6>the styles</h6>
+              <div class="rounded d-inline-block bg-warning p-3">.rounded</div>
+              <div class="rounded-circle d-inline-block bg-warning p-3">.rounded-circle</div>
+              <div class="rounded-pill d-inline-block bg-warning p-3">.rounded-pill</div>
+              <div class="rounded-top d-inline-block bg-warning p-3">.rounded-top</div>
+              <div class="rounded-end d-inline-block bg-warning p-3">.rounded-end</div>
+              <div class="rounded-bottom d-inline-block bg-warning p-3">.rounded-bottom</div>
+              <div class="rounded-start d-inline-block bg-warning p-3">.rounded-start</div>
+              
+              <h6 class="mt-3">the size</h6>
+              <div class="rounded-1 d-inline-block bg-warning p-3">.rounded-pill</div>
+              <div class="rounded-2 d-inline-block bg-warning p-3">.rounded-pill</div>
+              <div class="rounded-3 d-inline-block bg-warning p-3">.rounded-pill</div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Color</td>
+          </tr>
+          <tr>
+            <td>Basic</td>
+            <td>
+              text-*<br>
+              <span class="text-success">the star: contextual utilities</span>
+            </td>
+            <td class="row">
+              <div class="col-sm-6">
+                <div class="mb-2 p-2 bg-light text-primary">.text-divrimary</div>
+                <div class="mb-2 p-2 bg-light text-secondary">.text-secondary</div>
+                <div class="mb-2 p-2 bg-light text-success">.text-success</div>
+                <div class="mb-2 p-2 bg-light text-danger">.text-danger</div>
+                <div class="mb-2 p-2 bg-light text-warning bg-dark">.text-warning</div>
+                <div class="mb-2 p-2 bg-light text-info bg-dark">.text-info</div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="mb-2 p-2 bg-light text-light bg-dark">.text-light</div>
+                <div class="mb-2 p-2 bg-light text-dark">.text-dark</div>
+                <div class="mb-2 p-2 bg-light text-body">.text-body</div>
+                <div class="mb-2 p-2 bg-light text-muted">.text-muted</div>
+                <div class="mb-2 p-2 bg-light text-white bg-dark">.text-white</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Opacity</td>
+            <td>
+              .text-opacity-*<br>
+              <span class="text-success">the star: percentage</span>
+            </td>
+            <td>
+              <div class="mb-2 p-2 bg-light bg-light text-primary">default</div>
+              <div class="mb-2 p-2 bg-light bg-light text-primary text-opacity-75">text-opacity-75</div>
+              <div class="mb-2 p-2 bg-light bg-light text-primary text-opacity-50">text-opacity-50</div>
+              <div class="mb-2 p-2 bg-light bg-light text-primary text-opacity-25">text-opacity-25</div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Display</td>
+          </tr>
+          <tr>
+            <td>Basic</td>
+            <td>
+              .d-* <span class="text-success">the star: value</span><br>
+              .d-*-* for responsive <span class="text-success">1st star: breakpoint | 2nd star: value</span><br>
+            </td>
+            <td>
+              <div class="d-inline p-2 bg-primary text-white">d-inline</div>
+              <div class="d-inline p-2 bg-dark text-white">d-inline</div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Float</td>
+          </tr>
+          <tr>
+            <td>Basic</td>
+            <td>
+              .float-*-start<br>
+              .float-*-end<br>
+              .float-*-none<br>
+              <span class="text-success">the star: breakpoint</span>
+            </td>
+            <td>
+              <div class="float-start">.float-start</div><br>
+              <div class="float-end">.float-end</div><br>
+              <div class="float-none">.float-none</div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Interactions</td>
+          </tr>
+          <tr>
+            <td>Text selection</td>
+            <td>
+              .user-select-auto<br>
+              .user-select-all<br>
+              .user-select-none<br>
+            </td>
+            <td>
+              <p class="user-select-auto">.user-select-auto (default)</p>
+              <p class="user-select-all">.user-select-all</p>
+              <p class="user-select-none">.user-select-none</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Pointer events</td>
+            <td>
+              .pe-auto (default)<br>
+              .pe-none<br>
+            </td>
+            <td>
+              <p><a href="#" class="pe-auto">.pe-auto</a> can be clicked</p>
+              <p><a href="#" class="pe-none" tabindex="-1" aria-disabled="true">.pe-none</a> can not be clicked</p>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Opacity</td>
+          </tr>
+          <tr>
+            <td>Basic</td>
+            <td>
+              .opacity-*<br>
+              <span class="text-success">the star: percentage</span><br>
+            </td>
+            <td>
+              <div class="d-inline-block bg-success text-white p-3 rounded-pill opacity-100">.opacity-100</div>
+              <div class="d-inline-block bg-success text-white p-3 rounded-pill opacity-75">.opacity-75</div>
+              <div class="d-inline-block bg-success text-white p-3 rounded-pill opacity-50">.opacity-50</div>
+              <div class="d-inline-block bg-success text-white p-3 rounded-pill opacity-25">.opacity-25</div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Opacity</td>
+          </tr>
+          <tr>
+            <td>Basic</td>
+            <td>
+              .overflow-visible (default)<br>
+              .overflow-auto<br>
+              .overflow-hidden<br>
+              .overflow-scroll<br>
+            </td>
+            <td>
+              <div class="bg-success p-3 mb-3 overflow-visible" style="width: 100px; white-space: nowrap;" >.overflow-visible</div>
+              <div class="bg-success p-3 mb-3 overflow-hidden" style="width: 100px; white-space: nowrap;" >.overflow-hidden</div>
+              <div class="bg-success p-3 mb-3 overflow-auto" style="width: 100px; white-space: nowrap;" >.overflow-auto</div>
+              <div class="bg-success p-3 mb-3 overflow-scroll" style="width: 100px; white-space: nowrap;" >.overflow-scroll</div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Position</td>
+          </tr>
+          <tr>
+            <td>Basic</td>
+            <td>
+              .position-static<br>
+              .position-relative<br>
+              .position-absolute<br>
+              .position-fixed<br>
+              .position-sticky<br>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Edge position</td>
+            <td>
+              .top-*<br>
+              .end-*<br>
+              .bottom-*<br>
+              .start-*<br>
+              <span class="text-success">star: percentage</span>
+            </td>
+            <td>
+              <div class="position-relative bg-light border border-success" style="height: 100px; width: 50%;">
+                <div class="position-absolute bg-success p-3 top-0 start-50">top-0 start-50</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Center elements</td>
+            <td>
+              .translate-middle both horizontally and vertically<br>
+              .translate-middle-x positioned horizontally<br>
+              .translate-middle-y positioned vertically<br>
+            </td>
+            <td>
+              <h6 class="mb-3">.translate-middle</h6>
+              <div class="position-relative ms-5 bg-light border border-success" style="height: 150px; width: 50%;">
+                <div class="position-absolute bg-success p-3 top-0 start-0 translate-middle"></div>
+                <div class="position-absolute bg-success p-3 top-0 start-50 translate-middle"></div>
+                <div class="position-absolute bg-success p-3 top-0 start-100 translate-middle"></div>
+                <div class="position-absolute bg-success p-3 top-50 start-100 translate-middle"></div>
+                <div class="position-absolute bg-success p-3 top-100 start-100 translate-middle"></div>
+                <div class="position-absolute bg-success p-3 top-100 start-50 translate-middle"></div>
+                <div class="position-absolute bg-success p-3 top-100 start-0 translate-middle"></div>
+                <div class="position-absolute bg-success p-3 top-50 start-0 translate-middle"></div>
+                <div class="position-absolute bg-success p-3 top-50 start-50 translate-middle"></div>
+              </div>
+
+              <h6 class="mb-3 mt-5">.translate-middle-x or .translate-middle-y</h6>
+              <div class="position-relative ms-5 bg-light border border-success" style="height: 150px; width: 50%;">
+                <div class="position-absolute bg-success p-3 top-0 start-0"></div>
+                <div class="position-absolute bg-success p-3 top-0 start-50 translate-middle-x"></div>
+                <div class="position-absolute bg-success p-3 top-0 end-0"></div>
+                <div class="position-absolute bg-success p-3 top-50 end-0 translate-middle-y"></div>
+                <div class="position-absolute bg-success p-3 bottom-0 end-0"></div>
+                <div class="position-absolute bg-success p-3 bottom-0 start-50 translate-middle-x"></div>
+                <div class="position-absolute bg-success p-3 bottom-0 start-0"></div>
+                <div class="position-absolute bg-success p-3 top-50 start-0 translate-middle-y"></div>
+              </div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Shadows</td>
+          </tr>
+          <tr>
+            <td>Basic</td>
+            <td>
+              .shadow-none<br>
+              .shadow-sm<br>
+              .shadow<br>
+              .shadow-lg<br>
+            </td>
+            <td class="row g-3">
+              <div class="col-sm-3 shadow-none p-3 mb-5 bg-light rounded">No shadow</div>
+              <div class="col-sm-3 shadow-sm p-3 mb-5 bg-body rounded">Small shadow</div>
+              <div class="col-sm-3 shadow p-3 mb-5 bg-body rounded">Regular shadow</div>
+              <div class="col-sm-3 shadow-lg p-3 mb-5 bg-body rounded">Larger shadow</div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Sizing</td>
+          </tr>
+          <tr>
+            <td>
+              Relative<br>
+              <span class="text-success">(to the parent)</span>
+            </td>
+            <td>
+              .w-* for width <span class="text-success">percentage</span><br>
+              .mw-* for max-width <span class="text-success">percentage</span><br><br>
+              
+              .h-* for height <span class="text-success">percentage</span><br>
+              .mh-* for max-height <span class="text-success">percentage</span><br>
+            </td>
+            <td class="row">
+              <div class="col-sm-6">
+                <div class="w-auto p-3" style="background-color: #eee;">w-auto</div>
+                <div class="w-100 p-3" style="background-color: #eee;">w-100</div>
+                <div class="w-75 p-3" style="background-color: #eee;">w-75</div>
+                <div class="w-50 p-3" style="background-color: #eee;">w-50</div>
+                <div class="w-25 p-3" style="background-color: #eee;">w-25</div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="h-100 d-inline-block" style="background-color: #eee;">h-100</div>
+                <div class="h-75 d-inline-block" style="background-color: #eee;">h-75</div>
+                <div class="h-50 d-inline-block" style="background-color: #eee;">h-50</div>
+                <div class="h-25 d-inline-block" style="background-color: #eee;">h-25</div>
+                <div class="h-auto d-inline-block" style="background-color: #eee;">h-auto</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Relative<br>
+              <span class="text-success">(to the vewport)</span>
+            </td>
+            <td>
+              .vw-* for width <span class="text-success">percentage</span><br>
+              .min-vw-* for min-width <span class="text-success">percentage</span><br>
+              .max-vw-* for max-width <span class="text-success">percentage</span><br><br>
+              .vh-* for height <span class="text-success">percentage</span><br>
+              .min-vh-* for min-width <span class="text-success">percentage</span><br>
+              .max-vh-* for max-width <span class="text-success">percentage</span><br>
+            </td>
+            <td></td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Spacing</td>
+          </tr>
+          <tr>
+            <td>Margin</td>
+            <td>
+              <strong>Margin</strong><br>
+              .m-*-* for all margin<br>
+              .mx-*-* for horizontal margin<br>
+              .my-*-* for vertical margin<br>
+              .mt-*-* for top margin<br>
+              .me-*-* for right margin<br>
+              .mb-*-* for bottom margin<br>
+              .ms-*-* for left margin<br>
+              <span class="text-success">1st star: breakpoint | 2nd star: auto or 1 to 5</span><br>
+            </td>
+            <td>
+              <strong>Padding</strong><br>
+              .p-*-* for all padding<br>
+              .px-*-* for horizontal padding<br>
+              .py-*-* for vertical padding<br>
+              .pt-*-* for top padding<br>
+              .pe-*-* for right padding<br>
+              .pb-*-* for bottom padding<br>
+              .ps-*-* for left padding<br>
+              <span class="text-success">1st star: breakpoint | 2nd star: auto or 1 to 5</span><br>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <strong>Negative margin</strong>: disabled by default<br>
+              Syntax: with "n" before the size (Ex: m-n3)<br>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Horizontal centering</td>
+            <td>.mx-auto to element with display: block; and a width set</td>
+            <td>
+              <div class="mx-auto mb-2 p-2" style="background: #04AA6D;">
+                Centered with width not set
+              </div>
+
+              <div class="mx-auto mb-2 p-2" style="background: #04AA6D; width: 200px;">
+                Centered with width set
+              </div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Text</td>
+          </tr>
+          <tr>
+            <td>Alignment</td>
+            <td>
+              text-*-start <span class="text-danger">(default)</span><br>
+              text-*-end<br>
+              text-*-center<br>
+              <span class="text-success">(the star: breakpoint)</span>
+            </td>
+            <td>
+              <p class="bg-warning p-2 text-start">.text-start</p>
+              <p class="bg-warning p-2 text-center">.text-center</p>
+              <p class="bg-warning p-2 text-end">.text-end</p>
+            </td>
+          </tr>
+          <tr>
+            <td>wrapping and overflow</td>
+            <td>
+              <span class="text-danger">.text-wrap</span><br>
+              .text-nowrap<br>
+            </td>
+            <td>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="bg-warning text-wrap" style="width: 6rem;">
+                    .text-wrap => This text should wrap.
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="bg-warning text-nowrap" style="width: 6rem;">
+                    .text-nowrap => This text should overflow the parent.
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Word break</td>
+            <td>.text-break</td>
+            <td>
+              <p class="text-break">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Text transform</td>
+            <td>
+              .text-lowercase<br>
+              .text-uppercase<br>
+              .text-capitalize<br>
+            </td>
+            <td>
+              <div class="d-inline-block me-5 text-lowercase">text-lowercase</div>
+              <div class="d-inline-block me-5 text-uppercase">text-uppercase</div>
+              <div class="d-inline-block me-5 text-capitalize">text-capitalize</div>
+            </td>
+          </tr>
+          <tr>
+            <td>Font size</td>
+            <td>
+              .fs-* <span class="text-success">star: from 1 to 6</span>
+            </td>
+            <td>
+              <div class="d-inline-block me-2 fs-1">.fs-1 text</div>
+              <div class="d-inline-block me-2 fs-2">.fs-2 text</div>
+              <div class="d-inline-block me-2 fs-3">.fs-3 text</div>
+              <div class="d-inline-block me-2 fs-4">.fs-4 text</div>
+              <div class="d-inline-block me-2 fs-5">.fs-5 text</div>
+              <div class="d-inline-block me-2 fs-6">.fs-6 text</div>
+            </td>
+          </tr>
+          <tr>
+            <td>Font style</td>
+            <td>
+              .fst-normal|italic<br>
+              .fw-normal|lighter|light|bold|bolder<br>
+            </td>
+            <td>
+              <div class="d-inline-block me-2 fw-lighter">fw-lighter</div>
+              <div class="d-inline-block me-2 fw-light">fw-light</div>
+              <div class="d-inline-block me-2 fw-normal">fw-normal</div>
+              <div class="d-inline-block me-2 fw-bold">fw-bold</div>
+              <div class="d-inline-block me-2 fw-bolder">fw-bolder</div>
+              <div class="d-inline-block me-2 fst-normal">fst-normal</div>
+              <div class="d-inline-block me-2 fst-italic">fst-italic</div>
+            </td>
+          </tr>
+          <tr>
+            <td>Line height</td>
+            <td>
+              .lh-*<br>
+            </td>
+            <td>
+              <p class="lh-1"><strong>.lh-1</strong> This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+              <p class="lh-sm"><strong>.lh-sm</strong> This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+              <p class="lh-base"><strong>.lh-base</strong> This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+              <p class="lh-lg"><strong>.lh-lg</strong> This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Monospace</td>
+            <td>.font-monospace</td>
+            <td><p class="font-monospace">.font-monospace This is in monospace</p></td>
+          </tr>
+          <tr>
+            <td>Reset color</td>
+            <td>.text-reset => inherit from its parent</td>
+            <td>
+              <p class="text-muted">
+                Muted text with a <a href="#" class="text-reset">reset link</a>.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>Text decoration</td>
+            <td>
+              .text-decoration-none<br>
+              .text-decoration-underline<br>
+              .text-decoration-line-through<br>
+            </td>
+            <td>
+              <p class="text-decoration-underline">.text-decoration-underline</p>
+              <p class="text-decoration-line-through">This text has a line going through it.</p>
+              <a href="#" class="text-decoration-none">.text-decoration-none</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Vertical align</td>
+            <td>
+              .align-baseline|top|middle|bottom|text-bottom|align-text-top<br>
+              <span class="text-success">Only affects inline, inline-block, inline-table, table cell<br>
+              To vertically center non-inline content, use flex box utilities<br></span>
+            </td>
+            <td class="row">
+              <div class="col-sm-6">
+                <h6>With inline elements:</h6>
+                <span class="align-baseline">baseline</span>
+                <span class="align-top">top</span>
+                <span class="align-middle">middle</span>
+                <span class="align-bottom">bottom</span>
+                <span class="align-text-top">text-top</span>
+                <span class="align-text-bottom">text-bottom</span>
+              </div>
+              
+              <div class="col-sm-6">
+                <h6 class="mt-3">With table cells:</h6>
+                <table style="height: 100px;">
+                  <tbody>
+                    <tr>
+                      <td class="align-baseline">baseline</td>
+                      <td class="align-top">top</td>
+                      <td class="align-middle">middle</td>
+                      <td class="align-bottom">bottom</td>
+                      <td class="align-text-top">text-top</td>
+                      <td class="align-text-bottom">text-bottom</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Visibility</td>
+            <td>
+              .visible<br>
+              .invisible<br>
+            </td>
+            <td class="row">
+              <div class="col-sm-6">
+                <h6>below is visible</h6>
+                <div class="visible">.visible</div>
+              </div>
+              <div class="col-sm-6">
+                <h6>below is invisible</h6>
+                <div class="invisible">.invisible</div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--Close the container-->
+  </body>
+</html>

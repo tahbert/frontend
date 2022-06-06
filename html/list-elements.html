@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <title>List Elements</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>List Elements</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>General</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Normal List</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;ul&gt;&lt;/ul&gt;</td>
+                        <td>Unordered list <span class="note">(default: bullets)</span></td>
+                        <td>
+                            <ul>
+                                <li>Coffee</li>
+                                <li>Tea</li>
+                                <li>Milk</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>list-style-type</strong> property <span class="text-red">(later in CSS)</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;ol&gt;&lt;/ol&gt;</td>
+                        <td>Ordered list <span class="note">(default: numbers)</span></td>
+                        <td>
+                            <ol>
+                                <li>Coffee</li>
+                                <li>Tea</li>
+                                <li>Milk</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>type</strong> attribute</td>
+                        <td>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p><strong>type="1"</strong><br>numbers</p>
+                                            <ol type="1">
+                                                <li>Coffee</li>
+                                                <li>Tea</li>
+                                                <li>Milk</li>
+                                            </ol>
+                                        </td>
+                                        <td>
+                                            <p><strong>type="A"</strong><br>uppercase letters</p>
+                                            <ol type="A">
+                                                <li>Coffee</li>
+                                                <li>Tea</li>
+                                                <li>Milk</li>
+                                            </ol>
+                                        </td>
+                                        <td>
+                                            <p><strong>type="a"</strong><br>lowercase letters</p>
+                                            <ol type="a">
+                                                <li>Coffee</li>
+                                                <li>Tea</li>
+                                                <li>Milk</li>
+                                            </ol>
+                                        </td>
+                                        <td>
+                                            <p><strong>type="I"</strong><br>uppercase roman numbers</p>
+                                            <ol type="I">
+                                                <li>Coffee</li>
+                                                <li>Tea</li>
+                                                <li>Milk</li>
+                                            </ol>
+                                        </td>
+                                        <td>
+                                            <p><strong>type="i"</strong><br>lowercase roman numbers</p>
+                                            <ol type="i">
+                                                <li>Coffee</li>
+                                                <li>Tea</li>
+                                                <li>Milk</li>
+                                            </ol>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>start</strong> attribute: start from a specified number</td>
+                        <td>
+                            <p><strong>start="50"</strong></p>
+                            <ol start="50">
+                                <li>Coffee</li>
+                                <li>Tea</li>
+                                <li>Milk</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>reversed</strong> attribute: reverse the list order</td>
+                        <td>
+                            <ol reversed>
+                                <li>Coffee</li>
+                                <li>Tea</li>
+                                <li>Milk</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;li&gt;&lt;/li&gt;</td>
+                        <td>Define a list item<br>
+                            <span class="note">
+                                (used inside &lt;ol&gt;, &lt;ul&gt;, &lt;menu&gt;)<br>
+                                Can contain a new list,other elements like images, links, etc
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Nested Lists</td>
+                        <td></td>
+                        <td>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <ul>
+                                                <li>Coffee</li>
+                                                <li>Tea
+                                                    <ul>
+                                                        <li>Black tea</li>
+                                                        <li>Green tea</li>
+                                                    </ul>
+                                                </li>
+                                                <li>Milk</li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <ol class="ms-5">
+                                                <li>Coffee</li>
+                                                <li>Tea
+                                                    <ol>
+                                                        <li>Black tea</li>
+                                                        <li>Green tea</li>
+                                                    </ol>
+                                                </li>
+                                                <li>Milk</li>
+                                            </ol>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Description List</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;dl&gt;&lt;/dl&gt;</td>
+                        <td>
+                            Description list<br>
+                            <span class="note">(a list of terms, with a description of each term)</span>
+                        </td>
+                        <td>
+                            <dl>
+                                <dt>Coffee</dt>
+                                <dd>black hot drink</dd>
+                                <dt>Milk</dt>
+                                <dd>white cold drink</dd>
+                            </dl>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;dt&gt;&lt;/dt&gt;</td>
+                        <td>Description term</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;dd&gt;&lt;/dd&gt;</td>
+                        <td>
+                            Description data<br>
+                            <span class="note">Can contain paragraphs, line breaks, images, links, lists, etc</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

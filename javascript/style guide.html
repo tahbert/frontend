@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Style Guide</title>
+  </head>
+  <body>
+    <!--Container-->
+    <div class="container-fluid my-3">
+      <div class="text-center text-light p-5" style="background: #00AA6D;">
+        <h1>Style Guide</h1>
+      </div>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">Coding Conventions</h5>
+      <table class="table">
+        <thead class="text-light" style="background: #00AA6D;">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--Secondary table head-->
+          <tr style="background: #eee;">
+            <td colspan="3">Secondary table head</td>
+          </tr>
+          <tr>
+            <td>Spaces</td>
+            <td>Spaces around operators ( = + - * / )</td>
+            <td style="font-family: monospace;">let x = y + z;</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Spaces after commas</td>
+            <td style="font-family: monospace;">const myArray = ["Volvo", "Saab", "Fiat"];</td>
+          </tr>
+          <tr>
+            <td>Indentation</td>
+            <td>2 spaces</td>
+            <td style="font-family: monospace;">
+              function toCelsius(fahrenheit) {<br>
+                &ensp;return (5 / 9) * (fahrenheit - 32);<br>
+              }<br>
+            </td>
+          </tr>
+          <tr>
+            <td>Statement</td>
+            <td>Simple Statement:
+              <ul>
+                <li>Ending with semicolon</li>
+              </ul>
+            </td>
+            <td style="font-family: monospace;">const person = {firstName: "John", lastName: "Doe"};</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Complex Statement
+              <ul>
+                <li>Opening bracket: end the first line, 1 space before</li>
+                <li>Closing bracket: new line, without leading spaces</li>
+                <li>Ending without semicolon</li>
+              </ul>
+            </td>
+            <td style="font-family: monospace;">
+              <span class="text-success">// Function</span><br>
+              function toCelsius(fahrenheit) {<br>
+                &ensp;return (5 / 9) * (fahrenheit - 32);<br>
+              }<br>
+              <span class="text-success">// Loops</span><br>
+              for (let i = 0; i &lt; 5; i++) {<br>
+                &ensp;x += i;<br>
+              }<br>
+              <span class="text-success">// Conditionals:</span><br>
+              if (time &lt; 20) {<br>
+                greeting = "Good day";<br>
+              } else {<br>
+                greeting = "Good evening";<br>
+              }<br>
+            </td>
+          </tr>
+          <tr>
+            <td>Object</td>
+            <td>Short Object
+              <ul>
+                <li>Property-value pair, no space between</li>
+              </ul>
+              </td>
+            <td style="font-family: monospace;">const person = {firstName:"John", lastName:"Doe"};</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Long Object
+              <ul>
+                <li>Opening bracket: on the same line as the object name</li>
+                <li>Closing bracket: new line, without leading spaces</li>
+                <li>Property-value pair: 1 space between</li>
+              </ul>
+            </td>
+            <td style="font-family: monospace;">
+              const person = {<br>
+                &ensp;firstName: "John",<br>
+                &ensp;lastName: "Doe",<br>
+                &ensp;age: 50,<br>
+                &ensp;eyeColor: "blue"<br>
+              };<br>
+            </td>
+          </tr>
+          <tr>
+            <td>Long Line</td>
+            <td>Avoid lines longer than 80 characters, break after an <strong>operator</strong> or a <strong>comma</strong>.</td>
+            <td style="font-family: monospace;">
+              document.getElementById("demo").innerHTML =<br>
+              "Hello Dolly.";<br>
+            </td>
+          </tr>
+          <tr>
+            <td>Naming</td>
+            <td>
+              <ul>
+                <li>Variables and Functions in <strong>camelCase</strong></li>
+                <li>Constants (like PI) in <strong>UPPERCASE</strong></li>
+                <li>Undercore is not allowed in JS => affect id/class name in HTML</li>
+              </ul>
+            </td>
+            <td style="font-family: monospace;">
+              lastName = "Doe";<br><br>
+              const obj = getElementById("demo_1")
+            </td>
+          </tr>
+          <tr>
+            <td>Loading JS in HTML</td>
+            <td>
+              Simple syntax for loading external scripts<br>
+              <span class="text-success">(<strong>type</strong> attribute is not necessary)</span>
+            </td>
+            <td style="font-family: monospace;">
+              &lt;script src="myscript.js"&gt;&lt;/script&gt;
+            </td>
+          </tr>
+          <tr>
+            <td>File Extensions</td>
+            <td><strong>.js</strong> extension</td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td>File Names</td>
+            <td>
+              Lower case file names (if possible)<br>
+              <span class="text-success">(some web servers are case sensitve, some aren't)</span>
+            </td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">Best Practices</h5>
+      <table class="table">
+        <thead class="text-light" style="background: #00AA6D;">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Variables</td>
+            <td>Global variables:<br>
+              Global variables and functions can be overwritten by other scripts => avoid
+            </td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              Local Variables: always declare with the var keyword or the let keyword
+            </td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td>Declaration</td>
+            <td>Should be at the top of each script or function.</td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td>Initialize Variables</td>
+            <td>Should be initialized when you declaring</td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td>Declare Objects</td>
+            <td>Declaring with const to prevent any accidential change of type</td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td>Declare Arrays</td>
+            <td>Declaring with const to prevent any accidential change of type</td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td>new Object()</td>
+            <td>Don't Use new Object()</td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td>Automatic Type Conversions</td>
+            <td>
+              Beware of Automatic Type Conversions<br>
+              A variable can change its data type<br>
+              </td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td>Comparison</td>
+            <td>Using === operator forces comparison of values and type</td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td>Parameter Defaults</td>
+            <td>
+              Missing argument, the value is set to undefined<br>
+              <span class="text-success">=> It's a good practice to assign default values to arguments.</span>
+            </td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td>Switches with Defaults</td>
+            <td>
+              Always end switch statements with a default<br>
+              <span class="text-success">Even if you think there is no need for it.</span>
+            </td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td>Primative Values or Objects</td>
+            <td>
+              JS not treat numbers, strings, or booleans as objects<br>
+              <span class="text-success">Slow down execution speed, and produces nasty side effects</span>
+            </td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td>eval()</td>
+            <td>
+              Unnecessary to use eval(). It allows arbitrary code to be run, it also represents a security problem.
+            </td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">Common Mistakes</h5>
+      <table class="table">
+        <thead class="text-light" style="background: #00AA6D;">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td style="font-family: monospace;"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--Close the container-->
+  </body>
+</html>

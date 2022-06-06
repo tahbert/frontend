@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Resetting the default */
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root {
+    --green: #04AA6D;
+    --lightgreen: #D9EEE1;
+    --grey: #ccc;
+    --darkgrey: #282A35;
+    --lightgrey: #f1f1f1;
+    --lightpink: #FFC0C7;
+    --red: #DC143C;
+}
+body {
+    margin: 0; padding: 0;
+}
+
+/* Style some default */
+.active {
+    color: white !important;
+    background: var(--green) !important;
+}
+.activeNav {
+    background: var(--green);
+}
+
+/* Style the primary navbar */
+.nav {
+    display: flex;
+    position: fixed; top: 0; left: 0; z-index: 1;
+    width: 100%; height: 44px;
+    background: var(--darkgrey);
+    font-size: 17px;
+}
+.nav a {
+    text-decoration: none;
+    color: var(--lightgrey);
+    line-height: 44px;
+    padding: 0 16px;
+}
+.nav .fa-bars {
+    display: none;
+    color: var(--lightgrey);
+    line-height: 44px;
+    padding: 0 16px;
+    font-size: 20px;
+}
+.nav a:hover {
+    background: black;
+}
+.nav .fa-bars:hover {
+    background: black;
+    cursor: pointer;
+}
+
+
+/* Style the main layout */
+.main {
+    position: relative;
+    width: 100%;
+}
+
+/* Style the side navbar */
+.side_nav {
+    position: fixed; z-index: 1; top: 44px; left: 0; 
+    display: flex; flex-direction: column;
+    width: 280px; height: 100%;
+    overflow: auto;
+    background: var(--lightgrey);
+}
+.panel {
+    display: none;
+    flex-direction: column;
+    transition: ease 0.8s;
+}
+.units {
+    border: none;
+    outline: none;
+    text-align: left;
+    padding: 8px 16px;
+    font-size: 100%;
+    cursor: pointer;
+}
+.panel button.units {
+    background: var(--lightgreen);
+    padding: 8px 16px 8px 32px;
+}
+.units:hover {
+    background: var(--grey);
+}
+#overlay {
+    display: none;
+    position: fixed; left: 0; top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(0,0,0); /* Fallback */
+    background: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Style the main content */
+.main_content {
+    position: absolute;
+    top: 44px; left: 280px; right: 0;
+    height: 100vh;
+}
+
+/* For small devices */
+@media screen and (max-width: 768px) {
+    .side_nav {
+        display: none;
+    }
+    .main_content {
+        left: 0;
+    }
+    .nav .fa-bars {
+        display: block;
+    }
+}
+@media screen and (min-width: 769px) {
+    .side_nav {
+        display: flex !important;
+    }
+    .main_content {
+        left: 280px !important;
+    }
+}

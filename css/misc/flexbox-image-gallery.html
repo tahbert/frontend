@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flexbox Image Gallery</title>
+  </head>
+  <body>
+    <div class="row"> 
+      <div class="column">
+        <img src="../imgs/wedding.jpg">
+        <img src="../imgs/rocks.jpg">
+        <img src="../imgs/falls2.jpg">
+        <img src="../imgs/paris.jpg">
+        <img src="../imgs/nature.jpg">
+        <img src="../imgs/mist.jpg">
+        <img src="../imgs/paris.jpg">
+      </div>
+      
+      <div class="column">
+        <img src="../imgs/underwater.jpg">
+        <img src="../imgs/ocean.jpg">
+        <img src="../imgs/wedding.jpg">
+        <img src="../imgs/mountainskies.jpg">
+        <img src="../imgs/rocks.jpg">
+        <img src="../imgs/underwater.jpg">
+      </div> 
+       
+      <div class="column">
+        <img src="../imgs/wedding.jpg">
+        <img src="../imgs/rocks.jpg">
+        <img src="../imgs/falls2.jpg">
+        <img src="../imgs/paris.jpg">
+        <img src="../imgs/nature.jpg">
+        <img src="../imgs/mist.jpg">
+        <img src="../imgs/paris.jpg">
+      </div>
+      
+      <div class="column">
+        <img src="../imgs/underwater.jpg">
+        <img src="../imgs/ocean.jpg">
+        <img src="../imgs/wedding.jpg">
+        <img src="../imgs/mountainskies.jpg">
+        <img src="../imgs/rocks.jpg">
+        <img src="../imgs/underwater.jpg">
+      </div>
+    </div>
+
+    <style>
+      * {box-sizing: border-box;}
+      body {margin: 0;} /* resetting body margin */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px; /* + 4px padding of the column = 8xp */
+      }
+      .column {
+        flex: 25%;
+        max-width: 25%; /* dont know why not 100% */
+        padding: 0 4px; /* + 4px padding of the row = 8xp & + 4px padding of each column = 8xp */
+      }
+      .column img {
+        width: 100%;
+        margin-top: 8px;
+        vertical-align: middle; /* why is it so important to keep margin-top: 8px; */
+      }
+
+      @media (max-width: 800px) {
+        .column {
+          flex: 50%;
+          max-width: 50%; /* dont know why not 100% */
+        }
+      }
+
+      @media (max-width: 600px) {
+        .column {
+          flex: 100%;
+          max-width: 100%; /* dont know why */
+        }
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <title>Margins</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Margins</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Margins</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>margin</td>
+                        <td>
+                            <strong>margin</strong>: <i>length</i>|auto|initial|inherit; <span class="text-red">(default: 0)</span><br>
+                            Set space around elements, outside of any defined borders<br>
+                            <span class="note">Negative values <span class="badge red">not allowed</span></span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="sub-head">More Specific</td>
+                        <td>margin-top, margin-right, margin-bottom, margin-left</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="sub-head">Mixing Properties</td>
+                        <td>According to clock direction</td>
+                        <td>
+                            <div class="outside">
+                                <div style="margin:5px; padding: 5px; border: 1px solid grey; background-color:lightcoral;">
+                                    margin: 5px; <span style="color: white;">4 margins</span>
+                                </div>
+                            </div>
+                            <div class="outside">
+                                <div
+                                    style="margin: 5px 10px; padding: 5px; border: 1px solid grey; background-color:lightcoral;">
+                                    margin: 5px 10px; <span style="color: white;">top + bottom | right + left</span>
+                                </div>
+                            </div>
+                            <div class="outside">
+                                <div
+                                    style="margin: 5px 10px 15px; padding: 5px; border: 1px solid grey; background-color:lightcoral;">
+                                    margin: 5px 10px 15px; <span style="color: white;">top | right + left | bottom</span>
+                                </div>
+                            </div>
+                            <div class="outside">
+                                <div
+                                    style="margin: 5px 10px 15px 20px; padding: 5px; border: 1px solid grey; background-color:lightcoral;">
+                                    margin: 5px 10px 15px 20px; <span style="color: white;">top | right | bottom | left</span>
+                                </div>
+                            </div>
+        
+                            <style>
+                                .outside {
+                                    border: 1px solid green;
+                                    margin-top: 5px;
+                                    background-color: lightgrey;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Margin Collapse</td>
+                        <td>
+                            Sometimes two margins collapse into a single margin.<br>
+                            Happen on top and bottom margins
+                        </td>
+                        <td>
+                            <div style="margin: 0 0 50px 0; padding: 5px; border: 1px solid grey; background-color:lightcoral;">
+                                margin: 0 0 50px 0; <span style="color: white;">margin-bottom: 50px</span>
+                            </div>
+                            <div style="margin: 50px 0 0 0; padding: 5px; border: 1px solid grey; background-color:lightcoral;">
+                                margin: 20px 0 0 0; <span style="color: white;">margin-top: 20px has ben collapsed => total
+                                    50px</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

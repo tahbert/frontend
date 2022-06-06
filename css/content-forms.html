@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <title>Forms</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Forms</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Forms</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Visual Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary Heading------------------------------------------------------------------------------------------------->
+                    <tr class="sub-head">
+                        <td colspan="3">Input Fiels</td>
+                    </tr>
+                    <tr>
+                        <td>Basic</td>
+                        <td></td>
+                        <td>
+                            <form>
+                                <label for="fname-basic">First Name:</label>
+                                <input type="text" id="fname-basic" name="fname">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Full width</td>
+                        <td>
+                            <ul>
+                                <li>width: 100%;</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <form>
+                                <label for="fname-fullwidth">First Name:</label>
+                                <input type="text" id="fname-fullwidth" name="fname">
+        
+                                <style>
+                                    #fname-fullwidth {
+                                        width: 100%;
+                                    }
+                                </style>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Padded</td>
+                        <td>
+                            <ul>
+                                <li>box-sizing: border-box; <span class="text-green">to make sure padding and borders are
+                                        included in total width and height</span></li>
+                                <li>padding: 12px 20px;</li>
+                                <li>margin: 8px 0;</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <form class="padded">
+                                <lable for="fname-padded">First Name:</lable>
+                                <input type="text" id="fname-padded" name="fname-padded">
+                                <lable for="lname-padded">Last Name:</lable>
+                                <input type="text" id="lname-padded" name="lname-padded">
+                            </form>
+        
+                            <style>
+                                .padded input {
+                                    width: 100%;
+                                    box-sizing: border-box;
+                                    padding: 12px 20px;
+                                    margin: 8px 0;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bordered</td>
+                        <td>
+                            <ul>
+                                <li>border: 2px solid #04AA6D; <span class="text-green"></span></li>
+                                <li>border-radius: 5px; <span class="text-green"></span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <form class="bordered">
+                                <lable for="fname-bordered">First Name:</lable>
+                                <input type="text" id="fname-bordered" name="fname-bordered">
+                                <lable for="lname-bordered">Last Name:</lable>
+                                <input type="text" id="lname-bordered" name="lname-bordered">
+                            </form>
+        
+                            <style>
+                                .bordered input {
+                                    width: 100%;
+                                    box-sizing: border-box;
+                                    padding: 12px 20px;
+                                    margin: 8px 0;
+                                    border: 2px solid #04AA6D;
+                                    border-radius: 5px;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <ul>
+                                <li>border: none; <span class="text-green">resetting</span></li>
+                                <li>border-bottom: 2px solid #04AA6D; <span class="text-green"></span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <form class="border-bottom">
+                                <lable for="fname-border-bottom">First Name:</lable>
+                                <input type="text" id="fname-border-bottom" name="fname-border-bottom">
+                                <lable for="lname-border-bottom">Last Name:</lable>
+                                <input type="text" id="lname-border-bottom" name="lname-border-bottom">
+                            </form>
+        
+                            <style>
+                                .border-bottom input {
+                                    width: 100%;
+                                    box-sizing: border-box;
+                                    padding: 12px 20px;
+                                    margin: 8px 0;
+                                    border: none;
+                                    border-bottom: 2px solid #04AA6D;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Colored</td>
+                        <td>
+                            <ul>
+                                <li>border: none; <span class="text-green">resetting</span></li>
+                                <li>color: white;<span class="text-green"></span></li>
+                                <li>background: #04AA6D;<span class="text-green"></span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <form class="colored">
+                                <lable for="fname-colored">First Name:</lable>
+                                <input type="text" id="fname-colored" name="fname-colored" value="Tahbert">
+                                <lable for="lname-colored">Last Name:</lable>
+                                <input type="text" id="lname-colored" name="lname-colored" value="Nguyen">
+                            </form>
+                            <style>
+                                .colored input {
+                                    width: 100%;
+                                    box-sizing: border-box;
+                                    padding: 12px 20px;
+                                    margin: 8px 0;
+                                    border: none;
+                                    border-radius: 5px;
+                                    color: white;
+                                    background: #04AA6D;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Focused</td>
+                        <td>
+                            <ul>
+                                <li>input:focus {} <span class="text-green"></span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <form class="focused">
+                                <lable for="fname-focused">First Name:</lable>
+                                <input type="text" id="fname-focused" name="fname-focused" value="Tahbert">
+                                <lable for="lname-focused">Last Name:</lable>
+                                <input type="text" id="lname-focused" name="lname-focused" value="Nguyen">
+                            </form>
+        
+                            <style>
+                                .focused input {
+                                    width: 100%;
+                                    box-sizing: border-box;
+                                    padding: 12px 20px;
+                                    margin: 8px 0;
+                                    border-radius: 5px;
+                                    -webkit-transition: 0.5s;
+                                    transition: 0.5s;
+                                    /*bonus style*/
+                                }
+        
+                                .focused input:focus {
+                                    color: white;
+                                    background: #04AA6D;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>With icon/image</td>
+                        <td>
+                            <ul>
+                                <li>background-image: url('imgs/searchicon.png');<span class="text-green"></span></li>
+                                <li>padding: 10px 20px 10px 40px;<span class="text-green">padding-left: 40px</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <form class="search">
+                                <input type="text" name="search" placeholder="Search...">
+                            </form>
+        
+                            <style>
+                                .search input {
+                                    box-sizing: border-box;
+                                    width: 100%;
+                                    background-image: url('imgs/searchicon.png');
+                                    background-repeat: no-repeat;
+                                    background-position: 10px 12px;
+                                    border: 2px solid #ccc;
+                                    border-radius: 4px;
+                                    padding: 10px 20px 10px 40px;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Animated</td>
+                        <td>
+                            <ul>
+                                <li>transition: 0.5s;<span class="text-green"></span></li>
+                                <li>input:focus {width: 100%;}<span class="text-green"></span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <form class="animated">
+                                <input type="text" name="search" placeholder="Search...">
+                            </form>
+        
+                            <style>
+                                .animated input {
+                                    box-sizing: border-box;
+                                    width: 160px;
+                                    background-image: url('imgs/searchicon.png');
+                                    background-repeat: no-repeat;
+                                    background-position: 10px 12px;
+                                    border: 2px solid #ccc;
+                                    border-radius: 4px;
+                                    padding: 10px 20px 10px 40px;
+                                    -webkit-transition: 0.5s;
+                                    transition: 0.5s;
+                                }
+        
+                                .animated input:focus {
+                                    width: 100%;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <!--Secondary Heading------------------------------------------------------------------------------------------------->
+                    <tr class="sub-head">
+                        <td colspan="3">Input Button</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <ul>
+                                <li>border: none; <span class="text-green">resetting: remove border</span></li>
+                                <li>cursor: pointer; <span class="text-green"></span></li>
+                                <li>padding: 10px 24px; <span class="text-green">align center horizontally and
+                                        vertically</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <form class="button">
+                                <input type="button" value="Button">
+                                <input type="reset" value="Reset">
+                                <input type="submit" value="Submit">
+                            </form>
+                            <a href="buttons.html">see more</a>
+        
+                            <style>
+                                .button input {
+                                    color: white;
+                                    background: #04AA6D;
+                                    padding: 10px 24px;
+                                    border: none;
+                                    border-radius: 4px;
+                                    cursor: pointer;
+                                    /*bootstrap have changed it*/
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <!--Secondary Heading------------------------------------------------------------------------------------------------->
+                    <tr class="sub-head">
+                        <td colspan="3">Textarea Fields</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <ul>
+                                <li>resize: none; <span class="text-green">resetting: disable the grabber</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <form class="textarea">
+                                <textarea>Some text...</textarea>
+                            </form>
+        
+                            <style>
+                                .textarea textarea {
+                                    box-sizing: border-box;
+                                    width: 100%;
+                                    height: 100px;
+                                    padding: 14px 20px;
+                                    resize: none;
+                                    border: 2px solid #ccc;
+                                    border-radius: 4px;
+                                    background-color: #f8f8f8;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <!--Secondary Heading------------------------------------------------------------------------------------------------->
+                    <tr class="sub-head">
+                        <td colspan="3">Select Menus</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <form>
+                                <select id="country" name="country">
+                                    <option value="au">Australia</option>
+                                    <option value="ca">Canada</option>
+                                    <option value="usa">USA</option>
+                                </select>
+                            </form>
+        
+                            <style>
+                                #country {
+                                    box-sizing: border-box;
+                                    width: 100%;
+                                    padding: 12px 16px;
+                                    background-color: #f1f1f1;
+                                    border: none;
+                                    border-radius: 4px;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <!--Secondary Heading------------------------------------------------------------------------------------------------->
+                    <tr class="sub-head">
+                        <td colspan="3">Responsive Form</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <iframe src="misc/responsive-form.html" style="width: 100%; height: 300px; overflow: auto;"></iframe>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

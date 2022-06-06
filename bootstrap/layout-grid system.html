@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Grid System</title>
+  </head>
+  <body>
+    <!--Container-->
+    <div class="container-fluid my-3">
+      <div class="row g-0 text-center bg-primary">
+        <h1 class="text-center text-light p-5">Grid System</h1>
+      </div>
+
+      <!--Title here------------------------------------------------------------------------------------------------------------>
+      <h5 class="text-danger mt-5">Grid System</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>General</td>
+            <td>The system of 12 columns, built with flexbox</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              .row<br>
+              .col-*-*<br>
+            </td>
+            <td colspan="2">
+              The 1st star: viewport<br>
+              The 2nd star: spans (should add up to 12)<br>
+              <span class="text-success">(Often combined to create repsonsive layouts on different screens)</span>
+              <table class="table table-bordered">
+                <tr>
+                  <th>Breakpoint</th>
+                  <th>Class infix</th>
+                  <th>Dimensions</th>
+                  <th>Class</th>
+                  <th># of columns</th>
+                  <th>Gutter width</th>
+                  <th>Custom gutters</th>
+                  <th>Nestable</th> 
+                  <th>Column ordering</th>
+                </tr>
+                <tr>
+                  <td>X-small</td>
+                  <td>None</td>
+                  <td>&lt;576</td>
+                  <td>.col-*</td>
+                  <td rowspan="6">12</td>
+                  <td rowspan="6">1.5rem (.75rem on left and right)</td>
+                  <td rowspan="6" class="text-success">Yes</td>
+                  <td rowspan="6" class="text-success">Yes</td>
+                  <td rowspan="6" class="text-success">Yes</td>
+                </tr>
+                <tr>
+                  <td>Small</td>
+                  <td>sm</td>
+                  <td>&ge;576</td>
+                  <td>.col-sm-*</td>
+                </tr>
+                <tr>
+                  <td>Medium</td>
+                  <td>md</td>
+                  <td>&ge;768</td>
+                  <td>.col-md-*</td>
+                </tr>
+                <tr>
+                  <td>Large</td>
+                  <td>lg</td>
+                  <td>&ge;992</td>
+                  <td>.col-lg-*</td>
+                </tr>
+                <tr>
+                  <td>Extra Large</td>
+                  <td>xl</td>
+                  <td>&ge;1200</td>
+                  <td>.col-xl-*</td>
+                </tr>
+                <tr>
+                  <td>Extra extra large</td>
+                  <td>xxl</td>
+                  <td>&ge;1400</td>
+                  <td>.col-xxl-*</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td>Auto layout</td>
+            <td>No viewport or spans specified => equal width<br>
+              &lt;div class="<strong>row</strong>"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="<strong>col</strong>"&gt;col 1&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="<strong>col</strong>"&gt;col 2&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="<strong>col</strong>"&gt;col 3&lt;/div&gt;<br>
+              &lt;/div&gt;<br>
+            </td>
+            <td><a target="_blank" href="misc/layout-grid-ex.html">see more</a></td>
+          </tr> 
+          <tr>
+            <td>Stacked</td>
+            <td>When the viewport is specifed => stacked on smaller viewport</td>
+            <td><strong>col-md</strong> => stacked when &lt;768px <a target="_blank" href="misc/layout-grid-ex.html">see more</a></td>
+          </tr>
+          <tr>
+            <td>col-*-auto</td>
+            <td>Variable width content: based on the natural width of their content<br>
+              <span class="text-success">the star: viewport</span>
+            </td>
+            <td>
+              <strong>col-md-auto</strong> => variable width content when &ge;768px and stacked when &lt;768px<br>
+              <a target="_blank" href="misc/layout-grid-ex.html">see more</a>
+            </td>
+          </tr>
+          <tr>
+            <td>row-cols-*-*</td>
+            <td>Row columns: quickly set the number of columns each row<br>
+            </td>
+            <td><a target="_blank" href="misc/layout-grid-ex.html">see more</a></td>
+          </tr>
+          <tr>
+            <td>Nesting</td>
+            <td></td>
+            <td><a target="_blank" href="misc/layout-grid-ex.html">see more</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--Title here------------------------------------------------------------------------------------------------------------>
+      <h5 class="text-danger mt-5">Gutters</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>General</td>
+            <td>
+              The padding between columns in grid system<br>
+              <span class="text-success">Default: 1.5rem (.75rem on left and right)</span>
+            </td>
+            <td>
+              <div class="container-fluid" style="background-color: lightblue;">
+                <h6>Default gutters</h6> 
+                <div class="row row-cols-3 example">
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                </div>
+
+                <h6 class="mt-3">g-0 (remove gutters)</h6> 
+                <div class="row row-cols-3 g-0 example">
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                </div>
+              </div>
+
+              <style>
+                .example > div {
+                  color: white;
+                  background: #04AA6D;
+                  border: 1px solid #555;
+                  padding: 8px
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>Remove gutters</td>
+            <td>Removes negative margins from .row, horizontal padding from all immediate children columns</td>
+            <td>
+              <div class="container-fluid" style="background-color: lightblue;">
+                <h6 class="mt-3">g-0</h6> 
+                <div class="row row-cols-3 g-0 example">
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Horizontal</td>
+            <td>
+              <strong>gx-*-*</strong><br>
+              <span class="text-success">
+                (the 1st star: viewport)<br>
+                (the 2nd star: from 1 to 5)<br>
+              </span>
+            </td>
+            <td>
+              <div class="container-fluid" style="background-color: lightblue;">
+                <h6>gx-5</h6> 
+                <div class="row row-cols-3 gx-5 example">
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                </div>
+              </div>
+
+              <div class="container-fluid overflow-hidden" style="background-color: lightblue;">
+              <h6 class="mt-3">gx-5 with overflow-hidden</h6> 
+                <div class="row row-cols-3 gx-5 example">
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Vertical</td>
+            <td>
+              <strong>gy-*-*</strong><br>
+              <span class="text-success">
+                (the 1st star: viewport)<br>
+                (the 2nd star: from 1 to 5)<br>
+              </span>
+            </td>
+            <td>
+              <div class="container-fluid" style="background-color: lightblue;">
+                <h6>gy-3</h6> 
+                <div class="row row-cols-3 g-3 example">
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Horizontal & Vertical</td>
+            <td>
+              <strong>g-*-*</strong><br>
+              <span class="text-success">
+                (the 1st star: viewport)<br>
+                (the 2nd star: from 1 to 5)<br>
+              </span>
+            </td>
+            <td>
+              <div class="container-fluid" style="background-color: lightblue;">
+                <h6>g-3</h6> 
+                <div class="row row-cols-3 g-3 example">
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                  <div class="col">col</div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>SASS</td>
+            <td>$gutters</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--Close the container-->
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

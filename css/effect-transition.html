@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    
+    <title>Transitions</title>
+  </head>
+  <body>
+    
+      <div>
+        <h1>CSS Transitions</h1>
+      </div>
+      <!--Title here------------------------------------------------------------------------------------------------------------>
+      <h2>CSS Transitions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              transition<br>
+              <span class="badge bg-success">shorthand</span>
+            </td>
+            <td>
+              <strong>transition</strong>: <i>property duration timing-function delay</i>|initial|inherit; <span class="text-danger">(default: all 0s ease 0s)</span><br>
+              Change property values smoothly, over a given duration<br>
+              <span class="text-success">Multiple: seperated by commas</span>
+            </td>
+            <td style="min-width: 500px;">
+              <div class="transition">
+                transition: width 2s ease-out 1s,<br>
+                height 2s ease-in 0.5s,<br>
+                background-color 0 ease 0;
+              </div>
+              <style>
+                .transition {
+                  width: 250px;
+                  height: 100px;
+                  padding: 10px;
+                  background-color: #04AA6D;
+                  transition: width 2s ease-out 1s, height 4s ease-in 0.5s, background-color 1s ease 0s;
+                }
+                .transition:hover {
+                  width: 300px;
+                  height: 200px;
+                  cursor: pointer;
+                  background-color: lightsalmon;
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Transition + Transformation</td>
+            <td>
+              <div class="withtransformation">
+                transition: width 2s,<br>
+                height 2s,<br>
+                background-color 2s;<br>
+                transform 2s;
+              </div>
+              <style>
+                .withtransformation {
+                  width: 250px;
+                  height: 120px;
+                  padding: 10px;
+                  background-color: #04AA6D;
+                  transition: width 2s, height 2s, background-color 2s, transform 2s;
+                }
+                .withtransformation:hover {
+                  width: 300px;
+                  height: 200px;
+                  cursor: pointer;
+                  background-color: lightsalmon;
+                  transform: rotate(180deg);
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>transition-property</td>
+            <td>
+              <strong>transition-property</strong>: <span class="text-danger">all</span>|none|<i>property</i>|initial|inherit;<br>
+              Specify the property name the transition effect is for<br>
+              <span class="text-success">
+                Multiple: seperated by commas<br>
+                Typically occur when a user hover over an element
+              </span>
+            </td>
+            <td>
+              <div class="property">transition-property: width, height;</div>
+              <style>
+                .property {
+                  width: 300px;
+                  padding: 10px;
+                  background-color: #04AA6D;
+                  transition-property: width, height;
+                }
+                .property:hover {
+                  width: 400px;
+                  height: 100px;
+                  cursor: pointer;
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>transition-duration</td>
+            <td>
+              <strong>transition-duration</strong>: <i>time</i>|initial|inherit; <span class="text-danger">(default: 0s)</span><br>
+              Specify the duration the transition takes to complete<br>
+              <span class="text-success">seconds (s) or milliseconds (ms)</span>
+            </td>
+            <td>
+              <div class="duration">transition-duration: 2s;</div>
+              <style>
+                .duration {
+                  width: 300px;
+                  padding: 10px;
+                  background-color: #04AA6D;
+                  transition-property: width;
+                  transition-duration: 2s;
+                }
+                .duration:hover {
+                  width: 400px;
+                  cursor: pointer;
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>transition-timing-function</td>
+            <td>
+              <strong>transition-timing-function</strong>: <span class="text-danger">ease</span>|linear|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)|initial|inherit;<br>
+              Specify the speed curve<br>
+              <ul class="text-success">
+                <li>steps(int,start|end): intervals (positive integer greater than 0), second parameter is optional</li>
+                <li>cubic-bezier: values from 0 to 1</li>
+              </ul>
+            </td>
+            <td>
+              <div class="timing a">transition-timing-function: ease;</div>
+              <div class="timing b">transition-timing-function: linear;</div>
+              <div class="timing c">transition-timing-function: ease-in;</div>
+              <div class="timing d">transition-timing-function: ease-out;</div>
+              <div class="timing e">transition-timing-function: ease-in-out;</div>
+              <div class="timing f">transition-timing-function: step-start;</div>
+              <div class="timing g">transition-timing-function: step-end;</div>
+              <div class="timing h">transition-timing-function: steps(2);</div>
+              <div class="timing j">transition-timing-function: cubic-bezier(0,0,0.5,1);</div>
+              <style>
+                .timing {
+                  width: 300px;
+                  padding: 10px;
+                  margin-bottom: 10px;
+                  background-color: #04AA6D;
+                  transition-property: width;
+                  transition-duration: 2s;
+                }
+                .timing:hover {
+                  width: 400px;
+                  cursor: pointer;
+                }
+                .timing.a {
+                transition-timing-function: ease;
+                }
+                .timing.b {
+                transition-timing-function: linear;
+                }
+                .timing.c {
+                transition-timing-function: ease-in;
+                }
+                .timing.d {
+                transition-timing-function: ease-out;
+                }
+                .timing.e {
+                transition-timing-function: ease-in-out;
+                }
+                .timing.f {
+                transition-timing-function: step-start;
+                }
+                .timing.g {
+                transition-timing-function: step-end;
+                }
+                .timing.h {
+                transition-timing-function: steps(2);
+                }
+                .timing.j {
+                transition-timing-function: cubic-bezier(0,0,0.5,1);
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>transition-delay</td>
+            <td>
+              <strong>transition-delay</strong>: <i>time</i>|initial|inherit; <span class="text-danger">(default: 0s)</span><br>
+              Specify the duration the transition takes to start<br>
+              <span class="text-success">seconds (s) or milliseconds (ms)</span>
+            </td>
+            <td>
+              <div class="delay">transition-delay: 1s;</div>
+              <style>
+                .delay {
+                  width: 300px;
+                  padding: 10px;
+                  background-color: #04AA6D;
+                  transition-property: width;
+                  transition-delay: 1s;
+                }
+                .delay:hover {
+                  width: 400px;
+                  cursor: pointer;
+                }
+              </style>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </body>
+</html>

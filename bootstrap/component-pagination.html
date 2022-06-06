@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Component - Pagination</title>
+  </head>
+  <body>
+    <!--Container-->
+    <div class="container-fluid my-3">
+      <div class="row g-0 text-center bg-primary">
+        <h1 class="text-center text-light p-5">Component - Pagination</h1>
+      </div>
+
+      <!--Title here-->
+      <h5 class="text-danger mt-5">Component - Pagination</h5>
+      <table class="table">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Secondary table head</td>
+          </tr>
+          <tr>
+            <td>Basic</td>
+            <td>
+              .pagination to &lt;ul&gt;<br>
+              .page-item to &lt;li&gt;<br>
+              .page-link to &lt;a&gt;<br>
+            </td>
+            <td>
+              <h6 class="mt-3">With text</h6>
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+
+              <h6 class="mt-3">With icons</h6>
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </td>
+          </tr>
+          <tr>
+            <td>State</td>
+            <td>
+              .active to .page-item<br>
+              .disable to .page-item<br>
+            </td>
+            <td>
+              <nav aria-label="...">
+                <ul class="pagination">
+                  <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+
+              <h6>Use &lt;span&gt; to remove click functionality and prevent keyboard focus</h6>
+              <nav aria-label="...">
+                <ul class="pagination">
+                  <li class="page-item disabled">
+                    <span class="page-link">Previous</span>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item active" aria-current="page">
+                    <span class="page-link">2</span>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </td>
+          </tr>
+          <tr>
+            <td>Sizing</td>
+            <td>
+              .pagination-lg to .pagination<br>
+              .pagination-sm to .pagination<br>
+            </td>
+            <td>
+              <nav aria-label="...">
+                <ul class="pagination pagination-lg">
+                  <li class="page-item active" aria-current="page">
+                    <span class="page-link">1</span>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                </ul>
+              </nav>
+
+              <nav aria-label="...">
+                <ul class="pagination pagination-sm">
+                  <li class="page-item active" aria-current="page">
+                    <span class="page-link">1</span>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                </ul>
+              </nav>
+            </td>
+          </tr>
+          <tr>
+            <td>Alignment</td>
+            <td>With the help of with flexbox utilities</td>
+            <td>
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-end">
+                  <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <!--Close the container-->
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

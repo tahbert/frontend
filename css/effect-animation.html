@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    
+    <title>Animations</title>
+  </head>
+  <body>
+    
+      <div>
+        <h1>Animations</h1>
+      </div>
+      <!--Title here------------------------------------------------------------------------------------------------------------>
+      <h2>Animations</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Visual Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>General</td>
+            <td>
+              Allow animation without using JS or Flash!<br>
+              <span class="text-success">
+                animation: gradually change from one style to another, and back to original style when finishing<br>
+                animation-name <span class="badge bg-danger">required</span> to bind the animation to an element<br>
+              </span>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>@keyframes</td>
+            <td>
+              <strong>@keyframes</strong> <i>animation-name</i> {<i>keyframes-selector</i> {<i>css-styles</i>;}}<br>
+              Specify the animation code<br>
+              <span class="text-success">Note: The !important rule is ignored in a keyframe</span><br>
+              <span class="text-danger"><span class="badge bg-danger">?</span> multiple available</span>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>keyframes-selector: from, to</td>
+            <td>
+              @keyframes example {<br>
+                &nbsp;&nbsp;from {background-color: green;}<br>
+                &nbsp;&nbsp;to {background-color: yellow;}<br>
+              }
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              keyframes-selector: percentage<br>
+              <span class="text-success">Useful for adding many style changes</span>
+            </td>
+            <td>
+              @keyframes example {<br>
+                &nbsp;&nbsp;0%   {background-color: green;}<br>
+                &nbsp;&nbsp;25%  {background-color: red;}<br>
+                &nbsp;&nbsp;50%  {background-color: purple;}<br>
+                &nbsp;&nbsp;100% {background-color: yellow;}<br>
+              }              
+            </td>
+          </tr>
+          <tr>
+            <td>
+              animation<br>
+              <span class="badge bg-success">shorthand</span>
+            </td>
+            <td>
+              <strong>animation</strong>: <i>name duration timing-function delay iteration-count direction fill-mode play-state</i>;<br>
+              <span class="text-danger">(default: none 0 ease 0 1 normal none running)</span><br>
+            </td>
+            <td style="white-space: nowrap;">
+              <h6>animation: shorthand 5s linear 2s infinite alternate;</h6>
+              <div class="shorthand"></div>
+              
+              <style>
+                .shorthand {
+                  background: url(imgs/tahbert.png) top left/ contain;
+                  width: 50px;
+                  height: 50px;
+                  position: relative;
+                  border: 2px solid #04AA6D;
+                  animation: shorthand 5s linear 2s infinite alternate;
+                }
+                @keyframes shorthand {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  25% {left: 200px; top: 0; border-color: red;}
+                  50% {left: 200px; top: 100px; border-color: purple;}
+                  75% {left: 0; top: 100px; border-color: yellow;}
+                  100% {left: 0; top: 0; border-color: #04AA6D;}
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>animation-name<br>
+            </td>
+            <td>
+              <strong>animation-name</strong>: <span class="text-danger">none</span>|<i>text</i>|initial|inherit;<br>
+              Specify a name for the @keyframes animation<br>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>animation-duration<br>
+              <span class="badge bg-danger">required</span>
+            </td>
+            <td>
+              <strong>animation-duration</strong>: <i>time</i>|initial|inherit; <span class="text-danger">(default: 0)</span><br>
+              Specify how long an animation should take to complete<br>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="white-space: nowrap;">animation-timing-function</td>
+            <td>
+              <strong>animation-timing-function</strong>: <span class="text-danger">ease</span>|linear|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)|initial|inherit;<br>
+              Specify the speed curve of the animation<br>
+              <ul class="text-success">
+                <li>steps(int,start|end): intervals (positive integer greater than 0), second parameter is optional</li>
+                <li>cubic-bezier: values from 0 to 1</li>
+              </ul>
+            </td>
+            <td>
+              <h6>animation-timing-function: ease;</h6>
+              <div class="timing a"></div>
+              <h6>animation-timing-function: linear;</h6>
+              <div class="timing b"></div>
+              <h6>animation-timing-function: ease-in;</h6>
+              <div class="timing c"></div>
+              <h6>animation-timing-function: ease-out;</h6>
+              <div class="timing d"></div>
+              <h6>animation-timing-function: ease-in-out;</h6>
+              <div class="timing e"></div>
+              <h6>animation-timing-function: step-start;</h6>
+              <div class="timing f"></div>
+              <h6>animation-timing-function: step-end;</h6>
+              <div class="timing g"></div>
+              <h6>animation-timing-function: steps(2);</h6>
+              <div class="timing h"></div>
+              <h6>animation-timing-function: cubic-bezier(0,0,0.5,1);</h6>
+              <div class="timing j"></div>
+
+              <style>
+                .timing {
+                  background: url(imgs/tahbert.png) top left/ contain;
+                  width: 50px;
+                  height: 50px;
+                  position: relative;
+                  border: 2px solid #04AA6D;
+                }
+                .timing.a {
+                animation: timing-ease 5s ease;
+                }
+                .timing.b {
+                animation: timing-linear 5s linear;
+                }
+                .timing.c {
+                animation: timing-ease-in 5s ease-in;
+                }
+                .timing.d {
+                animation: timing-ease-out 5s ease-out;
+                }
+                .timing.e {
+                animation: timing-ease-in-out 5s ease-in-out;
+                }
+                .timing.f {
+                animation: timing-step-start 5s step-start;
+                }
+                .timing.g {
+                animation: timing-step-end 5s step-end;
+                }
+                .timing.h {
+                animation: timing-steps 5s steps(2);
+                }
+                .timing.j {
+                animation: timing-cubic-bezier 5s cubic-bezier(0,0,0.5,1);
+                }
+
+                @keyframes timing-ease {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  100% {left: 200px; top: 0; border-color: red;}
+                }
+                @keyframes timing-linear {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  100% {left: 200px; top: 0; border-color: red;}
+                }
+                @keyframes timing-ease-in {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  100% {left: 200px; top: 0; border-color: red;}
+                }
+                @keyframes timing-ease-out {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  100% {left: 200px; top: 0; border-color: red;}
+                }
+                @keyframes timing-ease-in-out {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  100% {left: 200px; top: 0; border-color: red;}
+                }
+                @keyframes timing-step-start {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  100% {left: 200px; top: 0; border-color: red;}
+                }
+                @keyframes timing-step-end {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  100% {left: 200px; top: 0; border-color: red;}
+                }
+                @keyframes timing-steps {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  100% {left: 200px; top: 0; border-color: red;}
+                }
+                @keyframes timing-cubic-bezier {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  100% {left: 200px; top: 0; border-color: red;}
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>animation-delay</td>
+            <td>
+              <strong>animation-delay</strong>: <i>time</i>|initial|inherit; <span class="text-danger">(default: 0)</span><br>
+              Specify a delay for the start of an animation<br>
+              <span class="text-success">Negative value <span class="badge bg-success">allowed</span></span>
+            </td>
+            <td>
+              <h6>animation: delay0 5s linear 0s;</h6>
+              <div class="delay a"></div>
+              <h6>animation: delay1 5s linear 2s;</h6>
+              <div class="delay b"></div>
+              <h6>animation: delay1 5s linear -2s;</h6>
+              <div class="delay c"></div>
+              
+              <style>
+                .delay {
+                  background: url(imgs/tahbert.png) top left/ contain;
+                  width: 50px;
+                  height: 50px;
+                  position: relative;
+                  border: 2px solid #04AA6D;
+                }
+                .delay.a {
+                  animation: delay1 5s linear 0s;
+                }
+                .delay.b {
+                  animation: delay1 5s linear 2s;
+                }
+                .delay.c {
+                  animation: delay2 5s linear -2s;
+                }
+                @keyframes delay0 {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  100% {left: 200px; top: 0; border-color: red;}
+                }
+                @keyframes delay1 {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  100% {left: 200px; top: 0; border-color: red;}
+                }
+                @keyframes delay2 {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  100% {left: 200px; top: 0; border-color: red;}
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td style="white-space: nowrap;">animation-iteration-count</td>
+            <td>
+              <strong>animation-iteration-count</strong>: <i>number</i>|infinite|initial|inherit; <span class="text-danger">(default: 1)</span><br>
+              Specify how many times an animation should run<br>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>animation-direction</td>
+            <td>
+              <strong>animation-direction</strong>: <span class="text-danger">normal</span>|reverse|alternate|alternate-reverse|initial|inherit;<br>
+              Specify whether an animation should be played forwards, backwards or in alternate cycles<br>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>animation-fill-mode</td>
+            <td>
+              <strong>animation-fill-mode</strong>: <span class="text-danger">none</span>|forwards|backwards|both|initial|inherit;<br>
+              Specify a style for the element when the animation is not playing (before it starts, after it ends, or both)<br>
+            </td>
+            <td>
+              <h6>animation: fillmode-none 5s none;</h6>
+              <div class="fillmode none"></div>
+              <h6>animation: fillmode-forwards 5s forwards;</h6>
+              <div class="fillmode forwards"></div>
+              <h6>animation: fillmode-backwards 5s backwards;</h6>
+              <div class="fillmode backwards"></div>
+              <h6>animation: fillmode-both 5s both;</h6>
+              <div class="fillmode both"></div>
+              
+              <style>
+                .fillmode {
+                  background: url(imgs/tahbert.png) top left/ contain;
+                  width: 50px;
+                  height: 50px;
+                  position: relative;
+                  border: 2px solid blue;
+                }
+                .fillmode.none {
+                  animation: fillmode-none 5s none;
+                }
+                .fillmode.forwards {
+                  animation: fillmode-forwards 5s forwards;
+                }
+                .fillmode.backwards {
+                  animation: fillmode-backwards 5s backwards;
+                }
+                .fillmode.both {
+                  animation: fillmode-both 5s both;
+                }
+
+                @keyframes fillmode-none {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  100% {left: 200px; top: 0; border-color: red;}
+                }
+                @keyframes fillmode-forwards {
+                  0% {left: 0; top: 0;}
+                  100% {left: 200px; top: 0; border-color: red;}
+                }
+                @keyframes fillmode-backwards {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  100% {left: 200px; top: 0;}
+                }
+                @keyframes fillmode-both {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  100% {left: 200px; top: 0; border-color: red;}
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>animation-play-state</td>
+            <td>
+              <strong>animation-play-state</strong>: <span class="text-danger">running</span>|paused|initial|inherit;<br>
+              Specify whether the animation is running or paused<br>
+              <span class="text-success">Note: Use this property in a JS to pause an animation in the middle of a cycle</span>
+            </td>
+            <td style="white-space: nowrap;">
+              <h6>
+                .playstate {animation: playstate 5s infinite alternate;}<br>
+                .playstate:hover {animation-play-state: paused;}
+              </h6>
+              <div class="playstate"></div>
+              
+              <style>
+                .playstate {
+                  background: url(imgs/tahbert.png) top left/ contain;
+                  width: 50px;
+                  height: 50px;
+                  position: relative;
+                  border: 2px solid blue;
+                  animation: playstate 5s infinite alternate;
+                }
+                .playstate:hover {
+                  animation-play-state: paused;
+                  cursor: pointer;
+                }
+                @keyframes playstate {
+                  0% {left: 0; top: 0; border-color: #04AA6D;}
+                  100% {left: 200px; top: 0; border-color: red;}
+                }
+              </style>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </body>
+</html>
