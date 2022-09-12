@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Border</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Border</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Border</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>border <span class="badge green">shorthand</span></td>
+                        <td>
+                            <code>border: <i>width style color</i>|initial|inherit;</code> (default: medium none color)<br>
+                            <h3>more specific</h3>
+                            border-top, border-right, border-bottom, border-left
+                            <h3>and more specific</h3>
+                            border-top-width, border-top-style, border-top-color
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>border-width</td>
+                        <td>
+                            <samp>border-width: <u>medium</u>|thin|thick|<i>length</i>|initial|inherit;</samp>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>border-style</td>
+                        <td>
+                            <samp>border-style: <u>none</u>|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|initial|inherit;</samp>
+                            <div class="note">
+                                <span class="badge red">required</span> for other properties to have effect
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>border-color</td>
+                        <td>
+                            <samp>border-color: <i>color</i>|transparent|initial|<u>inherit;</u></samp>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-secondary">Mixing</td>
+                        <td>according to clock direction</td>
+                        <td>
+                            <div class="mix1">
+                                border-style: dotted;
+                            </div>
+                            <div class="mix2">
+                                border-style: dotted solid;
+                            </div>
+                            <div class="mix3">
+                                border-style: dotted solid double;
+                            </div>
+                            <div class="mix4">
+                                border-style: dotted solid double dashed;
+                            </div>
+                            <style>
+                                [class*=mix] {
+                                    padding: 10px; margin: 5px;
+                                    border-radius: 15px;
+                                    border-color: green;
+                                }
+                                .mix1 {border-style: dotted;}
+                                .mix2 {border-style: dotted solid;}
+                                .mix3 {border-style: dotted solid double;}
+                                .mix4 {border-style: dotted solid double dashed;}
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            border-radius
+                            <span class="badge green">shorthand</span>
+                        </td>
+                        <td>
+                            <code>border-radius: <i>length</i>|<i>%</i>|initial|inherit;</code> (default: 0)<br>
+                            <code>border-radius: <i>length</i>|<i>% / length</i>|<i>%</i>|initial|inherit;</code>
+                            <h3>more specific</h3>
+                            border-top-left-radius<br>
+                            border-top-right-radius<br>
+                            border-bottom-right-radius<br>
+                            border-bottom-left-radius<br>
+                        </td>
+                        <td>
+                            <h4>according to clock direction</h4>
+                            <div class="radius1">border-radius: 16px;</div>
+                            <div class="radius2">border-radius: 16px 32px;</div>
+                            <div class="radius3">border-radius: 16px 8px 32px;</div>
+                            <div class="radius4">border-radius: 16px 8px 32px 0px;</div>
+
+                            <h4>elliptical border</h4>
+                            <div class="radius_elliptical1">
+                                border-radius: 32px / 16px;
+                                <span class="text-green">// x-axis: 50px y-axis: 15px</span>
+                            </div>
+                            <div class="radius_elliptical2">border-radius: 32%;</div>
+
+                            <h4>ellipse border</h4>
+                            <div class="radius_ellipse1">border-radius: 50%;</div>
+
+                            <h4>more specific</h4>
+                            <div class="radius_specific1">border-top-right-radius: 32px;</div>
+                            <div class="radius_specific2">
+                                border-top-right-radius: 32px 16px;
+                                <span class="text-green">// x:32px y:16px</span>
+                            </div>
+                            <style>
+                                [class*=radius] {
+                                    border: 0.5px solid green;
+                                    padding: 8px; 
+                                    margin: 4px;
+                                }
+                                .radius1 {border-radius: 16px;}
+                                .radius2 {border-radius: 16px 32px;}
+                                .radius3 {border-radius: 16px 8px 32px;}
+                                .radius4 {border-radius: 16px 8px 32px 0px;}
+                                .radius_elliptical1 {border-radius: 32px / 16px;}
+                                .radius_elliptical2 {border-radius: 32%;}
+                                .radius_ellipse1 {border-radius: 50%;}
+                                .radius_specific1 {border-top-right-radius: 32px;}
+                                .radius_specific2 {border-top-right-radius: 32px 16px;}
+                            </style>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Border Images <span class=" badge yellow">not important</span></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

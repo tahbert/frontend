@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Object Iterator</title>
+    <script>
+        var r = "// result: "
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Object Iterator</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Object Iterator</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Iterable Object</td>
+                        <td>object that can be iterated over with <span class="text-red">for of</span></td>
+                        <td>
+                            <h4> iterate over a string</h4>
+                            const x = "tahbert";<br>
+                            for(let i of x) {...} <span class="text-blur" id="iterable1"></span><br>
+
+                            <h4> iterate over an array</h4>
+                            const y = [1, 2, 3, 4, 5];<br>
+                            for(let i of y) {...} <span class="text-blur" id="iterable2"></span><br>
+
+                            <script>
+                            {
+                                const x = "tahbert";
+                                let text1 = ""
+                                for (let i of x) {
+                                    text1 += i + " | ";
+                                }
+                                document.getElementById("iterable1").innerHTML = r + text1;
+                                
+                                const y = [1, 2, 3, 4, 5];
+                                let text2 = ""
+                                for (let i of y) {
+                                    text2 += i + " | ";
+                                }
+                                document.getElementById("iterable2").innerHTML = r + text2;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            JS Iterators<br>
+                        </td>
+                        <td><span class="text-red">later</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Home Made Iterable<br>
+                        </td>
+                        <td><span class="text-red">later</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

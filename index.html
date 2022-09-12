@@ -5,22 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="stylesheet.css">
+    <!-- styles -->
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <!-- scripts -->
+    <script src="js/script.js" defer></script>
     <title>HTML</title>
 </head>
 <body>
     <div id="header-nav" class="header-nav">
         <i id="icon-menu" class="icon-menu fa-solid fa-bars"></i>
-        <a href="#html" class="html header-nav-item active">HTML</a>
-        <a href="#css" class="css header-nav-item">CSS</a>
-        <a href="#javascript" class="javascript header-nav-item">JAVASCRIPT</a>
+        <a href="#html" class="front-html header-nav-item active">HTML</a>
+        <a href="#css" class="front-css header-nav-item">CSS</a>
+        <a href="#javascript" class="front-javascript header-nav-item">JAVASCRIPT</a>
         <a href="#bootstrap" class="bootstrap header-nav-item">BOOTSTRAP</a>
     </div>
 
     <div id="side-nav-wrapper" class="side-nav-wrapper">
         
         <!-- html -->
-        <div id="html" class="side-nav active">
+        <div id="front-html" class="side-nav active">
             <span class="unit pri-unit active">HTML Introduction</span>
 
             <span class="unit pri-unit">Elements
@@ -48,7 +51,7 @@
         </div>
 
         <!-- CSS -->
-        <div id="css" class="side-nav">
+        <div id="front-css" class="side-nav">
             <span class="unit pri-unit active">Introduction</span>
             <span class="unit pri-unit">Selector</span>
             <span class="unit pri-unit">Specificity</span>
@@ -129,7 +132,7 @@
         </div>
 
         <!-- JAVASCRIPT -->
-        <div id="javascript" class="side-nav">
+        <div id="front-javascript" class="side-nav">
             <span class="unit pri-unit active">JS Introduction</span>
 
             <span class="unit pri-unit">JS Statement
@@ -290,10 +293,7 @@
     </div>
 
     <div id="main" class="main">
-        <iframe src="html/HTML Introduction.html" id="frame" frameborder="0"></iframe>
+        <iframe src="front-html/HTML Introduction.html" id="frame" frameborder="0"></iframe>
     </div>
-
-    <!-- link scripts -->
-    <script src="script.js"></script>
 </body>
 </html>

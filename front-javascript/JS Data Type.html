@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Data Types</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Data Types</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>General</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>String & Number</td>
+                        <td>
+                            composed of strings and number => after a string treated as strings
+                        </td>
+                        <td>
+                            var x = "5" + 2 + 3; <span class="text-blur">// result: 523</span><br>
+                            var x = "tahbert" + 2 + 3; <span class="text-blur">// result : tahbert23</span><br>
+                            var x = 2 + 3 + "5" + 3; <span class="text-blur">// result : 553</span><br>
+                            var x = 2 + 3 + "tahbert" + 3; <span class="text-blur">// result : 5tahbert3</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dynamic</td>
+                        <td>the same variable can be used to hold different data types</td>
+                        <td>
+                            let x = 5; <span class="text-blur">// now x is a number</span><br>
+                            x = "Tahbert"; <span class="text-blur">// now x is a string</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>String</td>
+                        <td>In single or double quotes</td>
+                        <td>
+                            let carName1 = "Volvo XC60"; <span class="text-blur">// In double quotes</span><br>
+                            let carName2 = 'Volvo XC60'; <span class="text-blur">// In single quotes</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Number</td>
+                        <td>With, or without decimals</td>
+                        <td>
+                            let x1 = 34.00; <span class="text-blur">// with decimals</span><br>
+                            let x2 = 34; <span class="text-blur">// without decimals</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Extra large or small numbers with exponential notation</td>
+                        <td>
+                            let y = 123e5; <span class="text-blur">// 12300000</span><br>
+                            let z = 123e-5; <span class="text-blur">// 0.00123</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Boolean</td>
+                        <td>True or false</td>
+                        <td>
+                            let x = 5;<br>
+                            Boolean(x == 3); <span class="text-blur">// basic syntax</span><br>
+                            (x == 3); <span class="text-blur">// more simple</span><br>
+                            x == 3; <span class="text-blur">// most simple</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Array</td>
+                        <td>
+                            inside []<br>
+                            items: seperated by commas<br>
+                        </td>
+                        <td>
+                            const cars = ["Saab"];<br>
+                            const cars = ["Saab", "Volvo", "BMW"];
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Object</td>
+                        <td>
+                            inside {}<br>
+                            items: <span class="text-red">property:value</span> pairs seperated by commas
+                        </td>
+                        <td>
+                            const person = {firstName:"John"};<br>
+                            <span class="text-blur">// property: firstName | value: John</span><br>
+                            const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};<br>
+                            <span class="text-blur">// property: firstName, lastName, age, and eyeColor</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="badge red">avoid</span>
+                            <span class="text-red">new</span> keyword makes the variable is created as an object<br>
+                            => complicate code and slow down execution speed
+                        </td>
+                        <td>
+                            x = new String(); <span class="text-blur">// declare x as a String object</span><br>
+                            y = new Number(); <span class="text-blur">// declare y as a Number object</span><br>
+                            z = new Boolean(); <span class="text-blur">// declare z as a Boolean object</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Undefined Type</td>
+                        <td>when the value is undefined</td>
+                        <td>
+                            <h4> value unavailable => value undefined => type undefined</h4>
+                            let car;
+                            <h4> value undefined => type undefined</h4>
+                            let car = "Volvo";<br>
+                            car = undefined;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Empty Value</td>
+                        <td>Empty string has both a legal value and type</td>
+                        <td>let car = ""; <span class="text-blur">// value: "" | typeof: "string"</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Typeof</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td colspan="2">
+                            Data types that CAN contain values: string | number | boolean | object | function<br>
+                            Data types that CAN'T contain values: null | undefined<br>
+                            Types of objects: object | date | array | string | number | boolean<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Primitive or Complex</td>
+                        <td colspan="2">
+                            <table>
+                                <tr>
+                                    <th colspan="2">Primitive: single simple data value with no additional properties and
+                                        methods</th>
+                                </tr>
+                                <tr>
+                                    <td>string</td>
+                                    <td>
+                                        typeof "Tahbert Nguyen"; <span class="text-blur">// result: <span
+                                                id="tp2ID"></span></span><br>
+                                        typeof ""; <span class="text-blur">// result: <span id="tp2ID_empty"></span>.
+                                            (empty value)</span>
+                                        <script>
+                                            document.getElementById("tp2ID").innerHTML = typeof "Tahbert Nguyen";
+                                            document.getElementById("tp2ID_empty").innerHTML = typeof "";
+                                        </script>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>number</td>
+                                    <td>
+                                        typeof 1994; <span class="text-blur">// result: <span id="tp3ID"></span></span>
+                                        <script>
+                                            document.getElementById("tp3ID").innerHTML = typeof 1994;
+                                        </script>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>boolean</td>
+                                    <td>
+                                        typeof 10 == 9; <span class="text-blur">// result: <span
+                                                id="tp4ID"></span></span>
+                                        <script>
+                                            document.getElementById("tp4ID").innerHTML = typeof 10 == 9;
+                                        </script>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>undefined</td>
+                                    <td>
+                                        typeof tp5; <span class="text-blur">// result: <span id="tp5ID"></span></span>
+                                        <script>
+                                            document.getElementById("tp5ID").innerHTML = typeof tp5;
+                                        </script>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2">Complex</th>
+                                </tr>
+                                <tr>
+                                    <td>object</td>
+                                    <td>
+                                        typeof {fname:"Tahbert", lname:"Nguyen", age:28}; <span class="text-blur">//
+                                            result: <span id="tp6ID"></span></span>
+                                        <script>
+                                            document.getElementById("tp6ID").innerHTML = typeof { fname: "Tahbert", lname: "Nguyen", age: 28 };
+                                        </script>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>array</td>
+                                    <td>
+                                        typeof [1,2,3,4,5]; <span class="text-blur">// result: <span
+                                                id="tp7ID"></span></span>
+                                        <script>
+                                            document.getElementById("tp7ID").innerHTML = typeof [1, 2, 3, 4, 5];
+                                        </script>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>null</td>
+                                    <td>
+                                        typeof null; <span class="text-blur">// result: <span id="tp8ID"></span>. It's a
+                                            bug in JS that typeof null is an object. It should be null.</span>
+                                        <script>
+                                            document.getElementById("tp8ID").innerHTML = typeof null;
+                                        </script>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>function</td>
+                                    <td>
+                                        typeof function(){}; <span class="text-blur">// result: <span
+                                                id="tp9ID"></span></span>
+                                        <script>
+                                            document.getElementById("tp9ID").innerHTML = typeof function () { };
+                                        </script>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-red">constructor</span> property</td>
+                        <td>return the constructor function for a variable or object</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">
+                            <table class="sub-table">
+                                <tr>
+                                    <td>
+                                        "john".constructor;<br>
+                                        (3.14).constructor;<br>
+                                        false.constructor;<br>
+                                        [1,2,3,4].constructor;<br>
+                                        {name:'john', age:34}.constructor;<br>
+                                        new Date().constructor;<br>
+                                        function () {}.constructor;<br>
+                                    </td>
+                                    <td>
+                                        <div class="text-gren" id="tp10ID"></div>
+                                        <script>
+                                            document.getElementById("tp10ID").innerHTML =
+                                            "john".constructor + "<br>" +
+                                            (3.14).constructor + "<br>" +
+                                            false.constructor + "<br>" +
+                                            [1, 2, 3, 4].constructor + "<br>" +
+                                            { name: 'john', age: 34 }.constructor + "<br>" +
+                                            new Date().constructor + "<br>" +
+                                            function () { }.constructor;
+                                        </script>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Type Conversion</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>later</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

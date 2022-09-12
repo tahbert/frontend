@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Strict Mode</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Strict Mode</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Strict Mode</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Useful</td>
+                        <td>
+                            <ul class="note">
+                                <li>throw an error</li>
+                                <li>make it easier to write "secure" JS</li>
+                                <li>change previously accepted "bad syntax" into real errors</li>
+                                <li>make it impossible to accidentally create a global variable</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Declaring</td>
+                        <td>
+                            <span class="text-red">"use strict";</span>
+                            <ul>
+                                <li>at the beginning of script => global scope</li>
+                                <li>at the beginning of func => local scope</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class="text-red">"use strict";</span><br>
+                            x = 2; <span class="text-blur">// error</span><br>
+                            myFn();<br>
+                            function myFn() {y = 2;} <span class="text-blur">// error</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            x = 2; <span class="text-blur">// not throw an error</span><br>
+                            myFn();<br>
+                            function myFn() {<br>
+                                &emsp;<span class="text-red">"use strict";</span><br>
+                                &emsp;y = 2; <span class="text-blur">// error</span><br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="badge red">impossible</span> in strict mode<br>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>use a variable, object without declaring</td>
+                        <td>
+                            "use strict";<br>
+                            x = 2; <span class="text-blur">// error</span><br>
+                            x = {fname:"Tahbert", lname:"Nguyen"}; <span class="text-blur">// error</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>delete a variable, object, or function</td>
+                        <td>
+                            "use strict";<br>
+                            let x = 2;<br>
+                            function myFn() {};<br>
+                            delete x; <span class="text-blur">// error</span><br>
+                            delete myFn; <span class="text-blur">// error</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>duplicate a param</td>
+                        <td>
+                            "use strict";<br>
+                            function myFn(p,p) {}; <span class="text-blur">// error</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>octal numeric literals</td>
+                        <td>
+                            "use strict";<br>
+                            let x = 010; <span class="text-blur">// error</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>octal escape characters</td>
+                        <td>
+                            "use strict";<br>
+                            let x = "\010"; <span class="text-blur">// error</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>write to a read-only property</td>
+                        <td>
+                            "use strict";<br>
+                            const obj = {};<br>
+                            Object.defineProperty(obj, "x", {value:0, writable:false});<br>
+                            obj.x = 2; <span class="text-blur">// error</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>write to a get-only property</td>
+                        <td>
+                            "use strict";<br>
+                            const obj = {get x() {return 0} };<br>
+                            obj.x = 2; <span class="text-blur">// error</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>delete an undeletable property</td>
+                        <td>
+                            "use strict";<br>
+                            delete Object.prototype; <span class="text-blur">// error</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><span class="text-red">eval</span>, <span class="text-red">arguments</span> words cannot be used as a variable</td>
+                        <td>
+                            "use strict";<br>
+                            let eval = 2; <span class="text-blur">// error</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><span class="text-red">with</span> statement</td>
+                        <td>
+                            "use strict";<br>
+                            with (Math){x = cos(2)}; <span class="text-blur">// error</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><span class="text-red">eval()</span> is not allowed to create variables in the scope from which it was
+                            called:</td>
+                        <td>
+                            "use strict";<br>
+                            eval ("let x = 2");<br>
+                            alert (x); <span class="text-blur">// error</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="text-red">this</span> keyword when the object is not specified<br>
+                            <ul class="note">
+                                <li>non-strict mode: func refers to the window object</li>
+                                <li>strict mode: func refers to undefined</li>
+                            </ul>
+                        </td>
+                        <td>
+                            "use strict";<br>
+                            function myFn() {<br>
+                            &emsp;alert(this); <span class="text-blur">// return undefined</span><br>
+                            }<br>
+                            myFn();<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

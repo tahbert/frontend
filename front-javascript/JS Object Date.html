@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Date Object</title>
+    <script>
+        var r = "// result: "
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Date Object</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Date Object</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Date Object</td>
+                        <td>
+                            the object working with dates and times
+                            <div class="note">
+                                JS convert Date to string to display<br>
+                                instead of displaying [object Date]
+                            </div>
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x; <span class="text-blur" id="date1"></span><br>
+                            typeof x; <span class="text-blur" id="date2"></span><br>
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById('date1').innerHTML = r + x;
+                                document.getElementById('date2').innerHTML = r + typeof x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Date Formats</td>
+                    </tr>
+                    <tr>
+                        <td>Date Input</td>
+                        <td>
+                            <span class="text-red">"<i>yyyy-mm-dd</i>"</span><br>
+                            ISO date (standard, JS prefered)
+                            <div class="note">
+                                Date and time is separated with a capital T<br>
+                                UTC time is defined with a capital letter Z<br>
+                            </div>
+                        </td>
+                        <td>
+                            <h4> year, month, day</h4>
+                            const x = new Date("2015-03-25");<br>
+                            x; <span class="text-blur" id="ios1"></span><br>
+                            <h4> year, month</h4>
+                            const y = new Date("2015-03");<br>
+                            y; <span class="text-blur" id="ios2"></span><br>
+                            <h4> year only</h4>
+                            const z = new Date("2015");<br>
+                            z; <span class="text-blur" id="ios3"></span><br>
+                            <script>
+                            {
+                                const x = new Date("2015-03-25");
+                                const y = new Date("2015-03");
+                                const z = new Date("2015");
+                                document.getElementById("ios1").innerHTML = r + x;
+                                document.getElementById("ios2").innerHTML = r + y;
+                                document.getElementById("ios3").innerHTML = r + z;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="text-red">"<i>mm/dd/yyyy</i>"</span><br>
+                            short date
+                        </td>
+                        <td>
+                            const x = new Date("03/25/2015");<br>
+                            x; <span class="text-blur" id="short1"></span><br>
+                            <script>
+                            {
+                                const x = new Date("03/25/2015");
+                                document.getElementById("short1").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="text-red">"<i>mmm dd yyyy</i>"</span><br>
+                            <span class="text-red">"<i>dd mmm yyyy</i>"</span><br>
+                            long date (most often)
+                        </td>
+                        <td>
+                            <h4> month first day after</h4>
+                            const x = new Date("Mar 25 2015");<br>
+                            x; <span class="text-blur" id="long1"></span><br>
+                            <h4> day first month after</h4>
+                            const y = new Date("25 Mar 2015");<br>
+                            y; <span class="text-blur" id="long2"></span><br>
+                            <h4> month can be in full name</h4>
+                            const z = new Date("March 25 2015");<br>
+                            z; <span class="text-blur" id="long3"></span><br>
+                            <script>
+                            {
+                                const x = new Date("Mar 25 2015");
+                                const y = new Date("25 Mar 2015");
+                                const z = new Date("March 25 2015");
+                                document.getElementById("long1").innerHTML = r + x;
+                                document.getElementById("long2").innerHTML = r + y;
+                                document.getElementById("long3").innerHTML = r + z;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Date Output</td>
+                        <td>
+                            independent of input, always in full text string<br>
+                        </td>
+                        <td>
+                            Wed Mar 25 2015 07:00:00 GMT+0700 (Indochina Time)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Time Zones</td>
+                        <td>the browser's time zone by default</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Methods & Properties</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Creating</td>
+                    </tr>
+                    <tr>
+                        <td>new Date()</td>
+                        <td>
+                            <span class="text-red">new Date()</span><br>
+                            create a new date object with the current date and time
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x; <span class="text-blur" id="date_create"></span>
+                            <script>
+                                document.getElementById("date_create").innerHTML = r + new Date();
+                                console.log(typeof new Date())
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="text-red">new Date(<i>year, month</i>)</span><br>
+                            with a specified year, month<br>
+                            <div class="note">
+                                JS counts months from 0 to 11<br>
+                                year with 1 or 2 digit will be interpreted as 19xx:
+                            </div>
+                        </td>
+                        <td>
+                            const x = new Date(2018, 11);<br>
+                            x; <span class="text-blur" id="date_create7"></span><br>
+                            const y = new Date(99, 11,);<br>
+                            y; <span class="text-blur" id="date_create8"></span><br>
+                            const z = new Date(9, 11,);<br>
+                            z; <span class="text-blur" id="date_create9"></span><br>
+                            <script>
+                            {
+                                const x = new Date(2018, 11);
+                                document.getElementById("date_create7").innerHTML = r + x;
+                                const y = new Date(99, 11,);
+                                document.getElementById("date_create8").innerHTML = r + y;
+                                const z = new Date(9, 11,);
+                                document.getElementById("date_create9").innerHTML = r + z;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="text-red">new Date(<i>year, month, day</i>)</span><br>
+                            with a specified year, month, day<br>
+                        </td>
+                        <td>
+                            const x = new Date(2018, 11, 24);<br>
+                            x; <span class="text-blur" id="date_create6"></span>
+    
+                            <script>
+                            {
+                                const x = new Date(2018, 11, 24);
+                                document.getElementById("date_create6").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="text-red">new Date(<i>year, month, day, hour</i>)</span><br>
+                            with a specified year, month, day, hour<br>
+                        </td>
+                        <td>
+                            const x = new Date(2018, 11, 24, 10);<br>
+                            x; <span class="text-blur" id="date_create5"></span>
+                            <script>
+                            {
+                                const x = new Date(2018, 11, 24, 10);
+                                document.getElementById("date_create5").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="text-red">new Date(<i>year, month, day, hour, minute</i>)</span><br>
+                            with a specified year, month, day, hour, minute<br>
+                        </td>
+                        <td>
+                            const x = new Date(2018, 11, 24, 10, 33);<br>
+                            x; <span class="text-blur" id="date_create4"></span>
+                            <script>
+                            {
+                                const x = new Date(2018, 11, 24, 10, 33);
+                                document.getElementById("date_create4").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="text-red">new Date(<i>year, month, day, hour, minute, second</i>)</span><br>
+                            with a specified year, month, day, hour, minute, second<br>
+                        </td>
+                        <td>
+                            const x = new Date(2018, 11, 24, 10, 33, 30);<br>
+                            x; <span class="text-blur" id="date_create3"></span>
+                            <script>
+                            {
+                                const x = new Date(2018, 11, 24, 10, 33, 30);
+                                document.getElementById("date_create3").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="text-red">new Date(<i>year, month, day, hour, minute, second, millisecond</i>)</span><br>
+                            with a specified year, month, day, hour, minute, second, millisecond<br>
+                        </td>
+                        <td>
+                            const x = new Date(2018, 11, 24, 10, 33, 30, 0);<br>
+                            x; <span class="text-blur" id="date_create2"></span>
+                            <script>
+                            {
+                                const x = new Date(2018, 11, 24, 10, 33, 30, 0);
+                                document.getElementById("date_create2").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="text-red">new Date(<i>string</i>)</span><br>
+                            create a new date object from a date string
+                        </td>
+                        <td>
+                            const x = new Date("October 13, 2014 11:13:00");<br>
+                            x; <span class="text-blur" id="date_create10"></span>
+    
+                            <script>
+                            {
+                                const x = new Date("October 13, 2014 11:13:00");
+                                document.getElementById("date_create10").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="text-red">new Date(<i>milliseconds</i>)</span><br>
+                            create a new date object as zero time plus milliseconds<br>
+                            <div class="note">
+                                start at January 1, 1970, 00:00:00 Universal Time (UTC)
+                            </div>
+                        </td>
+                        <td>
+                            const x = new Date(0);<br>
+                            x; <span class="text-blur" id="do11_id"></span><br>
+                            const y = new Date(100000000000);<br>
+                            y; <span class="text-blur" id="do12_id"></span><br>
+                            <script>
+                            {
+                                const x = new Date(0);
+                                document.getElementById("do11_id").innerHTML = r + x;
+                                const y = new Date(100000000000);
+                                document.getElementById("do12_id").innerHTML = r + y;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Converting</td>
+                    </tr>
+                    <tr>
+                        <td>toString()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.toString()</span><br>
+                            return string - convert into string<br>
+                            <div class="note">
+                                JS automatically convert Date into string to dipslay
+                            </div>
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x; <span class="text-blur" id="toString1"></span><br>
+                            x.toString(); <span class="text-blur" id="toString2"></span><br>
+    
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("toString1").innerHTML = r + x;
+                                document.getElementById("toString2").innerHTML = r + x.toString();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>toUTCString()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.toUTCString()</span><br>
+                            return string - convert a date to a UTC string (standard)
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.toUTCString(); <span class="text-blur" id="toUTCString1"></span><br>
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("toUTCString1").innerHTML = r + x.toUTCString();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>toISOString()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.toISOString()</span><br>
+                            return string - convert a Date object to a ISO string (standard)
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.toISOString(); <span class="text-blur" id="toISOString1"></span><br>
+    
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("toISOString1").innerHTML = r + x.toISOString();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>toDateString()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.toDateString()</span><br>
+                            return string - convert a date to a more readable format
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.toDateString(); <span class="text-blur" id="toDateString1"></span><br>
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("toDateString1").innerHTML = r + x.toDateString();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Date.parse()<br>
+                            <span class="text-blur">static method</span>
+                        </td>
+                        <td>
+                            <span class="text-red">Date.parse(<i>string</i>)</span><br>
+                            return number - milliseconds between the date and Jan 1 1970</td>
+                        <td>
+                            const x = Date.parse("Mar 25 2015");<br>
+                            x; <span class="text-blur" id="parse1"></span><br>
+                            <script>
+                            {
+                                const x = Date.parse("Mar 25 2015");
+                                document.getElementById("parse1").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Getting</td>
+                    </tr>
+                    <tr>
+                        <td>getTime()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.getTime()</span><br>
+                            return number - milliseconds (since Jan 1 1970)
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.getTime(); <span class="text-blur" id="getIime1"></span><br>
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("getIime1").innerHTML = r + x.getTime();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>getFullYear()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.getFullYear()</span><br>
+                            return number - the year of a date as a four digit number
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.getFullYear(); <span class="text-blur" id="getFullYear1"></span><br>
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("getFullYear1").innerHTML = r + x.getFullYear();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>getMonth()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.getMonth()</span><br>
+                            return number - the month of the date (0-11)<br>
+                            <span class="note">
+                                + 1 to get the correct month
+                            </span>
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.getMonth() + 1; <span class="text-blur" id="getMonth1"></span><br>
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("getMonth1").innerHTML = r + (x.getMonth() + 1);
+                            }
+                            </script>
+
+                            <h4> return the month as a name</h4>
+                            y[x.getMonth()]; <span class="text-blur" id="getMonth2"></span><br>
+                            <script>
+                            {
+                                const x = new Date();
+                                const y = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                                document.getElementById("getMonth2").innerHTML = r + y[x.getMonth()];
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>getDate()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.getDate()</span><br>
+                            return number - the day of the month (1-31)
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.getDate(); <span class="text-blur" id="getDate1"></span><br>
+    
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("getDate1").innerHTML = r + x.getDate();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>getHours()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.getHours()</span><br>
+                            return number - the local time hour (0-23)
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.getHours(); <span class="text-blur" id="getHours1"></span><br>
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("getHours1").innerHTML = r + x.getHours();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>getMinutes()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.getMinutes()</span><br>
+                            return number - the minutes of the date (0-59)
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.getMinutes(); <span class="text-blur" id="getMinutes1"></span><br>
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("getMinutes1").innerHTML = r + x.getMinutes();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>getSeconds()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.getSeconds()</span><br>
+                            return number - the seconds of the date(0-59)
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.getSeconds(); <span class="text-blur" id="getSeconds1"></span><br>
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("getSeconds1").innerHTML = r + x.getSeconds();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>getMilliseconds()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.getMilliseconds()</span><br>
+                            return number - the milliseconds of the date (0-999)
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.getMilliseconds(); <span class="text-blur" id="getMilliseconds1"></span><br>
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("getMilliseconds1").innerHTML = r + x.getMilliseconds();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>getDay()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.getDay()</span><br>
+                            return number - the day of the week (0-6)<br>
+                            <div class="note">+ 1 to get the correct day</div>
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.getDay() + 1; <span class="text-blur" id="getDay1"></span><br>
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("getDay1").innerHTML = r + (x.getDay() + 1);
+                            }
+                            </script>
+                            <h4> return the weekday as a name</h4>
+                            y[x.getDay()] <span class="text-blur" id="do37_id"></span><br>
+                            <script>
+                            {
+                                const x = new Date();
+                                const y = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                                document.getElementById("do37_id").innerHTML = r + y[x.getDay()];
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="text-blur">UTC Date Methods</span>
+                        </td>
+                        <td>
+                            Used for working with UTC dates (Universal Time Zone dates):<br>
+                            getUTCFullYear(), getUTCMonth(), getUTCDate(), getUTCDay()<br>
+                            getUTCHours(), getUTCMinutes(), getUTCSeconds(), getUTCMilliseconds()<br>
+                        </td>
+                        <td></td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Setting</td>
+                    </tr>
+                    <tr>
+                        <td>setTime()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.setTime(millisec)</span><br>
+                            return number - set the time (since Jan 01 1970)
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.setTime(1332403882588); <span class="text-blur" id="setTime1"></span><br>
+                            x; <span class="text-blur" id="setTime2"></span><br>
+    
+                            <script>
+                            {
+                                const x = new Date();
+                                x.setTime(1332403882588);
+                                document.getElementById("setTime1").innerHTML = r + x.setTime(1332403882588);
+                                document.getElementById("setTime2").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>setDate()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.setDate(<i>day</i>)</span><br>
+                            set a date (1-31)<br>
+                            return number - milliseconds from Jan 1, 1970 00:00:00 UTC.</td>
+                        <td>
+                            const x = new Date();<br>
+                            x.setDate(15); <span class="text-blur" id="setDate1"></span><br>
+                            x; <span class="text-blur" id="setDate2"></span><br>
+    
+                            <h4> can be used to add days to a date</h4>
+                            const y = new Date();<br>
+                            y.setDate(y.getDate() + 1); <span class="text-blur" id="setDate3"></span><br>
+                            y; <span class="text-blur" id="setDate4"></span><br>
+    
+                            <script>
+                                const x = new Date();
+                                document.getElementById("setDate1").innerHTML = r + x.setDate(15);;
+                                document.getElementById("setDate2").innerHTML = r + x;
+
+                                const y = new Date();
+                                document.getElementById("setDate3").innerHTML = r + y.setDate(y.getDate() + 1);
+                                document.getElementById("setDate4").innerHTML = r + y;
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>setMonth()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.setMonth(<i>month</i>)</span><br>
+                            <span class="text-red"><i>date</i>.setMonth(<i>month, day</i>)</span><br>
+                            set the month of a date (0-11)<br>
+                            return number - milliseconds from Jan 1, 1970 00:00:00 UTC.
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.setMonth(0); <span class="text-blur" id="setMonth1"></span><br>
+                            x; <span class="text-blur" id="setMonth2"></span><br>
+    
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("setMonth1").innerHTML = r + x.setMonth(0);
+                                document.getElementById("setMonth2").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>setFullYear()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.setFullYear(<i>year</i>)</span><br>
+                            <span class="text-red"><i>date</i>.setFullYear(<i>year, month</i>)</span><br>
+                            <span class="text-red"><i>date</i>.setFullYear(<i>year, month, day</i>)</span><br>
+                            set the year (can alse set month, day) of a date<br>
+                            return number - milliseconds from Jan 1, 1970 00:00:00 UTC.
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.setFullYear(1994); <span class="text-blur" id="setFullYear1"></span><br>
+                            x; <span class="text-blur" id="setFullYear2"></span><br>
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("setFullYear1").innerHTML = r + x.setFullYear(1994);;
+                                document.getElementById("setFullYear2").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>setMilliseconds()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.setMilliseconds(<i>millisec</i>)</span><br>
+                            set the milliseconds of a date (0-999)<br>
+                            return number - milliseconds from Jan 1, 1970 00:00:00 UTC.
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.setMilliseconds(0); <span class="text-blur" id="setMilliseconds1"></span><br>
+                            x; <span class="text-blur" id="setMilliseconds2"></span><br>
+    
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("setMilliseconds1").innerHTML = r + x.setMilliseconds(0);;
+                                document.getElementById("setMilliseconds2").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>setSeconds()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.setSeconds(<i>sec</i>)</span><br>
+                            <span class="text-red"><i>date</i>.setSeconds(<i>sec, millisec</i>)</span><br>
+                            set the seconds of a date (0-59)<br>
+                            return number - milliseconds from Jan 1, 1970 00:00:00 UTC.
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.setSeconds(0); <span class="text-blur" id="setSeconds1"></span><br>
+                            x; <span class="text-blur" id="setSeconds2"></span><br>
+    
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("setSeconds1").innerHTML = r + x.setSeconds(0);;
+                                document.getElementById("setSeconds2").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>setMinutes()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.setMinutes(<i>min</i>)</span><br>
+                            <span class="text-red"><i>date</i>.setMinutes(<i>min, sec</i>)</span><br>
+                            <span class="text-red"><i>date</i>.setMinutes(<i>min, sec, millisec</i>)</span><br>
+                            set the minutes of a date (0-59)<br>
+                            return number - milliseconds from Jan 1, 1970 00:00:00 UTC.
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.setMinutes(0); <span class="text-blur" id="setMinutes1"></span><br>
+                            x; <span class="text-blur" id="setMinutes2"></span><br>
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("setMinutes1").innerHTML = r + x.setMinutes(0);
+                                document.getElementById("setMinutes2").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>setHours()</td>
+                        <td>
+                            <span class="text-red"><i>date</i>.setHours(<i>hour</i>)</span><br>
+                            <span class="text-red"><i>date</i>.setHours(<i>hour, min</i>)</span><br>
+                            <span class="text-red"><i>date</i>.setHours(<i>hour, min, sec</i>)</span><br>
+                            <span class="text-red"><i>date</i>.setHours(<i>hour, min, sec, millisec</i>)</span><br>
+                            set the hour of a date (0-23)<br>
+                            return number - milliseconds from Jan 1, 1970 00:00:00 UTC.
+                        </td>
+                        <td>
+                            const x = new Date();<br>
+                            x.setHours(0); <span class="text-blur" id="setHours1"></span><br>
+                            x; <span class="text-blur" id="setHours2"></span><br>
+    
+                            <script>
+                            {
+                                const x = new Date();
+                                document.getElementById("setHours1").innerHTML = r + x.setHours(0);
+                                document.getElementById("setHours2").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

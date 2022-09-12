@@ -1,0 +1,1596 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Array</title>
+    <script>
+        var r = "// result: ";
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Array</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Array Object</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Array</td>
+                        <td>
+                            <span class="text-red">const <i>array</i> = [<i>item1, item2, ...</i>];</span><br>
+                            variable that can hold more than one value<br>
+                        </td>
+                        <td>
+                            <h4> create an array and items at the same time</h4>
+                            const x = ["Banana", "Orange", "Apple"];
+                            <h4> create an empty array, and provide items later</h4>
+                            const x = [];<br>
+                            x[0]= "Banana";<br>
+                            x[1]= "Orange";<br>
+                            x[2]= "Apple";<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Accessing</td>
+                        <td>
+                            <span class="text-red"><i>array</i></span><br>
+                            access array by name<br>
+                            <span class="text-red"><i>array</i>.[<i>index</i>]</span><br>
+                            access elements by index<br>
+                            <span class="text-red"><i>array</i>.[<i>array</i>.length]</span><br>
+                            access elements by <span class="text-red">length</span> property
+                        </td>
+                        <td>
+                            <h4> starting code:</h4>
+                            const x = ["Banana", "Orange", "Apple"];
+                            <h4> access the full array</h4>
+                            x; <span class="text-blur" id="access1"></span>
+                            <h4> access the 1st element</h4>
+                            x[0]; <span class="text-blur" id="access2"></span>
+                            <h4> access the last element</h4>
+                            x[x.length - 1]; <span class="text-blur" id="access3"></span>
+
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+                                document.getElementById("access1").innerHTML = r + x;
+                                document.getElementById("access2").innerHTML = r + x[0];
+                                document.getElementById("access3").innerHTML = r + x[x.length -1];
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Changing</td>
+                        <td>access and change elements</td>
+                        <td>
+                            <h4> starting code:</h4>
+                            let x = ["Banana", "Orange", "Apple"];
+                            <h4> access and change the full array</h4>
+                            x = ["Mango", "Kiwi", "Lemon"]; <span class="text-blur" id="change1"></span>
+                            <h4> access and change the 1st element</h4>
+                            x[0]; <span class="text-blur" id="change2"></span>
+                            <h4> access and change the last element</h4>
+                            x[x.length - 1]; <span class="text-blur" id="change3"></span>
+
+                            <script>
+                            {
+                                let x = ["Banana", "Orange", "Apple"];
+                                x = ["Mango", "Kiwi", "Lemon"];
+                                document.getElementById("change1").innerHTML = r + x;
+                                x[0] = "Banana";
+                                document.getElementById("change2").innerHTML = r + x[0];
+                                x[x.length -1] = "Apple";
+                                document.getElementById("change3").innerHTML = r + x[x.length -1];
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Adding</td>
+                        <td>
+                            <ul class="note">
+                                <li>use <span class="text-red">push()</span> (easiest way)</li>
+                                <li>use <span class="text-red">length</span> property</li>
+                                <li>use <span class="text-red">index</span> (high index can create undefined "holes")</li>
+                            </ul>
+                        </td>
+                        <td>
+                            const x = ["Banana", "Orange", "Apple"];
+                            <h4> use push() method:</h4>
+                            x.push("Lemon"); <span class="text-blur" id="add1"></span>
+                            <h4> use length property:</h4>
+                            x[x.length] = "Mango"; <span class="text-blur" id="add2"></span>
+                            <h4> use index:</h4>
+                            x[5] = "Kiwi"; <span class="text-blur" id="add3"></span>
+                            <h4> use high index</h4>
+                            x[8] = "Coconut"; <span class="text-blur" id="add4"></span>
+
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+                                x.push("Lemon");
+                                document.getElementById("add1").innerHTML = r + x;
+                                x[x.length] = "Mango";
+                                document.getElementById("add2").innerHTML = r + x;
+                                x[5] = "Kiwi";
+                                document.getElementById("add3").innerHTML = r + x;
+                                x[8] = "Coconut";
+                                document.getElementById("add4").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Looping</td>
+                        <td>
+                            <ul class="note">
+                                <li>use <span class="text-red">for</span> (standard)</li>
+                                <li>use <span class="text-red">for of</span></li>
+                                <li>use <span class="text-red">forEach()</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            const x = ["Banana", "Orange", "Apple"];<br>
+                            text1; <span class="text-blur" id="loop1"></span><br>
+                            text2; <span class="text-blur" id="loop2"></span><br>
+                            text3; <span class="text-blur" id="loop3"></span><br>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+
+                                let text1 = "";
+                                for (let i = 0; i < x.length; i++) {
+                                    text1 += x[i];
+                                }
+                                document.getElementById("loop1").innerHTML = r + text1;
+
+                                let text2 = "";
+                                for (let i of x) {
+                                    text2 += i;
+                                }
+                                document.getElementById("loop2").innerHTML = r + text2;
+
+                                let text3 = "";
+                                x.forEach((i) => {
+                                    text3 += i;
+                                });
+                                document.getElementById("loop3").innerHTML = r + text3;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Arrays are Objects</td>
+                        <td>array is a special type of object</td>
+                        <td>
+                            <h4> arrays access "elements" by index</h4>
+                            const x = ["Tahbert", "Nguyen", 28];<br>
+                            x[0]; <span class="text-blur" id="special1"></span>
+                            <h4> objects access "members" by name</h4>
+                            const y = {fname:"Tahbert", lname:"Nguyen", age:28};<br>
+                            y.fname; <span class="text-blur" id="special2"></span>
+
+                            <script>
+                            {
+                                const x = ["Tahbert", "Nguyen", 28];
+                                const y = {fname:"Tahbert", lname:"Nguyen", age:28};
+                                document.getElementById("special1").innerHTML = r + x[0];
+                                document.getElementById("special2").innerHTML = r + y.fname;
+                            }
+                            </script>
+                        </td>
+                    <tr>
+                        <td>Associative Arrays</td>
+                        <td>
+                            arrays with named indexes<br>
+                            <div class="note"> may languages support. but JS does not</div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Array Elements</td>
+                        <td>
+                            <ul>
+                                <li>variables can be objects</li>
+                                <li>arrays are special kinds of objects</li>
+                            </ul>
+                            => <span class="badge green">possible</span> array elements can be of different types<br>
+                        </td>
+                        <td>
+                            const x[];<br>
+                            x[0] = "Tahbert Nguyen" <span class="text-blur">// element string</span><br>
+                            x[1] = 28 <span class="text-blur">// element as number</span><br>
+                            x[2] = Date.now; <span class="text-blur">// element as object</span><br>
+                            x[3] = myFunction; <span class="text-blur">// element as function</span><br>
+                            x[4] = myCars; <span class="text-blur">// element as array</span><br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Methods & Properties</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties</td>
+                    </tr>
+                    <tr>
+                        <td>length</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.length</span><br>
+                            return number - the number of array elements
+                        </td>
+                        <td>
+                            const x = ["Banana", "Orange", "Apple", "Mango"];<br>
+                            x.length; <span class="text-blur" id="length1"></span>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple", "Mango"];
+                                document.getElementById("length1").innerHTML = r + x.length;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>constructor</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.constructor</span><br>
+                            return function - that created the Array prototype
+                        </td>
+                        <td>
+                            const x = ["Banana", "Orange", "Apple", "Mango"];<br>
+                            x.constructor; <span class="text-blur" id="constructor1"></span>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple", "Mango"];
+                                document.getElementById("constructor1").innerHTML = r + x.constructor;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>prototype</td>
+                        <td>
+                            <span class="text-red">Array.prototype.<i>name</i> = <i>value</i></span><br>
+                            allow to add new methods and properties to arrays<br>
+                        </td>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/jsref_prototype_array.asp" 
+                            target="_blank">example</a>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Static</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Array.from()<br>
+                            <span class="text-blur">(static method)</span>
+                        </td>
+                        <td>
+                            <span class="text-red">Array.from(<i>object</i>)</span><br>
+                            <span class="text-red">Array.from(<i>object, mapFunction, this</i>)</span><br>
+                            return array - from any iterable object, or object with a <span class="text-red">length</span> property<br>
+                        </td>
+                        <td>
+                            <h4> create an array from a string</h4>
+                            const x = "ABCDEFG";<br>
+                            Array.from(x); <span class="text-blur" id="from1"></span>
+    
+                            <script>
+                            {
+                                const x = "ABCDEFG";
+                                document.getElementById("from1").innerHTML = r + Array.from(x);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Array.isArray()<br>
+                            <span class="text-blur">(static method)</span>
+                        </td>
+                        <td>
+                            <span class="text-red">Array.isArray(<i>object</i>)</span><br>
+                            return boolean - true if the object is an array<br>
+                        </td>
+                        <td>
+                            <h4> check if an object is an array:</h4>
+                            const x = ["Banana", "Orange", "Apple", "Mango"];<br>
+                            Array.isArray(x); <span class="text-blur" id="isArray1"></span>
+    
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple", "Mango"];
+                                document.getElementById("isArray1").innerHTML = r + Array.isArray(x);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Basic</td>
+                    </tr>
+                    <tr>
+                        <td>valueOf()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.valueOf()</span> (comma as default separator)<br>
+                            return array - the array itself
+                            <div class="note">the same as returning the array by name</div>
+                            <div class="warn">not mutate the original array</div>
+                        </td>
+                        <td>
+                            const x = ["Banana", "Orange", "Apple"];<br>
+                            x.valueOf(); <span class="text-blur" id="valueOf1"></span><br>
+                            x; <span class="text-blur" id="valueOf2"></span>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+                                document.getElementById("valueOf1").innerHTML = r + x.valueOf();
+                                document.getElementById("valueOf2").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Convert to String</td>
+                    </tr>
+                    <tr>
+                        <td>toString()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.toString()</span> (comma as default separator)<br>
+                            return string - convert to a string of elements
+                            <div class="warn">not mutate the original array</div>
+                        </td>
+                        <td>
+                            const x = ["Banana", "Orange", "Apple"];<br>
+                            x.toString(); <span class="text-blur" id="toString1"></span>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+                                document.getElementById("toString1").innerHTML = r + x.toString();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>join()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.join()</span> (comma as default separator)<br>
+                            <span class="text-red"><i>array</i>.join(<i>separator</i>)</span><br>
+                            return string - convert to a string of elements
+                            <div class="note">possible for specified separator</div>
+                            <div class="warn">not mutate the original array</div>
+                        </td>
+                        <td>
+                            const x = ["Banana", "Orange", "Apple"];<br>
+                            x.join(); <span class="text-blur" id="join1"></span><br>
+                            x.join("|"); <span class="text-blur" id="join2"></span><br>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+                                document.getElementById("join1").innerHTML = r + x.join();
+                                document.getElementById("join2").innerHTML = r + x.join("|");
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Add or Remove Elements</td>
+                    </tr>
+                    <tr>
+                        <td>pop()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.pop()</span><br>
+                            remove the last element<br>
+                            return value - the element removed
+                            <div class="warn">mutate the original array</div>
+                        </td>
+                        <td>
+                            const x = ["Banana", "Orange", "Apple"];<br>
+                            x.pop(); <span class="text-blur" id="pop1"></span><br>
+                            x; <span class="text-blur" id="pop2"></span><br>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+                                document.getElementById("pop1").innerHTML = r + x.pop();
+                                document.getElementById("pop2").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>shift()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.shift()</span><br>
+                            remove the 1st element (shift index)<br>
+                            return value - the element removed
+                            <div class="warn">mutate the original array</div>
+                        </td>
+                        <td>
+                            const x = ["Banana", "Orange", "Apple"];<br>
+                            x.shift(); <span class="text-blur" id="shift1"></span><br>
+                            x; <span class="text-blur" id="shift2"></span><br>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+                                document.getElementById("shift1").innerHTML = r + x.shift();
+                                document.getElementById("shift2").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            arrays are objects => elements can be deleted by <span class="text-red">delete</span> operator<br>
+                            <div class="note">
+                                may leave undefined holes => use 
+                                <span class="text-red">pop()</span> or 
+                                <span class="text-red">shift()</span> instead
+                            </div>
+                        </td>
+                        <td>
+                            const x = ["Banana", "Orange", "Apple"];<br>
+                            delete x[0]; <span class="text-blur" id="delete1"></span><br>
+                            x; <span class="text-blur" id="delete2"></span><br>
+
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+                                document.getElementById("delete1").innerHTML = r + delete x[0];
+                                document.getElementById("delete2").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>push()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.push(<i>el</i>)</span><br>
+                            <span class="text-red"><i>array</i>.push(<i>el, el, etc</i>)</span><br>
+                            add elements at the end<br>
+                            return number - new length
+                            <div class="warn">mutate the original array</div>
+                        </td>
+                        <td>
+                            const x = ["Banana", "Orange", "Apple"];<br>
+                            x.push("Mango", "Kiwi"); <span class="text-blur" id="push1"></span><br>
+                            x; <span class="text-blur" id="push2"></span><br>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+                                document.getElementById("push1").innerHTML = r + x.push("Mango", "Kiwi");
+                                document.getElementById("push2").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>unshift()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.unshift(<i>el</i>)</span><br>
+                            <span class="text-red"><i>array</i>.unshift(<i>el, el, etc</i>)</span><br>
+                            add elements at the beginning (unshift index)<br>
+                            return number - new length
+                            <div class="warn">mutate the original array</div>
+                        </td>
+                        <td>
+                            const x = ["Banana", "Orange", "Apple"];<br>
+                            x.unshift("Mango", "Kiwi"); <span class="text-blur" id="unshift1"></span><br>
+                            x; <span class="text-blur" id="unshift2"></span><br>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+                                document.getElementById("unshift1").innerHTML = r + x.unshift("Mango", "Kiwi");
+                                document.getElementById("unshift2").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>splice()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.splice(<i>start</i>)</span><br>
+                            <span class="text-red"><i>array</i>.splice(<i>start, removeCount</i>)</span><br>
+                            <span class="text-red"><i>array</i>.splice(<i>start, removeCount, el</i>)</span><br>
+                            <span class="text-red"><i>array</i>.splice(<i>start, removeCount, el, el, etc</i>)</span><br>
+                            add, remove, or add and remove elements<br>
+                            return array - containing removed elements (if any)
+                            <ul class="note">
+                                <li>start: start position for adding/removing</li>
+                                <li>removeCount: how many elements removed</li>
+                                <li>el: elements added</li>
+                            </ul>
+                            <div class="warn">mutate the original array</div>
+                        </td>
+                        <td>
+                            <h4> remove items (start: 1 | removeCount: the rest)</h4>
+                            const x = ["Banana", "Orange", "Apple"];<br>
+                            x.splice(1); <span class="text-blur" id="splice1"></span><br>
+                            x; <span class="text-blur" id="splice2"></span>
+    
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+                                document.getElementById("splice1").innerHTML = r + x.splice(1);
+                                document.getElementById("splice2").innerHTML = r + x;
+                            }
+                            </script>
+
+                            <h4> remove items (start: 1 | removeCount: 2)</h4>
+                            const x = ["Banana", "Orange", "Apple"];<br>
+                            x.splice(1, 2); <span class="text-blur" id="splice3"></span><br>
+                            x; <span class="text-blur" id="splice4"></span><br>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+                                document.getElementById("splice3").innerHTML = r + x.splice(1, 2);
+                                document.getElementById("splice4").innerHTML = r + x;
+                            }
+                            </script>
+
+                            <h4> add items (start: 1 | 0 removed | elements added)</h4>
+                            const x = ["Banana", "Orange", "Apple"];<br>
+                            x.splice(1, 0, "Lemon", "Kiwi"); <span class="text-blur" id="splice5"></span><br>
+                            x; <span class="text-blur" id="splice6"></span><br>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+                                document.getElementById("splice5").innerHTML = r + x.splice(1, 0, "Lemon", "Kiwi");
+                                document.getElementById("splice6").innerHTML = r + x;
+                            }
+                            </script>
+
+                            <h4> add and remove (start: 1 | 2 removed | elements added)</h4>
+                            const x = ["Banana", "Orange", "Apple"];<br>
+                            x.splice(1, 2, "Lemon", "Kiwi"); <span class="text-blur" id="splice7"></span><br>
+                            x; <span class="text-blur" id="splice8"></span><br>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+                                document.getElementById("splice7").innerHTML = r + x.splice(1, 2, "Lemon", "Kiwi");
+                                document.getElementById("splice8").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Modify Elements</td>
+                    </tr>
+                    <tr>
+                        <td>copyWithin()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.copyWithin(<i>target</i>)</span><br>
+                            <span class="text-red"><i>array</i>.copyWithin(<i>target, start</i>)</span><br>
+                            <span class="text-red"><i>array</i>.copyWithin(<i>target, start, end</i>)</span><br>
+                            copy elements to another position<br>
+                            return array - the changed array<br>
+                            <div class="warn">
+                                mutate the original array<br>
+                                not add items to the array
+                            </div>
+                        </td>
+                        <td>
+                            <h4> target: 2 | start: 0 as default | end: length as default</h4>
+                            const x = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];<br>
+                            x.copyWithin(2); <span class="text-blur" id="copyWithin1"></span><br>
+                            <script>
+                                {
+                                    const x = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
+                                    document.getElementById("copyWithin1").innerHTML = r + x.copyWithin(2);
+                                }
+                            </script>
+
+                            <h4> target: 2 | start: 2 | end: length as default</h4>
+                            const x = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];<br>
+                            x.copyWithin(2,2); <span class="text-blur" id="copyWithin2"></span><br>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
+                                document.getElementById("copyWithin2").innerHTML = r + x.copyWithin(2,2);
+                            }
+                            </script>
+
+                            <h4> target: 2 | start: 1 | end: 2</h4>
+                            const x = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];<br>
+                            x.copyWithin(2,2,2); <span class="text-blur" id="copyWithin3"></span><br>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
+                                document.getElementById("copyWithin3").innerHTML = r + x.copyWithin(2,1,2);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>fill()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.fill(<i>el</i>)</span><br>
+                            <span class="text-red"><i>array</i>.fill(<i>el, start</i>)</span><br>
+                            <span class="text-red"><i>array</i>.fill(<i>el, start, end</i>)</span><br>
+                            fill specified elements with a value<br>
+                            return array - the filled array<br>
+                            <div class="warn">
+                                mutate the original array<br>
+                                not add items to the array
+                            </div>
+                        </td>
+                        <td>
+                            <h4> el: "Lemon" | start: 0 as default | end: length as default</h4>
+                            const x = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];<br>
+                            x.fill("Lemon"); <span class="text-blur" id="fill1"></span><br>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
+                                document.getElementById("fill1").innerHTML = r + x.fill("Lemon");
+                            }
+                            </script>
+
+                            <h4> el: "Lemon" | start: 1 | end: length as default</h4>
+                            const x = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];<br>
+                            x.fill("Lemon",1); <span class="text-blur" id="fill2"></span><br>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
+                                document.getElementById("fill2").innerHTML = r + x.fill("Lemon",1);
+                            }
+                            </script>
+
+                            <h4> el: "Lemon" | start: 1 | end: 2</h4>
+                            const x = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];<br>
+                            x.fill("Lemon",1,2); <span class="text-blur" id="fill3"></span><br>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
+                                document.getElementById("fill3").innerHTML = r + x.fill("Lemon",1,2);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Copy Elements to a New Array</td>
+                    </tr>
+                    <tr>
+                        <td>concat()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.concat()</span><br>
+                            <span class="text-red"><i>array</i>.concat(<i>array</i>)</span><br>
+                            <span class="text-red"><i>array</i>.concat(<i>array, array, etc</i>)</span><br>
+                            return array - concatenated array<br>
+                            <div class="warn">not mutate the original array</div>
+                        </td>
+                        <td>
+                            const x = ["Banana", "Orange"];<br>
+                            const y = ["Apple", "Mango"];<br>
+                            const z = ["Kiwi"];<br>
+                            <h4> concatenate nothing</h4>
+                            x.concat(); <span class="text-blur" id="concat1"></span>
+                            <h4> concatenate another array</h4>
+                            x.concat(y); <span class="text-blur" id="concat2"></span>
+                            <h4> concatenate other arrays</h4>
+                            x.concat(y, z); <span class="text-blur" id="concat3"></span>
+                            <h4> concatenate strings</h4>
+                            x.concat("Lemon"); <span class="text-blur" id="concat4"></span>
+    
+                            <script>
+                            {
+                                const x = ["Banana", "Orange"];
+                                const y = ["Apple", "Mango"];
+                                const z = ["Kiwi"];
+                                document.getElementById("concat1").innerHTML = r + x.concat();
+                                document.getElementById("concat2").innerHTML = r + x.concat(y);
+                                document.getElementById("concat3").innerHTML = r + x.concat(y, z);
+                                document.getElementById("concat4").innerHTML = r + x.concat("Lemon");
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>slice()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.slice()</span><br>
+                            <span class="text-red"><i>array</i>.slice(<i>start</i>)</span><br>
+                            <span class="text-red"><i>array</i>.slice(<i>start, end</i>)</span><br>
+                            return array - containing the selected elements.<br>
+                            <div class="note">negative index possible: -4 -3 -2 -1 0</div>
+                            <div class="warn">not mutate the original arrays</div>
+                        </td>
+                        <td>
+                            const x =  ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+                            <h4> start: 0 as default | end: last index as default</h4>
+                            x.slice(); <span class="text-blur" id="slice1"></span>
+                            <h4> start: 1 | end: last index as default</h4>
+                            x.slice(1); <span class="text-blur" id="slice2"></span>
+                            <h4> start: 1 | end: 2</h4>
+                            x.slice(1,2); <span class="text-blur" id="slice3"></span>
+                            <h4> start: -4 | end: -3</h4>
+                            x.slice(-4,-3); <span class="text-blur" id="slice4"></span>
+
+                            <script>
+                            {
+                                const x =  ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+                                document.getElementById("slice1").innerHTML = r + x.slice();
+                                document.getElementById("slice2").innerHTML = r + x.slice(1);
+                                document.getElementById("slice3").innerHTML = r + x.slice(1,2);
+                                document.getElementById("slice4").innerHTML = r + x.slice(-4,-3);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Sorting </td>
+                    </tr>
+                    <tr>
+                        <td>sort()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.sort()</span><br>
+                            sort array elements alphabetically in ascending order<br>
+                            return array - sorted array<br>
+                            <div class="warn">mutate the original array</div>
+                        </td>
+                        <td>
+                            <h4> in ascending order</h4>
+                            const x = ["Banana", "Orange", "Apple"];<br>
+                            x.sort(); <span class="text-blur" id="sort1"></span>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+                                document.getElementById("sort1").innerHTML = r + x.sort();
+                            }
+                            </script>
+
+                            <h4> try with numbers</h4>
+                            const x = [40, 100, 1, 25];<br>
+                            x.sort(); <span class="text-blur" id="sort2"></span>
+                            <script>
+                            {
+                                const x = [40, 100, 1, 25];
+                                document.getElementById("sort2").innerHTML = r + x.sort();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="text-red"><i>array</i>.sort(<i>function</i>)</span><br>
+                            sort array elements numerically in ascending order<br>
+                            return array - sorted array<br>
+                            <div class="warn">mutate the original array</div>
+                        </td>
+                        <td>
+                            <h4> sort numerically in ascending order</h4>
+                            const x = [40, 100, 1, 25];<br>
+                            x.sort(function(a, b){return a-b}); <span class="text-blur" id="numberic1"></span>
+                            <script>
+                            {
+                                const x = [40, 100, 1, 25];
+                                document.getElementById("numberic1").innerHTML = 
+                                r + x.sort(function(a, b) {return a - b});
+                            }
+                            </script>
+
+                            <h4> sort numerically in descending order</h4>
+                            const x = [40, 100, 1, 25];<br>
+                            x.sort(function(a, b){return b-a}); <span class="text-blur" id="numberic2"></span>
+                            <script>
+                            {
+                                const x = [40, 100, 1, 25];
+                                document.getElementById("numberic2").innerHTML = 
+                                r + x.sort(function(a, b) {return b - a});
+                            }
+                            </script>
+
+                            <h4> sort numerically in randam order</h4>
+                            const x = [40, 100, 1, 25];<br>
+                            x.sort(function(a, b) {return 0.5 - Math.random()}); <span class="text-blur" id="numberic3"></span>
+                            <script>
+                            {
+                                const x = [40, 100, 1, 25];
+                                document.getElementById("numberic3").innerHTML = 
+                                r + x.sort(function(a, b) {return 0.5 - Math.random()});
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="badge red">problem</span> <span class="text-red">sort()</span> favor some numbers over the others when sorting randomly<br>
+                            => use <span class="text-red">Fisher Yates</span> method<br>
+                        </td>
+                        <td>
+                            <h4> sort numerically in randam order</h4>
+                            <button onclick="fisherYates()">Sort</button>
+                            <span class="text-blur" id="fisherYates"></span>
+    
+                            <script>
+                            {
+                                const x = [40, 100, 1, 5, 25, 10];
+                                document.getElementById("fisherYates").innerHTML = r + x;
+    
+                                function fisherYates() {
+                                    for (let i = x.length - 1; i > 0; i--) {
+                                        let j = Math.floor(Math.random() * i)
+                                        let k = x[i]
+                                        x[i] = x[j]
+                                        x[j] = k
+                                    }
+                                    document.getElementById("fisherYates").innerHTML = r + x;
+                                }
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>reverse()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.reverse()</span><br>
+                            return array - reversed array<br>
+                            <div class="warn">mutate the original array</div>
+                        </td>
+                        <td>
+                            <h4> sort alphabetically in descending order</h4>
+                            const x = ["Banana", "Orange", "Apple"];<br>
+                            x.sort(); <span class="text-blur" id="reverse1"></span><br>
+                            x.reverse(); <span class="text-blur" id="reverse2"></span>
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple"];
+                                document.getElementById("reverse1").innerHTML = x.sort();
+                                document.getElementById("reverse2").innerHTML = x.reverse();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-blur">Array of Objects</td>
+                        <td>sort elements by object properties</td>
+                        <td>
+                            <h4> sort in ascending order by year or type</h4>
+                            <button onclick="sortByYear()">sort by year</button>
+                            <button onclick="sortByType()">sort by type</button>
+                            <div id="array-of-objects"></div>
+    
+                            <script>
+                            {
+                                const x = [
+                                    {type: "Volvo", year: 2016},
+                                    {type: "Saab", year: 2001},
+                                    {type: "BMW", year: 2010}
+                                ];
+
+                                displayCars();
+
+                                function sortByYear() {
+                                    x.sort(function (a, b) {return a.year - b.year});
+                                    displayCars();
+                                }
+
+                                function sortByType() {
+                                    x.sort(function (a, b) {
+                                        let x = a.type.toLowerCase();
+                                        let y = b.type.toLowerCase();
+                                        if (x < y) { return -1; }
+                                        if (x > y) { return 1; }
+                                        return 0;
+                                    });
+                                    displayCars();
+                                }
+
+                                function displayCars() {
+                                    document.getElementById("array-of-objects").innerHTML =
+                                        x[0].type + " " + x[0].year + "<br>" +
+                                        x[1].type + " " + x[1].year + "<br>" +
+                                        x[2].type + " " + x[2].year;
+                                }
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Max and Min</td>
+                    </tr>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            since JS arrays do not have a <span class="text-red">max()</span>, <span class="text-red">min()</span><br>
+                            => we can simulate <span class="text-red">Math.max()</span>, <span class="text-red">Math.min()</span> instead
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Math.max()<br>
+                            Math.min()<br>
+                        </td>
+                        <td>
+                            <span class="text-red">Math.max.apply(null, <i>array</i>)</span><br>
+                            <span class="text-red">Math.min.apply(null, <i>array</i>)</span><br>
+                            return number - max|min<br>
+                            <div class="note"><span class="text-red">null</span> doesn't matter, it can be anything like: Math, "", etc</div>
+                        </td>
+                        <td>
+                            const x = [40, 100, 1, 5, 25, 10];<br>
+                            Math.max.apply(null, x); <span class="text-blur" id="max1"></span><br>
+                            Math.min.apply(null, x); <span class="text-blur" id="min1"></span>
+
+                            <script>
+                            {
+                                const x = [40, 100, 1, 5, 25, 10];
+                                document.getElementById("max1").innerHTML = r + myArrayMax(x);
+                                document.getElementById("min1").innerHTML = r + myArrayMin(x);
+
+                                function myArrayMax(x) {
+                                    return Math.max.apply(null, x);
+                                }
+                                function myArrayMin(x) {
+                                    return Math.min.apply(null, x);
+                                }
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            sort()<br>
+                            reverse()
+                        </td>
+                        <td>
+                            sort an array and return the 1st/last element
+                        </td>
+                        <td>
+                            const x = [40, 100, 1, 5, 25, 10];<br>
+                            x.sort(function(a, b) {return a-b});<br>
+                            x[x.length - 1]; <span class="text-blur" id="max3"></span><br>
+                            x[0]; <span class="text-blur" id="min3"></span><br>
+
+                            <script>
+                            {
+                                const x = [40, 100, 1, 5, 25, 10];
+                                x.sort(function(a, b) {return a-b});
+                                document.getElementById("max3").innerHTML = r + x[x.length - 1];
+                                document.getElementById("min3").innerHTML = r + x[0];
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Homemad</td>
+                        <td>loop and compare with the highest|lowest value found</td>
+                        <td>
+                            const x = [40, 100, 1, 5, 25, 10];<br>
+                            <span class="text-blur" id="max2"></span><br>
+                            <span class="text-blur" id="min2"></span><br>
+
+                            <script>
+                            {
+                                const x = [40, 100, 1, 5, 25, 10];
+                                document.getElementById("max2").innerHTML = r + myArrayMax(x);
+                                document.getElementById("min2").innerHTML = r + myArrayMin(x);
+
+                                function myArrayMax(x) {
+                                    let len = x.length;
+                                    let max = -Infinity;
+                                    while (len--) {
+                                        if (x[len] > max) {
+                                            max = x[len];
+                                        }
+                                    }
+                                    return max;
+                                }
+                                function myArrayMin(x) {
+                                    let len = x.length;
+                                    let min = Infinity;
+                                    while (len--) {
+                                        if (x[len] < min) {
+                                            min = x[len];
+                                        }
+                                    }
+                                    return min;
+                                }
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Searching</td>
+                    </tr>
+                    <tr>
+                        <td>indexOf()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.indexOf(<i>el</i>)</span><br>
+                            <span class="text-red"><i>array</i>.indexOf(<i>el, start</i>)</span><br>
+                            return number - the index of the 1st matched (left to right)<br>
+                            <ul class="note">start param (0 as default)
+                                <li>positive: 0 1 2 3 4</li>
+                                <li>negative: -4 -3 -2 -1 0</li>
+                            </ul>
+                            <div class="warn">
+                                case-sensitive
+                            </div>
+                        </td>
+                        <td>
+                            const x = ["Apple", "Orange", "Apple", "Mango"];
+                            <h4> find the 1st matched</h4>
+                            x.indexOf("Apple"); <span class="text-blur" id="indeOf1"></span>
+                            <h4> find the 1st matched (index 1)</h4>
+                            x.indexOf("Apple", 1); <span class="text-blur" id="indeOf2"></span>
+                            <h4> find the 1st matched (index -3 = index 1)</h4>
+                            x.indexOf("Apple", -1); <span class="text-blur" id="indeOf3"></span>
+                            <script>
+                            {
+                                const x = ["Apple", "Orange", "Apple", "Mango"];
+                                document.getElementById("indeOf1").innerHTML = r + x.indexOf("Apple");
+                                document.getElementById("indeOf2").innerHTML = r + x.indexOf("Apple", 1);
+                                document.getElementById("indeOf3").innerHTML = r + x.indexOf("Apple", -3);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>lastIndexOf()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.lastIndexOf(<i>el</i>)</span><br>
+                            <span class="text-red"><i>array</i>.lastIndexOf(<i>el, start</i>)</span><br>
+                            return number - the index of the 1st matched (right to left)<br>
+                            <ul class="note">start param (0 as default)
+                                <li>positive: 0 1 2 3 4</li>
+                                <li>negative: -4 -3 -2 -1 0</li>
+                            </ul>
+                            <div class="warn">
+                                case-sensitive
+                            </div>
+                        </td>
+                        <td>
+                            const x = ["Apple", "Orange", "Apple", "Mango"];
+                            <h4> find the 1st matched</h4>
+                            x.lastIndexOf("Apple"); <span class="text-blur" id="lastIndexOf1"></span>
+                            <h4> find the 1st matched (index 1)</h4>
+                            x.lastIndexOf("Apple", 1); <span class="text-blur" id="lastIndexOf2"></span>
+                            <h4> find the 1st matched (index -3 = index 1)</h4>
+                            x.lastIndexOf("Apple", -1); <span class="text-blur" id="lastIndexOf3"></span>
+                            <script>
+                            {
+                                const x = ["Apple", "Orange", "Apple", "Mango"];
+                                document.getElementById("lastIndexOf1").innerHTML = r + x.lastIndexOf("Apple");
+                                document.getElementById("lastIndexOf2").innerHTML = r + x.lastIndexOf("Apple", 1);
+                                document.getElementById("lastIndexOf3").innerHTML = r + x.lastIndexOf("Apple", -3);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>includes()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.includes(<i>el</i>)</span><br>
+                            <span class="text-red"><i>array</i>.includes(<i>el, start</i>)</span><br>
+                            return boolean - true if the element found
+                            <div class="warn">
+                                case-sensitive
+                            </div>
+                        </td>
+                        <td>
+                            const x = ["Apple", "Orange", "Apple", "Mango"];<br>
+                            x.includes("Apple"); <span class="text-blur" id="includes1"></span><br>
+                            x.includes("Apple", 3); <span class="text-blur" id="includes2"></span>
+                            <script>
+                            {
+                                const x = ["Apple", "Orange", "Apple", "Mango"];
+                                document.getElementById("includes1").innerHTML = r + x.includes("Apple");
+                                document.getElementById("includes2").innerHTML = r + x.includes("Apple", 3);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Iteration (operate on every item)</td>
+                    </tr>
+                    <tr>
+                        <td>forEach()</td>
+                        <td>
+                            <h3>// arrow function</h3>
+                            <span class="text-red"><i>array</i>.forEach((<i>el</i>) => {...})</span><br>
+                            <span class="text-red"><i>array</i>.forEach((<i>el, index</i>) => {...})</span><br>
+                            <span class="text-red"><i>array</i>.forEach((<i>el, index, array</i>) => {...})</span><br>
+
+                            <h3>// callback function</h3>
+                            <span class="text-red"><i>array</i>.forEach(<i>callbackFn</i>)</span><br>
+                            <span class="text-red"><i>array</i>.forEach(<i>callbackFn</i>, <i>this</i>)</span><br>
+
+                            <h3>// inline function</h3>
+                            <span class="text-red"><i>array</i>.forEach(function(<i>el</i>) {...})</span><br>
+                            <span class="text-red"><i>array</i>.forEach(function(<i>el, index</i>) {...})</span><br>
+                            <span class="text-red"><i>array</i>.forEach(function(<i>el, index, arr</i>) {...})</span><br>
+                            <span class="text-red"><i>array</i>.forEach(function(<i>el, index, arr</i>), {...} <i>this</i>)</span><br>
+
+                            call a function (callback) once for each element<br>
+                            return <span class="badge grey">undefined</span>
+                            <div class="warn">
+                                not executed for empty elements<br>
+                                not mutate the original array (however, a callback may do so)
+                            </div>
+                        </td>
+                        <td>
+                            <h4> starting code:</h4>
+                            const x = [45, 4, 9, 16, 25];<br>
+                            <h4> multiplie each element by 2</h4>
+                            x.forEach((i) => {return i*2;}); <span class="text-blur" id="forEach1"></span><br>
+                            x; <span class="text-blur" id="forEach2"></span>
+
+                            <script>
+                            {
+                                const x = [45, 4, 9, 16, 25];
+                                const y = x.forEach((i) => {
+                                    return i * 2;
+                                });
+                                document.getElementById("forEach1").innerHTML = r + y;
+                                document.getElementById("forEach2").innerHTML = r + x;
+                            }
+                            </script>
+
+                            <h4> callbackFn may mutate the original array</h4>
+                            x.forEach((i, index, arr) => {<br>
+                                &emsp;return arr[index] = i*2;<br>
+                            }); <span class="text-blur" id="forEach3"></span><br>
+                            x; <span class="text-blur" id="forEach4"></span>
+
+                            <script>
+                            {
+                                const x = [45, 4, 9, 16, 25];
+                                const y = x.forEach((i, index, arr) => {
+                                    return arr[index] = i*2
+                                });
+                                document.getElementById("forEach3").innerHTML = r + y;
+                                document.getElementById("forEach4").innerHTML = r + x;
+                            }
+                            </script>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>map()</td>
+                        <td>
+                            syntax similar to <span class="text-red">forEach()</span><br>
+                            call a function (callback) once for each element<br>
+                            return array - with transformed elements
+                            <div class="warn">
+                                not executed for empty elements<br>
+                                not mutate the original array (however, a callback may do so)
+                            </div>
+                        </td>
+                        <td>
+                            <h4> starting code:</h4>
+                            const x = [45, 4, 9, 16, 25];<br>
+                            <h4> multiplie each element by 2</h4>
+                            x.map((i) => {return i*2;}); <span class="text-blur" id="map1"></span><br>
+                            x; <span class="text-blur" id="map2"></span>
+
+                            <script>
+                            {
+                                const x = [45, 4, 9, 16, 25];
+                                const y = x.map((i) => {
+                                    return i * 2;
+                                });
+                                document.getElementById("map1").innerHTML = r + y;
+                                document.getElementById("map2").innerHTML = r + x;
+                            }
+                            </script>
+
+                            <h4> callbackFn may mutate the original array</h4>
+                            x.map((i, index, arr) => {<br>
+                                &emsp;return arr[index] = i*2;<br>
+                            }); <span class="text-blur" id="map3"></span><br>
+                            x; <span class="text-blur" id="map4"></span>
+
+                            <script>
+                            {
+                                const x = [45, 4, 9, 16, 25];
+                                const y = x.map((i, index, arr) => {
+                                    return arr[index] = i * 2;
+                                });
+                                document.getElementById("map3").innerHTML = r + y;
+                                document.getElementById("map4").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>filter()</td>
+                        <td>
+                            syntax similar to <span class="text-red">forEach()</span><br>
+                            call a function (callback) once for each element<br>
+                            return array - with elements passed
+                            <div class="warn">
+                                not executed for empty elements<br>
+                                not mutate the original array
+                            </div>
+                        </td>
+                        <td>
+                            <h4> filter elements >= 18</h4>
+                            const x = [45, 4, 9, 16, 25];<br>
+                            x.filter((i) => {<br>
+                                &emsp;return i >= 18<br>
+                            }); <span class="text-blur" id="filter1"></span><br>
+                            x; <span class="text-blur" id="filter2"></span>
+    
+                            <script>
+                            {
+                                const x = [45, 4, 9, 16, 25];
+                                const y = x.filter((i) => {
+                                    return i >= 18;
+                                });
+    
+                                document.getElementById("filter1").innerHTML = r + y;
+                                document.getElementById("filter2").innerHTML = r + x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>every()</td>
+                        <td>
+                            syntax similar to <span class="text-red">forEach()</span><br>
+                            call a calback function for each element<br>
+                            return boolean - true if every element passed
+                            <div class="warn">
+                                not executed for empty elements<br>
+                                not mutate the original array
+                            </div>
+                        </td>
+                        <td>
+                            <h4> check if all elements >= 18</h4>
+                            const x = [45, 4, 9, 16, 25];<br>
+                            x.every((i) => {return i>=18}); <span class="text-blur" id="every1"></span><br>
+                            x; <span class="text-blur" id="every2"></span>
+    
+                            <script>
+                            {
+                                const x = [45, 4, 9, 16, 25];
+                                const y = x.every((i) => {
+                                    return i >= 18;
+                                });
+    
+                                document.getElementById("every1").innerHTML = y;
+                                document.getElementById("every2").innerHTML = x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>some()</td>
+                        <td>
+                            syntax similar to <span class="text-red">forEach()</span><br>
+                            call a calback function for each element<br>
+                            return boolean - true if any element passed
+                            <div class="warn">
+                                not executed for empty elements<br>
+                                not mutate the original array
+                            </div>
+                        </td>
+                        <td>
+                            <h4> check if any element >= 18</h4>
+                            const x = [45, 4, 9, 16, 25];<br>
+                            x.some((i) => {return i>=18}); <span class="text-blur" id="some1"></span><br>
+                            x; <span class="text-blur" id="some2"></span>
+    
+                            <script>
+                            {
+                                const x = [45, 4, 9, 16, 25];
+                                const y = x.some((i) => {
+                                    return i >= 18;
+                                });
+    
+                                document.getElementById("some1").innerHTML = y;
+                                document.getElementById("some2").innerHTML = x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>find()</td>
+                        <td>
+                            syntax similar to <span class="text-red">forEach()</span><br>
+                            call a function (callback) for each element<br>
+                            return value - the 1st element passed
+                            <div class="warn">
+                                not executed for empty elements<br>
+                                not mutate the original array
+                            </div>
+                        </td>
+                        <td>
+                            <h3>// find the 1st element >= 18</h3>
+                            const x = [4, 9, 16, 25, 29];<br>
+                            x.find(myFn); <span class="text-blur" id="find1"></span>
+
+                            <script>
+                            {
+                                const x = [4, 9, 16, 25, 29];
+                                document.getElementById("find1").innerHTML = x.find(myFn);
+                                function myFn(value) {
+                                    return value >= 18;
+                                }
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>findIndex()</td>
+                        <td>
+                            syntax similar to <span class="text-red">forEach()</span><br>
+                            call a function (callback) for each element<br>
+                            return number - the index of the 1st element passed
+                            <div class="warn">
+                                not executed for empty elements<br>
+                                not mutate the original array
+                            </div>
+                        </td>
+                        <td>
+                            <h3>// findIndex the 1st element >= 18</h3>
+                            const x = [4, 9, 16, 25, 29];<br>
+                            x.findIndex(myFn); <span class="text-blur" id="findIndex1"></span>
+
+                            <script>
+                            {
+                                const x = [4, 9, 16, 25, 29];
+                                document.getElementById("findIndex1").innerHTML = x.findIndex(myFn);
+                                function myFn(value) {
+                                    return value >= 18;
+                                }
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>reduce()</td>
+                        <td>
+                            <h3>// arrow function</h3>
+                            <span class="text-red"><i>array</i>.reduce((<i>prevValue, currValue</i>) => {...})</span><br>
+                            <span class="text-red"><i>array</i>.reduce((<i>prevValue, currValue, index</i>) => {...})</span><br>
+                            <span class="text-red"><i>array</i>.reduce((<i>prevValue, currValue, index, array</i>) => {...})</span><br>
+
+                            <h3>// callback function</h3>
+                            <span class="text-red"><i>array</i>.reduce(<i>callbackFn</i>)</span><br>
+                            <span class="text-red"><i>array</i>.reduce(<i>callbackFn, initial</i>)</span><br>
+
+                            <h3>// inline function</h3>
+                            <span class="text-red"><i>array</i>.reduce(function(<i>prevValue, currValue</i>) {...})</span><br>
+                            <span class="text-red"><i>array</i>.reduce(function(<i>prevValue, currValue, index</i>) {...})</span><br>
+                            <span class="text-red"><i>array</i>.reduce(function(<i>prevValue, currValue, index, arr</i>) {...})</span><br><br>
+                            <span class="text-red"><i>array</i>.reduce(function(<i>prevValue, currValue</i>) {...}, <i>initial</i>)</span><br>
+                            <span class="text-red"><i>array</i>.reduce(function(<i>prevValue, currValue, index</i>) {...}, <i>initial</i>)</span><br>
+                            <span class="text-red"><i>array</i>.reduce(function(<i>prevValue, currValue, index, arr</i>) {...}, <i>initial</i>)</span><br>
+
+                            call a reducer function for each element (left to right)<br>
+                            return value - the function's accumulated result
+                            <div class="warn">
+                                not executed for empty elements<br>
+                                not mutate the original array
+                            </div>
+                        </td>
+                        <td>
+                            <h4> get the sum of elements</h4>
+                            const x = [45, 4, 9, 16, 25];<br>
+                            x.reduce(myFn); <span class="text-blur" id="reduce1"></span>
+                            <h4> with an initial value</h4>
+                            x.reduce(myFn, 100); <span class="text-blur" id="reduce2"></span>
+    
+                            <script>
+                            {
+                                const x = [45, 4, 9, 16, 25];
+
+                                const sum1 = x.reduce(myFn);
+                                const sum2 = x.reduce(myFn, 100);
+    
+                                document.getElementById("reduce1").innerHTML = sum1;
+                                document.getElementById("reduce2").innerHTML = sum2;
+    
+                                function myFn(total, value) {
+                                    return total + value;
+                                }
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>reduceRight()</td>
+                        <td>
+                            syntax similar to <span class="text-red">reduce()</span><br>
+                            call a reducer function for each element (right to left)<br>
+                            return value - the function's accumulated result
+                            <div class="warn">
+                                not executed for empty elements<br>
+                                not mutate the original array
+                            </div>
+                        </td>
+                        <td>
+                            <h4> get the sum of elements</h4>
+                            const x = [45, 4, 9, 16, 25];<br>
+                            x.reduceRight(myFn); <span class="text-blur" id="reduceRight1"></span>
+                            <h4> with an initial value</h4>
+                            x.reduceRight(myFn, 100); <span class="text-blur" id="reduceRight2"></span>
+    
+                            <script>
+                            {
+                                const x = [45, 4, 9, 16, 25];
+
+                                const sum1 = x.reduceRight(myFn);
+                                const sum2 = x.reduceRight(myFn, 100);
+    
+                                document.getElementById("reduceRight1").innerHTML = sum1;
+                                document.getElementById("reduceRight2").innerHTML = sum2;
+    
+                                function myFn(total, value) {
+                                    return total - value;
+                                }
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>entries()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.entries()</span><br>
+                            return array - Array Iterator object with key/value pairs<br>
+                            <div class="warn">
+                                not mutate the original array
+                            </div>
+                        </td>
+                        <td>
+                            <h4> return entries</h4>
+                            const x = ["Banana", "Orange", "Apple", "Mango"];<br>
+                            x.entries(); <span class="text-blur" id="entries1"></span><br>
+                            y; <span class="text-blur" id="entries2"></span><br>
+    
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple", "Mango"];
+                                const entries = x.entries();
+                                document.getElementById("entries1").innerHTML = r + entries;
+    
+                                let y = "";
+                                for (let x of entries) {
+                                    y += x + " ";
+                                }
+                                document.getElementById("entries2").innerHTML = r + y;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>keys()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.keys()</span><br>
+                            return array - Array Iterator object with keys<br>
+                            <div class="warn">
+                                not mutate the original array
+                            </div>
+                        </td>
+                        <td>
+                            <h4> return they keys</h4>
+                            const x = ["Banana", "Orange", "Apple", "Mango"];<br>
+                            x.keys(); <span class="text-blur" id="keys1"></span><br>
+                            y; <span class="text-blur" id="keys2"></span><br>
+    
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple", "Mango"];
+                                const keys = x.keys();
+                                document.getElementById("keys1").innerHTML = r + keys;
+    
+                                let y = "";
+                                for (let x of keys) {
+                                    y += x + " ";
+                                }
+                                document.getElementById("keys2").innerHTML = r + y;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>values()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.values()</span><br>
+                            return array - Array Iterator object with values<br>
+                            <div class="warn">
+                                not mutate the original array
+                            </div>
+                        </td>
+                        <td>
+                            <h4> return they values</h4>
+                            const x = ["Banana", "Orange", "Apple", "Mango"];<br>
+                            x.values(); <span class="text-blur" id="values1"></span><br>
+                            y; <span class="text-blur" id="values2"></span><br>
+    
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple", "Mango"];
+                                const values = x.values();
+                                document.getElementById("values1").innerHTML = r + values;
+    
+                                let y = "";
+                                for (let x of values) {
+                                    y += x + " ";
+                                }
+                                document.getElementById("values2").innerHTML = r + y;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>use built in <span class="text-red">Object.keys()</span></td>
+                        <td>
+                            <h4> return they keys</h4>
+                            const x = ["Banana", "Orange", "Apple", "Mango"];<br>
+                            Object.keys(x); <span class="text-blur" id="keys3"></span><br>
+
+                            <script>
+                            {
+                                const x = ["Banana", "Orange", "Apple", "Mango"];
+                                document.getElementById("keys3").innerHTML = r + Object.keys(x);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

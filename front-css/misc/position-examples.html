@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Position Examples</title>
+  </head>
+  <style>
+    html {
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      font-size: 18px;
+      padding: 0;
+    }
+    [class*='parent'] {
+      border: 1px solid red;
+      background-color: rgba(255, 0, 0, 0.1);
+      width: 300px;
+      height: 150px;
+    }
+    [class*='child'] {
+      border: 1px solid green;
+      background-color: rgba(0, 255, 0, 0.1);
+      white-space: nowrap;
+    }
+
+    .parent1-a {position: static;}
+    .child1-a {position: absolute;}
+
+    .parent1-b {position: static; left: 400px; top: 0px;}
+    .child1-b {position: absolute; left: 400px; top: 0px;}
+    
+    .parent2-a {position: relative;}
+    .child2-a {position: absolute;}
+
+    .parent2-b {position: relative; left: 400px; top: 0px;}
+    .child2-b {position: absolute; left: 400px; top: 0px;}
+
+    .parent3-a {position: absolute;}
+    .child3-a {position: absolute;}
+
+    .parent3-b {position: absolute; left: 400px; top: 40px;}
+    .child3-b {position: absolute; left: 400px; top: 40px;}
+
+    .parent4-a {position: fixed;}
+    .child4-a {position: absolute;}
+
+    .parent4-b {position: fixed; left: 400px; top: 200px;}
+    .child4-b {position: absolute; left: 400px; top: 40px;}
+
+    .parent5-b {position: sticky; left: 400px; bottom: 0;}
+    .child5-b {position: absolute; left: 400px; top: 40px;}
+  </style>
+  <body>
+    <h1>Position Property</h1>
+    <div class="parent1-a">
+      .parent1-a {<br>
+        &nbsp;&nbsp;position: static;<br>
+      }
+      <span class="child1-a">.child1-a {position: absolute;}</span>
+    </div>
+
+    <div class="parent1-b">
+      .parent1-b {<br>
+        &nbsp;&nbsp;position: static;<br>
+        &nbsp;&nbsp;left: 400px; top: 0px; <span style="color: green">/* no effect */</span><br>
+      }
+      <span class="child1-b">.child1-b {position: absolute; left: 400px; top: 0px;}</span>
+    </div>
+
+    <div class="parent2-a">
+      .parent2-a {<br>
+        &nbsp;&nbsp;position: relative;<br>
+      }
+      <span class="child2-a">.child2-a {position: absolute;}</span>
+    </div>
+
+    <div class="parent2-b">
+      .parent2-b {<br>
+        &nbsp;&nbsp;position: relative;<br>
+        &nbsp;&nbsp;left: 400px; top: 0px;<br>
+      }
+      <span class="child2-b">.child2-b {position: absolute; left: 400px; top: 0px;}</span>
+    </div>
+
+    <div class="parent3-a">
+      .parent3-a {<br>
+        position: absolute;<br>
+      }
+      <span class="child3-a">.child3-a {position: absolute;}</span>
+    </div>
+
+    <div class="parent3-b">
+      .parent3-b {<br>
+        &nbsp;&nbsp;position: absolute;<br>
+        &nbsp;&nbsp;left: 400px; top: 40px;<br>
+      }
+      <span class="child3-b">.child3-b {position: absolute; left: 400px; top: 40px;}</span>
+    </div>
+
+    <div class="parent4-a">
+      .parent4-a {<br>
+        position: fixed;<br>
+      }
+      <span class="child4-a">.child4-a {position: absolute;}</span>
+    </div>
+
+    <div class="parent4-b">
+      .parent4-b {<br>
+        &nbsp;&nbsp;position: fixed;<br>
+        &nbsp;&nbsp;left: 400px; top: 40px;<br>
+      }
+      <span class="child4-b">.child4-b {position: absolute; left: 400px; top: 40px;}</span>
+    </div>
+
+    <div class="parent5-b">
+      .parent5-b {<br>
+        &nbsp;&nbsp;position: sticky;<br>
+        &nbsp;&nbsp;left: 400px; bottom: 0;<br>
+      }
+      <span class="child5-b">.child5-b {position: absolute; left: 400px; top: 40px;}</span>
+    </div>
+
+  
+    <script src="../js/script-detail.js" defer></script>
+</body>
+</html>

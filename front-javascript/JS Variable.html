@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Variable</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Variable</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>General</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Variable</td>
+                        <td>container for storing data (values)</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Identifiers</td>
+                        <td>
+                            must a unique => called <span class="text-red">identifier</span class="text-red">
+                            <ul class="note">
+                                <li><span class="text-red">$</span>: not common, but professional programmers often use it as an alias for the main function in a JS library</li>
+                                <li><span class="text-red">_</span>: not common, but professional programmers often use it as an alias for "private (hidden)" variables</li>
+                            </ul>
+                        </td>
+                        <td>
+                            $("p");<br>
+                            var _lastName= "Johnson";
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Keywords</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td colspan="2">
+                            <span class="badge green">good practice</span> declare all variables at the beginning of a script
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Which Keyword</td>
+                        <td>
+                            <ul>
+                                <li><span class="text-red">const</span>: always use unless the value will change</li>
+                                <li><span class="text-red">let</span>: when the value will change</li>
+                                <li><span class="text-red">var</span>: for older browser (1995 to 2015)</li>
+                            </ul> 
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Multi Declaration</td>
+                        <td>comma-seperated</td>
+                        <td>var person = "John Doe", car = "Volvo", price = 200;</td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">var keyword</td>
+                    </tr>
+                    <tr>
+                        <td>Declaration</td>
+                        <td><span class="badge green">possible</span> not assign a value when declaring</td>
+                        <td>
+                            <h4> assign a value when declaring</h4>
+                            var x = 2;
+                            <h4> not assign a value when declaring</h4>
+                            var x;<br>
+                            x = 2;<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Reassignment</td>
+                        <td>
+                            <span class="badge green">possible</span> reassign a value<br>
+                        </td>
+                        <td>
+                            <h4> reassign a value</h4>
+                            var x = 2;<br>
+                            x = 5; <span class="text-blur">// now x = 5</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Redeclaration</td>
+                        <td>
+                            <span class="badge green">possible</span> in differnt or same blocks
+                            <div class="note"><i class="icon not-recommended fa-solid fa-thumbs-down"></i> this could improve problems</div>
+                        </td>
+                        <td>
+                            <h4>global and local variables</h4>
+                            var x = 2;<br>
+                            {var x = 5;} <span class="text-blur">// now x = 5</span><br>
+                            <h4>global variables</h4>
+                            var x = 2;<br>
+                            var x = 5; <span class="text-blur">// now x = 5</span><br>
+                            <h4>local variables</h4>
+                            {<br>
+                                &emsp;var x = 2;<br>
+                                &emsp;var x = 5; <span class="text-blur">// now x = 5</span><br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Block Scope</td>
+                        <td>
+                            <span class="badge green">possible</span> 
+                            access from outside the block
+                        </td>
+                        <td>
+                            {var x = 2;}<br>
+                            return x; <span class="text-blur">// result: 2</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoisting</td>
+                        <td>
+                            <span class="badge green">possible</span> use variable before declaring</td>
+                        <td>
+                            x = 2;<br>
+                            var x = 5;<br>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">let keyword</td>
+                    </tr>
+                    <tr>
+                        <td>Declaration</td>
+                        <td><span class="badge green">possible</span> not assign a value when declaring</td>
+                        <td>
+                            <h4> assign a value when declaring</h4>
+                            let x = 2;
+                            <h4> not assign a value when declaring</h4>
+                            let x;<br>
+                            x = 2;<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Reassignment</td>
+                        <td>
+                            <span class="badge green">possible</span> reassign a value<br>
+                        </td>
+                        <td>
+                            <h4> reassign a value</h4>
+                            var x = 2;<br>
+                            x = 5; <span class="text-blur">// now x = 5</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Redeclaration</td>
+                        <td>
+                            <span class="badge green">possible</span> in different blocks<br>
+                        </td>
+                        <td>
+                            <h4> global and local variables</h4>
+                            let x = 2;<br>
+                            {let x = 3;} <span class="text-blur">// ok</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="badge red">impossible</span> in the same block<br>
+                        </td>
+                        <td>
+                            <h4> global variables</h4>
+                            let x = 2<br>
+                            let x = 3; <span class="text-red">// error</span><br>
+                            <h4> local variables</h4>
+                            {<br>
+                            &emsp;let x = 2;<br>
+                            &emsp;let x = 3 <span class="text-red">// error</span><br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="badge red">impossible</span> in the same block with other keyword<br>
+                        </td>
+                        <td>
+                            <h4> global variables</h4>
+                            var x = 2<br>
+                            let x = 3; <span class="text-red">// error</span><br>
+                            <h4> local variables</h4>
+                            {<br>
+                            &emsp;var x = 2;<br>
+                            &emsp;let x = 3 <span class="text-red">// error</span><br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Block Scope</td>
+                        <td>
+                            <span class="badge red">impossible</span> access from outside the block
+                        </td>
+                        <td>
+                            {let x = 5;}<br>
+                            return x; <span class="text-red">// ReferenceError</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoisting</td>
+                        <td>
+                            <span class="badge red">impossible</span> use the variable before declaring<br>
+                        </td>
+                        <td>
+                            x = 2;<br>
+                            let x = 5; <span class="text-red">// ReferenceError</span>
+                        </td>
+                    </tr>
+                    <tr class="sub-head">
+                        <td colspan="3">const keyword</td>
+                    </tr>
+                    <tr>
+                        <td>Declaration</td>
+                        <td>
+                            <span class="badge red">impossible</span> not a asign a value when declaring<br>
+                        </td>
+                        <td>
+                            <h4> assign a value when declaring</h4>
+                            const x = 10;
+                            <h4> not assign a value when declaring</h4>
+                            const x; <span class="text-red">// error</span><br>
+                            x = 10;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Reassignment</td>
+                        <td>
+                            <span class="badge red">impossible</span> reassign a value<br>
+                        </td>
+                        <td>
+                            <h4> reassign a value</h4>
+                            const x = 2;<br>
+                            x = 5; <span class="text-red">// error</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Redeclaration</td>
+                        <td>
+                            <span class="badge green">possible</span> in different blocks<br>
+                        </td>
+                        <td>
+                            <h4> global and local variables</h4>
+                            const x = 2;<br>
+                            {const x = 3;} <span class="text-blur">// ok</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="badge red">impossible</span> in the same block with the same keyword<br>
+                        </td>
+                        <td>
+                            <h4> global variables</h4>
+                            const x = 2;<br>
+                            const x = 5; <span class="text-red">// error</span><br>
+                            <h4> local variables</h4>
+                            {<br>
+                                &emsp;const x = 2;<br>
+                                &emsp;const x = 5; <span class="text-red">// error</span><br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="badge red">impossible</span> in the same block with other keyword<br>
+                        </td>
+                        <td>
+                            <h4> global variables</h4>
+                            var x = 2;<br>
+                            const x = 5; <span class="text-red">// error</span><br>
+                            <h4> local variables</h4>
+                            {<br>
+                                &emsp;var x = 2;<br>
+                                &emsp;const x = 5; <span class="text-red">// error</span><br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Block Scope</td>
+                        <td><span class="badge red">impossible</span> access from outside the block</td>
+                        <td>
+                            {const x = 5;}<br>
+                            return x; <span class="text-red">// ReferenceError</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoisting</td>
+                        <td>
+                            <span class="badge red">impossible</span> use variable before declaring<br>
+                        </td>   
+                        <td>
+                            x = 2;<br>
+                            const x = 5; <span class="text-red">// ReferenceError</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-head">
+                <h2>Const keyword</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>When to use</td>
+                        <td colspan="2">
+                            <span class="badge green">always</span> use <span class="text-red">const</span> keyword unless the value will change<br>
+                            => use when declare a new array, object, function, regExp
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Objects and Arrays</td>
+                        <td>
+                            <span class="text-red">const</span> define a constant reference to a value, not a constant value
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <ul> => <span class="badge green">possible</span>
+                                <li>change the elements of constant array</li>
+                                <li>change the properties of constant object</li>
+                            </ul>
+                        </td>
+                        <td>
+                            const cars = ["Saab", "Volvo", "BMW"]; <span class="text-blur">// constant array</span><br>
+                            cars[0] = "Toyota"; <span class="text-blur">// change an element:</span><br>
+                            cars.push("Audi"); <span class="text-blur">// add an element:</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            const car = {type:"Fiat", model:"500", color:"white"}; <span class="text-blur">// const object</span><br>
+                            car.color = "red"; <span class="text-blur">// change a property</span><br>
+                            car.owner = "Johnson"; <span class="text-blur">// add a property</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <ul> => <span class="badge red">impossible</span>
+                                <li>reassign a constant value</li>
+                                <li>reassign a constant array</li>
+                                <li>reassign a constant object</li>
+                            </ul>
+                        </td>
+                        <td>
+                            const car = "Saab";<br>
+                            car = "Volvo"; <span class="text-red">// error</span><br>
+    
+                            const cars = ["Saab", "Volvo", "BMW"];<br>
+                            cars = ["Toyota", "Volvo", "Audi"]; <span class="text-red">// error</span><br>
+    
+                            const car = {type:"Fiat", model:"500", color:"white"};<br>
+                            car = {type:"Volvo", model:"EX60", color:"red"}; <span class="text-red">// error</span><br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="main">
+            <div class="section">
+                <div class="section-head">
+                    <h2>Scope</h2>
+                    <i class="icon arrow fa-solid fa-angle-down"></i>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Elements</th>
+                            <th>Explaination</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Scope</td>
+                            <td>determine the accessibility of variables</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Variable Lifetime</td>
+                            <td>
+                                <ul>
+                                    <li>local variables: from declared to function completed</li>
+                                    <li>global variables: from declared to browser/tab closed</li>
+                                </ul>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Block Scope</td>
+                            <td>
+                                variables declared inside a <span class="text-red">{...}</span> block<br>
+                                <div class="note">
+                                    not accessible from outside (except with <span class="text-red">var</span> keyword)
+                                </div>
+                            </td>
+                            <td>
+                                {<br>
+                                    &emsp;var x = 2;<br>
+                                    &emsp;let y = 2;<br>
+                                    &emsp;const z = 2;<br>
+                                }<br>
+                                x; <span class="text-result" id="block_scope1"></span><br>
+                                y; <span class="text-result" id="block_scope2"></span><br>
+                                z; <span class="text-result" id="block_scope3"></span><br>
+                                <script>
+                                {
+                                    {
+                                        var x = 2;
+                                        let y = 2;
+                                        const z = 2;
+                                    }
+                                    document.getElementById('block_scope1').innerHTML = x;
+                                    document.getElementById('block_scope2').innerHTML = y;
+                                    document.getElementById('block_scope3').innerHTML = z;
+                                }
+                                </script>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Local Scope</td>
+                            <td>
+                                variable declared inside a function<br>
+                                <div class="note">not accessible from outside</div>
+                            </td>
+                            <td>
+                                function myFn() {<br>
+                                &ensp;var a = 2;<br>
+                                &ensp;let b = 2;<br>
+                                &ensp;const c = 2;<br>
+                                }<br>
+                                a; <span class="text-result" id="local_scope1"></span><br>
+                                b; <span class="text-result" id="local_scope2"></span><br>
+                                c; <span class="text-result" id="local_scope3"></span><br>
+                                <div class="note">
+                                    I use different chacracters since <span class="text-red">x</span> 
+                                    of the prev example can be accessed everywhere on the page
+                                </div>
+                                <script>
+                                {
+                                    function myFn() {
+                                        var a = 2;
+                                        let b = 2;
+                                        const c = 2;
+                                    };
+                                    document.getElementById('local_scope1').innerHTML = a;
+                                    document.getElementById('local_scope2').innerHTML = b;
+                                    document.getElementById('local_scope3').innerHTML = c;
+                                }
+                                </script>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Global scope</td>
+                            <td>
+                                variables declared outside a function or block<br>
+                                <ul class="note">
+                                    <li>accessible from everywhere</li>
+                                    <li>undeclared variable => automatically global (not in strict mode)</li>
+                                </ul>
+                                <div class="warn">
+                                    becareful: global variables can cause name conflicts
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>From Inside</td>
+                            <td>
+                                every function have access to scope above them => called <span class="text-red">closure</span><br>
+                                every block scope have access to scope above them
+                            </td>
+                            <td>
+                                <h4>access outer block scopes</h4>
+                                let counter = 2;<br>
+                                {counter += 1; {counter += 1};}<br>
+                                counter; <span class="text-result" id="from_inside1"></span><br>
+    
+                                <script>
+                                {
+                                    let counter = 2;
+                                    {counter += 1;{counter += 1;};}
+                                    document.getElementById('from_inside1').innerHTML = counter;
+                                }
+                                </script>
+    
+                                <h4>access outer function scopes</h4>
+                                let counter = 2;<br>
+                                {<br>
+                                    &emsp;counter += 1;<br>
+                                    &emsp;(() => {counter += 1})();<br>
+                                };<br>
+                                counter; <span class="text-result" id="from_inside2"></span><br>
+                                <script>
+                                {
+                                    let counter = 2;
+                                    {
+                                        counter += 1;
+                                        (() => {counter += 1;})();
+                                    };
+                                    document.getElementById('from_inside2').innerHTML = counter;
+                                }
+                                </script>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

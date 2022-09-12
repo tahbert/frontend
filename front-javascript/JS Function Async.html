@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Async</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Async</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Callback</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Callback</td>
+                        <td>
+                            a func as the other function argument<br>
+                            can run after another func has finished<br>
+                            <div class="note">
+                                <span class="badge green">useful</span> 
+                                allow a function to call another function<br>
+                                <span class="badge green">usage</span> 
+                                especially in asynchronous funcs<br>
+                                (where 1 func has to wait for another)
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <h3>plan 1</h3>
+                            <ul>
+                                <li>call a calculator function (myCal)</li>
+                                <li>then call a display function (myDis)</li>
+                            </ul>
+                            => <span class="badge red">problem</span> have to call 2 funcs
+                        </td>
+                        <td>
+                            function myDis(text) {<br>
+                                &emsp;document.getElementById("plan1").innerHTML = text;<br>
+                            }<br>
+                            function myCal(num1, num2) {<br>
+                                &emsp;let sum = num1 + num2;<br>
+                                &emsp;return sum;<br>
+                            }<br>
+                            let result = myCal(5, 5);<br>
+                            myDis(result); <span class="text-result" id="plan1"></span><br>
+                            <script>
+                            {
+                                function myDis(text) {
+                                    document.getElementById("plan1").innerHTML = text;
+                                }
+                                function myCal(num1, num2) {
+                                    let sum = num1 + num2;
+                                    return sum;
+                                }
+                                let result = myCal(5, 5); 
+                                myDis(result);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <h3>plan 2</h3>
+                            <ul>
+                                <li>call a calculator function (myCal)</li>
+                                <li>then let myCal call the display function (myDis)</li>
+                            </ul>
+                            => <span class="badge red">problem</span> can't prevent the myCal from displaying the result
+                        </td>
+                        <td>
+                            function myDis(text) {<br>
+                                &emsp;document.getElementById("plan2").innerHTML = text;<br>
+                            }<br>
+                            function myCal(num1, num2) {<br>
+                                &emsp;let sum = num1 + num2;<br>
+                                &emsp;myDis(sum);<br>
+                            }<br>
+                            myCal(5, 5); <span class="text-result" id="plan2"></span><br>
+                            <script>
+                            {
+                                function myDis(text) {
+                                    document.getElementById("plan2").innerHTML = text;
+                                }
+                                function myCal(num1, num2) {
+                                    let sum = num1 + num2;
+                                    myDis(sum);
+                                }
+                                myCal(5, 5);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <h3>callback as solution</h3>
+                            <ul>
+                                <li>call a calculator function (myCal) with a callback</li>
+                                <li>and let myCal run the callback after the calculation is finished</li>
+                            </ul>
+                        </td>
+                        <td>
+                            function myDis(text) {<br>
+                                &emsp;document.getElementById("callback1").innerHTML = text;<br>
+                            }<br>
+                            function myCal(num1, num2, <span class="text-red">myCallback</span>) {<br>
+                                &emsp;let sum = num1 + num2;<br>
+                                &emsp;<span class="text-red">myCallback</span>(sum); <span class="text-blur">// callback</span><br> 
+                            }<br>
+                            myCal(5, 5, <span class="text-red">myDis</span>); <span class="text-result" id="callback1"></span><br>
+                            <script>
+                            {
+                                function myDis(text) {
+                                    document.getElementById("callback1").innerHTML = text;
+                                }
+                                function myCal(num1, num2, myCallback) {
+                                    let sum = num1 + num2;
+                                    myCallback(sum);
+                                }
+                                myCal(5, 5, myDis);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Asynchronous</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Asynchronous Function</td>
+                        <td>
+                            a func running in parallel with other func<br>  
+                            <div class="note">
+                                <span class="badge green">most often</span> callbacks are used with asynchronous funcs<br>
+                                (<span class="text-red">setTimeout()</span> as typical example)
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>setTimeout()</td>
+                        <td>specify a callback to be executed on time-out</td>
+                        <td>
+                            <h4>asynchronous: setTimeout() | callback: myFn()</h4>
+                            setTimeout(myFn, 3000); <span class="text-result" id="asynchronous1"></span>
+                            <script>
+                            {
+                                setTimeout(myFn, 3000); // callback: myFn
+                                function myFn() {
+                                    document.getElementById("asynchronous1").innerHTML = "I love You!";
+                                }
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><span class="badge green">possible</span> to pass the whole function instead of name as an argument</td>
+                        <td>
+                            <h4>asynchronous: setTimeout() | callback: myFn()</h4>
+                            setTimeout(function() {myFn("I love you!");}, 3000); <span class="text-result" id="asynchronous2"></span>
+                            <script>
+                            {
+                                setTimeout(function() {myFn("I love you!");}, 3000);
+                                function myFn(value) {
+                                    document.getElementById("asynchronous2").innerHTML = value;
+                                }
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>setInterval()</td>
+                        <td>specify a callback function to be executed for each interval</td>
+                        <td>
+                            <h4>asynchronous: setInterval() | callback: myFn()</h4>
+                            setInterval(myFn, 1000); <span class="text-result" id="asynchronous3"></span>
+                            <script>
+                            {
+                                setInterval(myFn, 1000); // callback: myFn
+                                function myFn() {
+                                    let d = new Date();
+                                    document.getElementById("asynchronous3").innerHTML =
+                                    d.getHours() + ":" +
+                                    d.getMinutes() + ":" +
+                                    d.getSeconds();
+                                }
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>getFile()</td>
+                        <td>waiting for files</td>
+                        <td>
+                            <h4>asynchronous: getFile() | callback: myFn()</h4>
+                            getFile(myFn); <span class="text-result" id="asynchronous4"></span>
+                            <script>
+                            {
+                                function myFn(text) {
+                                    document.getElementById("asynchronous4").innerHTML = text;
+                                }
+                                function getFile(myCallback) {
+                                    let req = new XMLHttpRequest();
+                                    req.open('GET', "misc/mycar.html");
+                                    req.onload = function() {
+                                        if (req.status == 200) {
+                                            myCallback(this.responseText);
+                                        } else {
+                                            myCallback("Error: " + req.status);
+                                        }
+                                    }
+                                    req.send();
+                                }
+                                getFile(myFn);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Promise</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Promise</td>
+                        <td>
+                            let <i>myPromise</i> = new <span class="text-red">Promise</span>(function(<i>myResolve</i>, <i>myReject</i>) {<br>
+                            <span class="text-blur">// producing code here</span><br>
+                                &emsp;<i>myResolve</i>(); <span class="text-blur">// when successful</span><br>
+                                &emsp;<i>myReject</i>(); <span class="text-blur">// when error</span><br>
+                            });<br>
+        
+                            <span class="text-blur">// consuming dode here</span><br>
+                            <i>myPromise</i>.then(<br>
+                                &emsp;function(<i>value</i>) { <span class="text-blur">/* code if successful */</span> },<br>
+                                &emsp;function(<i>error</i>) { <span class="text-blur">/* code if some error */</span> }<br>
+                            );<br>
+
+                            an object that links producing code and consuming code<br>
+                            <ul class="note">
+                                <li>producing code: code that can take some time</li>
+                                <li>consuming code: code that must wait for the result</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>basic example</h4>
+                            <span class="text-result" id="promise1"></span>
+                            <script>
+                            {
+                                function myDis(some) {
+                                    document.getElementById("promise1").innerHTML = some;
+                                }
+        
+                                let myPromise = new Promise(function(myResolve, myReject) {
+                                    let x = 0;
+                                    if (x == 0) {
+                                        myResolve("OK");
+                                    } else {
+                                        myReject("Error");
+                                    }
+                                });
+                                myPromise.then(
+                                    function(value) {myDis(value);},
+                                    function(error) {myDis(error);}
+                                );
+                            }
+                            </script>
+
+                            <h4>waiting for a Timeout example</h4>
+                            <span class="text-result" id="promise2"></span>
+                            <script>
+                            {
+                                const myPromise = new Promise(function (myResolve, myReject) {
+                                    setTimeout(function() {myResolve("I love You!");}, 3000);
+                                });
+                                myPromise.then(function(value) {
+                                    document.getElementById("promise2").innerHTML = value;
+                                });
+                            }
+                            </script>
+
+                            <h4>waiting for a file example</h4>
+                            <span class="text-result" id="promise3"></span>
+                            <script>
+                            {
+                                function myDis(some) {
+                                    document.getElementById("promise3").innerHTML = some;
+                                }
+        
+                                let myPromise = new Promise(function(myResolve, myReject) {
+                                    let req = new XMLHttpRequest();
+                                    req.open('GET', "mycar.html");
+                                    req.onload = function () {
+                                        if (req.status == 200) {
+                                            myResolve(req.response);
+                                        } else {
+                                            myReject("File not Found");
+                                        }
+                                    };
+                                    req.send();
+                                });
+        
+                                myPromise.then(
+                                    function(value) {myDis(value);},
+                                    function(error) {myDis(error);}
+                                );
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Promise Properties</td>
+                        <td>
+                            <span class="badge red">inaccessable</span> <span class="text-red">state</span> and <span class="text-red">result</span><br>
+                            <ul>
+                                <li>state: pending => result: undefined</li>
+                                <li>state: fulfilled => result: a value</li>
+                                <li>state: rejected => result: an error</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Asyns/Await</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Asyn/Await</td>
+                        <td>
+                            make promises easier to write
+                            <ul>
+                                <li><span class="text-red">async</span> makes a function return a Promise</li>
+                                <li><span class="text-red">await</span> makes a function wait for a Promise</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>waiting for a timeout example</h4>
+                            <span class="text-result" id="async_await1"></span>
+                            <script>
+                            {
+                                async function myDis() {
+                                    let myPromise = new Promise(function (resolve) {
+                                        setTimeout(function () {resolve("I love You!");}, 3000);
+                                    });
+                                    document.getElementById("async_await1").innerHTML = await myPromise;
+                                }
+                                myDis();
+                            }
+                            </script>
+
+                            <h4>waiting for a file example</h4>
+                            <span class="text-result" id="async_await2"></span>
+                            <script>
+                            {
+                                async function getFile() {
+                                    let myPromise5 = new Promise(function (resolve) {
+                                        let req = new XMLHttpRequest();
+                                        req.open('GET', "misc/mycar.html");
+                                        req.onload = function () {
+                                            if (req.status == 200) {
+                                                resolve(req.response);
+                                            } else {
+                                                resolve("File not Found");
+                                            }
+                                        };
+                                        req.send();
+                                    });
+                                    document.getElementById("async_await2").innerHTML = await myPromise5;
+                                }
+                                getFile();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Async Syntax</td>
+                        <td>
+                            <span class="text-red">async</span> keyword before a function</td>
+                        <td>
+                            <h4>with resolve and reject</h4>
+                            <span class="text-result" id="async1"></span>
+                            <script>
+                            {
+                                function myDis(some) {
+                                    document.getElementById("async1").innerHTML = some;
+                                }
+                                async function myFn() {return "Hello";}
+                                myFn().then(
+                                    function(value) {myDis(value);},
+                                    function(error) {myDis(error);}
+                                );
+                            }
+                            </script>
+
+                            <h4>more simple without reject</h4>
+                            <span class="text-result" id="async2"></span>
+                            <script>
+                            {
+                                function myDis(some) {
+                                    document.getElementById("async2").innerHTML = some;
+                                }
+                                async function myFn() {return "Hello";}
+                                myFn().then(
+                                    function(value) {myDis(value);}
+                                );
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Await Syntax</td>
+                        <td>
+                            <span class="text-red">await</span> keyword before a function<br>
+                            <span class="note">only used inside an async function</span>
+                        </td>
+                        <td>
+                            <h4>with resulve and reject</h4>
+                            <span class="text-result" id="await1"></span>
+                            <script>
+                            {
+                                async function myDis() {
+                                    let myPromise = new Promise(function(resolve, reject) {
+                                        resolve("I love You !!");
+                                    });
+                                    document.getElementById("await1").innerHTML = await myPromise;
+                                }
+                                myDis();
+                            }
+                            </script>
+
+                            <h4>more simpler without reject</h4>
+                            <span class="text-result" id="await2"></span>
+                            <script>
+                            {
+                                async function myDis() {
+                                    let myPromise = new Promise(function(resolve) {
+                                        resolve("I love You !!");
+                                    });
+                                    document.getElementById("await2").innerHTML = await myPromise;
+                                }
+                                myDis();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

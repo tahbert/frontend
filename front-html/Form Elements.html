@@ -1,0 +1,1301 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Form Elements</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Form Elements</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>&lt;form&gt; element</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&lt;form&gt;&lt;/form&gt;</td>
+                        <td>A container for different types of input elements, to collect user input</td>
+                        <td>&lt;form&gt;&lt;/form&gt;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Attributes for &lt;form&gt;</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>action</td>
+                        <td>
+                            &lt;form <strong>action</strong>="<i>URL</i>"&gt;&lt;/form&gt; <span class="note"> (default:
+                                current page)</span><br>
+                            Specify where to send the form-data when a form is submitted
+                        </td>
+                        <td>&lt;form <strong>action</strong>="/action_page.php"&gt;&lt;/form&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>target</td>
+                        <td>
+                            &lt;form
+                            <strong>target</strong>="<i>_blank|_self|_parent|_top|framename</i>"&gt;&lt;/form&gt;<br>
+                            Specify where to display the response
+                        </td>
+                        <td>
+                            <form action="/action_page.php" method="get" target="_self">
+                                <label for="name">name:</label>
+                                <input type="text" id="name" name="name">
+                                <input type="submit" value="Submit">
+                                <span class="ms-5">_self: same frame<span class="note"> (default)</span></span>
+                            </form>
+                            <form class="mt-1" action="/action_page.php" method="get" target="_top">
+                                <label for="name">name:</label>
+                                <input type="text" id="name" name="name">
+                                <input type="submit" value="Submit">
+                                <span class="ms-5">_top: full window</span>
+                            </form>
+                            <form class="mt-1" action="/action_page.php" method="get" target="_blank">
+                                <label for="name">name:</label>
+                                <input type="text" id="name" name="name">
+                                <input type="submit" value="Submit">
+                                <span class="ms-5">_blank: new tab/window</span>
+                            </form>
+                            <form class="mt-1" action="/action_page.php" method="get" target="_parent">
+                                <label for="name">name:</label>
+                                <input type="text" id="name" name="name">
+                                <input type="submit" value="Submit">
+                                <span class="ms-5">_parent: parent frame</span>
+                            </form>
+                            <form class="mt-1" action="/action_page.php" method="get" target="display-frame">
+                                <label for="name">name:</label>
+                                <input type="text" id="name" name="name">
+                                <input type="submit" value="Submit">
+                                <span class="ms-5">framename: named iframe</span>
+                            </form>
+                            <iframe class="mt-1" name="display-frame"
+                                style="width:100%;height:100px;border:1px solid grey;"></iframe>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>accept-charset</td>
+                        <td>&lt;form <strong>accept-charset</strong>="<i>character_set</i>"&gt;&lt;/form&gt;<br>
+                            Specify the character encodings for form submission<span class="note"> (Most common: UTF-8,
+                                ISO-8859-1)</span>
+                        </td>
+                        <td>&lt;form action="/action_page.php" <strong>accept-charset</strong>="utf-8"&gt;&lt;/form&gt;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>method</td>
+                        <td>&lt;form <strong>method</strong>="<i>get|post</i>"&gt;&lt;/form&gt;<br>
+                            Specify how to send form-data
+                        </td>
+                        <td>
+                            <ul>
+                                <li>get: Append the form data to the URL, in name/value pairs<span class="note">
+                                        (default)</span></li>
+                                <li>post: Append the form data inside the body of the HTTP request</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>enctype</td>
+                        <td>
+                            &lt;form <strong>enctype</strong>="<i>value</i>"&gt;&lt;/form&gt;<br>
+                            Specify how the form-data should be encoded when submitting it to the server <span
+                                class="note">(only for method="post")</span>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>application/x-www-form-urlencoded:<span class="note"> (default)</span></li>
+                                <li>multipart/form-data: necessary if uploading a file</li>
+                                <li>text/plain: not encode at all <span class="badge red">not recommended</span></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>autocomplete</td>
+                        <td>
+                            &lt;form <strong>autocomplete</strong>="<i>on|off</i>"&gt;&lt;/form&gt;<span class="note">
+                                (default: on)</span><br>
+                            Specify autocomplete is on or off<br>
+                            <span class="note">possible to have autocomplete "on" for the form, "off" for specific input
+                                fields, or vice versa</span>
+                        </td>
+                        <td>
+                            <form>
+                                <label for="name">name:</label>
+                                <input type="text" id="name" name="name">
+                                <input type="submit" value="Submit">
+                                <span class="ms-5">on</span>
+                            </form>
+                            <form class="mt-1" autocomplete="off">
+                                <label for="name">name:</label>
+                                <input type="text" id="name" name="name">
+                                <input type="submit" value="Submit">
+                                <span class="ms-5">off</span>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>name</td>
+                        <td>&lt;form <strong>name</strong>="<i>text</i>"&gt;&lt;/form&gt;<br>
+                            Specify the form name<br>
+                            <span class="note">Used to reference elements in a JS, or to reference form data after a
+                                form is submitted</span>
+                        </td>
+                        <td>&lt;form action="/action_page.php" method="get"
+                            <strong>name</strong>="myForm"&gt;&lt;/form&gt;</td>
+                    </tr>
+                    <tr>
+                        <td class="text-danger">novalidate</td>
+                        <td>&lt;form <strong>novalidate</strong>&gt;&lt;/form&gt;<br>
+                            Specify that the form should not be validated when submitted</td>
+                        <td>&lt;form action="/action_page.php" <strong>novalidate</strong>&gt;&lt;/form&gt;</td>
+                    </tr>
+                    <tr>
+                        <td class="text-danger">rel</td>
+                        <td>&lt;form <strong>rel</strong>="<i>value</i>"&gt;&lt;/form&gt;<br>
+                            Specify the relationship between the current document and the linked document</td>
+                        <td><a href="https://www.w3schools.com/tags/att_form_rel.asp">see all here</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Elements for &lt;form&gt;</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&lt;lable&gt;&lt;/lable&gt;</td>
+                        <td>
+                            Useful for screen-reader users<br>
+                            Help users with difficulty clicking on very small regions<br>
+                            <span class="note">Always use for &lt;input&gt;
+                                type="text|checkbox|radio|file|password"</span>
+                        </td>
+                        <td>
+                            &lt;<strong>label</strong> for="fname"&gt;First name:&lt;/<strong>label</strong>&gt;<br>
+                            &lt;<strong>input</strong> type="text" id="fname" name="fname"&gt;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <strong>for</strong> attribute: Specify the id of the form element the label should be bound
+                            to<br>
+                            <span class="note">the value of <strong>for</strong> = the value of
+                                <strong>id</strong></span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <strong>form</strong> attribute: Specify which form the label belongs to<br>
+                            <span class="note">the value of <strong>for</strong> = the value of
+                                <strong>id</strong></span>
+                        </td>
+                        <td>
+                            &lt;form action="/action_page.php" id="<strong>form1</strong>"&gt;<br>
+                            some code here<br>
+                            &lt;/form&gt;<br><br>
+
+                            &lt;label form="<strong>form1</strong>" for="html"&gt;HTML&lt;/label&gt;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;input&gt; <span class="badge green">most common</span></td>
+                        <td>the most used form element with <strong>type</strong> property</td>
+                        <td>&lt;<strong>input</strong> type="text" id="fname" name="fname"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &lt;select&gt;&lt;/select&gt;<br>
+                            <span class="badge green">most common</span>
+                        </td>
+                        <td>Specify a drop-down list <span class="note">(default: 1st item is selected)</span></td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="cars">Choose a car:</label>
+                                <select name="cars" id="cars">
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="opel">Opel</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>size</strong> attribute: to specify the number of visible values <span
+                                class="note">(default: 1)</span></td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="cars">Choose a car:</label>
+                                <select name="cars" id="cars" size="2">
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="opel">Opel</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>multiple</strong> attribute: to allow the user to select more than one value</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="cars">Choose a car:</label>
+                                <select name="cars" id="cars" multiple>
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="opel">Opel</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Other attributes: autofocus, disabled, form, name, required.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;option&gt;</td>
+                        <td>
+                            Specify available options<br>
+                            <span class="note">inside &lt;select&gt;, &lt;optgroup&gt;, or &lt;datalist&gt;</span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="cars">Choose a car:</label>
+                                <select name="cars" id="cars">
+                                    <option value="volvo" disabled>Volvo</option>
+                                    <option value="saab" selected>Saab</option>
+                                    <option value="opel">Opel</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Attributes: disable, label, selected, value</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;optgroup&gt;&lt;/optgroup&gt;</td>
+                        <td>
+                            Options Group: used to group related options in a <strong>&lt;select&gt;</strong>
+                            element<br>
+                            Attributes: disable, label
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="cars">Choose a car:</label>
+                                <select name="cars" id="cars">
+                                    <optgroup label="Swedish Cars">
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                    </optgroup>
+                                    <optgroup label="German Cars">
+                                        <option value="mercedes">Mercedes</option>
+                                        <option value="audi">Audi</option>
+                                    </optgroup>
+                                </select>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;textarea&gt;&lt;/textarea&gt;</td>
+                        <td>Specify a text area (a multi-line input field)</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="note">Note: </label><br>
+                                <textarea id="note" name="note" rows="3" cols="40">call me before delivery</textarea>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <strong>rows|cols</strong> attribute: Specify the visible lines, width<br>
+                            <span class="note">CSS as an alternative</span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="note">Note: </label><br>
+                                <textarea id="note" name="note"
+                                    style="width:300px; height:80px;">call me before delivery</textarea>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>wrap</strong> attribute: Specify how the text is to be wrapped when submitted in a
+                            form<br>
+                            - soft: not wrapped <span class="note">(default)</span><br>
+                            - hard: wrapped - contain newlines (if any) when submitted in a form <span
+                                class="note">(cols attribute required)</span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="note">Note: </label><br>
+                                <textarea id="note" name="note" rows="3" cols="40"
+                                    wrap="hard">call me before delivery</textarea>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Other attributes: autofocus, dirname, disable, readonly, required, form, placeholder, name,
+                            maxlength</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;button&gt;&lt;/button&gt;</td>
+                        <td>Specify a clickable button</td>
+                        <td><button type="button" onclick="alert('Hello World!')">Click Me!</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>type="button|submit|reset <span class="badge green">always</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Other attributes: autofocus, disable, form, formaction, formenctype, formmethod,
+                            formnovalidate, formtarget, name, value</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &lt;fieldset&gt;&lt;/fieldset&gt;<br>
+                        </td>
+                        <td>Group related data in a form<br>
+                            <span class="note">draws a box around the related elements</span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <fieldset>
+                                    <legend>Personalia:</legend>
+                                    <label for="fname">First name:</label><br>
+                                    <input type="text" id="fname" name="fname" value="John"><br>
+                                    <label for="lname">Last name:</label><br>
+                                    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+                                    <input type="submit" value="Submit">
+                                </fieldset>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            Attributes: name, disable, form<br>
+                            &lt;legend&gt;&lt;/legend&gt; Define a caption for the &lt;fieldset&gt;
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="text-danger">&lt;output&gt;&lt;/output&gt;</td>
+                        <td>Define the result of a calculation (like one performed by a script)</td>
+                        <td>
+                            <form oninput="x.value=parseInt(a.value)+ parseInt(b.value)">
+                                <input type="range" id="a" value="50">
+                                +<input type="number" id="b" value="25">
+                                =<output name="x" for="a b"></output>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>for</strong> attribute: Specify the relationship between the result of the
+                            calculation, and the elements used in the calculation</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>form</strong> attribute: Specify which form the output element belongs to</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>name</strong> attribute: Specify a name for the output element</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2 class="text-danger mt-1">Elements for &lt;input&gt;</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&lt;datalist&gt;&lt;/datalist&gt;</td>
+                        <td>
+                            Specify a drop-down list of pre-defined options for an &lt;input&gt;<br>
+                            <span class="note">(Id attribute = List attribute)</span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <input list="browsers">
+                                <datalist id="browsers">
+                                    <option value="Internet Explorer">
+                                    <option value="Firefox">
+                                    <option value="Chrome">
+                                    <option value="Opera">
+                                    <option value="Safari">
+                                </datalist>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2><strong>type</strong> attribute for &lt;input&gt;</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td>Define an input field</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>type="text" <span class="note">default</span></td>
+                        <td>For a single-line text</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="fname">First name:</label>
+                                <input type="text" id="fname" name="fname"><br>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="password"</td>
+                        <td>For a password</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="pwd">Password:</label>
+                                <input type="password" id="pwd" name="pwd">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="hidden"</td>
+                        <td>
+                            Hidden input field with a predefined value<br>
+                            <span class="note">Not use hidden inputs as a form of security, because of developer
+                                tools</span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <input type="hidden" id="custId" name="custId" value="37">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="email"</td>
+                        <td>For an email</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="number"</td>
+                        <td>For a number</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="quantity">Number (from 1 to 5):</label>
+                                <input type="number" id="quantity" name="quantity" min="1" max="5">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="tel"</td>
+                        <td>For a telephone number</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="phone">Phone:</label>
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="search"</td>
+                        <td>For a search string</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="gsearch">Seach:</label>
+                                <input type="search" id="gsearch" name="gsearch">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="url"</td>
+                        <td>For a URL</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="homepage">URL: </label>
+                                <input type="url" id="homepage" name="homepage">
+                            </form>
+                        </td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td>
+                            Define a button<br>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>type="button"</td>
+                        <td>
+                            Clickable button<br>
+                            <span class="note">Mostly used with a JS to activate a script</span>
+                        </td>
+                        <td>
+                            <form>
+                                <input type="button" value="Click me" onclick="msg()">
+                            </form>
+
+                            <script>
+                                function msg() {
+                                    alert("Hello world!");
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="submit"</td>
+                        <td>Submit button</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="name">Name: </label>
+                                <input type="text" id="name" name="name">
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="reset"</td>
+                        <td>
+                            Reset button<br>
+                            <span class="note">Reset all the values you have changed to default</span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="name">Name: </label>
+                                <input type="text" id="name" name="name">
+                                <input type="reset" value="Reset">
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="image"</td>
+                        <td>An image as a submit button</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="name">Name: </label>
+                                <input type="text" id="name" name="name">
+                                <input type="image" src="imgs/img_submit.gif" alt="Submit" width="30px" height="30px">
+                            </form>
+                        </td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td>Define a limited options</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>type="radio"</td>
+                        <td>For users to select only one option</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <p>Please select your favorite Web language:</p>
+                                  <input type="radio" id="html" name="fav_language" value="HTML">
+                                  <label for="html">HTML</label><br>
+                                  <input type="radio" id="css" name="fav_language" value="CSS">
+                                  <label for="css">CSS</label><br>
+                                  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                                  <label for="javascript">JavaScript</label><br>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="checkbox"</td>
+                        <td>For users to select zero or more options</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <p>Pick what you have</p>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1"> I have a bike</label><br>
+                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                <label for="vehicle2"> I have a car</label><br>
+                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                <label for="vehicle3"> I have a boat</label><br>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="sub-head">
+                        <!--Secondary table head-->
+                        <td>Define a time</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>type="time"</td>
+                        <td>A time control (no timezone)</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="appt">Select a time:</label>
+                                <input type="time" id="appt" name="appt">
+                                <input type="submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="date"</td>
+                        <td>
+                            A date control (year, month, day)<br>
+                            <strong>min|max</strong> attribute: to add restrictions to dates
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="birthday">Birthday:</label>
+                                <input type="date" id="birthday" name="birthday" max="1979-12-31">
+                                <input type="submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="datetime-local"</td>
+                        <td>A date and time control (year, month, day, time (no timezone)</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="birthdaytime">Birthday:</label>
+                                <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                                <input type="submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="week"</td>
+                        <td>A week and year control (no timezone)</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="week">Select a week:</label>
+                                <input type="week" id="week" name="week">
+                                <input type="submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="month"</td>
+                        <td>A month and year control (no timezone)</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="bdaymonth">Birthday:</label>
+                                <input type="month" id="bdaymonth" name="bdaymonth">
+                                <input type="submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="sub-head">
+                        <!--Secondary table head-->
+                        <td>Others</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>type="color"</td>
+                        <td>Defines a color picker</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="color">Select your color:</label>
+                                <input type="color" id="color" name="color" value="#ff0000">
+                                <input type="submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="file"</td>
+                        <td>Define a file-select field and a "Browse" button (for file uploads)</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="myfile">Select a file:</label>
+                                <input type="file" id="myfile" name="myfile">
+                                <input type="submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>multiple </strong>attribute: allow multiple files selection</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="myfile">Select files:</label>
+                                <input type="file" id="myfile" name="myfile" multiple>
+                                <input type="submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>type="range"</td>
+                        <td>
+                            Define a range control (like a slider control)<br>
+                            <strong>min|max</strong> attribute: set the limition <span class="note">(default: 0 to
+                                100)</span><br>
+                            <strong>step</strong> attribute: interval between legal numbers<br>
+                            <strong>value</strong> attribute: default value
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="vol">Volume (between 0 and 50):</label>
+                                <input type="range" id="vol" name="vol" min="0" max="50" value="10" step="10">
+                                <input type="submit">
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Other Attributes for &lt;input&gt;</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>name <span class="badge red">required</span></td>
+                        <td>
+                            Used to reference elements in a JS, or to reference form data after a form is submitted.<br>
+                            <span class="note">If omitted, the value will not be sent at all</span>
+                        </td>
+                        <td>&lt;input type="text" id="fname" <strong>name</strong>="fname"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>value</td>
+                        <td>
+                            Specify an initial value for an input field<br>
+                            <span class="note">(type: text, password, hidden)</span>
+                        </td>
+                        <td><input type="text" id="fname" name="fname" value="John"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            Specify the text on the button<br>
+                            <span class="note">(type: button, reset, submit)</span>
+                        </td>
+                        <td><input type="button" onclick="alert('Hello World!')" value="Click Me!"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            Specify the value associated with the input (also the value sent on submit)<br>
+                            <span class="note">(type: checkbox, radio, image)</span>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <lable for="vehicle1">vehicle 1</lable>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>readonly</td>
+                        <td>
+                            Specify that an input field is read-only<br>
+                            <span class="note">
+                                - The value will be sent when submitting the form!<br>
+                                - Useful to keep a user from changing the value until some other conditions have been
+                                met.<br>
+                                Then, a JS can remove the readonly value, and make the input field editable.
+                            </span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="fname">First name:</label>
+                                <input type="text" id="fname" name="fname" value="John" readonly>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>disabled</td>
+                        <td>
+                            Specify that an input field should be disabled<br>
+                            <span class="note">
+                                - The value will not be sent when submitting the form<br>
+                                - Useful to keep a user from using the &lt;input&gt; until some other condition has been
+                                met.<br>
+                                Then, a JS could remove the disabled value, and make the &lt;input&gt; usable-->
+                            </span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="fname">First name:</label>
+                                <input type="text" id="fname" name="fname" value="John" disabled>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>size</td>
+                        <td>Specify the <strong>visible width</strong>, in characters, of an input field <span
+                                class="note">(default: 20)<br>
+                                types: text, search, tel, url, email, password</span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="pin">PIN:</label>
+                                <input type="text" id="pin" name="pin" size="6">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>height|width <span class="badge green">always</span></td>
+                        <td>Specify the height and width of an &lt;input&gt;<br>
+                            <span class="note">Types: image</span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="name">Name: </label>
+                                <input type="text" id="name" name="name">
+                                <input type="image" src="imgs/img_submit.gif" alt="Submit" width="30px" height="30px">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>min|max</td>
+                        <td>Specify the <strong>minimum|maximum</strong> values<br>
+                            <span class="note">types: number, range, date, datetime-local, month, time, week</span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="quantity">Quantity (between 1 and 5):</label>
+                                <input type="number" id="quantity" name="quantity" min="1" max="5">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>minlength/maxlength</td>
+                        <td>
+                            Specify the <strong>minimum|maximum</strong> characters allowed<br>
+                            <span class="note">
+                                Type: text, search, url, tel, email, password<br>
+                                Not provide any feedback => use JS if needed
+                            </span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="pin">PIN:</label>
+                                <input type="text" id="pin" name="pin" size="6" maxlength="4">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>multiple</td>
+                        <td>Specify that more than one value is allowed<br>
+                            <span class="note">
+                                Type: email, file<br>
+                                Tip: For type="file": Use CTRL or SHIFT key while selecting<br>
+                                Tip: For type="email": Separate emails with a comma.
+                            </span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="files">Select files:</label>
+                                <input type="file" id="files" name="files" multiple>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>pattern</td>
+                        <td>
+                            Specify a <strong>regular expression</strong> that the input field's value is checked
+                            against, when the form is submitted<br>
+                            <span class="note">
+                                Types: text, date, search, url, tel, email, password <a
+                                    href="https://www.w3schools.com/js/js_regexp.asp">see more</a><br>
+                                Tip: Use the global <strong>title</strong> attribute to describe the pattern to help the
+                                user
+                            </span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="country_code">Country code:</label>
+                                <input type="text" id="country_code" name="country_code" pattern="[A-Za-z]{3}"
+                                    title="Three letter country code">
+                                <input type="submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>placeholder</td>
+                        <td>
+                            Specify an expected value of an input field (displayed in the field)<br>
+                            <span class="note">Types: text, search, url, tel, email, password</span>
+                        </td>
+                        <td><input type="tel" id="phone" name="phone" placeholder="123-45-678"
+                                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"></td>
+                    </tr>
+                    <tr>
+                        <td>required</td>
+                        <td>Specify that an input field is required<br>
+                            <span class="note">Types: text, search, url, tel, email, password, date pickers, number,
+                                checkbox, radio, file</span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="username">Username:</label>
+                                <input type="text" id="username" name="username" required>
+                                <input type="submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>step</td>
+                        <td>Specify the legal number intervals for an input field<br>
+                            <span class="note">Types: number, range, date, datetime-local, month, time, week</span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="points">Points:</label>
+                                <input type="number" id="points" name="points" step="3">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>autofocus</td>
+                        <td>Automatically get focus when the page loads</td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="fname">First name:</label>
+                                <input type="text" id="fname" name="fname"><br>
+                                <label class="mt-2" for="lname">Last name:</label>
+                                <input type="text" id="lname" name="lname"><br>
+                                <label class="mt-2" for="age">Age:</label>
+                                <input type="number" id="age" name="age" autofocus><br>
+                                <input class="mt-2" type="submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>list</td>
+                        <td>Refer to a &lt;datalist&gt; that contains pre-defined options for an &lt;input&gt;<br>
+                            <span class="note">list value = datalist id</span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php" method="get">
+                                <label for="browser">Choose your browser:</label>
+                                <input list="browsers" name="browser" id="browser">
+                                <datalist id="browsers">
+                                    <option value="Edge">
+                                    <option value="Firefox">
+                                    <option value="Chrome">
+                                    <option value="Opera">
+                                    <option value="Safari">
+                                </datalist>
+                                <input type="submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>autocomplete</td>
+                        <td>
+                            Specify autocomplete is on or off <span class="note"> (default: on)</span><br>
+                            <span class="note">&lt;form&gt; &lt;input&gt; types: text, search, url, tel, email,
+                                password, datepickers, range, and color<br>
+                                possible to have autocomplete "on" for the form, "off" for specific input fields, or
+                                vice versa</span>
+                        </td>
+                        <td>
+                            <form class="mt-1" autocomplete="off">
+                                <label for="name">name:</label>
+                                <input type="text" id="name" name="name"><br>
+                                <label class="mt-2" for="name">name:</label>
+                                <input type="text" id="name" name="name" autocomplete="on">
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>accept</td>
+                        <td>
+                            &lt;input
+                            <strong>accept</strong>="<i>file_extension|audio/*|video/*|image/*|media_type</i>"&gt; <a
+                                href="https://www.w3schools.com/tags/att_input_accept.asp">see more</a><br>
+                            Specify what file types the user can pick<br>
+                            <span class="note">
+                                Type="file"<br>
+                                Notes: not use as a validation tool. File uploads should be validated on the server<br>
+                                Tip: To specify more than one value, separate the values with a comma.
+                            </span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="img">Select image:</label>
+                                <input type="file" id="img" name="img" accept="image/*">
+                                <input type="submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>alt</td>
+                        <td>Specify an alternate text for images<br>
+                            <span class="note">Type: image</span>
+                        </td>
+                        <td><input type="image" src="imgs/img_submit.gif" alt="Submit" width="30" height="30"></td>
+                    </tr>
+                    <tr>
+                        <td>src <span class="badge red">required</span></td>
+                        <td>Specify the URL of the image as a submit button<br>
+                            <span class="note">Type: image</span>
+                        </td>
+                        <td><input type="image" src="imgs/img_submit.gif" alt="Submit" width="30" height="30"></td>
+                    </tr>
+                    <tr>
+                        <td>checked</td>
+                        <td>Specify a pre-selected option<br>
+                            <span class="note">
+                                Type: checkbox, radio<br>
+                                JS as an alternative.
+                            </span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <p>Select your Web language:</p>
+                                  <input type="radio" id="html" name="fav_language" value="HTML">
+                                  <label for="html">HTML</label><br>
+                                  <input type="radio" id="css" name="fav_language" value="CSS" checked>
+                                  <label for="css">CSS</label><br>
+                                  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                                  <label for="javascript">JavaScript</label><br>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-danger">dirname</td>
+                        <td>Enable the submission of the text direction of the input field<br>
+                            <span class="note">The value is always the name of the input field, followed by
+                                ".dir"</span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="fname">First name:</label>
+                                <input type="text" id="fname" name="fname" dirname="fname.dir">
+                                <input type="submit" value="Submit">
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Form* attributes for &lt;input&gt;</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>form</td>
+                        <td>Specify the form the &lt;input&gt; belongs to<br>
+                            <span class="note"><strong>form</strong> value = <strong>id</strong> value</span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php" id="form1">
+                                <label for="fname">First name:</label>
+                                <input type="text" id="fname" name="fname">
+                                <input type="submit" value="Submit">
+                            </form>
+                            <p>The field below is outside the form element, but still part of the form.</p>
+                            <label for="lname">Last name:</label>
+                            <input type="text" id="lname" name="lname" form="form1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>formaction</td>
+                        <td>
+                            Specify the URL of the file that will process the input when submitted<br>
+                            <span class="note">
+                                Override the <strong>action</strong> attribute of &lt;form&gt;<br>
+                                Type: submit, image
+                            </span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="fname">First name:</label>
+                                <input type="text" id="fname" name="fname"><br>
+                                <label class="mt-1" for="lname">Last name:</label>
+                                <input class="mt-1" type="text" id="lname" name="lname"><br>
+                                <input class="mt-1" type="submit" value="Submit">
+                                <input class="mt-1" type="submit" formaction="/action_page2.php"
+                                    value="Submit as Admin">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>formenctype</td>
+                        <td>
+                            Specify how the form-data should be encoded when submitted (only for forms with
+                            method="post")<br>
+                            <span class="note">
+                                Override the <trong>enctype</trong> attribute of &lt;form&gt;<br>
+                                Type: submit, image
+                            </span>
+                        </td>
+                        <td>
+                            <form action="/action_page_binary.asp" method="post">
+                                <label for="fname">First name:</label>
+                                <input type="text" id="fname" name="fname"><br>
+                                <input class="mt-1" type="submit" value="Submit">
+                                <input class="mt-1" type="submit" formenctype="multipart/form-data"
+                                    value="Submit as Multipart/form-data">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>formmethod</td>
+                        <td>
+                            Specify the HTTP method for sending form-data to the action URL<br>
+                            <span class="note">
+                                Override the <strong>method</strong> attribute<br>
+                                Type: submit, image
+                            </span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php" method="get" target="_blank">
+                                <label for="fname">First name:</label>
+                                <input type="text" id="fname" name="fname"><br>
+                                <label for="lname">Last name:</label>
+                                <input class="mt-1" type="text" id="lname" name="lname"><br>
+                                <input class="mt-1" type="submit" value="Submit using GET">
+                                <input class="mt-1" type="submit" formmethod="post" value="Submit using POST">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>formtarget</td>
+                        <td>
+                            Specify where to display the response<br>
+                            <span class="note">
+                                Override the <strong>target</strong> attribute<br>
+                                Type: submit, image<br>
+                                <strong>formtarget</strong> value = <strong>target</strong> value
+                            </span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="fname">First name:</label>
+                                <input type="text" id="fname" name="fname"><br>
+                                <label for="lname">Last name:</label>
+                                <input class="mt-1" type="text" id="lname" name="lname"><br>
+                                <input class="mt-1" type="submit" value="Submit">
+                                <input class="mt-1" type="submit" formtarget="_blank"
+                                    value="Submit to a new window/tab">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>formnovalidate</td>
+                        <td>
+                            Specify that an &lt;input&gt; should not be validated when submitted<br>
+                            <span class="note">
+                                Override the <strong>novalidate</strong> attribute<br>
+                                Type: submit
+                            </span>
+                        </td>
+                        <td>
+                            <form action="/action_page.php">
+                                <label for="email">Enter your email:</label>
+                                <input type="email" id="email" name="email" required><br>
+                                <input class="mt-1" type="submit" value="Submit">
+                                <input class="mt-1" type="submit" formnovalidate="formnovalidate"
+                                    value="Submit without validation">
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

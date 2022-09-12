@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Shadow</title>
+
+    <style>
+        .main .section {
+            background: #F5F5F5;
+        }
+        .boxshadow {
+            width: 80%;
+            padding: 10px;
+            margin: 20px;
+            background-color: white;
+        }
+
+        .boxshadow.a {
+            box-shadow: 10px 10px;
+        }
+
+        .boxshadow.b {
+            box-shadow: 10px 10px grey;
+        }
+
+        .boxshadow.c {
+            box-shadow: 10px 10px 5px grey;
+        }
+
+        .boxshadow.d {
+            box-shadow: 10px 10px 5px 10px grey;
+        }
+
+        .boxshadow.e {
+            box-shadow: 10px 10px 5px -10px grey;
+        }
+
+        .boxshadow.f {
+            box-shadow: 
+                0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .box {
+            margin: 10px auto;
+            height: 100px; width: 200px;
+            background: white;
+            border-radius: 8px;
+            line-height: 100px;
+            text-align: center;
+        }
+        .box.single {
+            box-shadow: 2px 4px 4px rgba(0,0,0,0.12);
+        }
+        .box.multi-basic {
+            box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+                        0 2px 2px rgba(0,0,0,0.12), 
+                        0 4px 4px rgba(0,0,0,0.12), 
+                        0 8px 8px rgba(0,0,0,0.12),
+                        0 16px 16px rgba(0,0,0,0.12);
+        }
+        .box.spread-smaller {
+            box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+                        0 2px 2px rgba(0,0,0,0.15), 
+                        0 4px 4px rgba(0,0,0,0.15), 
+                        0 8px 8px rgba(0,0,0,0.15);
+            }
+
+        .box.spread-larger {
+            box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+                        0 2px 2px rgba(0,0,0,0.11), 
+                        0 4px 4px rgba(0,0,0,0.11), 
+                        0 8px 8px rgba(0,0,0,0.11), 
+                        0 16px 16px rgba(0,0,0,0.11), 
+                        0 32px 32px rgba(0,0,0,0.11);
+        }
+        .box.sharp-more {
+            box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
+                        0 2px 2px rgba(0,0,0,0.20), 
+                        0 4px 4px rgba(0,0,0,0.15), 
+                        0 8px 8px rgba(0,0,0,0.10),
+                        0 16px 16px rgba(0,0,0,0.05);
+        }
+        .box.sharp-less {
+            box-shadow: 0 1px 1px rgba(0,0,0,0.08), 
+                        0 2px 2px rgba(0,0,0,0.12), 
+                        0 4px 4px rgba(0,0,0,0.16), 
+                        0 8px 8px rgba(0,0,0,0.20);
+        }
+        .box.dreamy {
+            box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                        0 2px 4px rgba(0,0,0,0.07), 
+                        0 4px 8px rgba(0,0,0,0.07), 
+                        0 8px 16px rgba(0,0,0,0.07),
+                        0 16px 32px rgba(0,0,0,0.07), 
+                        0 32px 64px rgba(0,0,0,0.07);
+        }
+        .box.distance-further {
+            box-shadow: 0 1px 1px rgba(0,0,0,0.11),
+                        0 2px 2px rgba(0,0,0,0.11),
+                        0 4px 4px rgba(0,0,0,0.11),
+                        0 6px 8px rgba(0,0,0,0.11),
+                        0 8px 16px rgba(0,0,0,0.11);
+        }
+        .box.distance-closer {
+            box-shadow: 0 2px 1px rgba(0,0,0,0.09), 
+                        0 4px 2px rgba(0,0,0,0.09), 
+                        0 8px 4px rgba(0,0,0,0.09), 
+                        0 16px 8px rgba(0,0,0,0.09),
+                        0 32px 16px rgba(0,0,0,0.09);
+        }
+        .box.good-small {
+            width: 200px; height: 50px; line-height: 50px;
+            box-shadow: 0.5px 1px 1px rgba(0,0,0,0.12);
+        }
+        .box.good-medium {
+            box-shadow: 1px 2px 2px rgba(0,0,0,0.12),
+                        2px 4px 4px rgba(0,0,0,0.12),
+                        3px 6px 6px rgba(0,0,0,0.12);
+        }
+        .box.good-large {
+            width: 200px; height: 150px; line-height: 150px;
+            box-shadow: 1px 2px 2px rgba(0,0,0,0.12),
+                        2px 4px 4px rgba(0,0,0,0.12),
+                        4px 8px 8px rgba(0,0,0,0.12),
+                        8px 16px 16px rgba(0,0,0,0.12),
+                        16px 32px 32px rgba(0,0,0,0.12);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Shadow</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Shadow</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>text-shadow</td>
+                        <td>
+                            <strong>text-shadow</strong>: <i>h-shadow v-shadow blur-radius color</i>|<span
+                                class="text-red">none</span>|initial|inherit;<br>
+                            <span class="text-green">
+                                <span class="badge bg-danger">required</span> h-shadow, v-shadow<br>
+                                Multiple: seperated by commas
+                            </span>
+                        </td>
+                        <td>
+                            <p style="text-shadow: 2px 2px;">text-shadow: 2px 2px;</p>
+                            <p style="text-shadow: 2px 2px green;">text-shadow: 2px 2px green;</p>
+                            <p style="text-shadow: 2px 2px 5px green;">text-shadow: 2px 2px 5px green (with 5px blur);</p>
+                            <p style="text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;">text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; (multiple)</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>box-shadow</td>
+                        <td>
+                            <strong>box-shadow</strong>: <span class="text-red">none</span>|<i>h-offset v-offset blur spread
+                                color</i>|inset|initial|inherit;<br>
+                            <span class="text-green">
+                                <span class="badge bg-danger">required</span> h-offset, v-offset<br>
+                                Multiple: seperated by commas
+                            </span>
+                        </td>
+                        <td rowspan="3">
+                            <div class="boxshadow a">box-shadow: 10px 10px;</div>
+                            <div class="boxshadow b">box-shadow: 10px 10px grey;</div>
+                            <div class="boxshadow c">box-shadow: 10px 10px 5px grey;</div>
+                            <div class="boxshadow d">box-shadow: 10px 10px 5px 10px grey;</div>
+                            <div class="boxshadow e">box-shadow: 10px 10px 5px -10px grey;</div>
+                            <div class="boxshadow f">
+                                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),<br>
+                                0 6px 20px 0 rgba(0, 0, 0, 0.19); (multiple)
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>spread</strong> optional value: increase or decrease the size of shadow</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>inset</strong> optional value: change the shadow from an outer shadow (outset) to an inner
+                            shadow
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Best Practice</td>
+                        <td>
+                            <ul>
+                                <li>Lit from the same global light source.</li>
+                                <li>Same ratio between horizontal and vertical offsets</li>
+                                <li>Closer to the user:<br>
+                                    the offset should increase,<br>
+                                    the blur radius should increase,<br>
+                                    the opacity should decrease.</li>
+                                <li>Match background color</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Box Shadow - Collection</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Single Box</td>
+                        <td>box-shadow: 2px 4px 4px rgba(0,0,0,0.12);</td>
+                        <td>
+                            <div class="box single">single</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Multiple Box</td>
+                        <td>
+                            0 1px 1px rgba(0,0,0,0.12),<br>
+                            0 2px 2px rgba(0,0,0,0.12),<br>
+                            0 4px 4px rgba(0,0,0,0.12),<br>
+                            0 8px 8px rgba(0,0,0,0.12),<br>
+                            0 16px 16px rgba(0,0,0,0.12);
+                        </td>
+                        <td>
+                            <div class="box multi-basic">basic</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            0 1px 1px rgba(0,0,0,0.15),<br>
+                            0 2px 2px rgba(0,0,0,0.15),<br>
+                            0 4px 4px rgba(0,0,0,0.15),<br>
+                            0 8px 8px rgba(0,0,0,0.15);
+                        </td>
+                        <td>
+                            <div class="box spread-smaller">spread-smaller</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            0 1px 1px rgba(0,0,0,0.11),<br>
+                            0 2px 2px rgba(0,0,0,0.11), <br>
+                            0 4px 4px rgba(0,0,0,0.11), <br>
+                            0 8px 8px rgba(0,0,0,0.11), <br>
+                            0 16px 16px rgba(0,0,0,0.11), <br>
+                            0 32px 32px rgba(0,0,0,0.11);
+                        </td>
+                        <td>
+                            <div class="box spread-larger">spread-larger</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            0 1px 1px rgba(0,0,0,0.25),<br>
+                            0 2px 2px rgba(0,0,0,0.20),<br>
+                            0 4px 4px rgba(0,0,0,0.15),<br>
+                            0 8px 8px rgba(0,0,0,0.10),<br>
+                            0 16px 16px rgba(0,0,0,0.05);
+                        </td>
+                        <td>
+                            <div class="box sharp-more">sharp-more</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            0 1px 1px rgba(0,0,0,0.08), <br>
+                            0 2px 2px rgba(0,0,0,0.12), <br>
+                            0 4px 4px rgba(0,0,0,0.16), <br>
+                            0 8px 8px rgba(0,0,0,0.20);
+                        </td>
+                        <td>
+                            <div class="box sharp-less">sharp-less</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            0 1px 2px rgba(0,0,0,0.07), <br>
+                            0 2px 4px rgba(0,0,0,0.07), <br>
+                            0 4px 8px rgba(0,0,0,0.07), <br>
+                            0 8px 16px rgba(0,0,0,0.07),<br>
+                            0 16px 32px rgba(0,0,0,0.07), <br>
+                            0 32px 64px rgba(0,0,0,0.07);
+                        </td>
+                        <td>
+                            <div class="box dreamy">dreamy</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            0 1px 1px rgba(0,0,0,0.11),<br>
+                            0 2px 2px rgba(0,0,0,0.11),<br>
+                            0 4px 4px rgba(0,0,0,0.11),<br>
+                            0 6px 8px rgba(0,0,0,0.11),<br>
+                            0 8px 16px rgba(0,0,0,0.11);
+                        </td>
+                        <td>
+                            <div class="box distance-further">distance-further</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            0 2px 1px rgba(0,0,0,0.09), <br>
+                            0 4px 2px rgba(0,0,0,0.09), <br>
+                            0 8px 4px rgba(0,0,0,0.09), <br>
+                            0 16px 8px rgba(0,0,0,0.09), <br>
+                            0 32px 16px rgba(0,0,0,0.09);
+                        </td>
+                        <td>
+                            <div class="box distance-closer">distance-closer</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Good examples</td>
+                        <td>
+                            0.5px 1px 1px rgba(0,0,0,0.12);<br><br>
+
+                            1px 2px 2px rgba(0,0,0,0.12),<br>
+                            2px 4px 4px rgba(0,0,0,0.12),<br>
+                            3px 6px 6px rgba(0,0,0,0.12);<br><br>
+
+                            1px 2px 2px rgba(0,0,0,0.12),<br>
+                            2px 4px 4px rgba(0,0,0,0.12),<br>
+                            4px 8px 8px rgba(0,0,0,0.12),<br>
+                            8px 16px 16px rgba(0,0,0,0.12),<br>
+                            16px 32px 32px rgba(0,0,0,0.12);<br>
+                        </td>
+                        <td>
+                            <div class="box good-small">small</div>
+                            <div class="box good-medium">medium</div>
+                            <div class="box good-large">large</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sources</td>
+                        <td>
+                            guide: <a href="https://www.joshwcomeau.com/css/designing-shadows" target="_blank">see more</a><br>
+                            tools: <a href="https://shadows.brumm.af" target="_blank">see more</a><br>
+                            animate box-shadow: <a href="https://tobiasahlin.com/blog/how-to-animate-box-shadow" target="_blank">see more</a><br>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> 
+
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

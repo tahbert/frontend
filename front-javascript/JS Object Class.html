@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Class</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Class</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Class</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Class</td>
+                        <td>
+                            <span class="text-red">class</span> <i>Name</i> {<br>
+                                &emsp;<span class="text-red">constructor()</span> {...}<br>
+                            }<br>
+                            template for objects of the same type
+                            <ul class="note">
+                                <li><span class="text-red">class</span> keyword</li>
+                                <li>class properties: use special method <span class="text-red">constructor()</span> to initialize</li>
+                                <li>class methods: same syntax as object methods</li>
+                                <li>class must be written in "strict mode"</li>
+                                <li><span class="badge red">impossible</span> hoisting: must declared before using</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>create a class</h4>
+                            <span class="text-red">class</span> Person {<br>
+                                &emsp;<span class="text-red">constructor(fname, lname)</span> {<br>
+                                    &emsp;&emsp;this.fname = fname; <span class="text-blur">// class property</span><br>
+                                    &emsp;&emsp;this.lname = lname; <span class="text-blur">// class property</span><br>
+                                &emsp;}<br>
+                                &emsp;name() { <span class="text-blur">// class method</span><br>
+                                    &emsp;&emsp;return this.fname + this.lname;<br>
+                                &emsp;}<br>
+                                &emsp;age(x) { <span class="text-blur">// class method with params</span><br>
+                                    &emsp;&emsp;return x - this.birth;<br>
+                                &emsp;}<br>
+                            }<br>
+                            typeof Person; <span class="text-result" id="class1"></span><br>
+
+                            <h4>create objects of the same type</h4>
+                            const person1 = new Person("Tahbert", "Nguyen", 1994);<br>
+                            const person2 = new Person("Annie", "Sy", 1994);<br>
+
+                            <h4>access objects of the same type</h4>
+                            person1.fname + " " + person1.lname; <span class="text-result" id="class2"></span><br>
+                            person2.fname + " " + person2.lname; <span class="text-result" id="class3"></span><br>
+                            person1.name() + " " + person1.age(thisYear); <span class="text-result" id="class4"></span><br>
+
+                            <script>
+                            {
+                                class Person {
+                                    constructor(fname, lname, birth) {
+                                        this.fname = fname;
+                                        this.lname = lname;
+                                        this.birth = birth;
+                                    }
+                                    name() {
+                                        return this.fname + " " + this.lname;
+                                    }
+                                    age(x) {
+                                        return x - this.birth;
+                                    }
+                                }
+                                const person1 = new Person("Tahbert", "Nguyen", 1994);
+                                const person2 = new Person("Annie", "Sy", 1994);
+
+                                let date = new Date();
+                                let thisYear = date.getFullYear();
+
+                                document.getElementById("class1").innerHTML = typeof Person;
+                                document.getElementById("class2").innerHTML = person1.fname + " " + person1.lname;
+                                document.getElementById("class3").innerHTML = person2.fname + " " + person2.lname;
+                                document.getElementById("class4").innerHTML = 
+                                person1.name() + " " + person1.age(thisYear);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Class Inheritance</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Class Inheritance</td>
+                        <td>
+                            use <span class="text-red">extends</span> keyword to create<br>
+                            use <span class="text-red">super()</span> access the parent's properties and methods
+                            <div class="note">
+                                <span class="badge green">useful</span> reuse the other class properties and methods<br>
+                            </div>
+                        </td>
+                        <td>
+                            myCar.show(); <span class="text-result" id="class_inheritance1"></span><br>
+                            <script>
+                            {
+                                // create a class
+                                class Car {
+                                    constructor(brand) {
+                                        this.carName = brand;
+                                    }
+                                    present() {
+                                        return "I have a " + this.carName;
+                                    }
+                                }
+                                // create an class inheritance
+                                class Model extends Car { // use extends keyword
+                                    constructor(brand, mod) {
+                                        super(brand); // use super() method
+                                        this.model = mod;
+                                    }
+                                    show() {
+                                        return this.present() + ", model " + this.model;
+                                    }
+                                }
+                                // create an object
+                                const myCar = new Model("Ford", "Mustang");
+                                document.getElementById("class_inheritance1").innerHTML = myCar.show();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Getters and Setters</td>
+                        <td>
+                            use <span class="text-red">get</span> and <span class="text-red">set</span> keywords<br>
+                            <ul class="warn">
+                                <li>
+                                    getter/setter name must differ from property name<br>
+                                    => many programmers use underscore with the same name
+                                </li>
+                                <li>even if the getter/setter is a method, not use parentheses when getting/setting property value</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>get and then set</h4>
+                            myCar.carname; <span class="text-result" id="get_set1"></span><br>
+                            <script>
+                            {
+                                class Car {
+                                    constructor(brand) {
+                                        this._carname = brand;
+                                    }
+                                    get carname() {
+                                        return this._carname;
+                                    }
+                                    set carname(x) {
+                                        this._carname = x;
+                                    }
+                                }
+                                const myCar = new Car("Ford");
+                                document.getElementById("get_set1").innerHTML = myCar.carname;
+                            }
+                            </script>
+
+                            <h4>set and then get</h4>
+                            myCar.carname; <span class="text-result" id="get_set2"></span><br>
+                            <script>
+                            {
+                                class Car {
+                                    constructor(brand) {
+                                        this._carname = brand;
+                                    }
+                                    set carname(x) {
+                                        this._carname = x;
+                                    }
+                                    get carname() {
+                                        return this._carname;
+                                    }
+                                }
+                                const myCar = new Car("Ford");
+                                myCar.carname = "Volvo";
+                                document.getElementById("get_set2").innerHTML = myCar.carname;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Static Methods</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Static Method</td>
+                        <td>
+                            class method defined with <span class="text-red">static</span> keyword<br>
+                            <ul class="note">
+                                <li><span class="badge green">possible</span> to to call a static method on a class</li>
+                                <li><span class="badge red">impossible</span> to call a static method on an object</li>
+                                <li>to use object inside static method, send it as a param</li>
+                            </ul>
+                        </td>
+                        <td>
+                            Car.hello(); <span class="text-result" id="static1"></span><br>
+                            Car.hi(myCar); <span class="text-result" id="static2"></span><br>
+                            myCar.hello(); <span class="text-result" id="static3"></span><br>
+                            <script>
+                            {
+                                class Car {
+                                    constructor(brand) {
+                                        this.carname = brand;
+                                    }
+                                    static hello() {
+                                        return "Hello";
+                                    }
+                                    static hi(x) {
+                                        return "Hi " + x.carname;
+                                    }
+                                }
+                                const myCar = new Car("Ford");
+                                document.getElementById("static1").innerHTML = Car.hello();
+                                document.getElementById("static2").innerHTML = Car.hi(myCar);
+                                document.getElementById("static3").innerHTML = myCar.hello();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>            
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

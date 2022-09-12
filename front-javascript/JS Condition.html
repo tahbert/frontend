@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Condition</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Condition</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Condition</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Condition</td>
+                        <td>block of codes to perform different actions on different conditions</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>if</td>
+                        <td>
+                            <div class="text-red">
+                                if (<i>condition</i>) {<br>
+                                &emsp;// <i>block of code</i><br>
+                                }<br>
+                            </div>
+                            specify a block of code to be executed if a condition is true.<br>
+
+                        </td>
+                        <td>
+                            <h4>"Good day!" if the hour &lt; 18:00</h4>
+                            <p class="text-result" id="if1">Good Evening!</p>
+    
+                            <script>
+                                if (new Date().getHours() < 18) {
+                                    document.getElementById("if1").innerHTML = "Good day!";
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>if else</td>
+                        <td>
+                            <div class="text-red">
+                                if (<i>condition</i>) {<br>
+                                &emsp;// <i>block of code</i><br>
+                                } else {<br>
+                                &emsp;// <i>block of code</i><br>
+                                }<br>
+                            </div>
+                            specify a block of code to be executed if the condition is true or false<br>
+                        </td>
+                        <td>
+                            <h4>a time-based greeting:</h4>
+                            text; <span class="text-result" id="if_else1"></span>
+                            <script>
+                            {
+                                const date = new Date().getHours();
+                                let text;
+                                if (date < 18) {
+                                    text = "Good day!"
+                                } else {
+                                    text = "Good evening!"
+                                }
+                                document.getElementById("if_else1").innerHTML = text;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>else if</td>
+                        <td>
+                            <div class="text-red">
+                                if(<i>condition</i>) {<br>
+                                &emsp;// <i>block of code</i><br>
+                                } else if(<i>condition</i>) {<br>
+                                &emsp;// <i>block of code</i><br>
+                                } else {<br>
+                                &emsp;// <i>block of code</i><br>
+                                }<br>
+                            </div>
+                            specify a new condition if the 1st condition is false<br>
+                        </td>
+                        <td>
+                            <h4>a time-based greeting:</h4>
+                            text; <span class="text-result" id="else_if1"></span>
+                            <script>
+                            {
+                                const date = new Date().getHours();
+                                let text;
+                                if (date < 10) {
+                                    text = "Good morning!";
+                                } else if (date < 20) {
+                                    text = "Good day!";
+                                } else {
+                                    text = "Good evening!";
+                                }
+                                document.getElementById("else_if1").innerHTML = text;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>switch</td>
+                        <td>
+                            <div class="text-red">
+                                switch(<i>expression</i>) {<br>
+                                &emsp;case x:<br>
+                                    &emsp;&emsp;// <i>code block</i><br>
+                                    &emsp;&emsp;break;<br>
+                                &emsp;case y:<br>
+                                    &emsp;&emsp;// <i>code block</i><br>
+                                    &emsp;&emsp;break;<br>
+                                &emsp;default:<br>
+                                    &emsp;&emsp;// <i>code block</i><br>
+                                }<br>
+                            </div>
+                            perform different actions based on different conditions<br>
+                            <ul class="note">
+                                <li>
+                                    <span class="text-red">break</span> keyword: break out of the switch block<br>
+                                    (no need for the last case)
+                                </li>
+                                <li>
+                                    <span class="text-red">default</span> keyword: if there is no case matched<br>
+                                    (not have to be the last case)
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>display the current day</h4>
+                            <span class="text-result" id="switch1"></span>
+                            <script>
+                            {
+                                const date = new Date().getDay();
+                                let today;
+                                switch (date) {
+                                    case 0: today = "Sunday"; break;
+                                    case 1: today = "Monday"; break;
+                                    case 2: today = "Tuesday"; break;
+                                    case 3: today = "Wednesday"; break;
+                                    case 4: today = "Thursday"; break;
+                                    case 5: today = "Friday"; break;
+                                    case 6: today = "Saturday";
+                                }
+                                document.getElementById("switch1").innerHTML = today;
+                            }
+                            </script>
+    
+                            <h4>check it's the weekend or not</h4>
+                            <span class="text-result" id="switch2"></span>
+                            <script>
+                                const date = new Date().getDay();
+                                let isWeekend;
+                                switch (date) {
+                                    case 0: isWeekend = "It's the weekend"; break;
+                                    case 6: isWeekend = "It's the weekend"; break;
+                                    default: isWeekend = "Not the weekend";
+                                }
+                                document.getElementById("switch2").innerHTML = isWeekend;
+                            </script>
+
+                            <h4>different cases can use the same code</h4>
+                            <span class="text-result" id="switch3"></span>
+                            <script>
+                            {
+                                const date = new Date().getDay();
+                                let isWeekend;
+                                switch (date) {
+                                    case 0:
+                                    case 6: 
+                                        isWeekend = "It's the weekend"; break;
+                                    default: 
+                                        isWeekend = "Not the weekend";
+                                }
+                                document.getElementById("switch3").innerHTML = isWeekend;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <h3>switching details</h3>
+                            <ul>
+                                <li>multiple cases matched => the 1st selected</li>
+                                <li>no case matched => default case</li>
+                                <li>no default label => continue statement(s) after switch</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <h3>strict Comparison</h3> use (===)
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

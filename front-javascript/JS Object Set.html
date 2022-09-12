@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Object Set</title>
+    <script>
+        var r = "// result: "
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Object Set</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Object Set</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Set</td>
+                        <td>
+                            a collection of unique values<br>
+                            Sets are objects
+                            <ul class="note">
+                                <li>each value can only occur once</li>
+                                <li>value can be of any data type</li>
+                            </ul>
+                        </td>
+                        <td>
+                            const x = new Set(["a","b","c"]);<br>
+                            typeof x; <span class="text-blur" id="set1"></span>
+                            <script>
+                            {
+                                const x = new Set(["a","b","c"]);
+                                document.getElementById("set1").innerHTML = r + typeof x;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties</td>
+                    </tr>
+                    <tr>
+                        <td>size</td>
+                        <td>
+                            return number - the number elements in a Set
+                        </td>
+                        <td>
+                            const x = new Set(["a","b","c"]);<br>
+                            x.size; <span class="text-blur" id="set2"></span>
+                            <script>
+                            {
+                                const x = new Set(["a","b","c"]);
+                                document.getElementById("set2").innerHTML = r + x.size;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Creating</td>
+                    </tr>
+                    <tr>
+                        <td>new Set()</td>
+                        <td>pass an array to the <span class="text-red">new Set()</span> constructor</td>
+                        <td>const x = new Set(["a","b","c"]);</td>
+                    </tr>
+                    <tr>
+                        <td>add()</td>
+                        <td>create a new Set and use <span class="text-red">add()</span> to add values</td>
+                        <td>
+                            <span class="text-blur">// create a Set</span><br>
+                            const x = new Set();<br>
+
+                            <span class="text-blur">// add values to the Set</span><br>
+                            x.add("a");<br>
+                            x.add("b");<br>
+                            x.add("c");<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>create a new Set and use <span class="text-red">add()</span> to add variables</td>
+                        <td>
+                            <span class="text-blur">// create a Set</span><br>
+                            const x = new Set();<br>
+    
+                            <span class="text-blur">// create variables</span><br>
+                            const a = "a";<br>
+                            const b = "b";<br>
+                            const c = "c";<br>
+    
+                            <span class="text-blur">// add variables to the Set</span><br>
+                            x.add(a);<br>
+                            x.add(b);<br>
+                            x.add(c);<br>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Other</td>
+                    </tr>
+                    <tr>
+                        <td>forEach()</td>
+                        <td>
+                            <span class="text-red"><i>set</i>.forEach()</span><br>
+                            call a function (callback) for each element<br>
+                        </td>
+                        <td>
+                            const x = new Set(["a","b","c"]);<br>
+                            text; <span class="text-blur" id="set3"></span><br>
+                            <script>
+                            {
+                                const x = new Set(["a", "b", "c"]);
+                                let text = "";
+                                x.forEach((i) => {
+                                    text += i + " ";
+                                });
+                                document.getElementById("set3").innerHTML = r + text;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>values()</td>
+                        <td>
+                            <span class="text-red"><i>set</i>.values()</span><br>
+                            return object - new iterator object with values</td>
+                        <td>
+                            const x = new Set(["a","b","c"]);<br>
+                            x.values(); <span class="text-blur" id="set4"></span><br>
+                            text; <span class="text-blur" id="set5"></span><br>
+    
+                            <script>
+                            {
+                                const x = new Set(["a", "b", "c"]);
+                                document.getElementById("set4").innerHTML = x.values();
+    
+                                let text = "";
+                                for (let i of x.values()) {
+                                    text += i + " ";
+                                }
+                                document.getElementById("set5").innerHTML = text;
+                            }set5
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>keys()</td>
+                        <td>
+                            <span class="text-red"><i>set</i>.keys()</span><br>
+                            return the same as <span class="text-red">values()</span><br>
+                            <div class="note">this makes Sets compatible with Maps</div>
+                        </td>
+                        <td>
+                            const x = new Set(["a","b","c"]);<br>
+                            x.keys(); <span class="text-blur" id="set6"></span><br>
+                            text; <span class="text-blur" id="set7"></span><br>
+    
+                            <script>
+                            {
+                                const x = new Set(["a", "b", "c"]);
+                                document.getElementById("set6").innerHTML = x.keys();
+    
+                                let text = "";
+                                for (let i of x.keys()) {
+                                    text += i + " ";
+                                }
+                                document.getElementById("set7").innerHTML = text;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>entries()</td>
+                        <td>
+                            <span class="text-red"><i>set</i>.entries()</span><br>
+                            return <span class="text-red">value,value</span> pairs instead of <span class="text-red">key,value</span> pairs<br>
+                            <div class="note">this makes Sets compatible with Maps</div>
+                        </td>
+                        <td>
+                            const x = new Set(["a","b","c"]);<br>
+                            x.entries(); <span class="text-blur" id="set8"></span><br>
+                            text; <span class="text-blur" id="set9"></span><br>
+    
+                            <script>
+                            {
+                                const x = new Set(["a", "b", "c"]);
+                                document.getElementById("set8").innerHTML = x.entries();
+    
+                                let text = "";
+                                for (let i of x.entries()) {
+                                    text += i + " ";
+                                }
+                                document.getElementById("set9").innerHTML = text;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

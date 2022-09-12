@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Variable</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Variable</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Variable</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CSS variable</td>
+                        <td>
+                            <ul class="note">
+                                <li>make the code easier to read (more understandable)</li>
+                                <li>make it much easier to change the color values</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <h3>global variable</h3>
+                            can be used by the entire document, declared inside :root</td>
+                        <td>
+                            :root {--blue: #0000ff;}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Declaration</td>
+                        <td>
+                            <h3>local variable</h3>
+                            used only inside the selector where it is declared</td>
+                        <td>
+                            button {--blue: #0000ff;}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>var() function</td>
+                        <td>
+                            <span class="text-red">var(<i>--name</i>)</span><br>
+                            <span class="text-red">var(<i>--name, value</i>)</span><br>
+                            insert the value of a CSS variable<br>
+                            <ul class="note">
+                                <li>value: the fallback value if the variable is not found</li>
+                            </ul>
+                        </td>
+                        <td>
+                            div {color: var(--blue)}<br>
+                            div {color: var(--blue, blue)}<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Overriding Variable</td>
+                        <td>local variable overrides global variable</td>
+                        <td>
+                            :root {<span class="text-red">--blue</span>: #1e90ff;}<br>
+                            body {background: var(<span class="text-red">--blue</span>)}<br>
+                            button {<br>
+                            &emsp;<span class="text-red">--blue</span>: #0000ff;<br>
+                            &emsp;background: var(<span class="text-red">--blue</span>); 
+                            <span class="text-green">// #0000ff applied</span><br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>
+                            CSS variables have access to the DOM<br>
+                            => possible to change them with JS
+                        </td>
+                        <td>
+                            <div class="changeVariable">
+                                <h4>change the variable by JS</h4>
+                                <button type="button" id="btn">click here</button>
+                            </div>
+        
+                            <style>
+                                .changeVariable {--green: #04AA6D;}
+                                .changeVariable h4 {background: var(--green);}
+                            </style>
+                            <script>
+                            {
+                                let r = document.querySelector('.changeVariable');
+                                document.getElementById('btn').onclick = () => {
+                                    r.style.setProperty('--green', '#008b00');
+                                }
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Media Queries</td>
+                        <td>possible to change variables with Media Queries</td>
+                        <td>
+                            :root {<span class="text-red">--blue</span>: blue;}<br>
+
+                            &media (max-width: 768px) {<br>
+                                &emsp;:root {<span class="text-red">--blue</span>: blue;}<br>
+                            }<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

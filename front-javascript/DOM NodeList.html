@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>NodeList</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>NodeList</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>NodeList Object</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/dom_obj_html_nodelist.asp" 
+                            target="_blank">General</a>
+                        </td>
+                        <td>
+                            array-like collection of nodes returned by: <br>
+                            <span class="text-red">.getElementsByName()</span><br>
+                            <span class="text-red">.querySelectorAll()</span><br>
+                            <span class="text-red">.childNodes</span><br>
+                            <ul class="warn">
+                                <li>possible to loop through or access items by index</li>
+                                <li>impossible to use array methods like valueOf(), pop(), push(), or join().</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            HTMLCollection<br>
+                            or NodeList
+                        </td>
+                        <td>
+                            <h4>Similarity</h4>
+                            <ul>
+                                <li>array-like object</li>
+                                <li>length property</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>Difference</h4>
+                            <ul>
+                                <li>HTMLCollection items can be accessed by their name, id</li>
+                                <li>NodeList can contain attribute nodes and text nodes</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Methods & Properties</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_nodelist_length.asp" 
+                            target="_blank">length</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>NodeList</i>.length</span><br>
+                            return number - the number of nodes
+                            <div class="note">useful for loop</div>
+                        </td>
+                        <td>
+                            <h4> how many nodes in a NodeList</h4>
+                            const nodeList = document.querySelectorAll(".box");<br>
+                            nodeList.length;<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_nodelist_item.asp" 
+                            target="_blank">item()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>NodeList</i>.item(<i>index</i>)</span><br>
+                            <span class="text-red"><i>NodeList</i>[<i>index</i>]</span> <span class="badge green">simple</span><br>
+                            return node - the node by index
+                        </td>
+                        <td>
+                            <h4> access the 1st node in a NodeList</h4>
+                            const nodeList = document.querySelectorAll(".box");<br>
+                            nodeList[0];<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_nodelist_entries.asp" 
+                            target="_blank">entries()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>NodeList</i>.entries()</span><br>
+                            return object - an iterator with key/value pairs
+                        </td>
+                        <td>
+                            <h4> return an iterator with key/value pairs</h4>
+                            const nodeList = document.querySelectorAll(".box");<br>
+                            let text = "";<br>
+                            for(let x of nodeList.entries()) {<br>
+                                &emsp;text += x;<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_nodelist_keys.asp" 
+                            target="_blank">keys()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>NodeList</i>.keys()</span><br>
+                            return object - an iterator with keys
+                        </td>
+                        <td>
+                            <h4> return an iterator with keys</h4>
+                            const nodeList = document.querySelectorAll(".box");<br>
+                            let text = "";<br>
+                            for(let x of nodeList.keys()) {<br>
+                                &emsp;text += x;<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_nodelist_values.asp" 
+                            target="_blank">values()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>NodeList</i>.values()</span><br>
+                            return object - an iterator with values
+                        </td>
+                        <td>
+                            <h4> return an iterator with values</h4>
+                            const nodeList = document.querySelectorAll(".box");<br>
+                            let text = "";<br>
+                            for(let x of nodeList.values()) {<br>
+                                &emsp;text += x;<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_nodelist_forEach.asp" 
+                            target="_blank">forEach()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>NodeList</i>.forEach(<i>function(currentValue, index, arr), thisValue</i>)</span><br>
+                            execute a callback function for each node<br>
+                            return <span class="badge grey">none</span>
+                        </td>
+                        <td>
+                            <h4> run through each nodes</h4>
+                            const nodeList = document.querySelectorAll(".box");<br>
+                            nodeList.forEach((i) => {<br>
+                                &emsp;<span class="text-blur">// some code here</span><br>
+                            })<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

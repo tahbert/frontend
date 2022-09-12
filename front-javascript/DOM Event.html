@@ -1,0 +1,2037 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Event</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Event</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Event</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            when an event occurs, it belongs to a certain event object<br>
+                            (Ex, a mouse click event belongs to the <span class="text-red">MouseEvent</span> object.)
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_target.asp" 
+                            target="_blank">target</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.target</span><br>
+                            return element - the element that triggered the event<br>
+                            <div class="note">
+                                the element on which the event originally occurred<br>
+                                not necessarily the eventlistener's element.
+                            </div>
+                        </td>
+                        <td>
+                            <h4>return differently based on the element clicked in &lt;body&gt;</h4>
+                            document.body.onclick = (e) => {<br>
+                                &emsp;alert(e.target.tagName);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_currenttarget.asp" 
+                            target="_blank">currentTarget</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.currentTarget</span><br>
+                            return element - the element whose event listeners triggered the event<br>
+                            <div class="note">particularly useful during capturing and bubbling.</div>
+                        </td>
+                        <td>
+                            <h4>return the same when clicking on any elements in &lt;body&gt;</h4>
+                            document.body.onclick = (e) => {<br>
+                                &emsp;alert(e.currentTarget.tagName);<br>
+                            } <span class="text-blur">return: BODY</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_type.asp" 
+                            target="_blank">type</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.type</span><br>
+                            return string - the type of the triggered event.
+                        </td>
+                        <td>
+                            <h4>return the type of triggered event</h4>
+                            document.body.onclick = (e) => {<br>
+                                &emsp;alert(e.type);<br>
+                            } <span class="text-blur">return: click</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_timestamp.asp" 
+                            target="_blank">timeStamp</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.timeStamp</span><br>
+                            return number - the number of milliseconds from the document 
+                            was finished loading until the specific event was created.
+                            <div class="warn">
+                                not all systems provide this information
+                            </div>
+                        </td>
+                        <td>
+                            <h4>return how long I have visited the web</h4>
+                            document.body.onclick = (e) => {<br>
+                                &emsp;alert(e.timeStamp);<br>
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_bubbles.asp" 
+                            target="_blank">bubbles</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.bubbles</span><br>
+                            returns boolean - true if an event is a bubbling one.
+                        </td>
+                        <td>
+                            <h4>check if the onclick event is a bubbling one</h4>
+                            document.body.onclick = (e) => {<br>
+                                &emsp;alert(e.bubbles);<br>
+                            } <span class="text-blur">return: true</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_cancelable.asp" 
+                            target="_blank">cancelable</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.cancelable</span><br>
+                            return boolean - true if the event is a cancelable one.
+                            <div class="note">cancelable if it's possible to prevent default</div>
+                        </td>
+                        <td>
+                            <h4>check if the onclick event is a cancelable one</h4>
+                            document.body.onclick = (e) => {<br>
+                                &emsp;alert(e.cancelable);<br>
+                            } <span class="text-blur">return: true</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_preventdefault.asp" 
+                            target="_blank">preventDefault()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.preventDefault()</span><br>
+                            cancel the event if cancelable<br>
+                            returns none
+                            <div class="note">
+                                <span class="text-red">stopPropagation()</span> 
+                                to prevent further propagation of an event through the DOM
+                            </div>
+                        </td>
+                        <td>
+                            <h4>cancel onclick event on the frist link</h4>
+                            document.links[0].onclick = (event) => {<br>
+                                &emsp;event.preventDefault();<br>
+                            };
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_defaultprevented.asp" 
+                            target="_blank">defaultPrevented</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.defaultPrevented</span><br>
+                            reutrn boolean - true if <span class="text-red">preventDefault()</span> was called for the event.
+                        </td>
+                        <td>
+                            <h4>check onclick event on the frist link</h4>
+                            document.links[0].onclick = (event) => {<br>
+                                &emsp;event.preventDefault();<br>
+                                &emsp;alert(event.defaultPrevented);<br>
+                            }; <span class="text-blur">return: true</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_stoppropagation.asp" 
+                            target="_blank">stopPropagation()</a>
+                        </td>  
+                        <td>
+                            <span class="text-red"><i>event</i>.stopPropagation()</span><br>
+                            prevent propagation of the same event from being called<br>
+                            returns none
+                            <div class="note">
+                                propagation: bubbling up to parent elements or capturing down to child elements.
+                            </div>
+                        </td>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_stoppropagation.asp" 
+                            target="_blank">complex</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_stopimmediatepropagation.asp" 
+                            target="_blank">stopImmediatePropagation()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.stopImmediatePropagation()</span><br>
+                            prevent other listeners of the same event from being called.<br>
+                            returns none
+                        </td>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_stopimmediatepropagation.asp" 
+                            target="_blank">complex</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_composedpath.asp" 
+                            target="_blank">composedPath()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.composedPath()</span><br>
+                            return array - the elements in the event flow, in execution order.
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> by Edge</div>
+                        </td>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_composedpath.asp" 
+                            target="_blank">complex</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_istrusted.asp" 
+                            target="_blank">isTrusted</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.isTrusted</span><br>
+                            reutrn boolean - true if the event is trusted
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> by Safari</div>
+                            <ul class="note">
+                                <li>Chrome, Firefox, Opera: trusted if invoked by the user, not if by a script</li>
+                                <li>IE: all are trusted except those created with <span class="text-red">createEvent()</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_istrusted.asp" 
+                            target="_blank">complex</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/eventPhase" 
+                            target="_blank">eventPhase</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.eventPhase</span><br>
+                            reutrn number - which phase of the event flow is currently being evaluated.
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge red">later</span></td>
+                        <td>
+                            composed
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>UiEvent</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table> 
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>Events that are triggered from the user interface.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span> &lt;= <span class="highlight">UiEvent</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_detail.asp" 
+                            target="_blank">detail</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.detail</span><br>
+                            return number - the number of clicks in a short time
+                            <ul class="note">
+                                <li>onclick: current click count.</li>
+                                <li>onmousedown|onmouseup: current click count + 1</li>
+                                <li>ondblclick: always "2"</li>
+                                <li>onmouseover|onmouseout: always "0"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>return the number of double click</h4>
+                            el.ondblclick = (event) => {<br>
+                                &emsp;event.detail;<br>
+                            }; <span class="text-blur">return: 2</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_view.asp" 
+                            target="_blank">view</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.view</span><br>
+                            return object - the Window object where the event occured.
+                        </td>
+                        <td>
+                            <h4>return the Window object where the event occured.</h4>
+                            el.onclick = (event) => {<br>
+                                &emsp;event.view;<br>
+                            }; <span class="text-blur">return: [object Window]</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>MouseEvent</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>Events that occur when the mouse interacts with the HTML document</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span> &lt;= <span class="highlight">UiEvent</span> &lt;= <span class="highlight">MouseEvent</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/event_button.asp" 
+                            target="_blank">button</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.button</span><br>
+                            returns number - which mouse button was pressed<br>
+                            when a mouse event was triggered.
+                            <ul class="note">
+                                <li>0: left mouse</li>
+                                <li>1: middle button</li>
+                                <li>2: right button</li>
+                            </ul>
+                            <div class="note">mostly used with <span class="text-red">onmousedown</span></div>
+                        </td>
+                        <td>
+                            <h4>return which mouse button is pressed</h4>
+                            el.onmousedown = (event) => {<br>
+                                &emsp;alert(event.button);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_which.asp" 
+                            target="_blank">which</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.which</span><br>
+                            return number - which mouse button was pressed<br>
+                            when a mouse event was triggered.
+                            <div class="note">
+                                result the same as <span class="text-red">button</span> + 1<br>
+                                mostly used with <span class="text-red">onmousedown</span>
+                            </div>
+                        </td>
+                        <td>
+                            <h4>return which mouse button is pressed</h4>
+                            el.onmousedown = (event) => {<br>
+                                &emsp;alert(event.which);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_buttons.asp" 
+                            target="_blank">buttons</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.buttons</span><br>
+                            returns number - which mouse button/buttons was pressed<br>
+                            when a mouse event was triggered.
+                            <ul class="note">
+                                <li>1: left button</li>
+                                <li>2: right button</li>
+                                <li>4: middle button</li>
+                                <li>8: fourth button (typically "Browser Back")</li>
+                                <li>16: fifth  button (typically "Browser Forward")</li>
+                            </ul>
+                            <div class="note">
+                                mostly used with <span class="text-red">onmousedown</span>
+                            </div>
+                            <div class="warn">
+                                <i class="icon notsupported fa-solid fa-phone-slash"></i> by Safari
+                            </div>
+                        </td>
+                        <td>
+                            <h4>return which mouse button/buttons is pressed</h4>
+                            el.onmousedown = (event) => {<br>
+                                &emsp;alert(event.buttons);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_screenx.asp" 
+                            target="_blank">screenX</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.screenX</span><br>
+                            return number - x-coordinate of the mouse pointer<br>
+                            when an event was triggered
+                            <div class="note">according to user screen</div>
+                        </td>
+                        <td>
+                            <h4>return x-coordinate of the mouse pointer</h4>
+                            el.onclick = (event) => {<br>
+                                &emsp;alert(event.screenX);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_screenx.asp" 
+                            target="_blank">screenY</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.screenY</span><br>
+                            return number - y-coordinate of the mouse pointer<br>
+                            when an event was triggered
+                            <div class="note">according to user screen</div>
+                        </td>
+                        <td>
+                            <h4>return y-coordinate of the mouse pointer</h4>
+                            el.onclick = (event) => {<br>
+                                &emsp;alert(event.screenY);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_clientx.asp" 
+                            target="_blank">clientX</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.clientX</span><br>
+                            <span class="text-red"><i>event</i>.x</span> <span class="badge green">simple</span><br>
+                            return number - x-coordinate of the mouse pointer<br>
+                            when a mouse event was triggered.
+                            <div class="note">according to the client area (current window)</div>
+                        </td>
+                        <td>
+                            <h4>return x-coordinate of the mouse pointer</h4>
+                            el.onclick = (event) => {<br>
+                                &emsp;alert(event.clientX);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_clienty.asp" 
+                            target="_blank">clientY</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.clientY</span><br>
+                            <span class="text-red"><i>event</i>.y</span> <span class="badge green">simple</span><br>
+                            return number - y-coordinate of the mouse pointer<br>
+                            when a mouse event was triggered.
+                            <div class="note">according to the client area (current window)</div>
+                        </td>
+                        <td>
+                            <h4>return y-coordinate of the mouse pointer</h4>
+                            el.onclick = (event) => {<br>
+                                &emsp;alert(event.event_clienty);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_pagex.asp" 
+                            target="_blank">pageX</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.pageX</span><br>
+                            return number - x-coordinate of the mouse pointer<br>
+                            when a mouse event was triggered.
+                            <div class="note">according to the document (the web page)</div>
+                        </td>
+                        <td>
+                            <h4>return x-coordinate of the mouse pointer</h4>
+                            el.onclick = (event) => {<br>
+                                &emsp;alert(event.pageX);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_pagey.asp" 
+                            target="_blank">pageY</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.pageY</span><br>
+                            return number - y-coordinate of the mouse pointer<br>
+                            when a mouse event was triggered.
+                            <div class="note">according to the document (the web page)</div>
+                        </td>
+                        <td>
+                            <h4>return y-coordinate of the mouse pointer</h4>
+                            el.onclick = (event) => {<br>
+                                &emsp;alert(event.pageY);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/movementX" 
+                            target="_blank">movementX</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.movementX</span><br>
+                            return number - the difference of <span class="text-red">screenX</span> between the curr and prev event 
+                            <div class="note">curr.movementX = curr.screenX - prev.screenX</div>
+                        </td>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/movementX" 
+                            target="_blank">complex</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/movementY" 
+                            target="_blank">movementY</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.movementY</span><br>
+                            return number - the difference of <span class="text-red">screenY</span> between the curr and prev event 
+                            <div class="note">curr.movementY = curr.screenY - prev.screenY</div>
+                        </td>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/movementY" 
+                            target="_blank">complex</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_offsetx.asp" 
+                            target="_blank">offsetX</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.offsetX</span><br>
+                            return number - the x-coordinate of the mouse pointer<br>
+                            <div class="note">according to the target element.</div>
+                        </td>
+                        <td>
+                            <h4>return x-coordinate of the mouse pointer</h4>
+                            el.onclick = (event) => {<br>
+                                &emsp;alert(event.offsetX);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/event_offsetx.asp" 
+                            target="_blank">offsetY</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.offsetY</span><br>
+                            return number - the y-coordinate of the mouse pointer<br>
+                            <div class="note">according to the target element.</div>
+                        </td>
+                        <td>
+                            <h4>return y-coordinate of the mouse pointer</h4>
+                            el.onclick = (event) => {<br>
+                                &emsp;alert(event.offsetY);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_metakey.asp" 
+                            target="_blank">metaKey</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.metaKey</span><br>
+                            return boolean - true if "META" key was pressed<br>
+                            when a mouse event occured.
+                        </td>
+                        <td>
+                            <h4>return true if metaKey was pressed</h4>
+                            document.body.onclick = (event) => {<br>
+                                &emsp;alert(event.metaKey);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_ctrlkey.asp" 
+                            target="_blank">ctrlKey</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.ctrlKey</span><br>
+                            returns boolean - true if "CTRL" key was pressed<br>
+                            when a mouse event was trigered.
+                        </td>
+                        <td>
+                            <h4>return true if ctrlKey was pressed</h4>
+                            document.body.onclick = (event) => {<br>
+                                &emsp;alert(event.ctrlKey);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_shiftkey.asp" 
+                            target="_blank">shiftKey</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.shiftKey</span><br>
+                            return boolean - true if "SHIFT" key was pressed<br>
+                            when a mouse event was triggered.
+                        </td>
+                        <td>
+                            <h4>return true if shiftKey was pressed</h4>
+                            document.body.onclick = (event) => {<br>
+                                &emsp;alert(event.shiftKey);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_altkey.asp" 
+                            target="_blank">altKey</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.altKey</span><br>
+                            returns boolean - true if "ALT" key was pressed<br>
+                            when a mouse event was triggered.
+                        </td>
+                        <td>
+                            <h4>return true if altKey was pressed</h4>
+                            document.body.onclick = (event) => {<br>
+                                &emsp;alert(event.altKey);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_mouse_getmodifierstate.asp" 
+                            target="_blank">getModifierState()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.getModifierState("<i>modifierKey</i>")</span><br>
+                            reutrn boolean - true if the specified modifier key is activated<br>
+                            when a mouse event was triggered
+                            <ul class="note">
+                                <li>activated when pressed down: Meta, Control, Shift, Alt, AltGraph</li>
+                                <li>activated when clicked, deactivated when clicked again: CapsLock, NumLock, ScrollLock</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>return true if CapsLock is activeted</h4>
+                            document.body.onclick = (event) => {<br>
+                                &emsp;alert(event.getModifierState("CapsLock"));<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/relatedTarget" 
+                            target="_blank">relatedTarget</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.relatedTarget</span><br>
+                            return <a href="DOM EventTarget.html" target="_blank">EventTarget</a> - the secondary target for the mouse event, if there is one.
+                        </td>
+                        <td>
+                            <h4>return the tagName of the related element</h4>
+                            el.onmouseenter = (event) => {<br>
+                                &emsp;alert(event.relatedTarget.tagName);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>DragEvent</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>Events that occur when elements are dragged and/or dropped</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span> &lt;= <span class="highlight">UiEvent</span> &lt;= <span class="highlight">MouseEvent</span> &lt;= <span class="highlight">DragEvent</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/DragEvent/dataTransfer" 
+                            target="_blank">dataTransfer</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.dataTransfer</span><br>
+                            return DataTransfer - containing the drag event's data
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>WheelEvent</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            Events that occur when the mouse wheel is scrolling
+                            <div class="warn">Do NOT confuse the <span class="text-red">wheel</span> event with the <span class="text-red">scroll</span> event.</div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span> &lt;= <span class="highlight">UiEvent</span> &lt;= <span class="highlight">MouseEvent</span> &lt;= <span class="highlight">WheelEvent</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_wheel_deltamode.asp" 
+                            target="_blank">deltaMode</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.deltaMode</span><br>
+                            returns number - the length unit of the scrolling values.
+                            <ul class="note">
+                                <li>0: pixels</li>
+                                <li>1: lines</li>
+                                <li>2: pages</li>
+                            </ul>
+                            <div class="warn">
+                                <i class="icon notsupported fa-solid fa-phone-slash"></i> by Safari
+                            </div>
+                        </td>
+                        <td>
+                            <h4>return the length unit of the scrolling values</h4>
+                            document.body.onwheel = (event) => {<br>
+                                &emsp;alert(event.deltaMode);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_inputevent_data.asp" 
+                            target="_blank">deltaX</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.deltaX</span><br>
+                            returns double - 
+                            <ul class="note">
+                                <li>positive: when scrolling to the right</li>
+                                <li>negative: when scrolling to the left</li>
+                                <li>0: otherwise</li>
+                            </ul>
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> by Safari</div>
+                            <div class="warn">most mouse devices have no ability to scroll along the z-axis</div>
+                        </td>
+                        <td>
+                            <h4>return deltaX</h4>
+                            document.body.onwheel = (event) => {<br>
+                                &emsp;alert(event.deltaX);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_wheel_deltay.asp" 
+                            target="_blank">deltaY</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.deltaY</span><br>
+                            returns double
+                            <ul class="note">
+                                <li>positive: when scrolling down</li>
+                                <li>negative: when scrolling up</li>
+                                <li>0: otherwise</li>
+                            </ul>
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> by Safari</div>
+                        </td>
+                        <td>
+                            <h4>return deltaY</h4>
+                            document.body.onwheel = (event) => {<br>
+                                &emsp;alert(event.deltaY);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_wheel_deltaz.asp" 
+                            target="_blank">deltaZ</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.deltaZ</span><br>
+                            returns double - 
+                            <ul class="note">
+                                <li>positive: when scrolling in</li>
+                                <li>negative: when scrolling out</li>
+                                <li>0: otherwise</li>
+                            </ul>
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> by Safari</div>
+                            <div class="warn">most mouse devices have no ability to scroll along the z-axis</div>
+                        </td>
+                        <td>
+                            <h4>return deltaZ</h4>
+                            document.body.onwheel = (event) => {<br>
+                                &emsp;alert(event.deltaZ);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>TouchEvent</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>Events that occur when user touches a touch-based device</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span> &lt;= <span class="highlight">UiEvent</span> &lt;= <span class="highlight">TouchEvent</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_touch_touches.asp" 
+                            target="_blank">touches</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.touches</span><br>
+                            return array - of Touch objects, one for each finger touching the surface.
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> by Safari</div>
+                        </td>
+                        <td>
+                            <h4>return how many fingers touching the surface</h4>
+                            document.body.ontouchstart = (event) => {<br>
+                                &emsp;alert(event.touches.length);<br>
+                            }<br>
+                            document.body.ontouchend = (event) => {<br>
+                                &emsp;alert(event.touches.length);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_touch_targettouches.asp" 
+                            target="_blank">targetTouches</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.targetTouches</span><br>
+                            return array - of Touch objects, one for each finger touching the same element.
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> by Safari</div>
+                        </td>
+                        <td>
+                            <h4>return how many fingers touching the same element</h4>
+                            el.ontouchstart = (event) => {<br>
+                                &emsp;alert(event.targetTouches.length);<br>
+                            }<br>
+                            el.ontouchend = (event) => {<br>
+                                &emsp;alert(event.targetTouches.length);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/changedTouches" 
+                            target="_blank">changedTouches</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.changedTouches</span><br>
+                            return <a href="DOM TouchList.html" target="_blank">TouchList</a> 
+                            - whose Touch objects include all the touch points that contributed to this touch event.
+                            <ul class="note">
+                                <li><span class="text-red">touchstart</span>: the touch points that became active with the current event.</li>
+                                <li><span class="text-red">touchmove</span>: the touch points that have changed since the last event.</li>
+                                <li><span class="text-red">touchend</span>: the touch points that have been removed from the surface.</li>
+                            </ul>
+                            <div class="warn">
+                                <i class="icon notsupported fa-solid fa-phone-slash"></i> by Safari
+                            </div>
+                        </td>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/changedTouches" 
+                            target="_blank">complex exmaple</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_touch_metakey.asp" 
+                            target="_blank">metaKey</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.metaKey</span><br>
+                            return boolean - true if "META" key was pressed<br>
+                            when a touch event occured.
+                            <div class="warn">
+                                <i class="icon notsupported fa-solid fa-phone-slash"></i> by Safari<br>
+                                Many touch devices do not have a metaKey.
+                            </div>
+                        </td>
+                        <td>
+                            <h4>return true if metaKey was pressed</h4>
+                            document.body.ontouchstart = (event) => {<br>
+                                &emsp;alert(event.metaKey);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_touch_altkey.asp" 
+                            target="_blank">altKey</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.altKey</span><br>
+                            returns boolean - true if "ALT" key was pressed<br>
+                            when a touch event was triggered.
+                            <div class="warn">
+                                <i class="icon notsupported fa-solid fa-phone-slash"></i> by Safari<br>
+                                Many touch devices do not have a altKey.
+                            </div>
+                        </td>
+                        <td>
+                            <h4>return true if altKey was pressed</h4>
+                            document.body.ontouchstart = (event) => {<br>
+                                &emsp;alert(event.altKey);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_touch_ctrlkey.asp" 
+                            target="_blank">ctrlKey</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.ctrlKey</span><br>
+                            returns boolean - true if "CTRL" key was pressed<br>
+                            when a touch event was trigered.
+                            <div class="warn">
+                                <i class="icon notsupported fa-solid fa-phone-slash"></i> by Safari<br>
+                                Many touch devices do not have a ctrlKey.
+                            </div>
+                        </td>
+                        <td>
+                            <h4>return true if ctrlKey was pressed</h4>
+                            document.body.ontouchstart = (event) => {<br>
+                                &emsp;alert(event.ctrlKey);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_touch_shiftkey.asp" 
+                            target="_blank">shiftKey</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.shiftKey</span><br>
+                            return boolean - true if "SHIFT" key was pressed<br>
+                            when a touch event was triggered.
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> by Safari</div>
+                        </td>
+                        <td>
+                            <h4>return true if shiftKey was pressed</h4>
+                            document.body.ontouchstart = (event) => {<br>
+                                &emsp;alert(event.shiftKey);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>InputEvent</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>Events that occur when an form element's content changes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span> &lt;= <span class="highlight">UiEvent</span> &lt;= <span class="highlight">InputEvent</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_inputevent_data.asp" 
+                            target="_blank">data</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.data</span><br>
+                            return string - the character inserted with the event.
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> by Edge, Mozilla</div>
+                        </td>
+                        <td>
+                            <h4>return the character inserted with the event</h4>
+                            el.oninput = (event) => {<br>
+                                &emsp;console.log(event.data);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_inputevent_inputtype.asp" 
+                            target="_blank">inputType</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.inputType</span><br>
+                            return string - the type of change done by the event
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> by Edge, Mozilla</div>
+                        </td>
+                        <td>
+                            <h4>return the type of change done by the event</h4>
+                            el.oninput = (event) => {<br>
+                                &emsp;console.log(event.inputType);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/isComposing" 
+                            target="_blank">isComposing</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.isComposing</span><br>
+                            return boolean - true if the event is fired<br>
+                            after <span class="text-red">compositionstart</span> and 
+                            before <span class="text-red">compositionend</span>.
+                            <div class="warn">
+                                <i class="icon notsupported fa-solid fa-phone-slash"></i> by Safari
+                            </div>
+                        </td>
+                        <td>
+                            el.oninput = (event) => {<br>
+                                &emsp;console.log(event.isComposing);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/dataTransfer" 
+                            target="_blank">dataTransfer</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.dataTransfer</span><br>
+                            return <a href="DOM DataTransfer.html" target="_blank">DataTransfer</a>
+                            - containing information about richtext or plaintext data being added to or removed from editable content.
+                        </td>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/dataTransfer" 
+                            target="_blank">complex</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/getTargetRanges" 
+                            target="_blank">getTargetRanges()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.getTargetRanges()</span><br>
+                            return array of StaticRange - that will be affected by a change to the DOM if the input event is not canceled.
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>KeyboardEvent</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>Events that occur when user presses a key on the keyboard</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span> &lt;= <span class="highlight">UiEvent</span> &lt;= <span class="highlight">KeyboardEvent</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_key_code.asp" 
+                            target="_blank">code</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.code</span><br>
+                            returns string - the key that triggered the event.
+                            <div class="warn">
+                                return different values for different keyboard layouts.<br>
+                                => <span class="text-red">event.key</span> to return the correct character 
+                            </div>
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> by Edge</div>
+                        </td>
+                        <td>
+                            <h4>return the key that triggered the event</h4>
+                            el.onkeypress = (event) => {<br>
+                                &ensp;console.log(event.code);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/event_key_key.asp" 
+                            target="_blank">key</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.key</span><br>
+                            return string - the key pressed when a key event occured
+                            <div class="note">
+                                "ALT", "CTRL", "META", "SHIFT": use altKey, ctrlKey, metaKey, shiftKey
+                            </div>
+                        </td>
+                        <td>
+                            <h4>return the key pressed when a key event occured</h4>
+                            el.onkeydown = (event) => {<br>
+                                &ensp;console.log(event.key);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_key_metakey.asp" 
+                            target="_blank">metaKey</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.metaKey</span><br>
+                            return boolean - true if "META" key was pressed<br>
+                            when a key event was triggered
+                        </td>
+                        <td>
+                            <h4>return true if metaKey was pressed</h4>
+                            el.onkeydown = (event) => {<br>
+                                &emsp;alert(event.metaKey);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_key_shiftkey.asp" 
+                            target="_blank">shiftKey</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.shiftKey</span><br>
+                            return boolean - true if "SHIFT" key was pressed<br>
+                            when a key event was triggered
+                        </td>
+                        <td>
+                            <h4>return true if shiftKey was pressed</h4>
+                            el.onkeydown = (event) => {<br>
+                                &emsp;alert(event.shiftKey);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_key_altkey.asp" 
+                            target="_blank">altKey</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.altKey</span><br>
+                            returns boolean - true if "ALT" key was pressed<br>
+                            when a key event was triggered
+                        </td>
+                        <td>
+                            <h4>return true if altKey was pressed</h4>
+                            el.onkeydown = (event) => {<br>
+                                &emsp;alert(event.altKey);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_key_ctrlkey.asp" 
+                            target="_blank">ctrlKey</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.ctrlKey</span><br>
+                            returns boolean - true if "CTRL" key was pressed<br>
+                            when a key event was triggered
+                        </td>
+                        <td>
+                            <h4>return true if ctrlKey was pressed</h4>
+                            el.onkeydown = (event) => {<br>
+                                &emsp;alert(event.ctrlKey);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_key_location.asp" 
+                            target="_blank">location</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.location</span><br>
+                            return number - indicate the location of a key on the keyboard or device.
+                            <div class="note">can only be used on <span class="text-red">onkeydown</span>, <span class="text-red">onkeyup</span> , not <span class="text-red">onkeypress</span>.</div>
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> by Safari</div>
+                        </td>
+                        <td>
+                            <h4>return the location of a key</h4>
+                            el.onkeydown = (event) => {<br>
+                                &emsp;alert(event.location);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/isComposing" 
+                            target="_blank">isComposing</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.isComposing</span><br>
+                            return boolean - if the event is fired after compositionstart and before compositionend.
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> by Safari</div>
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/repeat" 
+                            target="_blank">repeat</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.repeat</span><br>
+                            returns boolean - true if the given key is being held down such that it is automatically repeating.
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_key_getmodifierstate.asp" 
+                            target="_blank">getModifierState()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.getModifierState(<i>modifierKey</i>)</span><br>
+                            reutrn boolean - true if the specified modifier key is activated<br>
+                            when a key event was triggered
+                            <ul class="note">
+                                <li>activated when pressed down: Alt, AltGraph, Control, Meta, Shift</li>
+                                <li>activated when clicked, deactivated when clicked again: CapsLock, NumLock, ScrollLock</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>return true if CapsLock is activeted</h4>
+                            document.body.onkeydown = (event) => {<br>
+                                &emsp;alert(event.getModifierState("CapsLock"));<br>
+                            }<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>FocusEvent</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>Events that occur when elements gets or loses focus</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span> &lt;= <span class="highlight">UiEvent</span> &lt;= <span class="highlight">FocusEvent</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon experiment fa-solid fa-flask"></i> 
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/event_focus_relatedtarget.asp" 
+                            target="_blank">relatedTarget</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.relatedTarget</span><br>
+                            return EventTarget - the element related to the element that triggered the focus/blur event.
+                            <ul class="note">
+                                <li><span class="text-red">onfocus/onfocusin</span> the element that LOST focus.</li>
+                                <li><span class="text-red">onblur/onfocusout</span> the element that GOT focus.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>return the tagName of the related element</h4>
+                            el.onfocus = (event) => {<br>
+                                &emsp;alert(event.relatedTarget.tagName);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>ClipboardEvent</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>Events that occur when the clipboard is modified</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span> &lt;= <span class="highlight">ClipboardEvent</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent/clipboardData" 
+                            target="_blank">clipboardData</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.clipboardData</span><br>
+                            return DataTransfer - containing the data affected by the clipboard operation
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>HashChangeEvent</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>Events that occur when the anchor part of the URL changes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span> &lt;= <span class="highlight">HashChangeEvent</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_hashchange_oldurl.asp"
+                            target="_blank">oldURL</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.oldURL</span><br>
+                            return string - the document's URL, before the hash (anchor part) was changed. (the URL navigated away from)
+                            <div class="note"><span class="text-red">location.hash</span> to set or return the hash of a URL.</div>
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> by Edge</div>
+                        </td>
+                        <td rowspan="2">
+                            <h4>return oldURL and newURL</h4>
+                            el.onclick = (event) => {<br>
+                                &emsp;location.hash = "part5";<br>
+                                &emsp;alert(event.oldURL);<br>
+                                &emsp;alert(event.oldURL);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_hashchange_newurl.asp" 
+                            target="_blank">newURL</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.newURL</span><br>
+                            return string - the document's URL, after the hash (anchor part) has been changed. (the URL navigated to)
+                            <div class="note"><span class="text-red">location.hash</span> to set or return the hash of a URL.</div>
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> by Edge</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>TransitionEvent</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>Events that occur when a CSS transition runs</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span> &lt;= <span class="highlight">TransitionEvent</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_transition_propertyName.asp" 
+                            target="_blank">propertyName</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.propertyName</span><br>
+                            return string - the name of the CSS property associated with the transition, when a <span class="text-red">transitionend</span> occurs.
+                        </td>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_transition_propertyName.asp" 
+                            target="_blank">complex</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_transition_elapsedtime.asp" 
+                            target="_blank">elapsedTime</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.elapsedTime</span><br>
+                            return number - the number of seconds a transition has been running, when its event occurs.
+                            <div class="warn"><span class="text-red">transition-delay</span> => no use</div>
+                        </td>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_transition_elapsedtime.asp" 
+                            target="_blank">complex</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent/pseudoElement" 
+                            target="_blank">pseudoElement</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.pseudoElement</span><br>
+                            return string - the name of the pseudo-element the transition runs on, starting with <span class="text-red">::</span>
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>AnimationEvent</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>Events that occur when a CSS animation runs</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span> &lt;= <span class="highlight">AnimationEvent</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_animation_animationName.asp" 
+                            target="_blank">animationName</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.animationName</span><br>
+                            return string - the name of the animation, when its event occurs.
+                        </td>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_animation_animationName.asp" 
+                            target="_blank">complex</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_animation_elapsedtime.asp" 
+                            target="_blank">elapsedTime</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.elapsedTime</span><br>
+                            return number - the number of seconds an animation has been running, when its event occurs.
+                            <ul class="warn">
+                                <li>not affected if the animation is paused by <span class="text-red">animation-delay</span></li>
+                                <li><span class="text-red">animationstart</span>: always 0.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_animation_elapsedtime.asp" 
+                            target="_blank">complex</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent/pseudoElement" 
+                            target="_blank">pseudoElement</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.pseudoElement</span><br>
+                            return string - the name of the pseudo-element the animation runs on, starting with <span class="text-red">::</span>
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>PageTransitionEvent</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span> &lt;= <span class="highlight">PageTransitionEvent</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/event_pagetransition_persisted.asp" 
+                            target="_blank">persisted</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.persisted</span><br>
+                            return boolean - true if the page is cached by the browser<br>
+                            when an <span class="text-red">onpageshow</span> or <span class="text-red">onpagehide</span> occurs.
+                        </td>
+                        <td>
+                            <h4>check if the page is cached by the browser</h4>
+                            document.body.onpageshow = (event) => {<br>
+                                &emsp;alert(event.persisted);<br>
+                            }<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>PopStateEvent</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>Events that occur when the window's history changes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span> &lt;= <span class="highlight">PopStateEvent</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/PopStateEvent" 
+                            target="_blank">state</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.state</span><br>
+                            return object - containing a copy of the history entries
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>ProgressEvent</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span> &lt;= <span class="highlight">ProgressEvent</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent/lengthComputable" 
+                            target="_blank">lengthComputable</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.lengthComputable</span><br>
+                            return boolean - true if the length of the progress can be computable
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent/loaded" 
+                            target="_blank">loaded</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.loaded</span><br>
+                            return integer - how much work has been loaded
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent/total" 
+                            target="_blank">total</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.total</span><br>
+                            return integer - the total size of the data being processed or transmitted
+                            <div class="warn"><span class="text-red">lengthComputable</span> returns false => no use</div>
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>StorageEvent</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            Events that occur when there is changes in the window's storage area.
+                            <div class="note">is only triggered when a window other than itself makes the changes</div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">Event</span> &lt;= <span class="highlight">StorageEvent</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties and Methods</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_storage_storagearea.asp" 
+                            target="_blank">storageArea</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.storageArea</span><br>
+                            return object - Storage Object of the changed storage item.
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_storage_key.asp" 
+                            target="_blank">key</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.key</span><br>
+                            return string - the name of the changed storage item.
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_storage_newvalue.asp" 
+                            target="_blank">newValue</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.newValue</span><br>
+                            return string - the new value of the changed storage item.
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_storage_oldvalue.asp" 
+                            target="_blank">oldValue</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.oldValue</span><br>
+                            return string - the old value of the changed storage item.
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/obj_storageevent.asp" 
+                            target="_blank">url</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>event</i>.url</span><br>
+                            return string - the URL of the changed item's document
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

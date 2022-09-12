@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>String</title>
+    <script>
+        var r = "// result: ";
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>String</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>String in general</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Quotes in quotes</td>
+                        <td>not match each other</td>
+                        <td>
+                            let x = "He is called 'Johnny'";<br>
+                            let x = 'He is called "Johnny"';<br>
+                            let x = "He is called "Johnny""; <span class="text-red">// error</span><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Special Characters</td>
+                        <td colspan="2">
+                            <table class="sub-table">
+                                <tr>
+                                    <th>Characters</th>
+                                    <th>Code</th>
+                                    <th>Example</th>
+                                </tr>
+                                <tr>
+                                    <td>Single quote (')</td>
+                                    <td>\'</td>
+                                    <td>
+                                        It\'s alright.; <span class="text-blur" id="specialChar1"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Double quote (")</td>
+                                    <td>\"</td>
+                                    <td>
+                                        I'm called \"Tahbert\"; <span class="text-blur" id="specialChar2"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Backslash (\)</td>
+                                    <td>\\</td>
+                                    <td>
+                                        this is a backslash: \\; <span class="text-blur" id="specialChar3"></span>
+                                    </td>
+                                </tr>
+
+                                <script>
+                                    document.getElementById("specialChar1").innerHTML = r + "It\'s alright";
+                                    document.getElementById("specialChar2").innerHTML = r + "I'm called \"Tahbert\"";
+                                    document.getElementById("specialChar3").innerHTML = r + "this is a backslash: \\";
+                                </script>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Long String</td>
+                        <td colspan="2">
+                            <table class="sub-table">
+                                <tr>
+                                    <th>Characters</th>
+                                    <th>Example</th>
+                                </tr>
+                                <tr>
+                                    <td>Break after an operator</td>
+                                    <td>
+                                        document.getElementById("demo").innerHTML =<br>
+                                        "Hello Tahbert"; <span class="text-blur" id="longString1"></span><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Break within a text string with a <span class="text-red">\</span></td>
+                                    <td>
+                                        document.getElementById("demo").innerHTML = "Hello\<br>
+                                        Tahbert"; <span class="text-blur" id="longString2"></span><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Use string addition <span class="text-red">+</span></td>
+                                    <td>
+                                        document.getElementById("demo").innerHTML =<br>
+                                        "Hello " + " Tahbert"; <span class="text-blur" id="longString3"></span>
+                                    </td>
+                                </tr>
+
+                                <script>
+                                    document.getElementById("longString1").innerHTML = 
+                                    r + "Hello Tahbert";
+                                    document.getElementById("longString2").innerHTML = r + "Hello\
+                                    Tahbert";
+                                    document.getElementById("longString3").innerHTML = 
+                                    r + "Hello" + " Tahbert";
+                                </script>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>String as Object</td>
+                        <td>when declared with the keyword <span class="text-red">new</span></td>
+                        <td>
+                            let x = "Tahbert"; <span class="text-blur">// string</span><br>
+                            let x = new String("Tahbert"); <span class="text-blur">// object</span><br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Methods & Properties</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties</td>
+                    </tr>
+                    <tr>
+                        <td>length</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.length</span><br>
+                            return number - how many character in the string
+                        </td>
+                        <td>
+                            "tahbert".length; <span class="text-blur" id="length1"></span><br>
+
+                            <script>
+                                document.getElementById("length1").innerHTML = r + "tahbert".length;
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>constructor</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.constructor</span><br>
+                            return function - that created the String prototype
+                        </td>
+                        <td>
+                            const x = "Tahbert Nguyen";<br>
+                            x.constructor; <span class="text-blur" id="constructor1"></span>
+                            <script>
+                            {
+                                const x = "Tahbert Nguyen";
+                                document.getElementById("constructor1").innerHTML = r + x.constructor;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>prototype</td>
+                        <td>
+                            <span class="text-red">String.prototype.<i>name</i> = <i>value</i></span><br>
+                            allow to add new methods and properties to strings<br>
+                        </td>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/jsref_prototype_string.asp" 
+                            target="_blank">example</a>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Basic</td>
+                    </tr>
+                    <tr>
+                        <td>toString()</td>
+                        <td>
+                            <div class="warn">not normally use in code</div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>valueOf()</td>
+                        <td>
+                            <div class="warn">not normally use in code</div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>charAt()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.charAt(<i>index</i>)</span><br>
+                            <span class="text-red"><i>string</i>[<i>index</i>]</span> <span class="badge green">simple</span><br>
+                            return string - the character by index</td>
+                        <td>
+                            const x = "tahbert"<br>
+                            x.charAt(0); <span class="text-blur" id="charAt1"></span><br>
+                            x[0]; <span class="text-blur" id="charAt2"></span>
+                            <script>
+                            {
+                                const x = "tahbert"
+                                document.getElementById("charAt1").innerHTML = r + x.charAt(0);
+                                document.getElementById("charAt2").innerHTML = r + x[0];
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>charCodeAt()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.charCodeAt(<i>index</i>)</span><br>
+                            return string - the UTF-16 code of the character by index
+                        </td>
+                        <td>
+                            let x = "tahbert";<br>
+                            x.charCodeAt(0); <span class="text-blur" id="charCode1"></span><br>
+                            x.charCodeAt(2); <span class="text-blur" id="charCode2"></span>
+    
+                            <script>
+                            {
+                                let x = "tahbert";
+                                document.getElementById("charCode1").innerHTML = r + x.charCodeAt(0);
+                                document.getElementById("charCode2").innerHTML = r + x.charCodeAt(2);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Extract</td>
+                    </tr>
+                    <tr>
+                        <td>slice()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.slice(<i>start</i>)</span><br>
+                            <span class="text-red"><i>string</i>.slice(<i>start</i>, <i>end</i>)</span><br>
+                            extracts a part of a string<br>
+                            return string - extracted string
+                            <div class="warn">
+                                negative index possible: -4 -3 -2 -1 0<br>
+                                not mutate the original string
+                            </div>
+                        </td>
+                        <td>
+                            const x = "I'm Tahbert Nguyen";
+                            <h4> start specified | end default</h4>
+                            x.slice(4) <span class="text-blur" id="slice1"></span><br>
+                            x.slice(-14) <span class="text-blur" id="slice2"></span><br>
+                            <h4> start specified | end specified</h4>
+                            x.slice(4, 11) <span class="text-blur" id="slice3"></span><br>
+                            x.slice(-14, -7) <span class="text-blur" id="slice4"></span><br>
+
+                            <script>
+                            {
+                                const x = "I'm Tahbert Nguyen";
+                                document.getElementById("slice1").innerHTML = r + x.slice(4);
+                                document.getElementById("slice2").innerHTML = r + x.slice(-14);
+                                document.getElementById("slice3").innerHTML = r + x.slice(4, 11);
+                                document.getElementById("slice4").innerHTML = r + x.slice(-14, -7);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>substr()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.substr(<i>start</i>)</span><br>
+                            <span class="text-red"><i>string</i>.substr(<i>start</i>, <i>length</i>)</span><br>
+                            extract a part of a string<br>
+                            return string - extracted string<br>
+                            <div class="warn">
+                                negative index possible: -4 -3 -2 -1 0<br>
+                                not mutate the original string
+                            </div>
+                        <td>
+                            const x = "I'm Tahbert Nguyen";
+                            <h4> start specified | length default</h4>
+                            x.substr(4) <span class="text-blur" id="substr1"></span><br>
+                            x.substr(-14) <span class="text-blur" id="substr2"></span>
+                            <h4> start specified | length specified</h4>
+                            x.substr(4, 7) <span class="text-blur" id="substr3"></span>
+                            x.substr(-14, 7) <span class="text-blur" id="substr4"></span>
+                            <script>
+                            {
+                                const x = "I'm Tahbert Nguyen";
+                                document.getElementById("substr1").innerHTML = r + x.substr(4);
+                                document.getElementById("substr2").innerHTML = r + x.substr(-14);
+                                document.getElementById("substr3").innerHTML = r + x.substr(4, 7);
+                                document.getElementById("substr4").innerHTML = r + x.substr(-14, 7);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>substring()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.substring(<i>start</i>)</span><br>
+                            <span class="text-red"><i>string</i>.substring(<i>start</i>, <i>end</i>)</span><br>
+                            extracts a part of a string<br>
+                            return string - extracted string
+                            <div class="warn">
+                                negative index impossible<br>
+                                not mutate the original string
+                            </div>
+                        </td>
+                        <td>
+                            const x = "I'm Tahbert Nguyen";
+                            <h4> started specified | end default</h4>
+                            x.substring(4) <span class="text-blur" id="substring1"></span><br>
+                            <h4> started specified | end specified</h4>
+                            x.substring(4, 11) <span class="text-blur" id="substring2"></span>
+
+                            <script>
+                            {
+                                const x = "I'm Tahbert Nguyen";
+                                document.getElementById("substring1").innerHTML = r + x.substring(4);
+                                document.getElementById("substring2").innerHTML = r + x.substring(4, 11);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Extract and Modify</td>
+                    </tr>
+                    <tr>
+                        <td>replace()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.replace(<i>old</i>, <i>new</i>)</span><br>
+                            replace the 1st matched<br>
+                            return string - modified string
+                            <div class="warn">
+                                not mutate the original string
+                            </div>
+                        </td>
+                        <td>
+                            const x = "Tahbert Tahbert Nguyen"
+                            <h4> replace the 1st matched case-sensitive</h4>
+                            x.replace("Tahbert", "David") <span class="text-blur" id="replace1"></span>
+                            <h4> replace the 1st matched case-insensitive</h4>
+                            x.replace(/tahbert/i, "David") <span class="text-blur" id="replace2"></span>
+                            <h4> replace all matched case-insensitive</h4>
+                            x.replace(/tahbert/gi, "David") <span class="text-blur" id="replace3"></span>
+                            <script>
+                            {
+                                const x = "Tahbert Tahbert Nguyen";
+                                document.getElementById("replace1").innerHTML = r + x.replace("Tahbert", "David");
+                                document.getElementById("replace2").innerHTML = r + x.replace(/tahbert/i, "David");
+                                document.getElementById("replace3").innerHTML = r + x.replace(/tahbert/gi, "David");
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            toUpperCase()<br>
+                            toLowerCase()<br>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>string</i>.toUpperCase()</span><br>
+                            convert to upper or lower case<br>
+                            return string - modified string
+                            <div class="warn">
+                                not mutate the original string
+                            </div>
+                        </td>
+                        <td>
+                            const x = "Tahbert";<br>
+                            x.toUpperCase() <span class="text-blur" id="convert1"></span><br>
+                            x.toLowerCase() <span class="text-blur" id="convert2"></span>
+    
+                            <script>
+                            {
+                                const x = "Tahbert";
+                                document.getElementById("convert1").innerHTML = r + x.toUpperCase();
+                                document.getElementById("convert2").innerHTML = r + x.toLowerCase();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>concat()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.concat()</span><br>
+                            <span class="text-red"><i>string</i>.concat(<i>string</i>)</span><br>
+                            <span class="text-red"><i>string</i>.concat(<i>string, string, etc</i>)</span><br>
+                            concatenate strings together<br>
+                            return string - modified string
+                            <div class="warn">
+                                not mutate the original string
+                            </div>
+                        </td>
+                        <td>
+                            let x = "Tahbert";<br>
+                            x.concat() <span class="text-blur" id="concat1"></span><br>
+                            x.concat(" Nguyen") <span class="text-blur" id="concat2"></span><br>
+                            x.concat(" ","Nguyen") <span class="text-blur" id="concat3"></span><br>
+                            x.concat(" Nguyen"," from VN") <span class="text-blur" id="concat4"></span><br>
+                            <script>
+                                let x = "Tahbert";
+                                document.getElementById("concat1").innerHTML = r + x.concat();
+                                document.getElementById("concat2").innerHTML = r + x.concat(" Nguyen");
+                                document.getElementById("concat3").innerHTML = r + x.concat(" ", "Nguyen");
+                                document.getElementById("concat4").innerHTML = r + x.concat(" Nguyen"," from VN");
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>trim()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.trim()</span><br>
+                            remove whitespace from both sides<br>
+                            return string - modified string
+                            <div class="warn">
+                                not mutate the original string
+                            </div>
+                        </td>
+                        <td>
+                            let x = "&emsp;Tahbert Nguyen&emsp;";<br>
+                            x.trim() <span class="text-blur" id="trim1"></span>
+                            <script>
+                            {
+                                const x = "    Tahbert Nguyen    ";
+                                document.getElementById("trim1").innerHTML = r + x.trim();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            padStart()<br>
+                            padEnd()<br>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>string</i>.padStart(<i>length</i>)</span><br>
+                            <span class="text-red"><i>string</i>.padStart(<i>length, string</i>)</span><br>
+                            pad a string with another string<br>
+                            return string - modified string
+                            <div class="note">
+                                <span class="text-red">length</span> param: count the original string in
+                            </div>
+                            <div class="warn">
+                                not mutate the original string
+                            </div>
+                        </td>
+                        <td>
+                            const x = "tahbert"
+                            <h4> length specified | string unspecified</h4>
+                            x.padStart(10); <span class="text-blur" id="pad1"></span><br>
+                            x.padEnd(10); <span class="text-blur" id="pad3"></span><br>
+
+                            <h4> length specified | string specified</h4>
+                            x.padStart(10, "-"); <span class="text-blur" id="pad2"></span><br>
+                            x.padEnd(10, "-"); <span class="text-blur" id="pad4"></span><br>
+
+                            <script>
+                            {
+                                const x = "tahbert"
+                                document.getElementById("pad1").innerHTML = r + x.padStart(10);
+                                document.getElementById("pad2").innerHTML = r + x.padStart(10, "-");
+                                document.getElementById("pad3").innerHTML = r + x.padEnd(10);
+                                document.getElementById("pad4").innerHTML = r + x.padEnd(10, "-");
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>repeat()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.repeat(<i>count</i>)</span><br>
+                            return string - with a number of copies of a string
+                            <div class="warn">
+                                not mutate the original string
+                            </div>
+                        </td>
+                        <td>
+                            const x = "tahbert";
+                            x.repeat(2); <span class="text-blur" id="repeat1"></span><br>
+                            <script>
+                            {
+                                const x = "tahbert";
+                                document.getElementById("repeat1").innerHTML = r + x.repeat(2);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Convert</td>
+                    </tr>
+                    <tr>
+                        <td>split()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.split()</span><br>
+                            <span class="text-red"><i>string</i>.split(<i>separator</i>)</span><br>
+                            <span class="text-red"><i>string</i>.split(<i>separator, limit</i>)</span><br>
+                            return array - convert string to array
+                            <div class="warn">
+                                not mutate the original string
+                            </div>
+                        </td>
+                        <td>
+                            const x = "How are you today?";
+                            <h4> seperator obmited => return array with original string</h4>
+                            x.split(); <span class="text-blur" id="split0"></span>
+
+                            <h4> split the character</h4>
+                            x.split(""); <span class="text-blur" id="split1"></span>
+
+                            <h4> split the words (based on space)</h4>
+                            x.split(" "); <span class="text-blur" id="split2"></span>
+
+                            <h4> split the words and return the 1st word</h4>
+                            x.split(" ")[0]; <span class="text-blur" id="split3"></span>
+
+                            <h4> limit splitting</h4>
+                            x.split(" ", 3); <span class="text-blur" id="split4"></span>
+
+                            <script>
+                            {
+                                const x = "How are you today?";
+                                document.getElementById("split0").innerHTML = r + x.split();
+                                document.getElementById("split1").innerHTML = r + x.split("");
+                                document.getElementById("split2").innerHTML = r + x.split(" ");
+                                document.getElementById("split3").innerHTML = r + x.split(" ")[0];
+                                document.getElementById("split4").innerHTML = r + x.split(" ", 3);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Search</td>
+                    </tr>
+                    <tr>
+                        <td>indexOf()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.indexOf(<i>string</i>)</span><br>
+                            <span class="text-red"><i>string</i>.indexOf(<i>string</i>, <i>start</i>)</span><br>
+                            return number - the 1st matched index<br>
+                            <ul class="note">
+                                <li>case-sensitive</li>
+                                <li>not powerful (use regexp like <span class="text-red">search()</span>)</li>
+                            </ul>
+                        </td>
+                        <td>
+                            let x = "How are you today? Are you ok?";
+                            <h4> find the 1st matched</h4>
+                            x.indexOf("you"); <span class="text-blur" id="indexOf1"></span>
+    
+                            <h4> find the 1st matched (start at index 15)</h4>
+                            x.indexOf("you", 15); <span class="text-blur" id="indexOf2"></span>
+    
+                            <h4> return -1 if not found</h4>
+                            x.indexOf("me"); <span class="text-blur" id="indexOf3"></span>
+    
+                            <script>
+                            {
+                                const x = "How are you today? Are you ok?";
+                                document.getElementById("indexOf1").innerHTML = r + x.indexOf("you");
+                                document.getElementById("indexOf2").innerHTML = r + x.indexOf("you", 15);
+                                document.getElementById("indexOf3").innerHTML = r + x.indexOf("me");
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>lastIndexOf()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.lastIndexOf(<i>string</i>)</span><br>
+                            <span class="text-red"><i>string</i>.lastIndexOf(<i>string</i>, <i>start</i>)</span><br>
+                            return number - the 1st matched index (right to left)<br>
+                            <ul class="note">
+                                <li>case-sensitive</li>
+                                <li>not powerful (use regexp like <span class="text-red">search()</span>)</li>
+                            </ul>
+                        </td>
+                        <td>
+                            let x = "How are you today? Are you ok?";
+                            <h4> find the 1st matched</h4>
+                            x.lastIndexOf("you"); <span class="text-blur" id="lastIndexOf1"></span>
+                            <h4> find the 1st matched (start at index 15)</h4>
+                            x.lastIndexOf("you", 15); <span class="text-blur" id="lastIndexOf2"></span>
+                            <h4> return -1 if not found</h4>
+                            x.lastIndexOf("me"); <span class="text-blur" id="lastIndexOf3"></span>
+                            <script>
+                            {
+                                const x = "How are you today? Are you ok?";
+                                document.getElementById("lastIndexOf1").innerHTML = r + x.lastIndexOf("you");
+                                document.getElementById("lastIndexOf2").innerHTML = r + x.lastIndexOf("you", 15);
+                                document.getElementById("lastIndexOf3").innerHTML = r + x.lastIndexOf("me");
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>search()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.search(<i>regexp</i>)</span><br>
+                            return number - the 1st matched index<br>
+                            <ul class="note">
+                                <li>case-sensitive</li>
+                                <li>powerful but can't specify start position</li>
+                            </ul>
+                        </td>
+                        <td>
+                            const x = "You! How are you today? You ok?";<br>
+                            <h4> find the 1st matched</h4>
+                            x.search("you"); <span span class="text-blur" id="search1"></span>
+                            <h4> find the 1st matched (case-insensitive)</h4>
+                            x.search(/you/i); <span span class="text-blur" id="search2"></span>
+                            <h4> return -1 if not found</h4>
+                            x.search("me"); <span span class="text-blur" id="search3"></span>
+                            <script>
+                            {
+                                const x = "You! How are you today? You ok?";
+                                document.getElementById("search1").innerHTML = r + x.search("you");
+                                document.getElementById("search2").innerHTML = r + x.search(/you/i);
+                                document.getElementById("search3").innerHTML = r + x.search("me");
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>match()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.match(<i>regexp</i>)</span><br>
+                            return array - the array of the matched
+                            <ul class="note">
+                                <li>case-sensitive</li>
+                            </ul>
+                        </td>
+                        <td>
+                            const x = "The rain in SPAIN stays mainly in the plain";
+                            <h4> return the 1st matched</h4>
+                            x.match(/ain/); <span class="text-blur" id="match1"></span>
+                            <h4> return all the matched</h4>
+                            x.match(/ain/g); <span class="text-blur" id="match2"></span>
+                            <h4> return all the matched (case-insensitive)</h4>
+                            x.match(/ain/gi); <span class="text-blur" id="match3"></span>
+                            <h4> using a string insdtead of regexp</h4>
+                            x.match("ain"); <span class="text-blur" id="match4"></span>
+                            <script>
+                            {
+                                const x = "The rain in SPAIN stays mainly in the plain";
+                                document.getElementById("match1").innerHTML = r + x.match(/ain/);
+                                document.getElementById("match2").innerHTML = r + x.match(/ain/g);
+                                document.getElementById("match3").innerHTML = r + x.match(/ain/gi);
+                                document.getElementById("match4").innerHTML = r + x.match("ain");
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>includes()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.includes(<i>string</i>)</span><br>
+                            <span class="text-red"><i>string</i>.includes(<i>string</i>, <i>start</i>)</span><br>
+                            retrun boolean - true if containing a specified string<br>
+                            <ul class="note">
+                                <li>case-sensitive</li>
+                            </ul>
+                        </td>
+                        <td>
+                            const x = "Tahbert Nguyen";<br>
+                            <h4> check "Tahbert"</h4>
+                            x.includes("Tahbert"); <span class="text-blur" id="includes1"></span>
+                            <h4> check "Tahbert" (start at index 7)</h4>
+                            x.includes("Tahbert"); <span class="text-blur" id="includes2"></span>
+
+                            <script>
+                            {
+                                const x = "Tahbert Nguyen";
+                                document.getElementById("includes1").innerHTML = r + x.includes("Tahbert");
+                                document.getElementById("includes2").innerHTML = r + x.includes("Tahbert", 7);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>startsWith()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.startsWith(<i>string</i>)</span><br>
+                            <span class="text-red"><i>string</i>.startsWith(<i>string</i>, <i>start</i>)</span><br>
+                            retrun boolean - true if beginning with a specified string<br>
+                            <ul class="note">
+                                <li>case-sensitive</li>
+                            </ul>
+                        </td>
+                        <td>
+                            const x = "Tahbert Nguyen";<br>
+                            <h4> check "Tahbert"</h4>
+                            x.startsWith("Tahbert"); <span class="text-blur" id="startsWith1"></span>
+                            <h4> check "Tahbert" (start at index 7)</h4>
+                            x.startsWith("Tahbert"); <span class="text-blur" id="startsWith2"></span>
+                            <script>
+                            {
+                                const x = "Tahbert Nguyen";
+                                document.getElementById("startsWith1").innerHTML = r + x.startsWith("Tahbert");
+                                document.getElementById("startsWith2").innerHTML = r + x.startsWith("Tahbert", 7);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>endsWith()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.endsWith(<i>string</i></span><br>
+                            <span class="text-red"><i>string</i>.endsWith(<i>string</i>, <i>start</i>)</span><br>
+                            retrun boolean - true if ending with a specified string<br>
+                            <ul class="note">
+                                <li>case-sensitive</li>
+                            </ul>
+                        </td>
+                        <td>
+                            const x = "Tahbert Nguyen";<br>
+                            <h4> check "Tahbert"</h4>
+                            x.endsWith("Tahbert"); <span class="text-blur" id="endsWith1"></span>
+                            <h4> check "Tahbert" (start at index 7)</h4>
+                            x.endsWith("Tahbert"); <span class="text-blur" id="endsWith2"></span>
+                            <script>
+                            {
+                                const x = "Tahbert Nguyen";
+                                document.getElementById("endsWith1").innerHTML = r + x.endsWith("Tahbert");
+                                document.getElementById("endsWith2").innerHTML = r + x.endsWith("Tahbert", 7);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Others</td>
+                    </tr>
+                    <tr>
+                        <td>fromCharCode()</td>
+                        <td>
+                            <span class="text-red">String.fromCharCode(<i>code, code, etc</i>)</span><br>
+                            return string - representing the unicode character(s)
+                        </td>
+                        <td>
+                            String.fromCharCode(0); <span class="text-blur" id="fromCharCode1"></span><br>
+                            String.fromCharCode(72, 69, 76, 76, 79); <span class="text-blur" id="fromCharCode2"></span>
+    
+                            <script>
+                            {
+                                let x = "tahbert";
+                                document.getElementById("fromCharCode1").innerHTML = r + String.fromCharCode(72);
+                                document.getElementById("fromCharCode2").innerHTML = r + String.fromCharCode(72, 69, 76, 76, 79);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>localeCompare()</td>
+                        <td>
+                            <span class="text-red"><i>string</i>.localeCompare(<i>string</i>)</span><br>
+                            return number - sort order in the current locale -1, 1, 0 (before, after, equal) 
+                        </td>
+                        <td>
+                            "A".localeCompare("a"); <span class="text-blur" id="localeCompare1"></span><br>
+
+                            <script>
+                            {
+                                document.getElementById("localeCompare1").innerHTML = r + "A".localeCompare("a");
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Template Literals</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            use back-ticks (``) rather than the quotes ("")
+                            <ul class="note">other names:
+                                <li>Template Literals</li>
+                                <li>Template Strings</li>
+                                <li>String Templates</li>
+                                <li>Back-Tics Syntax</li>
+                            </ul>
+                        </td>
+                        <td>let x = `Tahbert Nguyen`;</td>
+                    </tr>
+                    <tr>
+                        <td>Quotes</td>
+                        <td>quotes inside are more flexible</td>
+                        <td>
+                            let x = `I'm called 'Tahbert'`;<br>
+                            let x = `I'm called "Tahbert"`;<br>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>Multiline</td>
+                        <td>
+                            <span class="badge green">possible</span> multiline strings
+                            <div class="note">what quotes can NOT do</div>
+                        </td>
+                        <td>
+                            let x = `I'm<br>
+                            Tahbert Nguyen`;<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Interpolation</td>
+                        <td>
+                            <span class="text-red">${...}</span><br>
+                            <span class="badge green">possible</span> interpolate variables and expressions into strings<br>
+                        </td>
+                        <td>
+                            <h4> variable substitution</h4>
+                            let fname = "Tahbert";<br>
+                            let lname = "Nguyen";<br>
+                            let text = `I'm ${fname}, ${lname}!`; <span class="text-blur" id="variable"></span>
+    
+                            <script>
+                            {
+                                let fname = "Tahbert";
+                                let lname = "Nguyen";
+                                let text = `I'm ${fname} ${lname}!`;
+                                document.getElementById("variable").innerHTML = r + text;
+                            }
+                            </script>
+
+                            <h4> expression substitution</h4>
+                            let price = 10;<br>
+                            let VAT = 0.25;<br>
+                            let total = `Total is ${(price * (1 + VAT)).toFixed(2)}`; <span class="text-blur" id="expression"></span>
+    
+                            <script>
+                            {
+                                let price = 10;
+                                let VAT = 0.25;
+                                let total = `Total is ${(price * (1 + VAT)).toFixed(2)}`;
+                                document.getElementById("expression").innerHTML = r + total;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

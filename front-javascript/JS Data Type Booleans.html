@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Boolean</title>
+    <script>
+        var r = "// result: "
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Boolean</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Boolean</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>return true or false</td>
+                        <td>    
+                            10 > 9; <span span class="text-blur" id="boolean1"></span>
+                            <script>
+                                document.getElementById("boolean1").innerHTML = r + (10 > 9);
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>without value</td>
+                        <td>return false</td>
+                        <td>
+                            let x; Boolean(x); <span class="text-blur" id="boolean2"></span><br>
+                            Boolean(""); <span class="text-blur" id="boolean3"></span><br>
+                            Boolean(0); <span class="text-blur" id="boolean4"></span><br>
+                            Boolean(-0); <span class="text-blur" id="boolean5"></span><br>
+                            Boolean(null); <span class="text-blur" id="boolean6"></span><br>
+                            Boolean(false); <span class="text-blur" id="boolean7"></span><br>
+                            Boolean(10/"x"); <span class="text-blur" id="boolean8"></span><br>
+                            <script>
+                            {
+                                let x;
+                                document.getElementById("boolean2").innerHTML = r + Boolean(x);
+                                document.getElementById("boolean3").innerHTML = r + Boolean("");
+                                document.getElementById("boolean4").innerHTML = r + Boolean(0);
+                                document.getElementById("boolean5").innerHTML = r + Boolean(-0);
+                                document.getElementById("boolean6").innerHTML = r + Boolean(null);
+                                document.getElementById("boolean7").innerHTML = r + Boolean(false);
+                                document.getElementById("boolean8").innerHTML = r + Boolean(10/"x");
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Methods & Properties</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties</td>
+                    </tr>
+                    <tr>
+                        <td>constructor</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.constructor</span><br>
+                            return function - that created the Boolean prototype
+                        </td>
+                        <td>
+                            (10>5).constructor; <span class="text-blur" id="constructor1"></span>
+                            <script>
+                            {
+                                document.getElementById("constructor1").innerHTML = r + (10>5).constructor;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>prototype</td>
+                        <td>
+                            <span class="text-red">Boolean.prototype.<i>name</i> = <i>value</i></span><br>
+                            allow to add new methods and properties to booleans<br>
+                        </td>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/jsref_prototype_boolean.asp" 
+                            target="_blank">example</a>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods</td>
+                    </tr>
+                    <tr>
+                        <td>toString()</td>
+                        <td>
+                            <span class="text-red"><i>boolean</i>.toString()</span><br>
+                            return string - convert to string
+                            <div class="warn">normally not use in code</div>
+                        </td>
+                        <td>
+                            (10>5).toString(); <span class="text-blur" id="toString1"></span>
+                            <script>
+                            {
+                                document.getElementById("toString1").innerHTML = r + (10>5).toString();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>valueOf()</td>
+                        <td>
+                            <span class="text-red"><i>array</i>.valueOf()</span><br>
+                            return boolean - the boolean itself
+                            <div class="warn">normally not use in code</div>
+                        </td>
+                        <td>
+                            (10>5).valueOf(); <span class="text-blur" id="valueOf1"></span><br>
+                            <script>
+                            {
+                                document.getElementById("valueOf1").innerHTML = r + (10>5).valueOf();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

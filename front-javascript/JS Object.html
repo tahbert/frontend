@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Object</title>
+    <script>
+        var r = "// result: "
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Object</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Object</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            variable that can contain many values<br>
+                            <ul class="note">almost "everything" is an object
+                                <li>object is object</li>
+                                <li>array, function, regexp is object</li>
+                                <li>Date, Math is object</li>
+                                <li>numbers, boolean, string is object if declared with <span class="text-red">new</span></li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Declaring</td>
+                        <td>
+                            <span class="badge green">common practice</span> with 
+                            <span class="text-red">const</span>
+                        </td>
+                        <td>const x = {fname:"Tahbert", lname:"Nguyen", age:28};</td>
+                    </tr>
+                    <tr>
+                        <td>Creating</td>
+                        <td>declare and assign properties at the same time</td>
+                        <td>
+                            const x = {fname:"Tahbert", lname:"Nguyen", age:28};
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>declare and assign properties later</td>
+                        <td>
+                            const x = {};<br>
+                            x.fname = "Tahbert";<br>
+                            x.lname = "Nguyen";<br>
+                            x.age = 28;<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-head">
+                <h2>Property</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Property</td>
+                        <td>
+                            properties are the object values<br>
+                            property values can be primitive values, objects, functions<br>
+                        </td>
+                        <td>
+                            const x = {firstName:"John", lastName:"Doe", age:50};<br>
+                            <span class="text-blur">
+                                // property; firstName, lastName, age<br>
+                                // property value: "John", "Doe", 50<br>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Looping</td>
+                        <td>
+                            <div class="note">
+                                use <span class="text-red">for in</span>
+                            </div>
+                        </td>
+                        <td>
+                            const x = {fname:"Tahbert", lname:"Nguyen", age:28};<br>
+                            text; <span class="text-blur" id="loop1"></span><br>
+                            <script>
+                            {
+                                const x = {fname:"Tahbert", lname:"Nguyen", age:28};
+                                let text = "";
+                                for (let i in x) {
+                                    text += x[i] + " ";
+                                }
+                                document.getElementById("loop1").innerHTML = r + text;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Accessing</td>
+                        <td>
+                            <span class="text-red"><i>obj</i>.<i>property</i></span><br>
+                            <span class="text-red"><i>obj</i>["<i>property</i>"]</span><br>
+                        </td>
+                        <td>
+                            const x = {fname:"Tahbert", lname:"Nguyen", age:28};<br>
+                            x.age; <span class="text-blur" id="access1"></span><br>
+                            x["age"] <span class="text-blur" id="access2"></span><br>
+                            <script>
+                            {
+                                const x = {fname:"Tahbert", lname:"Nguyen", age:28};
+                                document.getElementById("access1").innerHTML = r + x.age;
+                                document.getElementById("access2").innerHTML = r + x["age"];
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Addding<br>
+                            Changing
+                        </td>
+                        <td>access and add or change</td>
+                        <td>
+                            const x = {fname:"Tahbert", lname:"Nguyen"};<br>
+                            x.fname = "David"; <span class="text-blur">// changing</span><br>
+                            x.age = 28; <span class="text-blur">// adding </span><br>
+                            text; <span class="text-blur" id="add1"></span><br>
+                            
+                            <script>
+                            {
+                                const x = {fname:"Tahbert", lname:"Nguyen"};
+                                x.fname = "David";
+                                x.age = 28;
+                                let text = "";
+                                for (let i in x) {
+                                    text += x[i] + " ";
+                                }
+                                document.getElementById("add1").innerHTML = r + text;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Deleting</td>
+                        <td>use <span class="text-red">delete</span> keyword</td>
+                        <td>
+                            const x = {fname:"Tahbert", lname:"Nguyen", age:28};<br>
+                            delete x.age;<br>
+                            text; <span class="text-blur" id="delete1"></span><br>
+                            
+                            <script>
+                            {
+                                const x = {fname:"Tahbert", lname:"Nguyen", age:28};
+                                delete x.age;
+                                let text = "";
+                                for (let i in x) {
+                                    text += x[i] + " ";
+                                }
+                                document.getElementById("delete1").innerHTML = r + text;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Property's Attributes</td>
+                        <td>
+                            <ul class="note">object property have attributes:
+                                <li>changable attributes: value</li>
+                                <li>read-only attributes: enumerable, configurable, writable</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Prototype Properties</td>
+                        <td>
+                            objects inherit the properties of their prototype<br>
+                            <div class="warn">
+                                deleting a prototype property will affect all objects inherited from the prototype
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Nested Object > Object in Object</td>
+                    </tr>
+                    <tr>
+                        <td>Accessing</td>
+                        <td>
+                            <span class="text-red"><i>obj1</i>.<i>obj2</i>.<i>property</i></span><br>
+                            <span class="text-red"><i>obj1</i>.<i>obj2</i>["<i>property</i>"]</span><br>
+                            <span class="text-red"><i>obj1</i>.["<i>obj2</i>"]["<i>property</i>"]</span><br>
+                        </td>
+                        <td>
+                            const x = {<br>
+                                &emsp;name: "Tahbert",<br>
+                                &emsp;family: {father: "Modric", mother: "Enya", sibling: "De Jong"}<br>
+                            }<br>
+                            x.family.father; <span class="text-blur" id="nested1"></span><br>
+                            x.family["father"]; <span class="text-blur" id="nested2"></span><br>
+                            x["family"]["father"]; <span class="text-blur" id="nested3"></span><br>
+                            <script>
+                            {
+                                const x = {
+                                    name: "Tahbert",
+                                    family: {father: "Modric", mother: "Enya", sibling: "De Jong"}
+                                };
+
+                                document.getElementById("nested1").innerHTML = r + x.family.father;
+                                document.getElementById("nested2").innerHTML = r + x.family["father"];
+                                document.getElementById("nested3").innerHTML = r + x["family"]["father"];
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Nested Object > Array in Object</td>
+                    </tr>
+                    <tr>
+                        <td>Accessing</td>
+                        <td>combine object and array accessing syntax</td>
+                        <td>
+                            const x = {<br>
+                                &emsp;name: "Tahbert",<br>
+                                &emsp;family: ["Modric", "Enya", "De Jong"]<br>
+                            }<br>
+                            x.family[0]; <span class="text-blur" id="nested4"></span><br>
+                            x.family[family.length-1]; <span class="text-blur" id="nested5"></span><br>
+                            <script>
+                            {
+                                const x = {
+                                    name: "Tahbert",
+                                    family: ["Modric", "Enya", "De Jong"]
+                                };
+                                document.getElementById("nested4").innerHTML = r + x.family[0];
+                                document.getElementById("nested5").innerHTML = r + x.family[x.family.length-1];
+                            }
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Nested Object > Object in Array in Object</td>
+                    </tr>
+                    <tr>
+                        <td>Accessing</td>
+                        <td>combine object and array accessing syntax</td>
+                        <td>
+                            const x = {<br>
+                                &emsp;name: "Tahbert",<br>
+                                &emsp;family: [<br>
+                                    &emsp;&emsp;{name:"Modric", age: 58],<br>
+                                    &emsp;&emsp;{name:"Enya", age: 50],<br>
+                                    &emsp;&emsp;{name:"De Jong", age: 22]<br>
+                                &emsp;]<br>
+                            }<br>
+                            x.family[0].name; <span class="text-blur" id="nested7"></span><br>
+                            x.family[x.family.length-1].name; <span class="text-blur" id="nested8"></span>
+
+                            <script>
+                            {
+                                const x = {
+                                    name: "Tahbert",
+                                    family: [
+                                        {name:"Modric", age: 58},
+                                        {name:"Enya", age: 50},
+                                        {name:"De Jong", age: 22}
+                                    ]
+                                }
+                                document.getElementById("nested7").innerHTML = r + x.family[0].name;
+                                document.getElementById("nested8").innerHTML = r + x.family[x.family.length-1].name;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Method</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Method</td>
+                        <td>
+                            the property that contain a function definition<br>
+                            instead of <span class="text-red">name: value</span> pairs
+                        </td>
+                        <td>
+                            name function() {return this.firstName + " " + this.lastName;}<br>
+                            <span class="text-blur">
+                                // property: name<br>
+                                // property value: function<br>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Accessing</td>
+                        <td>
+                            <span class="text-red"><i>object</i>.<i>method</i>()</span>
+                        </td>
+                        <td>
+                            const x = {<br>
+                            &emsp;fname: "Tahbert",<br>
+                            &emsp;lname: "Nguyen",<br>
+                            &emsp;id: 5566,<br>
+                            &emsp;name: function() {<br>
+                                &emsp;&emsp;return this.fname + " " + this.lname;<br>
+                            &emsp;}<br>
+                            };<br>
+                            x.name; <span class="text-blur" id="method1"></span><br>
+                            x.name(); <span class="text-blur" id="method2"></span>
+
+                            <script>
+                            {
+                                const x = {
+                                    fname: "Tahbert",
+                                    lname: "Nguyen",
+                                    id: 5566,
+                                    name: function () {
+                                        return this.fname + " " + this.lname;
+                                    }
+                                };
+                                document.getElementById("method1").innerHTML = r + x.name;
+                                document.getElementById("method2").innerHTML = r + x.name();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Adding<br>
+                            Changing
+                        </td>
+                        <td>
+                            <span class="text-red"><i>object</i>.<i>method</i> = <i>function</i></span>
+                        </td>
+                        <td>
+                            const x = {<br>
+                                &emsp;fname: "Tahbert",<br>
+                                &emsp;lname: "Nguyen",<br>
+                                &emsp;id: 5566,<br>
+                            };<br>
+                            x.name = function() {...}; </span> <span class="text-blur">// adding</span><br>
+                            x.name(); <span class="text-blur" id="method3"></span><br>
+                            x.name = function() {...}; </span> <span class="text-blur">// changing</span><br>
+                            x.name(); <span class="text-blur" id="method4"></span><br>
+                            <script>
+                            {
+                                const x = {
+                                    fname: "Tahbert",
+                                    lname: "Nguyen",
+                                    id: 5566,
+                                };
+
+                                x.name = function() {
+                                    return this.fname + " " + this.lname;
+                                }
+                                document.getElementById("method3").innerHTML = r + x.name();
+
+                                x.name = function() {
+                                    return this.fname + "-" + this.lname;
+                                }
+                                document.getElementById("method4").innerHTML = r + x.name();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Deleting                         
+                        </td>
+                        <td>
+                            use <span class="text-red">delete</span> keyword
+                        </td>
+                        <td>
+                            const x = {<br>
+                                &emsp;fname: "Tahbert",<br>
+                                &emsp;lname: "Nguyen",<br>
+                                &emsp;id: 5566,<br>
+                                &emsp;name: function() {<br>
+                                    &emsp;&emsp;return this.fname + " " + this.lname;<br>
+                                &emsp;}<br>
+                            };<br>
+                            x.name(); <span class="text-blur" id="method5"></span><br>
+                            delete x.name;<br>
+                            x.name(); <span class="text-blur" id="method6"></span><br>
+                            <script>
+                            {
+                                const x = {
+                                    fname: "Tahbert",
+                                    lname: "Nguyen",
+                                    id: 5566,
+                                    name: function () {
+                                        return this.fname + " " + this.lname;
+                                    }
+                                };
+                                document.getElementById("method5").innerHTML = r + x.name();
+                                delete x.name;
+                                document.getElementById("method6").innerHTML = r + x.name();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>built-in Methods</td>
+                        <td>possible to use built-in methods</td>
+                        <td>
+                            (this.fname + " " + this.lname).toUpperCase();<br>
+                            x.name(); <span class="text-blur" id="method7"></span><br>
+                            <script>
+                            {
+                                const x = {
+                                    fname: "Tahbert",
+                                    lname: "Nguyen",
+                                    id: 5566,
+                                    name: function () {
+                                        return (this.fname + " " + this.lname).toUpperCase();
+                                    }
+                                };
+                                document.getElementById("method7").innerHTML = x.name();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

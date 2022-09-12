@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Statement</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Statement</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Statement</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            a computer program is a list of <span class="text-red">instructions</span><br>
+                            a JS program is a list of programming <span class="text-red">statements</span><br>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Composed of</td>
+                        <td>values, operators, expressions, keywords, comments</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Execution</td>
+                        <td>one by one, in the written order</td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Within statements</td>
+                    </tr>
+                    <tr>
+                        <td>Semicolons (;)</td>
+                        <td>
+                            end a statement <span class="text-blur">(not required, highly recommended)</span>
+                        </td>
+                        <td>let x = y + z;</td>
+                    </tr>
+                    <tr>
+                        <td>White Space</td>
+                        <td>ignored => add to make it more readable</td>
+                        <td>let x = y + z;</td>
+                    </tr>
+                    <tr>
+                        <td>Long Code</td>
+                        <td><span class="badge green">best practice</span> break after an operator</td>
+                        <td>
+                            document.getElementById("demo").innerHTML =<br>
+                            "Hello Tahbert!";
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Code Block {...}</td>
+                        <td>define block of statements executed together</td>
+                        <td>
+                            function myFunction() {<br>
+                            &nbsp;&nbsp;document.getElementById("demo1").innerHTML = "Hello Tahbert!";<br>
+                            &nbsp;&nbsp;document.getElementById("demo2").innerHTML = "How are you?";<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Keyword</td>
+                        <td>
+                            statements often start with a keyword<br>
+                            (var, let, const, if, for, function, return, try, etc)
+                            <div class="note">
+                                they are reserved words
+                            </div>
+                        </td>
+                        <td>
+                            <strong>let</strong> x = y + z;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

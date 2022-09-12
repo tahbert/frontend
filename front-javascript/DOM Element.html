@@ -1,0 +1,1539 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Element</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Element</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Element Object</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>the object representing an HTML element</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">EventTarget</span> &lt;= <span class="highlight">Node</span> &lt;= <span class="highlight">Element</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Properties and Methods</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Getting Elements</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_queryselector.asp" 
+                            target="_blank">querySelector()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.querySelector(<i>selectors</i>)</span><br>
+                            return element - the first child element matched
+                        </td>
+                        <td>
+                            <h4>single: get the 1st element with "class1"</h4>
+                            el.querySelector(".class1");<br>
+                            <h4>multi: get the 1st element with "class1" or "class2"</h4>
+                            el.querySelector(".class1, .class2");<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_queryselectorall.asp" 
+                            target="_blank">querySelectorAll()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.querySelectorAll(<i>selectors</i>)</span><br>
+                            return <a href="DOM NodeList.html" target="_blank">NodeLlist</a>
+                            - all child elements matched
+                        </td>
+                        <td>
+                            <h4>single: get all elements with "box1"</h4>
+                            el.querySelectorAll(".box1");
+                            <h4>single: get all elements with "box1" and "green"</h4>
+                            el.querySelectorAll(".box1.green");
+                            <h4>multi: get all elements with "box1" and all elements with "box2"</h4>
+                            el.querySelectorAll(".box1, .box2");
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_getelementsbyclassname.asp" 
+                            target="_blank">getElementsByClassName()</a>
+                        </td>
+                        <td>
+                            <p class="text-red"><i>el</i>.getElementsByClassName(<i>class</i>)</p>
+                            return <a href="DOM HTMLCollection.html" target="_blank">HTMLCollection</a>
+                            - all child elements with specified class(es)
+                        </td>
+                        <td>
+                            <h4>get all child elements with class box</h4>
+                            el.getElementsByClassName("box");<br>
+                            <h4>get all child elements with class box and green</h4>
+                            el.getElementsByClassName("box green");<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_getelementsbytagname.asp" 
+                            target="_blank">getElementsByTagName()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.getElementsByTagName(<i>tagname</i>)</span><br>
+                            return <a href="DOM HTMLCollection.html" target="_blank">HTMLCollection</a>
+                            - all child elements with a specified tagname.<br>
+                        </td>
+                        <td>
+                            <h4>get all child element of el with tagname p</h4>
+                            el.getElementsByTagName("p");
+                            <h4>get the 1st child element of el with tagname p</h4>
+                            el.getElementsByTagName("p")[0];
+                            <h4>get all child element of el</h4>
+                            el.getElementsByTagName("*");
+                            <h4>get the 1st child element of el</h4>
+                            el.getElementsByTagName("*")[0];<br>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Relationship</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_element_children.asp" 
+                            target="_blank">children</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.children</span><br>
+                            return <a href="DOM HTMLCollection.html" target="_blank">HTMLCollection</a>
+                            - all child elements
+                            <div class="note">
+                                <span class="text-red">children[0]</span> =
+                                <span class="text-red">firstElementChild</span>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/prop_element_firstelementchild.asp" 
+                            target="_blank">firstElementChild</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.firstElementChild</span><br>
+                            return element - the first child element
+                            <div class="note">
+                                <span class="text-red">firstElementChild</span> =
+                                <span class="text-red">children[0]</span>
+                            </div>
+                        </td>
+                        <td>
+                            <h4>get the first child element</h4>
+                            el.firstElementChild;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/prop_element_lastelementchild.asp" 
+                            target="_blank">lastElementChild</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.lastElementChild</span><br>
+                            return element - the last child element
+                        </td>
+                        <td>
+                            <h4>get the last child element</h4>
+                            el.lastElementChild;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/prop_element_previouselementsibling.asp" 
+                            target="_blank">previousElementSibling</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.previousElementSibling</span><br>
+                            return element - the previous element
+                        </td>
+                        <td>
+                            <h4>get the prev sibling element</h4>
+                            el.previousElementSibling;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/prop_element_nextelementsibling.asp" 
+                            target="_blank">nextElementSibling</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.nextElementSibling</span><br>
+                            return element - the next element
+                        </td>
+                        <td>
+                            <h4>get the next sibling element</h4>
+                            el.nextElementSibling;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/prop_element_childelementcount.asp" 
+                            target="_blank">childElementCount</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.childElementCount</span><br>
+                            return number - the number of child elements<br>
+                            <div class="note">
+                                <span class="text-red">el.childElementCount</span> = 
+                                <span class="text-red">el.children.length</span>
+                            </div>
+                            <div class="warn">
+                                not of child nodes (attribute, text, comment nodes).
+                            </div>
+                        </td>
+                        <td>
+                            <h4>get the number of child elements</h4>
+                            el.childElementCount;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_matches.asp" 
+                            target="_blank">matches()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.matches("<i>selectors</i>")</span><br>
+                            return boolean - true if matched (multi: comma-separeted)
+                        </td>
+                        <td>
+                            <h4>single: return true if matching ".box"</h4>
+                            el.matches(".box");
+                            <h4>multi: return true if matching one of ".box1" or ".box2"</h4>
+                            el.matches(".box1, box2");<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_closest.asp" 
+                            target="_blank">closest()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.closest("<i>selectors</i>")</span><br>
+                            return element - search up until matched (multi: comma-separeted)
+                        </td>
+                        <td>
+                            <h4>single: get the 1st matching ".box"</h4>
+                            el.closest(".box");<br>
+                            <h4>multi: get the 1st matching one of ".box1" or ".box2"</h4>
+                            el.closest(".box1, .box2");<br>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Attribute</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_node_attributes.asp" 
+                            target="_blank">attributes</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.attributes</span><br>
+                            return <a href="DOM NamedNodeMap.html" target="_blank">NamedNodeMap</a>
+                            - all the element's attributes
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_getattribute.asp" 
+                            target="_blank">getAttribute()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.getAttribute("<i>name</i>")</span><br>
+                            return string - the value of attribute with a specified name
+                            <div class="note">getAttribute("<i>name</i>") = getAttributeNode("<i>name</i>").value</div>
+                        </td>
+                        <td>
+                            <h4>get value of the attribute "display"</h4>
+                            el.getAttribute("display");
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_getattributenode.asp" 
+                            target="_blank">getAttributeNode()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.getAttributeNode("<i>name</i>")</span><br>
+                            return Attr - the attribute with a specified name
+                            <div class="note">getAttributeNode("<i>name</i>").value = getAttribute("<i>name</i>")</div>
+                        </td>
+                        <td>
+                            <h4>get the attribute "display"</h4>
+                            el.getAttributeNode("display");
+                            <h4>get value of the attribute "display"</h4>
+                            el.getAttributeNode("display").value;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_setattribute.asp" 
+                            target="_blank">setAttribute()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.setAttribute("<i>name</i>", "<i>value</i>")</span><br>
+                            return none - set a new value to an attribute<br>
+                            <div class="note">
+                                attribute not exist => positioned first<br>
+                            </div>
+                            <div class="warn">
+                                <i class="icon not-recommended fa-solid fa-thumbs-down"></i> 
+                                add value to a <span class="text-red">style</span> attribute, it can cause overwrite.
+                            </div>
+                        </td>
+                        <td>
+                            <h4>add an "class" attribute</h4>
+                            el.setAttribute("class", "demo");<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_setattributenode.asp" 
+                            target="_blank">setAttributeNode()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.setAttributeNode(<i>node</i>)</span><br>
+                            add an attribute to an element (replace the existing if nany)<br>
+                            return Attr - the replaced attribute node if any<br>
+                            <div class="warn">
+                                1. create an attribute object<br>
+                                2. set the attribute value<br>
+                                3. add the attribute to an element<br>
+                                => <span class="text-red">setAttribute()</span> is more easier
+                            </div>
+                        </td>
+                        <td>
+                            <h4>add an "class" attribute</h4>
+                            const attr = document.createAttribute("class");<br>
+                            attr.value = "demo";<br>
+                            el.setAttributeNode(attr);<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_removeattribute.asp" 
+                            target="_blank">removeAttribute()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.removeAttribute("<i>name</i>")</span><br>
+                            remove an attribute from an element<br>
+                            return none
+                        </td>
+                        <td>
+                            <h4>remove the attribute "class"</h4>
+                            el.removeAttribute("class");<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_removeattributenode.asp" 
+                            target="_blank">removeAttributeNode()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.removeAttributeNode(<i>node</i>)</span><br>
+                            remove an attribute from an element<br>
+                            return Attr - the removed attribute
+                            <div class="warn">
+                                1. create an attribute object<br>
+                                2. add the attribute to an element<br>
+                                => <span class="text-red">removeAttribute()</span> is more easier
+                            </div>
+                        </td>
+                        <td>
+                            <h4>remove the attribute "class"</h4>
+                            const attr = element.getAttributeNode("class");<br>
+                            el.removeAttributeNode(attr);<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_hasattribute.asp" 
+                            target="_blank">hasAttribute()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.hasAttribute("<i>name</i>")</span><br>
+                            return boolean - true if the element has the specified attribute
+                        </td>
+                        <td>
+                            <h4>check if the element have attribute "class"</h4>
+                            el.hasAttribute("class");
+                            <h4>if attribute "class" exists, change value to "demo"</h4>
+                            if (el.hasAttribute("class")) {<br>
+                              &ensp;el.setAttribute("class", "demo");<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_node_hasattributes.asp" 
+                            target="_blank">hasAttributes()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.hasAttributes()</span><br>
+                            return boolean - true if the element has attributes
+                        </td>
+                        <td>
+                            <h4>check if the element have attributes</h4>
+                            el.hasAttributes();
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Attribute > Id and Class</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_element_classlist.asp"
+                            target="_blank">classList</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.classList</span><br>
+                            returnn <a href="DOM DOMTokenList.html" target="_blank">DOMTokenList</a> 
+                            - all the element's classnames<br>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_html_classname.asp" 
+                            target="_blank">className</a></td>
+                        <td>
+                            <span class="text-red"><i>el</i>.className</span><br>
+                            <span class="text-red"><i>el</i>.className</span> = <i>"class1 class2 etc"</i><br>
+                            return or set string - the element's classnames (multi: space-separated)<br>
+                        </td>
+                        <td>
+                            <h4>return all classnames of an element</h4>
+                            el.className;
+                            <h4>single: set 1 classname for an element</h4>
+                            el.className = "class1";
+                            <h4>single: add 1 more classname for an element</h4>
+                            el.className += "class1";
+                            <h4>multi: set 2 classnames for an element</h4>
+                            el.className = "class1 class2";
+                            <h4>multi: add 2 more classnames for an element</h4>
+                            el.className += "class1 class2";<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_html_id.asp" 
+                            target="_blank">id</a></td>
+                        <td>
+                            <span class="text-red"><i>el</i>.id</span><br>
+                            <span class="text-red"><i>el</i>.id</span> = <i>"id"</i><br>
+                            return or set string - the element's id<br>
+                        </td>
+                        <td>
+                            <h4>return the element's id</h4>
+                            el.id;
+                            <h4>set the element's id</h4>
+                            el.id = "demo";
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Text</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp"
+                            target="_blank">innerHTML</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.innerHTML</span><br>
+                            <span class="text-red"><i>el</i>.innerHTML</span> = <i>"text"</i><br>
+                            return or set string - the element's HTML content
+                            <div class="note">
+                                including all spacing, inner HTML tags.
+                            </div>
+                        </td>
+                        <td>
+                            <h4>return an element's HTML content</h4>
+                            el.innerHTML;
+                            <h4>set an element's HTML content</h4>
+                            el.innerHTML = "this is a heading"
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_html_outerhtml.asp" 
+                            target="_blank">outerHTML</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.outerHTML</span><br>
+                            <span class="text-red"><i>el</i>.outerHTML</span> = <i>"text"</i><br>
+                            return or set string -  the HTML element (including attributes, start tag, and end tag)
+                        </td>
+                        <td>
+                            <h4>return an HTML element</h4>
+                            el.outerHTML;
+                            <h4>set an HTML element</h4>
+                            el.outerHTML = "&lt;h1&gt;this is a heading&lt;/h1&gt;"
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Insert | Remove | Replace</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_remove.asp" 
+                            target="_blank">remove()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.remove()</span><br>
+                            remove an element from the document<br>
+                            return none
+                            <ul class="warn">
+                                <li>the element is removed from the DOM.</li>
+                                <li>return none => can't be modified and inserted back into the DOM.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>remove an element from the document</h4>
+                            el.remove();
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_node_insertadjacentelement.asp" 
+                            target="_blank">insertAdjacentElement()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.insertAdjacentElement(<i>position</i>, <i>element</i>)</span><br>
+                            insert an element into a specified position.
+                            <div class="note">
+                                position param: afterbegin| afterend | beforebegin| beforeend
+                            </div>
+                        </td>
+                        <td>
+                            <h4>Basic code for examples: </h4>
+                            const h2 = document.getElementById("myH2");<br>
+                            const span = document.getElementById("mySpan");<br>
+                            <h4>move &lt;span&gt; to after &lt;/h2&gt; tag:</h4>
+                            h2.insertAdjacentElement("afterend", span);
+                            <h4>move &lt;span&gt; to before &lt;/h2&gt; tag:</h4>
+                            h2.insertAdjacentElement("beforeend", span);
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_node_insertadjacenthtml.asp" 
+                            target="_blank">insertAdjacentHTML()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.insertAdjacentHTML(<i>position</i>, <i>html</i>)</span><br>
+                            insert HTML code into a specified position
+                            <div class="note">
+                                position param: afterbegin| afterend | beforebegin| beforeend
+                            </div>
+                        </td>
+                        <td>
+                            <h4>Basic code for examples: </h4>
+                            const h2 = document.getElementById("myH2");<br>
+                            const span = "&lt;span&gt;my new span.&lt;/span&gt;";<br>
+
+                            <h4>insert 1 &lt;span&gt; after &lt;/h2&gt; tag</h4>
+                            h2.insertAdjacentHTML("afterend", span);<br>
+                            <h4>insert 1 more &lt;span&gt; after &lt;/h2&gt; tag</h4>
+                            h2.insertAdjacentHTML("afterend", span);<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_node_insertadjacenttext.asp" 
+                            target="_blank">insertAdjacentText()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.insertAdjacentText(<i>position</i>, <i>text</i>)</span><br>
+                            insert a Text into a specified position
+                            <div class="note">
+                                position param: afterbegin| afterend | beforebegin| beforeend
+                            </div>
+                        </td>
+                        <td>
+                            <h4>Basic code for examples:</h4>
+                            const h2 = document.getElementById("myH2");<br>
+                            let text = "some text";<br>
+                            <h4>insert text after &lt;h2&gt; tag</h4>
+                            h2.insertAdjacentText("afterbegin", text);<br>
+                            <h4>insert text before &lt;/h2&gt; tag</h4>
+                            h2.insertAdjacentText("beforeend", text);<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge red">later</span></td>
+                        <td>replaceChildren(), replaceWith()</td>
+                        <td></td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Return in pixels</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/prop_element_clientheight.asp" 
+                            target="_blank">clientHeight</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.clientHeight</span><br>
+                            return number - viewable height, including padding, not border, scrollbar, margin.
+                        </td>
+                        <td>
+                            <h4>box-sizing: content-box; height: 100px; padding: 10px; border: 5px;</h4>
+                            el.clientHeight; <span class="text-blur">result: 120px</span>
+                            <h4>box-sizing: border-box; height: 100px; padding: 10px; border: 5px;</h4>
+                            el.clientHeight; <span class="text-blur">result: 90px</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_element_clientheight.asp" 
+                            target="_blank">clientWidth</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.clientWidth</span><br>
+                            return number - viewable width, including padding, not border, scrollbar, margin.
+                        </td>
+                        <td>
+                            <h4>box-sizing: content-box; width: 100px; padding: 10px; border: 5px;</h4>
+                            el.clientWidth; <span class="text-blur">result: 120px</span>
+                            <h4>box-sizing: border-box; width: 100px; padding: 10px; border: 5px;</h4>
+                            el.clientWidth; <span class="text-blur">result: 90px</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_element_clientleft.asp" 
+                            target="_blank">clientLeft</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.clientLeft</span><br>
+                            return number - the left border width.
+                            <div class="note">the same as <span class="text-red">style.borderLeftWidth</span></div>
+                        </td>
+                        <td>
+                            <h4>border: 10px 5px;</h4>
+                            el.clientLeft; <span class="text-blur">result: 5px</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/prop_element_clienttop.asp" 
+                            target="_blank">clientTop</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.clientTop</span><br>
+                            return number - the top border width.
+                            <div class="note">the same as <span class="text-red">style.borderTopWidth</span></div>
+                        </td>
+                        <td>
+                            <h4>border: 10px 5px;</h4>
+                            el.clientTop; <span class="text-blur">result: 10px</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_getboundingclientrect.asp" 
+                            target="_blank">getBoundingClientRect()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.getBoundingClientRect()</span><br>
+                            return <a href="DOM DOMRect.html" target="_blank">DOMRect</a> - the element's size and its position relative to the viewport (left, top, right, bottom, x, y, width, height)
+                        </td>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_getboundingclientrect.asp" 
+                            target="_blank">example</a>
+                        </td>
+                    </tr>
+                    
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Return in pixels > Scroll</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_element_scrollintoview.asp" 
+                            target="_blank">scrollIntoView()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.scrollIntoView(true|false)</span><br>
+                            return none - scroll an element into the visible area
+                            <ul class="note">
+                                <li><span class="text-red">true</span> - the element top aligned to the visible area top</li>
+                                <li>false - the element bottom aligned to the the visible area bottom</li>
+                            </ul>
+                            <div class="warn">depending on the layout of other elements, may not be scrolled completely</div>
+                        </td>
+                        <td>
+                            <h4>scroll to the top of the element</h4>
+                            el.scrollIntoView();
+                            <h4>scroll to the bottom of the element</h4>
+                            el.scrollIntoView(false);
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/prop_element_scrollheight.asp" 
+                            target="_blank">scrollHeight</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.scrollHeight</span><br>
+                            return number - the height of an element<br>
+                            (including padding, but not borders, scrollbars, margins)
+                            <div class="note">
+                                return the entire height of an element including what is not viewable (because of overflow).
+                            </div>
+                        </td>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_element_scrollheight.asp" 
+                            target="_blank">example</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/prop_element_scrollwidth.asp" 
+                            target="_blank">scrollWidth</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.scrollWidth</span><br>
+                            return number - the width of an element<br>
+                            (including padding, but not borders, scrollbars, margins)
+                            <div class="note">
+                                return the entire width of an element including what is not viewable (because of overflow).
+                            </div>
+                        </td>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_element_scrollwidth.asp" 
+                            target="_blank">example</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_element_scrollleft.asp" 
+                            target="_blank">scrollLeft</a>
+                        </td>
+                        <td>
+                            <span class="text-red">el.scrollLeft</span><br>
+                            <span class="text-red">el.scrollLeft</span> = <i>pixels</i><br>
+                            set or return number - how far the element has been scrolled horizontally
+                            <ul class="note">
+                                <li>negative => set to 0.</li>
+                                <li>can't be scrolled => set to 0.</li>
+                                <li>greater than maximum => set to the maximum.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>return how far the element is scrolled from the left</h4>
+                            el.scrollLeft;
+                            <h4>set how far the element is scrolled from the left</h4>
+                            el.scrollLeft = 50;
+                            <h4>set how far each time the element is scrolled from the left</h4>
+                            el.scrollLeft += 50;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_element_scrolltop.asp" 
+                            target="_blank">scrollTop</a>
+                        </td>
+                        <td>
+                            <span class="text-red">el.scrollTop</span><br>
+                            <span class="text-red">el.scrollTop</span> = <i>pixels</i><br>
+                            return or set number - how far the element has been scrolled vertically
+                            <ul class="note">
+                                <li>negative => set to 0.</li>
+                                <li>can't be scrolled => set to 0.</li>
+                                <li>greater than maximum => set to the maximum.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>return how far the element is scrolled from the top</h4>
+                            el.scrollTop;
+                            <h4>set how far the element is scrolled from the top</h4>
+                            el.scrollTop = 50;
+                            <h4>set how far each time the element is scrolled from the top</h4>
+                            el.scrollTop += 50;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge red">later</span></td>
+                        <td>scroll(), scrollBy(), scrollTo()</td>
+                        <td></td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Others</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_element_tagname.asp" 
+                            target="_blank">tagName</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.tagName</span><br>
+                            return string - the element's tagname (UPPERCASE)
+                            <div class="note">
+                                <span class="text-red">nodeName</span> can also do the same<br>
+                                furthermore, can return the other nodes' tagname (attribute, text, comment)<br>
+                            </div>
+                        </td>
+                        <td>
+                            <h4>return the element's tagname: </h4>
+                            el.tagName;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_node_namespaceuri.asp" 
+                            target="_blank">namespaceURI</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>el</i>.namespaceURI</span><br>
+                            return string - the URI of the element's namespace<br>
+                            <div class="warn">no practical use in HTML.</div>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Events</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">Event</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onscroll.asp" 
+                            target="_blank">scroll</a>
+                        </td>
+                        <td>when an element has been scrolled</td>
+                        <td>
+                            el.onscroll = () => {<br>
+                                &emsp;alert("the el has been scrolled");<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/error_event" 
+                            target="_blank">error</a>
+                        </td>
+                        <td>
+                            when a resource used for an element failed to load or couldn't be used.
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> | 
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                            <div class="note">
+                                <span class="highlight">UIEvent</span> 
+                                if generated from a user interface element, otherwise 
+                                <span class="highlight">Event</span>
+                            </div>
+                        </td>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/error_event" 
+                            target="_blank">complex</a>
+                        </td>
+                    </tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/fullscreenchange_event" 
+                            target="_blank">fullscreenchange</a>
+                        </td>
+                        <td>
+                            when an Element switches into or out of fullscreen mode.
+                            <div class="note">
+                                sent to the Element, not bubble up to the Document
+                            </div>
+                            <div class="warn">
+                                <i class="icon fa-solid fa-exclamation"></i> prefixes |
+                                <i class="icon fa-solid fa-xmark"></i> cancelable
+                            </div>
+                            <div class="note">
+                                <span class="text-red">requestFullscreen()</span> to open fullscreen mode<br>
+                                <span class="text-red">exitFullscreen()</span> to cancel fullscreen mode
+                            </div>
+                        </td>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/fullscreenchange_event" 
+                            target="_blank">complex</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/fullscreenerror_event" 
+                            target="_blank">fullscreenerror</a>
+                        </td>
+                        <td>
+                            when the browser can NOT switch to fullscreen mode
+                            <div class="note">
+                                two events fired: the 1st sent the Element, the 2nd sent to the Document
+                            </div>
+                            <div class="warn">
+                                <i class="icon fa-solid fa-exclamation"></i> prefixes |
+                                <i class="icon fa-solid fa-xmark"></i> cancelable
+                            </div>
+                        </td>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/fullscreenerror_event" 
+                            target="_blank">complex</a>
+                        </td>
+                    </tr>
+                    
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">WheelEvent</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event" 
+                            target="_blank">wheel</a>
+                        </td>
+                        <td>
+                            mouse wheel: rotate over an element<br>
+                            touchpad: zooms in or out of an element
+                            <div class="warn">
+                                don't confuse with <span class="text-red">scroll</span><br>
+                                <i class="icon notsupported fa-solid fa-phone-slash"></i> Safari
+                            </div>
+                        </td>
+                        <td>
+                            el.onwheel = (event) => {<br>
+                                &emsp;el.style.fontSize = "35px";<br>
+                            }<br>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">TouchEvent</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_touchstart.asp" 
+                            target="_blank">touchstart</a>
+                        </td>
+                        <td>  
+                            when the user touches an element.
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> Safari</div>
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_touchmove.asp" 
+                            target="_blank">touchmove</a>
+                        </td>  
+                        <td>  
+                            when the user moves the finger across the screen.
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> Safari</div>
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_touchend.asp" 
+                            target="_blank">touchend</a>
+                        </td>
+                        <td>  
+                            when the user removes the finger from an element.
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> Safari</div>
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_touchcancel.asp" 
+                            target="_blank">touchcancel</a>
+                        </td>
+                        <td>  
+                            when the touch event gets interrupted.
+                            <div class="note">
+                                different devices will interrupt a touch event at different actions,<br>
+                            => <span class="badge green">good practice</span> to include this event to clean up code if this "error" should occur.
+                            </div>
+                            <div class="warn"><i class="icon notsupported fa-solid fa-phone-slash"></i> Safari</div>
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">AnimationEvent</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_animationstart.asp" 
+                            target="_blank">animationstart</a>
+                        </td>
+                        <td>when a CSS animation has started</td>
+                        <td>
+                            el.<span class="text-red">onanimationstart</span> = () => {<br>
+                                &emsp;console.log("animation started");<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_animationiteration.asp" 
+                            target="_blank">animationiteration</a>
+                        </td>
+                        <td>
+                            when a CSS animation is repeated
+                            <div class="note">animation-iteration-count: 1; => not occur</div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onanimationiteration</span> = () => {<br>
+                                &emsp;console.log("animation repeated");<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_animationend.asp" 
+                            target="_blank">animationend</a>
+                        </td>
+                        <td>when a CSS animation has completed.</td>
+                        <td>
+                            el.<span class="text-red">onanimationend</span> = () => {<br>
+                                &emsp;console.log("animation completed");<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon experiment fa-solid fa-flask"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/animationcancel_event" 
+                            target="_blank">animationcancel</a>
+                        </td>
+                        <td>when a animation is canceled</td>
+                        <td>
+                            el.<span class="text-red">onanimationend</span> = () => {<br>
+                                &emsp;console.log("animation canceled");<br>
+                            }<br>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">TransitionEvent</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon experiment fa-solid fa-flask"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/transitionrun_event" 
+                            target="_blank">transitionrun</a>
+                        </td>
+                        <td>when a transition is first created, before any <span class="text-red">transition-delay</span> has begun</td>
+                        <td>
+                            el.<span class="text-red">ontransitionrun</span> = () => {<br>
+                                &emsp;console.log('Transition runned');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon experiment fa-solid fa-flask"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/transitionstart_event" 
+                            target="_blank">transitionstart</a>
+                        </td>
+                        <td>when a transition has started, after any <span class="text-red">transition-delay</span> has ended</td>
+                        <td>
+                            el.<span class="text-red">ontransitionstart</span> = () => {<br>
+                                &emsp;console.log('Transition started');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/transitionend_event" 
+                            target="_blank">transitionend</a>
+                        </td>
+                        <td>when a transition has completed</td>
+                        <td>
+                            el.<span class="text-red">ontransitionend</span> = () => {<br>
+                                &emsp;console.log('Transition ended');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon experiment fa-solid fa-flask"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/transitioncancel_event" 
+                            target="_blank">transitioncancel</a>
+                        </td>
+                        <td>when a transition is canceled</td>
+                        <td>
+                            el.<span class="text-red">ontransitioncancel</span> = () => {<br>
+                                &emsp;console.log('Transition canceled');<br>
+                            };<br>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">FocusEvent</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onblur.asp" 
+                            target="_blank">blur</a>
+                        </td>
+                        <td>
+                            when an element has lost focus
+                            <div class="note">most often used with form validation</div>
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> | 
+                                bubble <i class="icon fa-solid fa-xmark"></i><br>
+                                => using with useCapture = <span class="text-red">onfocusout</span>
+                            </div>
+                        </td>
+                        <td rowspan="2">
+                            var el = document.getElementById("myForm");<br>
+                            el.addEventListener("<span class="text-red">focus</span>", myFocus, <span class="text-red">true</span>);<br>
+                            el.addEventListener("<span class="text-red">blur</span>", myBlur, <span class="text-red">true</span>);<br><br>
+
+                            function myFocus() {<br>
+                                &emsp;console.log("Input has received focus");<br>
+                            }<br>
+                              
+                            function myBlur() {<br>
+                                &emsp;console.log("Input has lost focus");<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onfocus.asp" 
+                            target="_blank">focus</a>
+                        </td>
+                        <td>
+                            when an element has received focus
+                            <div class="note">
+                                most often used with &lt;input&gt;, &lt;select&gt;, &lt;a&gt;<br>
+                            </div>
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> | 
+                                bubble <i class="icon fa-solid fa-xmark"></i><br>
+                                => using with useCapture = <span class="text-red">onfocusin</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onfocusin.asp" 
+                            target="_blank">focusin</a>
+                        </td>
+                        <td>
+                            when an element is about to get focus
+                            <div class="note">
+                                using to determine whether an element or its child gets focus
+                            </div>
+                            <div class="warn">
+                                may not work in Chrome, Safari with JS HTML DOM syntax
+                            </div>
+                        </td>
+                        <td rowspan="2">
+                            var el = document.getElementById("myForm");<br>
+                            el.addEventListener("<span class="text-red">focusin</span>", myFocus);<br>
+                            el.addEventListener("<span class="text-red">focusout</span>", myBlur);<br><br>
+
+                            function myFocus() {<br>
+                                &emsp;console.log("Input has received focus");<br>
+                            }<br>
+                              
+                            function myBlur() {<br>
+                                &emsp;console.log("Input has lost focus");<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onfocusout.asp" 
+                            target="_blank">focusout</a>
+                        </td>
+                        <td>
+                            when an element is about to lose focus
+                            <div class="note">
+                                using to determine whether an element or its child loses focus
+                            </div>
+                            <div class="warn">
+                                may not work in Chrome, Safari with JS HTML DOM syntax
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">ClipboardEvent</span></td>
+                    </tr>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            <div class="note">
+                                mostly used on &lt;input&gt; with type="text".
+                            </div>
+                            <div class="warn">
+                                with many elements, impossible to cut or paste if contenteditable is "false"
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_oncopy.asp" 
+                            target="_blank">copy</a>
+                        </td>
+                        <td>
+                            when the user initiates a copy action through the browser's user interface.
+                        </td>
+                        <td>
+                            el.<span class="text-red">oncopy</span> = (event) => {<br>
+                                &emsp;console.log('copy action initiated');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_oncut.asp" 
+                            target="_blank">cut</a>
+                        </td>
+                        <td>
+                            when the user initiates a cut action through the browser's user interface.
+                        </td>
+                        <td>
+                            el.<span class="text-red">oncut</span> = (event) => {<br>
+                                &emsp;console.log('cut action initiated');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onpaste.asp" 
+                            target="_blank">paste</a>
+                        </td>
+                        <td>
+                            when the user initiates a paste action through the browser's user interface.
+                        </td>
+                        <td>
+                            el.<span class="text-red">onpaste</span> = (event) => {<br>
+                                &emsp;console.log('paste action initiated');<br>
+                            };<br>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">KeyboardEvent</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onkeydown.asp" 
+                            target="_blank">keydown</a>
+                        </td>
+                        <td>
+                            when the user is pressing a key
+                        </td>
+                        <td>
+                            el.<span class="text-red">onkeydown</span> = () => {<br>
+                                &emsp;console.log('key pressed');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onkeyup.asp" 
+                            target="_blank">keyup</a>
+                        </td>
+                        <td>when the user releases a key</td>
+                        <td>
+                            el.<span class="text-red">onkeyup</span> = () => {<br>
+                                &emsp;console.log('key released');<br>
+                            };<br>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">MouseEvent</span></td>
+                    </tr>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            <h3>order in DOM for the left/middle button: </h3>
+                            <ul>
+                                <li>onmousedown</li>
+                                <li>onmouseup</li>
+                                <li>onclick</li>
+                            </ul>
+                            <h3>order in DOM for the right button</h3>
+                            <ul>
+                                <li>onmousedown</li>
+                                <li>onmouseup</li>
+                                <li>oncontextmenu</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onmousedown.asp" 
+                            target="_blank">mousedown</a>
+                        </td>
+                        <td>
+                            when a user presses a mouse button over an element
+                        </td>
+                        <td>
+                            el.<span class="text-red">onmousedown</span> = (event) => {<br>
+                                &emsp;event.target.style.color = "green";<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onmouseup.asp" 
+                            target="_blank">mouseup</a>
+                        </td>
+                        <td>
+                            when the user releases a mouse button over an element.
+                        </td>
+                        <td>
+                            el.<span class="text-red">onmouseup</span> = (event) => {<br>
+                                &emsp;event.target.style.color = "grey";<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onclick.asp" 
+                            target="_blank">click</a>
+                        </td>
+                        <td>
+                            when the user clicks on an element.
+                            <div class="note">
+                                fire after 1 pair of 
+                                <span class="text-red">mousedown</span> and 
+                                <span class="text-red">mouseup</span>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onclick</span> = (event) => {<br>
+                                &emsp;event.target.style.color = "red";<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_ondblclick.asp" 
+                            target="_blank">dblclick</a>
+                        </td>
+                        <td>
+                            when the user double-clicks on an element.
+                            <div class="note">
+                                fire after 2 pairs of 
+                                <span class="text-red">mousedown</span> and 
+                                <span class="text-red">mouseup</span>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">ondblclick</span> = (event) => {<br>
+                                &emsp;event.target.style.color = "red";<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_oncontextmenu.asp" 
+                            target="_blank">contextmenu</a>
+                        </td>
+                        <td>
+                            when the user right-clicks on an element to open the context menu
+                            <div class="note">
+                                <span class="text-red">contextmenu</span> event is supported in all browsers<br>
+                                <span class="text-red">contextmenu</span> attribute is currently only supported in Firefox.
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">oncontextmenu</span> = (event) => {<br>
+                                &emsp;event.target.style.color = "red";<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onmouseenter.asp" 
+                            target="_blank">mouseenter</a>
+                        </td>
+                        <td>
+                            when the mouse pointer is moved onto an element.
+                            <div class="warn">
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onmouseenter</span> = (event) => {<br>
+                                &emsp;event.target.style.color = "red";<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onmouseleave.asp" 
+                            target="_blank">mouseleave</a>
+                        </td>
+                        <td>
+                            when the mouse pointer is moved out of an element.
+                            <div class="warn">
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onmouseleave</span> = (event) => {<br>
+                                &emsp;event.target.style.color = "black";<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onmouseover.asp" 
+                            target="_blank">onmouseover</a>
+                        </td>
+                        <td>
+                            when the mouse pointer is moved onto an element
+                        </td>
+                        <td>
+                            el.<span class="text-red">ononmouseover</span> = (event) => {<br>
+                                &emsp;event.target.style.color = "red";<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onmouseout.asp" 
+                            target="_blank">onmouseout</a>
+                        </td>
+                        <td>when the mouse pointer is moved out of an element</td>
+                        <td>
+                            el.<span class="text-red">ononmouseout</span> = (event) => {<br>
+                                &emsp;event.target.style.color = "black";<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onmousemove.asp" 
+                            target="_blank">mousemove</a>
+                        </td>
+                        <td>
+                            when the mouse pointer is moving while it is over an element.
+                        </td>
+                        <td>
+                            el.<span class="text-red">onmousemove</span> = () => {<br>
+                                &emsp;console.log("You're moving on the element")<br>
+                            };<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

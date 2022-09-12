@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>CSSStyleDeclaration</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>CSSStyleDeclaration</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>CSSStyleDeclaration Object</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>represent an individual style statement</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Accessing</td>
+                        <td>from the head section of the document</td>
+                        <td>
+                            document.getElementsByTagName("style");
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>from specific HTML element(s)</td>
+                        <td>
+                            document.getElementById("demo").style;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Creating</td>
+                        <td>using <span class="text-red">createElement()</span></td>
+                        <td>
+                            document.createElement("style");
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Setting</td>
+                        <td>using properties of style object</td>
+                        <td>document.getElementById("demo").style.color = "red";</td>
+                    </tr>
+                    <tr>
+                        <td>Properties</td>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/dom_obj_style.asp" 
+                            target="_blank">see all</a>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

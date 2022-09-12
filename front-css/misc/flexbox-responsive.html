@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flexbox Responsive</title>
+  </head>
+  <body>
+    <h2>Option 1</h2>
+    <div class="flex-container a">
+      <div class="flex-item a">1</div>
+      <div class="flex-item b">2</div>
+    </div>
+
+    <h2>Option 2</h2>
+    <div class="flex-container b">
+      <div class="flex-item a">1</div>
+      <div class="flex-item b">2</div>
+    </div>
+
+    <style>
+      * {box-sizing: border-box;}
+      body {margin: 0; padding: 0;}
+      .flex-container {
+        display: flex;
+        font-size: 25px;
+        /*flex-direction: row; this is default*/
+      } 
+      .flex-container > div {
+        flex: 50%;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        margin: 20px;
+      }
+      .flex-container .a {background: #04AA6D;}
+      .flex-container .b {background: dodgerblue;}
+
+      /*Option 1*/
+      @media (max-width: 800px) {
+        .flex-container.a {
+          flex-direction: column;
+        }
+      }
+
+      /*Option 2*/
+      @media (max-width: 800px) {
+        .flex-container.b {flex-wrap: wrap;}
+        .flex-container.b > div {flex: 100%;}
+      }
+    </style>
+  
+    <script src="../js/script-detail.js" defer></script>
+</body>
+</html>

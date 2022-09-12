@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Introduction</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Introduction</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Introduction</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Javascript</td>
+                        <td> frondend programing language</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JS Framework</td>
+                        <td>Libaries based on JS (Ex. Angular, React)</td>
+                        <td></td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Types based on location</td>
+                    </tr>
+                    <tr>
+                        <td>Inline JS</td>
+                        <td>directly to an HTML tag</td>
+                        <td>
+                            &lt;button <span class="text-red">onclick="alert("Hi")</span>>Click Me&lt;/button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Internal JS</td>
+                        <td>in &lt;body&gt;, or &lt;head&gt;</td>
+                        <td>
+                            &lt;script&gt;<br>
+                            &nbsp;&nbsp;-- some code here<br>
+                            &lt;/script&gt;<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>External JS</td>
+                        <td>in &lt;head&gt; or &lt;body&gt;<br>
+                            <div class="note">
+                                behave as if it was located exactly where the &lt;script&gt; tag is located
+                            </div>
+                        </td>
+                        <td>
+                            &lt;script src="script.js"&gt;&lt;/script&gt;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Others</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Comments</td>
+                        <td>single line</td>
+                        <td><span class="text-blur">// this is a single comment</span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>multiple line</td>
+                        <td>
+                            <span class="text-blur">
+                                /*<br>
+                                &emsp;this is multiple comments<br>
+                                &emsp;this is multiple comments<br>
+                                */<br>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoisting</td>
+                        <td>
+                            behavior of moving declarations to the top<br>
+                            => a variable can be used before declared
+                            <ul class="warn">
+                                <li>always declare variables before using to avoid bugs</li>
+                                <li><span class="badge red">impossible</span> in strict mode</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Reserved Word</td>
+                        <td>
+                            <span class="badge red">imposible</span> as identifiers (variable, label, function name)<br>
+                            <div class="note">VScode automatically alerts error when using reserved words</div>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>        
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Location</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Location</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Location</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>the object containing information about the current URL</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="badge yellow">not inherit</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Methods & Properties</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Heading</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_loc_origin.asp" 
+                            target="_blank">origin</a>
+                        </td>
+                        <td>
+                            <p class="text-red">location.origin</p>
+                            return string - protocol, hostname, port number of a URL.
+                            <div class="note">port number default or not specified => empty</div>
+                        </td>
+                        <td>
+                            <h4> starting code:</h4>
+                            host: www.w3schools.com<br>
+                            <h4> get the origin of the URL</h4>
+                            el.origin; <span class="text-blur">// result: https://www.w3schools.com</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_loc_hash.asp" 
+                            target="_blank">hash</a>
+                        </td>
+                        <td>
+                            <p class="text-red">location.hash</p>
+                            <p class="text-red">location.hash = <i>name</i></p>
+                            return or set string - the anchor part of the URL, including #
+                        </td>
+                        <td>
+                            <h4> starting code:</h4>
+                            &lt;a id="demo" href="tahbert.com#tech"&gt;&lt;/a&gt;<br>
+                            const el = document.getElementById("demo");<br>
+                            <h4> get the anchor part of the URL:</h4>
+                            el.hash; <span class="text-blur">// result: #tech</span>
+                            <h4> set the anchor part of the URL:</h4>
+                            el.hash = "music"; <span class="text-blur">// result: #music</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_loc_host.asp" 
+                            target="_blank">host</a>
+                        </td>
+                        <td>
+                            <p class="text-red">location.host</p>
+                            <p class="text-red">location.host = <i>host:port</i></p>
+                            set or return string - 	the host (IP address or domain) and port number of a URL.
+                            <div class="note">port number default or not specified => empty</div>
+                        </td>
+                        <td>
+                            <h4> starting code:</h4>
+                            host: www.w3schools.com<br>
+                            <h4> get the host of the URL:</h4>
+                            el.host; <span class="text-blur">// result: www.w3schools.com</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_loc_hostname.asp" 
+                            target="_blank">hostname</a>
+                        </td>
+                        <td>
+                            <p class="text-red">location.hostname</p>
+                            <p class="text-red">location.hostname = <i>name</i></p>
+                            set or return string - 	the host (IP address or domain) of a URL
+                        </td>
+                        <td>
+                            <h4> starting code:</h4>
+                            host: www.w3schools.com<br>
+                            <h4> get the hostname of the URL:</h4>
+                            el.hostname; <span class="text-blur">// result: www.w3schools.com</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_loc_href.asp" 
+                            target="_blank">href</a>
+                        </td>
+                        <td>
+                            <p class="text-red">location.href</p>
+                            <p class="text-red">location.href = <i>URL</i></p>
+                            set or return string - the full page URL (include the protocol like https://)
+                        </td>
+                        <td>
+                            <h4> starting code:</h4>
+                            host: www.w3schools.com<br>
+                            <h4> get the href of the URL</h4>
+                            el.href; <span class="text-blur">// result: https://www.w3schools.com</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_loc_pathname.asp" 
+                            target="_blank">pathname</a>
+                        </td>
+                        <td>
+                            <p class="text-red">location.pathname</p>
+                            <p class="text-red">location.pathname = <i>name</i></p>
+                            return string - the current pathname
+                        </td>
+                        <td>
+                            <h4> starting code:</h4>
+                            host: www.w3schools.com/tech.asp<br>
+                            <h4> get the pathname of the URL</h4>
+                            el.pathname; <span class="text-blur">// result: tech.asp</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_loc_port.asp" 
+                            target="_blank">port</a>
+                        </td>
+                        <td>
+                            <p class="text-red">location.port</p>
+                            <p class="text-red">location.port = <i>port</i></p>
+                            set or return string - the port number of a URL
+                            <div class="note">port number default or not specified => empty</div>
+                        </td>
+                        <td>
+                            <h4> starting code:</h4>
+                            host: www.w3schools.com<br>
+                            <h4> get the port of the URL</h4>
+                            el.port; <span class="text-blur">// result empty</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_loc_protocol.asp" 
+                            target="_blank">protocol</a>
+                        </td>
+                        <td>
+                            <p class="text-red">location.protocol</p>
+                            <p class="text-red">location.protocol = <i>protocol</i></p>
+                            return string - the protocol of the current URL, including the colon (:)
+                        </td>
+                        <td>
+                            <h4> starting code:</h4>
+                            host: www.w3schools.com<br>
+                            <h4> get the protocol of the URL</h4>
+                            el.protocol; <span class="text-blur">// result: https:</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_loc_search.asp" 
+                            target="_blank">search</a>
+                        </td>
+                        <td>
+                            <p class="text-red">location.search</p>
+                            <p class="text-red">location.search = <i>querystring</i></p>
+                            return string - the querystring part of a URL, including the question mark (?)
+                        </td>
+                        <td>
+                            <h4> starting code:</h4>
+                            host: www.w3schools.com/?answer=yes<br>
+                            <h4> get the search of the URL</h4>
+                            el.search; <span class="text-blur">// result: ?answer=yes</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_loc_assign.asp" 
+                            target="_blank">assign()</a>
+                        </td>
+                        <td>
+                            <p class="text-red">location.assign()</p>
+                            loads a new document<br>
+                            return <span class="badge grey">none</span>
+                        </td>
+                        <td>
+                            <h4> load a new document</h4>
+                            location.assign("https://www.w3schools.com");
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_loc_replace.asp" 
+                            target="_blank">replace()</a>
+                        </td>
+                        <td>
+                            <p class="text-red">location.replace()</p>
+                            replace the current document with a new one<br>
+                            return <span class="badge grey">none</span>
+                            <div class="warn">
+                                remove the current URL from the document history<br>
+                                => impossible to navigate back to the original document.
+                            </div>
+                        </td>
+                        <td>
+                            <h4> replace a document</h4>
+                            location.replace("https://www.w3schools.com");
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_loc_reload.asp" 
+                            target="_blank">reload()</a>
+                        </td>
+                        <td>
+                            <p class="text-red">location.reload()</p>
+                            reload the current document<br>
+                            return <span class="badge grey">none</span>
+                            <div class="note">= <span class="text-red">go(0)</span></div>
+                        </td>
+                        <td>
+                            <h4> reload the document</h4>
+                            location.reload();
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge red">later</span></td>
+                        <td>
+                            ancestorOrigins, toString()
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive Image Gallery</title>
+  </head>
+  <body>
+    <!--The Form ---------------------------------------------->
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="../imgs/paris.jpg">
+          <img src="../imgs/paris.jpg" alt="Paris" width="600" height="400">
+        </a>
+        <div class="desc">Image description here</div>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="../imgs/paris.jpg">
+          <img src="../imgs/paris.jpg" alt="Paris" width="600" height="400">
+        </a>
+        <div class="desc">Image description here</div>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="../imgs/paris.jpg">
+          <img src="../imgs/paris.jpg" alt="Paris" width="600" height="400">
+        </a>
+        <div class="desc">Image description here</div>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="../imgs/paris.jpg">
+          <img src="../imgs/paris.jpg" alt="Paris" width="600" height="400">
+        </a>
+        <div class="desc">Image description here</div>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+    
+    <!--Style the responsive image gallery-------------------------------------------------------------------------------------->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .responsive {
+        padding: 0 6px; /*for margin: 6px 0; below*/
+        float: left;
+        width: 24.99999%; /*don't know why*/
+      }
+      .gallery {
+        border: 1px solid #ccc; /*because of padding: 0 6px; above*/
+      }
+
+      .gallery:hover {
+        border: 1px solid #777;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: auto; /*because of preset height above*/
+      }
+
+      .desc {
+        padding: 15px;
+        text-align: center;
+      }
+
+      /*Using media query with 2 breakpoints*/
+      @media only screen and (max-width: 700px) {
+        .responsive {
+          width: 49.99999%; /*don't know why*/
+          margin: 6px 0; /*for padding: 0 6px; above*/
+        }
+      }
+
+      @media only screen and (max-width: 500px) {
+        .responsive {
+          width: 100%;
+        }
+      }
+
+      /*Clearfix*/
+      .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    </style>
+  
+    <script src="../js/script-detail.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS 
+    -->
+    <title>fixed-fullheight</title>
+    
+  </head>
+  <body>
+    <ul class="full-height">
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <div style="margin-left: 200px; padding: 5px;">
+      <p>Notice that this div element has a left margin of 25%. This is because the side navigation is set to 25% width. If you remove the margin, the sidenav will overlay/sit on top of this div.</p>
+      <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>
+    </div>
+
+    <style>
+      .full-height {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height:100%;
+        background: #f2f2f2;
+        position: fixed;
+        overflow: auto;
+      }
+      .full-height li a {
+        text-decoration: none;
+        display: block;
+        color: black;
+        padding: 12px 20px;
+      }
+      .full-height li a.active{
+        background: #04AA6D;
+        color: white;
+      }
+      .full-height li a:hover:not(.active) {
+        background: #555;
+        color: white;
+      }
+    </style>
+  
+    <script src="../js/script-detail.js" defer></script>
+</body>
+</html>

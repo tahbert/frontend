@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Unit</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Unit</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Unit</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            <ul class="note">
+                                <li>omitted => 0 as default</li>
+                                <li><span class="badge red">impossible</span> whitespace between the number and the unit</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Absolute</td>
+                        <td>
+                            not recommended for use on screen<br>
+                            but can be used if the output medium is known, such as for print layout
+                        </td>
+                        <td>
+                            <table class="sub-table nowrap">
+                                <tr>
+                                    <th>Unit</th>
+                                    <th>Explanation</th>
+                                </tr>
+                                <tr>
+                                    <td>px</td>
+                                    <td>pixels</td>
+                                </tr>
+                                <tr>
+                                    <td>cm</td>
+                                    <td>centimeters</td>
+                                </tr>
+                                <tr>
+                                    <td>mm</td>
+                                    <td>millimeters</td>
+                                </tr>
+                                <tr>
+                                    <td>in</td>
+                                    <td>inches (1in = 96px = 2.54cm)</td>
+                                </tr>
+                                <tr>
+                                    <td>pt</td>
+                                    <td>points (1pt = 1/72 of 1in)</td>
+                                </tr>
+                                <tr>
+                                    <td>pc</td>
+                                    <td>picas (1pc = 12 pt)</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Relative</td>
+                        <td>
+                            scale better between different rendering mediums<br>
+                            <ul class="note">
+                                <li>
+                                    <span class="text-red">em, rem</span>
+                                    practical in creating perfectly scalable layout<br>
+                                </li>
+                                <li>
+                                    <span class="text-red">viewport</span> 
+                                    the browser window size
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <table class="sub-table nowrap">
+                                <tr>
+                                    <th>Unit</th>
+                                    <th>Explanation</th>
+                                </tr>
+                                <tr>
+                                    <td>rem</td>
+                                    <td>relative to the root element font-size</td>
+                                </tr>
+                                <tr>
+                                    <td>em</td>
+                                    <td>relative to the current element font-size</td>
+                                </tr>
+                                <tr>
+                                    <td>%</td>
+                                    <td>relative to the parent element</td>
+                                </tr>
+                                <tr>
+                                    <td>vw</td>
+                                    <td>relative to 1% of the width of the viewport</td>
+                                </tr>
+                                <tr>
+                                    <td>vh</td>
+                                    <td>relative to 1% of the height of the viewport*</td>
+                                </tr>
+                                <tr>
+                                    <td>vmin</td>
+                                    <td>relative to 1% of viewport's smaller dimension</td>
+                                </tr>
+                                <tr>
+                                    <td>vmax</td>
+                                    <td>relative to 1% of viewport's larger dimension</td>
+                                </tr>
+                                <tr>
+                                    <td>ch</td>
+                                    <td>relative to width of the "0" (zero)</td>
+                                </tr>
+                                <tr>
+                                    <td>ex <span class="badge red">rarely</span></td>
+                                    <td>relative to the x-height of the current font</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script-detail.js" defer></script>
+</body>
+
+</html>
