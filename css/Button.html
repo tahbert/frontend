@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>Buttons</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Buttons</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Buttons</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Types of button</td>
+                        <td>
+                            <ul>
+                                <strong>default button</strong>
+                                <li>&lt;button&gt;&lt;/button&gt;</li>
+                                <strong>link button</strong>
+                                <li>&lt;a&gt;&lt;/a&gt;</li>
+                                <strong>input button</strong>
+                                <li>&lt;input&gt;</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button>Click me</button><br><br>
+                            <a href="#">Click me</a><br><br>
+                            <input type="button" value="Click me"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Reseting</td>
+                        <td>
+                            <ul>
+                                <strong>default button</strong>
+                                <li>border: none;</li>
+                                <li>cursor: pointer;</li>
+                                <strong>link button</strong>
+                                <li>border: none;</li>
+                                <li>cursor: pointer;</li>
+                                <li>display: inline-block;</li>
+                                <li>text-decoration: none;</li>
+                                <strong>input button</strong>
+                                <li>border: none;</li>
+                                <li>cursor: pointer;</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="setting">Click me</button><br><br><br>
+                            <a class="setting" href="#">Click me</a><br><br><br><br><br>
+                            <input class="setting" type="button" value="Click me"><br>
+        
+                            <style>
+                                .setting {
+                                    border: none;
+                                    cursor: pointer;
+                                }
+        
+                                a.setting {
+                                    display: inline-block;
+                                    text-decoration: none;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Align</td>
+                        <td>
+                            <ul>
+                                <li>padding: 12px 28px;</li>
+                                <li>text-align: center;</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="aligned">Click me</button>
+        
+                            <style>
+                                .aligned {
+                                    border: none;
+                                    cursor: pointer;
+                                    padding: 12px 28px;
+                                    text-align: center;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Color</td>
+                        <td>
+                            <ul>
+                                <li>color</li>
+                                <li>background-color</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="colored">Click me</button>
+        
+                            <style>
+                                .colored {
+                                    border: none;
+                                    cursor: pointer;
+                                    padding: 12px 28px;
+                                    text-align: center;
+                                    color: white;
+                                    background-color: #04AA6D;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td>
+                            <ul>
+                                <li>font-size</li>
+                                <li>padding</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="sized">Click me</button>
+        
+                            <style>
+                                .sized {
+                                    border: none;
+                                    cursor: pointer;
+                                    font-size: 18px;
+                                    padding: 12px 28px;
+                                    text-align: center;
+                                    color: white;
+                                    background-color: #04AA6D;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Border</td>
+                        <td>
+                            <ul>
+                                <li>border</li>
+                                <li>border-radius</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="bordered">Click me</button>
+                            <button class="bordered-rounded">Click</button>
+        
+                            <style>
+                                .bordered {
+                                    cursor: pointer;
+                                    padding: 12px 28px;
+                                    text-align: center;
+                                    border: 2px solid #04AA6D;
+                                    border-radius: 12px;
+                                }
+        
+                                .bordered-rounded {
+                                    cursor: pointer;
+                                    padding: 12px 28px;
+                                    text-align: center;
+                                    border: 2px solid #04AA6D;
+                                    border-radius: 50%;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hoverable</td>
+                        <td>
+                            <ul>
+                                <li>.button {transition: 0.3s}</li>
+                                <li>.button:hover {color: white;}</li>
+                                <li>.button:hover {background: #04AA6D;} <span class="text-green">the same color as the
+                                        border</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="hoverable">Click me</button>
+        
+                            <style>
+                                .hoverable {
+                                    cursor: pointer;
+                                    padding: 12px 28px;
+                                    text-align: center;
+                                    border: 2px solid #04AA6D;
+                                    border-radius: 12px;
+                                    transition: 0.3s;
+                                }
+        
+                                .hoverable:hover {
+                                    color: white;
+                                    background: #04AA6D;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Shadow</td>
+                        <td>
+                            <ul>
+                                <li>.button:hover {box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);}
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="shadowed">Click me</button>
+        
+                            <style>
+                                .shadowed {
+                                    cursor: pointer;
+                                    padding: 12px 28px;
+                                    text-align: center;
+                                    border: 2px solid #04AA6D;
+                                    border-radius: 12px;
+                                    transition: 0.3s;
+                                }
+        
+                                .shadowed:hover {
+                                    color: white;
+                                    background: #04AA6D;
+                                    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Disable</td>
+                        <td>
+                            <ul>
+                                <strong>style the disabled look</strong>
+                                <li>opacity: 0.6;</li>
+                                <li>cursor: not-allowed;</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="disable-button" disabled>Click me</button>
+                            <!--you can place disable property inside the class-->
+        
+                            <style>
+                                .disable-button {
+                                    border: none;
+                                    padding: 12px 28px;
+                                    text-align: center;
+                                    color: white;
+                                    background: #04AA6D;
+                                    border-radius: 12px;
+                                    /* style the disable */
+                                    opacity: 0.6;
+                                    cursor: not-allowed;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Full width</td>
+                        <td>
+                            <ul>
+                                <li>width: 100%;</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="full-width">Click me</button>
+        
+                            <style>
+                                .full-width {
+                                    border: none;
+                                    padding: 12px 28px;
+                                    text-align: center;
+                                    width: 100%;
+                                    color: white;
+                                    background: #04AA6D;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Button on Image</td>
+                        <td></td>
+                        <td>
+                            <div class="button-on-image">
+                                <button>Click me</button>
+                                <img src="imgs/paris.jpg" alt="Paris">
+                            </div>
+        
+                            <style>
+                                .button-on-image {
+                                    position: relative;
+                                }
+        
+                                .button-on-image img {
+                                    width: 100%;
+                                }
+        
+                                .button-on-image button {
+                                    position: absolute;
+                                    cursor: pointer;
+                                    padding: 12px 28px;
+                                    text-align: center;
+                                    border: 2px solid #04AA6D;
+                                    border-radius: 12px;
+                                    transition: 0.3s;
+                                    top: 50%;
+                                    left: 50%;
+                                    -webkit-transform: translate(-50%, -50%);
+                                    transform: translate(-50%, -50%);
+                                }
+        
+                                .button-on-image button:hover {
+                                    color: white;
+                                    background: #04AA6D;
+                                    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Animated Buttons</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Arrow</td>
+                        <td>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="arrow"><span>Hover me </span></button>
+        
+                            <style>
+                                .arrow {
+                                    /*instead of padding: 12px 28px; to fix the width on hover*/
+                                    padding: 12px;
+                                    width: 160px;
+                                    text-align: center;
+                                    cursor: pointer;
+                                    font-size: 18px;
+                                    color: white;
+                                    background: #04AA6D;
+                                    border: none;
+                                    border-radius: 12px;
+                                    transition: all 0.5s;
+                                    /*dont know why*/
+                                }
+        
+                                .arrow span {
+                                    display: inline-block;
+                                    /*from display: inline => need to position the span:after*/
+                                    position: relative;
+                                    /*need to position the span:after*/
+                                    transition: 0.5s;
+                                }
+        
+                                .arrow:hover span {
+                                    padding-right: 20px;
+                                    /*from 0 to 20px*/
+                                }
+        
+                                .arrow span:after {
+                                    content: '\00bb';
+                                    position: absolute;
+                                    top: 0;
+                                    /*dont know why*/
+                                    right: -20px;
+                                    opacity: 0;
+                                    transition: 0.5s;
+                                }
+        
+                                .arrow:hover span:after {
+                                    opacity: 1;
+                                    right: 0;
+                                    /*from 20px to 0*/
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fade in</td>
+                        <td>
+                            <ul>
+                                <li>.button {opacity: 0.6; transition: 0.3s;}</li>
+                                <li>.button:hover {opacity: 1;}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="fadein">Hover me</button>
+        
+                            <style>
+                                .fadein {
+                                    padding: 12px;
+                                    width: 160px;
+                                    text-align: center;
+                                    cursor: pointer;
+                                    font-size: 18px;
+                                    color: white;
+                                    background: #04AA6D;
+                                    border: none;
+                                    border-radius: 12px;
+                                    opacity: 0.6;
+                                    transition: 0.3s;
+                                }
+        
+                                .fadein:hover {
+                                    opacity: 1;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ripple Effect <span class="text-red">later</span></td>
+                        <td>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="ripple">Click me</button>
+        
+                            <style>
+                                .ripple {
+                                    position: relative;
+                                    padding: 12px;
+                                    width: 160px;
+                                    text-align: center;
+                                    cursor: pointer;
+                                    font-size: 18px;
+                                    color: white;
+                                    background: #04AA6D;
+                                    border: none;
+                                    border-radius: 12px;
+                                    overflow: hidden;
+                                    transition: 0.4s;
+                                }
+        
+                                .ripple:after {
+                                    content: "";
+                                    display: block;
+                                    position: absolute;
+                                    padding-top: 300%;
+                                    padding-left: 350%;
+                                    margin-left: -20px !important;
+                                    margin-top: -120%;
+                                    background: #f1f1f1;
+                                    opacity: 0;
+                                    transition: all 0.8s
+                                }
+        
+                                .ripple:active:after {
+                                    padding: 0;
+                                    margin: 0;
+                                    opacity: 1;
+                                    transition: 0s
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pressed Effect</td>
+                        <td>
+                            <ul>
+                                <li>.button {box-shadow: 0 9px #999;}</li>
+                                <li>.button:active {box-shadow: 0 5px #666;}</li>
+                                <li>.button:active {transform: translateY(4px);}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="pressed">Click me</button>
+        
+                            <style>
+                                .pressed {
+                                    display: inline-block;
+                                    /*dont know why*/
+                                    padding: 12px;
+                                    width: 160px;
+                                    text-align: center;
+                                    cursor: pointer;
+                                    font-size: 18px;
+                                    color: white;
+                                    background: #04AA6D;
+                                    border: none;
+                                    border: none;
+                                    /*dont know why*/
+                                    text-decoration: none;
+                                    /*dont know why*/
+                                    border-radius: 12px;
+                                    box-shadow: 0 9px #999;
+                                    /*important*/
+                                }
+        
+                                .pressed:hover {
+                                    background: #047a4d;
+                                }
+        
+                                .pressed:active {
+                                    background: #047a4d;
+                                    box-shadow: 0 5px #666;
+                                    transform: translateY(4px);
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>Button Group</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Horizontal</td>
+                        <td>
+                            <ul>
+                                <li>display: inline-block; <span class="text-green">already</span></li>
+                                <li>float: left;</li>
+                                <li>clear: both;</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="horizontal-group">
+                                <button class="button">Button</button>
+                                <button class="button">Button</button>
+                                <button class="button">Button</button>
+                                <button class="button">Button</button>
+                            </div>
+        
+                            <p style="clear:both;"><br>Remember to clear floats after, or else will this p element also float
+                                next to the buttons</p>
+        
+                            <style>
+                                .horizontal-group button {
+                                    /*display: inline-block; already*/
+                                    float: left;
+                                    border: none;
+                                    padding: 12px 28px;
+                                    text-align: center;
+                                    color: white;
+                                    background: #04AA6D;
+                                }
+        
+                                .horizontal-group button:hover {
+                                    background: #047a4d;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Divider</td>
+                        <td>
+                            <ul>
+                                <li>border: 1px solid green;</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="horizontal-divider">
+                                <button class="button">Button</button>
+                                <button class="button">Button</button>
+                                <button class="button">Button</button>
+                                <button class="button">Button</button>
+                            </div>
+        
+                            <div style="clear:both;"></div>
+        
+                            <style>
+                                .horizontal-divider button {
+                                    /*display: inline-block; already*/
+                                    float: left;
+                                    border: none;
+                                    padding: 12px 28px;
+                                    text-align: center;
+                                    color: white;
+                                    background: #04AA6D;
+                                    border: 1px solid green;
+                                }
+        
+                                .horizontal-divider button:hover {
+                                    background: #047a4d;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vertical</td>
+                        <td>
+                            <ul>
+                                <li>display: block;</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="vertical">
+                                <button class="button">Button</button>
+                                <button class="button">Button</button>
+                                <button class="button">Button</button>
+                                <button class="button">Button</button>
+                            </div>
+        
+                            <style>
+                                .vertical button {
+                                    display: block;
+                                    border: none;
+                                    padding: 12px 28px;
+                                    text-align: center;
+                                    color: white;
+                                    background: #04AA6D;
+                                    border: 1px solid green;
+                                }
+        
+                                .vertical button:hover {
+                                    background: #047a4d;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

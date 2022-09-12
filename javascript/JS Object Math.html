@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>Object Math</title>
+    <script>
+        var r = "// result: "
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Object Math</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>General</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            allow to perform mathematical tasks on numbers<br>
+                            <div class="note">Math is a static object</div>
+                        </td>
+                        <td>
+                            Math.PI; <span class="text-blur" id="math1"></span>
+                            <script>
+                                document.getElementById("math1").innerHTML = r + Math.PI;
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Math Properties</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Math.PI</td>
+                        <td>return number - PI</td>
+                        <td>
+                            Math.PI; <span class="text-blur" id="m2_id"></span>
+    
+                            <script>
+                                document.getElementById("m2_id").innerHTML = r + Math.PI;
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Math.E</td>
+                        <td>return number - Euler's number</td>
+                        <td>
+                            Math.E; <span class="text-blur" id="m3_id"></span>
+    
+                            <script>
+                                document.getElementById("m3_id").innerHTML = r + Math.E;
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Math.SQRT2</td>
+                        <td>return number - the square root of 2</td>
+                        <td>
+                            Math.SQRT2; <span class="text-blur" id="m4_id"></span>
+    
+                            <script>
+                                document.getElementById("m4_id").innerHTML = r + Math.SQRT2;
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Math.SQRT1_2</td>
+                        <td>return number - the square root of 1/2</td>
+                        <td>
+                            Math.SQRT1_2; <span class="text-blur" id="m5_id"></span>
+    
+                            <script>
+                                document.getElementById("m5_id").innerHTML = r + Math.SQRT1_2;
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Math.LN2</td>
+                        <td>return number - the natural logarithm of 2</td>
+                        <td>
+                            Math.LN2; <span class="text-blur" id="m6_id"></span>
+    
+                            <script>
+                                document.getElementById("m6_id").innerHTML = r + Math.LN2;
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Math.LN10</td>
+                        <td>return number - the natural logarithm of 10</td>
+                        <td>
+                            Math.LN10; <span class="text-blur" id="m7_id"></span>
+    
+                            <script>
+                                document.getElementById("m7_id").innerHTML = r + Math.LN10;
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Math.LOG2E</td>
+                        <td>return number - base 2 logarithm of E</td>
+                        <td>
+                            Math.LOG2E; <span class="text-blur" id="m8_id"></span>
+    
+                            <script>
+                                document.getElementById("m8_id").innerHTML = r + Math.LOG2E;
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Math.LOG10E</td>
+                        <td>return number - base 10 logarithm of E</td>
+                        <td>
+                            Math.LOG10E; <span class="text-blur" id="m9_id"></span>
+    
+                            <script>
+                                document.getElementById("m9_id").innerHTML = r + Math.LOG10E;
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Math Methods</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Number to Integer</td>
+                    </tr>
+                    <tr>
+                        <td>Math.round()</td>
+                        <td>
+                            <span class="text-red">Math.round(<i>x</i>)</span><br>
+                            return number - rounded to the nearest integer
+                        </td>
+                        <td>
+                            Math.round(4.9) <span class="text-blur" id="mmid1"></span><br>
+                            Math.round(4.2) <span class="text-blur" id="mmid2"></span><br>
+                            Math.round(-4.2) <span class="text-blur" id="mmid3"></span><br>
+    
+                            <script>
+                                document.getElementById("mmid1").innerHTML = r + Math.round(4.9);
+                                document.getElementById("mmid2").innerHTML = r + Math.round(4.2);
+                                document.getElementById("mmid3").innerHTML = r + Math.round(-4.2);
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Math.ceil()</td>
+                        <td>
+                            <span class="text-red">Math.ceil(<i>x</i>)</span><br>
+                            return number - rounded up to the nearest integer
+                        </td>
+                        <td>
+                            Math.ceil(4.9) <span class="text-blur" id="mmid4"></span><br>
+                            Math.ceil(4.2) <span class="text-blur" id="mmid5"></span><br>
+                            Math.ceil(-4.2) <span class="text-blur" id="mmid6"></span><br>
+    
+                            <script>
+                                document.getElementById("mmid4").innerHTML = r + Math.ceil(4.9);
+                                document.getElementById("mmid5").innerHTML = r + Math.ceil(4.2);
+                                document.getElementById("mmid6").innerHTML = r + Math.ceil(-4.2);
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Math.floor()</td>
+                        <td>
+                            <span class="text-red">Math.floor(<i>x</i>)</span><br>
+                            return number - rounded down to the nearest integer
+                        </td>
+                        <td>
+                            Math.floor(4.9) <span class="text-blur" id="mmid7"></span><br>
+                            Math.floor(4.2) <span class="text-blur" id="mmid8"></span><br>
+                            Math.floor(-4.2) <span class="text-blur" id="mmid9"></span><br>
+    
+                            <script>
+                                document.getElementById("mmid7").innerHTML = r + Math.floor(4.9);
+                                document.getElementById("mmid8").innerHTML = r + Math.floor(4.2);
+                                document.getElementById("mmid9").innerHTML = r + Math.floor(-4.2);
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Math.trunc()</td>
+                        <td>
+                            <span class="text-red">Math.trunc(<i>x</i>)</span><br>
+                            return number - the integer part
+                        </td>
+                        <td>
+                            Math.trunc(4.9) <span class="text-blur" id="trunc1"></span><br>
+                            Math.trunc(4.2) <span class="text-blur" id="trunc2"></span><br>
+                            Math.trunc(-4.2) <span class="text-blur" id="trunc3"></span><br>
+    
+                            <script>
+                                document.getElementById("trunc1").innerHTML = r + Math.trunc(4.9);
+                                document.getElementById("trunc2").innerHTML = r + Math.trunc(4.2);
+                                document.getElementById("trunc3").innerHTML = r + Math.trunc(-4.2);
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Math.sign()</td>
+                        <td>
+                            <span class="text-red">Math.sign(<i>x</i>)</span><br>
+                            return number - represent the number is negative, positive or null
+                        </td>
+                        <td>
+                            Math.sign(0) <span class="text-blur" id="sign1"></span><br>
+                            Math.sign(4.2) <span class="text-blur" id="sign2"></span><br>
+                            Math.sign(-4.2) <span class="text-blur" id="sign3"></span><br>
+    
+                            <script>
+                                document.getElementById("sign1").innerHTML = r + Math.sign(0);
+                                document.getElementById("sign2").innerHTML = r + Math.sign(4.2);
+                                document.getElementById("sign3").innerHTML = r + Math.sign(-4.2);
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Power or Square</td>
+                    </tr>
+                    <tr>
+                        <td>Math.pow()</td>
+                        <td>
+                            <span class="text-red">Math.pow(<i>x, y</i>)</span><br>
+                            return number - the value of x to the power of y
+                        </td>
+                        <td>
+                            Math.pow(8,2) <span class="text-blur" id="pow1"></span><br>
+                            <script>
+                                document.getElementById("pow1").innerHTML = r + Math.pow(8, 2);
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Math.sqrt()</td>
+                        <td>
+                            <span class="text-red">Math.sqrt(<i>x</i>)</span><br>
+                            return number - the square root of x</td>
+                        <td>
+                            Math.sqrt(64) <span class="text-blur" id="sqrt1"></span><br>
+                            <script>
+                                document.getElementById("sqrt1").innerHTML = r + Math.sqrt(64);
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Math.min()<br>
+                            Math.max()<br>
+                        </td>
+                        <td>
+                            <span class="text-red">Math.min(<i>x, y , etc</i>)</span><br>
+                            <span class="text-red">Math.max(<i>x, y , etc</i>)</span><br>
+                            return number - the min/max number
+                        </td>
+                        <td>
+                            Math.min(1, 11, 22, -33) <span class="text-blur" id="min1"></span><br>
+                            Math.max(1, 11, 22, -33) <span class="text-blur" id="max1"></span><br>
+                            <script>
+                                document.getElementById("min1").innerHTML = r + Math.min(1, 11, 22, -33);
+                                document.getElementById("max1").innerHTML = r + Math.max(1, 11, 22, -33);
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Math.abs()</td>
+                        <td>
+                            <span class="text-red">Math.abs(<i>x</i>)</span><br>
+                            return number - the absolute (positive) value of x
+                        </td>
+                        <td>
+                            Math.abs(-4.2) <span class="text-blur" id="abs1"></span><br>
+                            <script>
+                                document.getElementById("abs1").innerHTML = r + Math.abs(-4.2);
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Random</td>
+                    </tr>
+                    <tr>
+                        <td>Math.random()</td>
+                        <td>
+                            <span class="text-red">Math.random(<i></i>)</span><br>
+                            return number - random number between 0 (inclusive), and 1 (exclusive)
+                        </td>
+                        <td>
+                            Math.random() <span class="text-blur" id="random1"></span><br>
+                            <script>
+                                document.getElementById("random1").innerHTML = r + Math.random();
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="text-blur">Random Intergers</span>
+                        </td>
+                        <td>used with <span class="text-red">Math.floor()</span></td>
+                        <td>
+                            <h4> return a random integer from 0 to 9</h4>
+                            Math.floor(Math.random()*10); <span class="text-blur" id="random2"></span>
+                            <h4> // return a random integer from 1 to 10</h4>
+                            Math.floor(Math.random()*10 + 1); <span class="text-blur" id="random3"></span>
+                            <script>
+                                document.getElementById("random2").innerHTML = r + Math.floor(Math.random() * 10);
+                                document.getElementById("random3").innerHTML = r + Math.floor(Math.random() * 10 + 1);
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="text-blur">Proper Function</span>
+                        </td>
+                        <td>random number between min (included) and max (excluded)</td>
+                        <td>
+                            <span id="random4"></span>
+                            <button onclick="document.getElementById('random4').innerHTML = 
+                            r + getRndInteger(0,10)">Click Me</button>
+    
+                            <script>
+                                function getRndInteger(min, max) {
+                                    return Math.floor(Math.random() * (max - min)) + min;
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>random number between min (included) and max (included)</td>
+                        <td>
+                            <span id="random5"></span>
+                            <button onclick="document.getElementById('random5').innerHTML = 
+                            r + getRndInteger(1,10)">Click Me</button>
+    
+                            <script>
+                                function getRndInteger(min, max) {
+                                    return Math.floor(Math.random() * (max - min + 1)) + min;
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Trigonometry</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">
+                            <table>
+                                <tr>
+                                    <td>Math.sin()</td>
+                                    <td>return the sine (a value between -1 and 1) of the angle x (given in radians).</td>
+                                </tr>
+                                <tr>
+                                    <td>Math.cos()</td>
+                                    <td>return the cosine (a value between -1 and 1) of the angle x (given in radians).</td>
+                                </tr>
+                                <tr>
+                                    <td>Math.log()</td>
+                                    <td>return the natural logarithm of x</td>
+                                </tr>
+                                <tr>
+                                    <td>Math.log2()</td>
+                                    <td>return the base 2 logarithm of x.</td>
+                                </tr>
+                                <tr>
+                                    <td>Math.log10()</td>
+                                    <td>return the base 10 logarithm of x.</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Other uncommon</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">
+                            <table>
+                                <tr>
+                                    <td>asin()</td>
+                                    <td>return the arcsine of x, in radians</td>
+                                </tr>
+                                <tr>
+                                    <td>asinh()</td>
+                                    <td>return the hyperbolic arcsine of x</td>
+                                </tr>
+                                <tr>
+                                    <td>acos()</td>
+                                    <td>return the arccosine of x</td>
+                                </tr>
+                                <tr>
+                                    <td>acosh()</td>
+                                    <td>return the hyperbolic arccosine of x</td>
+                                </tr>
+                                <tr>
+                                    <td>atan()</td>
+                                    <td>return the arctangent of x as a numeric value between -PI/2 and PI/2 radians</td>
+                                </tr>
+                                <tr>
+                                    <td>atan2()</td>
+                                    <td>return the arctangent of the quotient of its arguments</td>
+                                </tr>
+                                <tr>
+                                    <td>atanh()</td>
+                                    <td>return the hyperbolic arctangent of x</td>
+                                </tr>
+                                <tr>
+                                    <td>cbrt()</td>
+                                    <td>return the cubic root of x</td>
+                                </tr>
+                                <tr>
+                                    <td>cosh()</td>
+                                    <td>return the hyperbolic cosine of x</td>
+                                </tr>
+                                <tr>
+                                    <td>exp()</td>
+                                    <td>return the value of Ex</td>
+                                </tr>
+                                <tr>
+                                    <td>sinh()</td>
+                                    <td>return the hyperbolic sine of x</td>
+                                </tr>
+                                <tr>
+                                    <td>sqrt()</td>
+                                    <td>return the square root of x</td>
+                                </tr>
+                                <tr>
+                                    <td>tan()</td>
+                                    <td>return the tangent of an angle</td>
+                                </tr>
+                                <tr>
+                                    <td>tanh()</td>
+                                    <td>return the hyperbolic tangent of a number</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

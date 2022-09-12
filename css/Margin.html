@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>Margin</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Margin</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Margin</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>margin</td>
+                        <td>
+                            <code>margin</code>: <i>length</i>|auto|initial|inherit; (default: 0)<br>
+                            set space around elements, outside of any defined borders<br>
+                            <div class="note"> 
+                                <span class="badge green">possible</span>
+                                negative values
+                            </div>
+                            <h3>more specific</h3>
+                            margin-top, margin-right, margin-bottom, margin-left
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="sub-head">Mixing</td>
+                        <td>according to clock direction</td>
+                        <td>
+                            <div class="mix_container">
+                                <div class="mix_content_1">margin: 5px;</div>
+                            </div>
+                            <div class="mix_container">
+                                <div class="mix_content_2">margin: 5px 10px;</div>
+                            </div>
+                            <div class="mix_container">
+                                <div class="mix_content_3">margin: 5px 10px 15px;</div>
+                            </div>
+                            <div class="mix_container">
+                                <div class="mix_content_4">margin: 5px 10px 15px 20px;</div>
+                            </div>
+                            <style>
+                                .mix_container {
+                                    border: 1px solid black;
+                                    margin-top: 5px;
+                                    background: DarkSeaGreen;
+                                }
+                                [class*=mix_content] {
+                                    padding: 5px;
+                                    background:wheat;
+                                }
+                                .mix_content_1 {margin:5px;}
+                                .mix_content_2 {margin: 5px 10px;}
+                                .mix_content_3 {margin: 5px 10px 15px;}
+                                .mix_content_4 {margin: 5px 10px 15px 20px;}
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Collapse</td>
+                        <td>
+                            top and bottom margins are sometimes collapsed into the largest margin
+                        </td>
+                        <td>
+                            <h4>collapsed to 20px (the largest margin)</h4>
+                            <div class="collapse_content_1">margin: 0 0 20px 0;</div>
+                            <div class="collapse_content_2">margin: 10px 0 0 0; </div>
+                            <style>
+                                [class*=collapse_content] {
+                                    padding: 5px;
+                                    background:wheat;
+                                }
+                                .collapse_content_1 {margin: 0 0 20px 0;}
+                                .collapse_content_2 {margin: 10px 0 0 0; }
+                            </style>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

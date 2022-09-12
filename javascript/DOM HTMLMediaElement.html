@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>HTMLMediaElement</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>HTMLMediaElement</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>HTMLMediaElement Object</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>the object representing an &lt;video&gt; or &lt;audio&gt; element</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td colspan="2">
+                            <span class="highlight">EventTarget</span> &lt;= 
+                            <span class="highlight">Node</span> &lt;= 
+                            <span class="highlight">Element</span> &lt;= 
+                            <span class="highlight">HTMLElement</span> &lt;= 
+                            <span class="highlight">HTMLMediaElement</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Methods and Properties</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>later</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Events</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">Event</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/tags/av_event_waiting.asp" 
+                            target="_blank">waiting</a>
+                        </td>
+                        <td>
+                            when the media stops to buffer the next frame.
+                            <div class="note">most used on &lt;video&gt;</div>
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onwaiting</span> = () => {<br>
+                                &emsp;alert('please wait!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onabort_media.asp" 
+                            target="_blank">abort</a>
+                        </td>
+                        <td>
+                            when the media data download has been aborted, not because of an error.
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onabort</span> = () => {<br>
+                                &emsp;alert('abort loading!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onvolumechange.asp" 
+                            target="_blank">volumechange</a>
+                        </td>
+                        <td>
+                            each time the volume has been changed.<br>
+                            (increase/ decrease/ mute/ unmute)
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onvolumechange</span> = () => {<br>
+                                &emsp;alert('volume changed!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_ontimeupdate.asp" 
+                            target="_blank">timeupdate</a>
+                        </td>
+                        <td>
+                            when the playing position has changed.
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">ontimeupdate</span> = () => {<br>
+                                &emsp;alert('playing position changed!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onseeking.asp" 
+                            target="_blank">seeking</a>
+                        </td>
+                        <td>
+                            when the user starts moving/skipping to a new position.
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onseeking</span> = () => {<br>
+                                &emsp;alert('seek operation began!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onseeked.asp" 
+                            target="_blank">seeked</a>
+                        </td>
+                        <td>
+                            when the user is finished moving/skipping to a new position
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onseeked</span> = () => {<br>
+                                &emsp;alert('seek operation completed!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onerror_media.asp" 
+                            target="_blank">error</a>
+                        </td>
+                        <td>
+                            when an error occurred during the loading of a media
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        <td>
+                            el.<span class="text-red">onerror</span> = () => {<br>
+                                &emsp;alert('loadding error!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onstalled.asp" 
+                            target="_blank">stalled</a>
+                        </td>
+                        <td>
+                            when the browser is trying to get media data, but data is not available.
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        <td>
+                            el.<span class="text-red">onstalled</span> = () => {<br>
+                                &emsp;alert('data unavailable!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onsuspend.asp" 
+                            target="_blank">suspend</a>
+                        </td>
+                        <td>
+                            when the browser is intentionally not getting media data.
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        <td>
+                            el.<span class="text-red">onsuspend</span> = () => {<br>
+                                &emsp;alert('data loading suspended!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onended.asp" 
+                            target="_blank">ended</a>
+                        </td>
+                        <td>
+                            when the media has reached the end
+                            <div class="note">useful for messages like "thanks for watching", etc.</div>
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onended</span> = () => {<br>
+                                &emsp;alert('Thanks for watching!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onplay.asp"
+                            target="_blank">play</a>
+                        </td>
+                        <td>
+                            when <span class="text-red">paused</span> property is changed from true to false<br>
+                            when as a result of <span class="text-red">play()</span> , or <span class="text-red">autoplay</span> attribute.
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onplay</span> = () => {<br>
+                                &emsp;alert('the video has started to play!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onplaying.asp"
+                            target="_blank">playing</a>
+                        </td>
+                        <td>
+                            after playback is first started, and whenever it is restarted
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onplaying</span> = () => {<br>
+                                &emsp;alert('the video is now playing!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onpause.asp" 
+                            target="_blank">pause</a>
+                        </td>
+                        <td>
+                            when the media is paused either by the user or programmatically.
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onpause</span> = () => {<br>
+                                &emsp;alert('video paused!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onratechange.asp" 
+                            target="_blank">ratechange</a>
+                        </td>
+                        <td>
+                            the playing speed of the media is changed (slow motion or fast forward)
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.playbackRate = 0.3;<br>
+                            el.<span class="text-red">onratechange</span> = () => {<br>
+                                &emsp;alert('slow motion!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">Event</span> > During the loading</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_oncanplay.asp" 
+                            target="_blank">canplay</a>
+                        </td>
+                        <td>
+                            when the browser can play the media (buffered enough).
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">oncanplay</span> = () => {<br>
+                                &emsp;alert('can start playing!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp" 
+                            target="_blank">canplaythrough</a>
+                        </td>
+                        <td>
+                            when the browser can play through the media (without stopping for buffering)
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">oncanplaythrough</span> = () => {<br>
+                                &emsp;alert('can play through without stopping!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onloadstart.asp" 
+                            target="_blank">loadstart</a>
+                        </td>
+                        <td>
+                            when the browser starts loading the media.<br>
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">oncanplay</span> = () => {<br>
+                                &emsp;alert('starting to load media!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_ondurationchange.asp" 
+                            target="_blank">durationchange</a>
+                        </td>
+                        <td>
+                            when the duration of the media is changed
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">ondurationchange</span> = () => {<br>
+                                &emsp;alert('duration changed!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onloadedmetadata.asp" 
+                            target="_blank">loadedmetadata</a>
+                        </td>
+                        <td>
+                            when meta data for the media has been loaded.
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onloadedmetadata</span> = () => {<br>
+                                &emsp;alert('meta data loaded!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onloadeddata.asp" 
+                            target="_blank">loadeddata</a>
+                        </td>
+                        <td>
+                            when data for the current frame is loaded, 
+                            but not enough data to play next frame
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onloadeddata</span> = () => {<br>
+                                &emsp;alert('current frame loaded!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onprogress.asp" 
+                            target="_blank">progress</a>
+                        </td>
+                        <td>
+                            when the browser is downloading the media
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i> |
+                                bubble <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onprogress</span> = () => {<br>
+                                &emsp;alert('downloading video!');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

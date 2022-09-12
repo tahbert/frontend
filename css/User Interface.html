@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    
+    <title>User Interface</title>
+  </head>
+  <body>
+    
+      <div>
+        <h1>User Interface</h1>
+      </div>
+      <!--Title here------------------------------------------------------------------------------------------------------------>
+      <h2>User Interface</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>resize</td>
+            <td>
+              <strong>resize</strong>: <span class="text-danger">none</span>|both|horizontal|vertical|initial|inherit;<br>
+              Specify if (and how) an element should be resizable by the user<br>
+              <span class="text-success">Note: not apply to inline elements or to block elements where overflow="visible"</span>
+            </td>
+            <td>
+              <div class="resize-default">
+                <h6>default: none;</h6>
+                <p>To resize: Click and drag the bottom right corner of this div element.</p>
+              </div>
+
+              <style>
+                .resize-default {
+                  border: 2px solid #555;
+                  padding: 20px;
+                  width: 300px;
+                  overflow: auto;
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>textarea {resize: none;} <span class="text-success">disable the resizability:</span></td>
+            <td>
+              <textarea>default: both: Bootstrap have changed to vertical only</textarea>
+              <textarea style="resize: none;">resize: none;</textarea>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <div class="resize-both">
+                <h6>resize: both;</h6>
+                <p>To resize: Click and drag the bottom right corner of this div element.</p>
+              </div>
+
+              <style>
+                .resize-both {
+                  border: 2px solid #555;
+                  padding: 20px;
+                  width: 300px;
+                  overflow: auto;
+                  resize: both;
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <div class="resize-horizontal">
+                <h6>resize: horizontal;</h6>
+                <p>To resize: Click and drag the bottom right corner of this div element</p>
+              </div>
+
+              <style>
+                .resize-horizontal {
+                  border: 2px solid #555;
+                  padding: 20px;
+                  width: 300px;
+                  overflow: auto;
+                  resize: horizontal;
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <div class="resize-vertical">
+                <h6>resize: vertical;</h6>
+                <p>To resize: Click and drag the bottom right corner of this div element</p>
+              </div>
+
+              <style>
+                .resize-vertical {
+                  border: 2px solid #555;
+                  padding: 20px;
+                  width: 300px;
+                  overflow: auto;
+                  resize: vertical;
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>outline-offset</td>
+            <td><a href="box.html">see more</a></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  
+    <script src="../script-detail.js"></script>
+</body>
+</html>

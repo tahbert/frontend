@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>CSS Dropdowns</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>CSS Dropdowns</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>CSS Dropdowns</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Basic Dropdown</td>
+                        <td>
+                            <ul>
+                                <strong>Position:</strong>
+                                <li>.dropdown {position: relative;} <span class="text-green">needed for .dropdown-content to
+                                        be <strong>absolute</strong></span></li>
+                                <li>.dropdown-content {position: absolute;}<span class="text-green"></span></li>
+                                <strong>Display:</strong>
+                                <li>.dropdown-content {display: none;} <span class="text-green">make it invisible</span></li>
+                                <li>.dropdown:hover .dropdown-content {display: block;} <span class="text-green">make it
+                                        visible right below</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <span
+                                    style="display: block; padding: 12px 14px; color: white; background: #04AA6D; text-align: center;">Dropdown
+                                    Menu</span>
+                                <div class="dropdown-content">Hello!</div>
+                            </div>
+        
+                            <style>
+                                .dropdown {
+                                    position: relative;
+                                    display: inline-block;
+                                }
+                                .dropdown-content {
+                                    position: absolute;
+                                    display: none;
+                                    overflow: auto;
+                                    /* enable scroll on small screens */
+                                    width: 100%;
+                                    /* make it wide as the button */
+                                    padding: 10px;
+                                    text-align: center;
+                                    background: #f9f9f9;
+                                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                                    z-index: 1;
+                                    /* make sure the content is in front of others */
+                                }
+                                .dropdown:hover {
+                                    cursor: pointer;
+                                }
+                                .dropdown:hover .dropdown-content {
+                                    display: block;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dropdown Image</td>
+                        <td></td>
+                        <td>
+                            <h4>Hover over the image</h4>
+                            <div class="drop-img">
+                                <img class="img" src="imgs/tahbert-thumbnail.png">
+                                <div class="drop-img-content">
+                                    <img src="imgs/tahbert.png">
+                                    <div class="desc">This is Tahbert Nguyen</div>
+                                </div>
+                            </div>
+        
+                            <style>
+                                .drop-img {
+                                    position: relative;
+                                    display: inline-block;
+                                }
+        
+                                .img {
+                                    width: 50px;
+                                    border: 2px solid #04AA6D;
+                                }
+        
+                                .img:hover {
+                                    cursor: pointer;
+                                }
+        
+                                .drop-img-content {
+                                    position: absolute;
+                                    display: none;
+                                    width: 200px;
+                                    margin-top: 5px;
+                                    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                                    z-index: 1;
+                                    background: #f9f9f9;
+                                }
+        
+                                .drop-img-content img {
+                                    width: 100%;
+                                }
+        
+                                .drop-img:hover .drop-img-content {
+                                    display: block;
+                                }
+        
+                                .drop-img .drop-img-content .desc {
+                                    padding: 10px;
+                                    text-align: center;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <!--Secondary Heading------------------------------------------------------------------------------------------------->
+                    <tr style="background-color: lightgray;">
+                        <td colspan="3">Dropdown Menu</td>
+                    </tr>
+                    <tr>
+                        <td>Basic Menu</td>
+                        <td>
+                            <ul>
+                                <strong>Heading:</strong>
+                                <li>item<span class="text-green">success</span></li>
+                                <li>item<span class="text-green">success</span></li>
+                                <strong>Heading:</strong>
+                                <li>item<span class="text-green">success</span></li>
+                                <li>item<span class="text-green">success</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="drop1">
+                                <button class="drop1-btn">Dropdown Menu</button>
+                                <div class="drop1-content">
+                                    <a href="#link1">Link 1</a>
+                                    <a href="#link2">Link 2</a>
+                                    <a href="#link3">Link 3</a>
+                                </div>
+                            </div>
+        
+                            <style>
+                                /* Style the container */
+                                .drop1 {
+                                    position: relative;
+                                    display: inline-block;
+                                }
+        
+                                /* Style the Dropdown Button */
+                                .drop1 .drop1-btn {
+                                    border: none;
+                                    padding: 12px 14px;
+                                    text-align: center;
+                                    color: white;
+                                    background: #04AA6D;
+                                    cursor: pointer;
+                                }
+        
+                                .drop1:hover .drop1-btn {
+                                    border: none;
+                                    /* resetting*/
+                                    padding: 12px 14px;
+                                    text-align: center;
+                                    color: white;
+                                    background: #3e8e41;
+                                    cursor: pointer;
+                                }
+        
+                                /* Style the Dropdown Content */
+                                .drop1-content {
+                                    position: absolute;
+                                    display: none;
+                                    width: 100%;
+                                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                                    z-index: 1;
+                                    background-color: #f9f9f9;
+                                    /* remove transparent also */
+                                }
+        
+                                .drop1:hover .drop1-content {
+                                    display: block;
+                                }
+        
+                                /* Style the links */
+                                .drop1-content a {
+                                    text-decoration: none;
+                                    display: block;
+                                    padding: 12px 14px;
+                                    color: black;
+                                }
+        
+                                .drop1-content a:hover {
+                                    background-color: #f1f1f1;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Right Aligned</td>
+                        <td>
+                            <ul>
+                                <li>.dropdown-content {right: 0px;}</li>
+                            </ul>
+                        </td>
+        
+                        <td>
+                            <div class="right">
+                                <button class="right-btn">Right Dropdown</button>
+                                <div class="right-content">
+                                    <a href="#link1">Link 1</a>
+                                    <a href="#link2">Link 2</a>
+                                    <a href="#link3">Link 3</a>
+                                </div>
+                            </div>
+        
+                            <style>
+                                /* Style the container */
+                                .right {
+                                    position: relative;
+                                    display: inline-block;
+                                }
+        
+                                /* Style the Dropdown Button */
+                                .right .right-btn {
+                                    border: none;
+                                    padding: 12px 14px;
+                                    text-align: center;
+                                    color: white;
+                                    background: #04AA6D;
+                                    cursor: pointer;
+                                }
+        
+                                .right:hover .right-btn {
+                                    border: none;
+                                    /* resetting*/
+                                    padding: 12px 14px;
+                                    text-align: center;
+                                    color: white;
+                                    background: #3e8e41;
+                                    cursor: pointer;
+                                }
+        
+                                /* Style the Dropdown Content */
+                                .right-content {
+                                    position: absolute;
+                                    display: none;
+                                    right: 0px;
+                                    min-width: 200px;
+                                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                                    z-index: 1;
+                                    background-color: #f9f9f9;
+                                }
+        
+                                .right:hover .right-content {
+                                    display: block;
+                                }
+        
+                                /* Style the links */
+                                .right-content a {
+                                    text-decoration: none;
+                                    display: block;
+                                    padding: 12px 14px;
+                                    color: black;
+                                    background-color: white;
+                                }
+        
+                                .right-content a:hover {
+                                    background-color: #f1f1f1;
+                                }
+                            </style>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dropdown Navbar</td>
+                        <td></td>
+                        <td>
+                            <iframe src="misc/drop-nav.html" style="width: 500px; height: 200px; overflow: auto;"></iframe>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

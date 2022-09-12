@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../style.css">
     <title>Specificity</title>
 </head>
@@ -15,26 +16,30 @@
 
     <div class="main">
         <div class="section">
-            <h2>heading</h2>
+            <div class="section-head">
+                <h2>Specificity</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+
             <table>
                 <thead>
                     <tr>
                         <th>Elements</th>
                         <th>Explaination</th>
-                        <th>Visual Code</th>
+                        <th>Example</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>General</td>
-                        <td>Determine which declarations are ultimately applied</td>
+                        <td>Specificity</td>
+                        <td>determine which declarations are ultimately applied</td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>Hierarchy</td>
                         <td>
                             <ol>
-                                <li><strong>!important</strong> attribute <span class="badge green">top</span></li>
+                                <li>!important attribute <span class="badge green">top</span></li>
                                 <li>inline style <span class="badge green">1000</span></li>
                                 <li>#id <span class="badge green">100</span></li>
                                 <li>.class | pseudo-classe | attribute <span class="badge green">10</span></li>
@@ -42,34 +47,40 @@
                                 <li>*universal | inherited <span class="badge green">0</span></li>
                             </ol>
                         </td>
-                        <td></td>
+                        <td>
+                            <h4>some common combination</h4>
+                            .icon {} <span class="badge green">10</span><br>
+                            span.icon {} <span class="badge green">11</span><br>
+                            .icon.icon-star {} <span class="badge green">20</span><br>
+                            span.icon.icon-star {} <span class="badge green">21</span><br>
+                        </td>
                     </tr>
                     <tr>
                         <td>Eternal or Internal</td>
-                        <td>The latest codes applied</td>
+                        <td>the latest codes applied</td>
                         <td>
                             &lt;head&gt;<br>
-                            &nbsp;&nbsp;&lt;link rel="stylesheet" type="text/css" href="<strong>mystyle.css</strong>"&gt;<br>
-                            &nbsp;&nbsp;<strong>&lt;style&gt;</strong> <span class="text-success">(this applied)</span><br>
-                            &nbsp;&nbsp;h1 {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;color: orange;<br>
-                            &nbsp;&nbsp;}<br>
-                            &nbsp;&nbsp;<strong>&lt;/style&gt;</strong><br>
+                                &emsp;&lt;<span class="text-red">style</span>&gt;
+                                h1 {color: orange;}
+                                &lt;/<span class="text-red">style</span>&gt;<br>
+                                &emsp;&lt;link rel="stylesheet" href="mystyle.css"&gt; <span class="text-green">// applied</span><br>
                             &lt;/head&gt;<br>
                         </td>
                     </tr>
                     <tr>
                         <td>Equal specificity</td>
-                        <td>The latest codes applied</td>
+                        <td>the latest codes applied</td>
                         <td>
-                            h1 {background-color: yellow;}<br>
-                            h1 {background-color: red;} <span class="text-success">(this applied)</span>
+                            h1 {color: yellow;}<br>
+                            h1 {color: red;} <span class="text-green">// applied</span>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+
+    <script src="../script-detail.js"></script>
 </body>
 
 </html>

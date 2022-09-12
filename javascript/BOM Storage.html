@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>Storage</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Storage</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Storage Object</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>localStorage</td>
+                        <td>
+                            store key/value pairs in the browser
+                            <div class="warn">
+                                the data is not deleted when the browser is closed
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>sessionStorage</td>
+                        <td>
+                            store key/value pairs in the browser
+                            <div class="warn">
+                                the data is deleted when the browser is closed
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Methods and Properties</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_storage_key.asp" 
+                            target="_blank">key()</a>
+                        </td>
+                        <td>
+                            <p class="text-red">localStorage.key(<i>index</i>)</p>
+                            <p class="text-red">sessionStorage.key(<i>index</i>)</p>
+                            return string - the item key by index
+                        </td>
+                        <td>
+                            <h4> return the 1st item key of localStorage</h4>
+                            localStorage.key(0);
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_storage_length.asp" 
+                            target="_blank">length</a>
+                        </td>
+                        <td>
+                            <p class="text-red">localStorage.length</p>
+                            <p class="text-red">sessionStorage.length</p>
+                            return number - the number of items stored
+                        </td>
+                        <td>
+                            <h4>how many items stored in localStorage</h4>
+                            localStorage.length;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_storage_setitem.asp" 
+                            target="_blank">setItem()</a>
+                        </td>
+                        <td>
+                            <p class="text-red">localStorage.setItem(<i>key, value</i>)</p>
+                            <p class="text-red">sessionStorage.setItem(<i>key, value</i>)</p>
+                            set the value of the specified Storage Object item<br>
+                            return string - the inserted value
+                        </td>
+                        <td>
+                            <h4> set Items for localStorage</h4>
+                            localStorage.setItem("fname", "Tahbert");<br>
+                            localStorage.setItem("lname", "Nguyen");
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_storage_getitem.asp" 
+                            target="_blank">getItem()</a>
+                        </td>
+                        <td>
+                            <p class="text-red">localStorage.getItem(<i>key</i>)</p>
+                            <p class="text-red">sessionStorage.getItem(<i>key</i>)</p>
+                            return string - the value of the specified Storage Object item
+                        </td>
+                        <td>
+                            <h4> get Items from localStorage</h4>
+                            localStorage.getItem("fname");<br>
+                            localStorage.getItem("lname");
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_storage_removeitem.asp" 
+                            target="_blank">removeItem()</a>
+                        </td>
+                        <td>
+                            <p class="text-red">localStorage.removeItem(<i>key</i>)</p>
+                            <p class="text-red">sessionStorage.removeItem(<i>key</i>)</p>
+                            remove an Storage Object item by key<br>
+                            return <span class="badge grey">none</span>
+                        </td>
+                        <td>
+                            <h4> remove an Item from localStorage</h4>
+                            localStorage.removeItem("lname");
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_storage_clear.asp" 
+                            target="_blank">clear()</a>
+                        </td>
+                        <td>
+                            <p class="text-red">localStorage.clear()</p>
+                            <p class="text-red">sessionStorage.clear()</p>
+                            remove all the Storage Object item for this domain<br>
+                            return <span class="badge grey">none</span>
+                        </td>
+                        <td>
+                            <h4> remove all localStorage item</h4>
+                            localStorage.clear();
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> 
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

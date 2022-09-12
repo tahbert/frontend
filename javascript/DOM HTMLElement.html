@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>HTMLElement</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>HTMLElement</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>HTMLElement Object</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>the object representing any HTML element</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">EventTarget</span> &lt;= <span class="highlight">Node</span> &lt;= <span class="highlight">Element</span> &lt;= <span class="highlight">HTMLElement</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Methods and Properties</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Focus and Blur</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_html_focus.asp" 
+                            target="_blank">focus()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>HTMLel</i>.focus()</span><br>
+                            give focus to an element (if focusable)
+                        </td>
+                        <td>
+                            window.onload = () => {<br>
+                                &emsp;document.getElementById("myInput").<span class="text-red">focus()</span>;<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_html_blur.asp" 
+                            target="_blank">blur()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>HTMLel</i>.blur()</span><br>
+                            remove focus from an element
+                        </td>
+                        <td>
+                            document.getElementById("myInput").<span class="text-red">blur()</span>;
+                        </td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Editable</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_html_contenteditable.asp" 
+                            target="_blank">contentEditable</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>HTMLel</i>.contentEditable</span><br>
+                            <span class="text-red"><i>HTMLel</i>.contentEditable</span> = <span class="text-red">inherit</span>|true|false<br>
+                            set ro return string - true if the element's content is editable
+                        </td>
+                        <td>
+                            <h4> return true if the element is editable</h4>
+                            el.contentEditable;
+                            <h4> set the element is editable</h4>
+                            el.contentEditable = "true";
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_html_iscontenteditable.asp" 
+                            target="_blank">isContentEditable</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>HTMLel</i>.isContentEditable</span><br>
+                            return boolean - true if the element'content is editable
+                        </td>
+                        <td>
+                            <h4> return true if the element is editable</h4>
+                            el.isContentEditable;
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Text</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_node_innertext.asp" 
+                            target="_blank">innerText</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>HTMLel</i>.innerText</span><br>
+                            <span class="text-red"><i>HTMLel</i>.innerText</span> = "<i>text</i>"<br>
+                            set or return string - the element text content (and its descendants)
+                            <div class="note">
+                                just the text content, without spacing, without CSS hidden, without tags
+                            </div>
+                            <div class="warn">
+                                setting will replace all child nodes by a new text node
+                            </div>
+                        </td>
+                        <td>
+                            <h4> return the text content</h4>
+                            el.innerText;
+                            <h4> set the text content</h4>
+                            el.innerText = "Hi There";
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_node_outertext.asp" 
+                            target="_blank">outerText</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>HTMLel</i>.outerText</span><br>
+                            <span class="text-red"><i>HTMLel</i>.outerText</span> = "<i>text</i>"<br>
+                            set or return string - the text content of the element and all its descendants
+                            <div class="warn">
+                                <i class="icon notsupported fa-solid fa-phone-slash"></i> by Firefox<br>
+                                setting will replace the whole current node by a text node
+                            </div>
+                        </td>
+                        <td>
+                            <h4> return the text content</h4>
+                            el.outerText;
+                            <h4> set the text content</h4>
+                            el.outerText = "Hi There";
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_firstelementchild3" 
+                            target="_blank">text</a>
+                        </td>
+                        <td><span class="badge red">later</span></td>
+                        <td></td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Return in pixels</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_element_offsetwidth.asp" 
+                            target="_blank">offsetWidth</a>
+                        </td>   
+                        <td>
+                            <span class="text-red"><i>el</i>.offsetWidth</span><br>
+                            return number - the viewable width of the element
+                            <div class="note">(including padding, border, scrollbar.)</div>
+                        </td>
+                        <td>
+                            <h4> width: 100px; padding: 10px; border: 5px;</h4>
+                            el.offsetWidth; <span>// return: 130px</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_element_offsetheight.asp" 
+                            target="_blank">offsetHeight</a>
+                        </td>   
+                        <td>
+                            <span class="text-red"><i>el</i>.offsetHeight</span><br>
+                            return number - the viewable height of the element
+                            <div class="note">(including padding, border, scrollbar.)</div>
+                        </td>
+                        <td>
+                            <h4> height: 100px; padding: 10px; border: 5px;</h4>
+                            el.offsetHeight; <span>// return: 130px</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_element_offsetleft.asp" 
+                            target="_blank">offsetLeft</a>
+                        </td>   
+                        <td>
+                            <span class="text-red"><i>el</i>.offsetLeft</span><br>
+                            return number - the left position relative to the parent<br>
+                            <ul class="note">including
+                                <li>the element's left, margin</li>
+                                <li>the parent's padding, border, scrollbar</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4> startting css code</h4>
+                            .parent {padding: 10px; border: 5px;}<br>
+                            .el {left: 50px; margin: 10px;}<br>
+                            <h4> javascript code</h4>
+                            el.offsetLeft; <span>// return: 75px</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_element_offsettop.asp" 
+                            target="_blank">offsetTop</a>
+                        </td>   
+                        <td>
+                            <span class="text-red"><i>el</i>.offsetTop</span><br>
+                            return number - the top position relative to the parent<br>
+                            <ul class="note">including
+                                <li>the element's top, margin</li>
+                                <li>the parent's padding, border, scrollbar</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4> startting css code</h4>
+                            .parent {padding: 10px; border: 5px;}<br>
+                            .el {top: 50px; margin: 10px;}
+                            <h4> javascript code</h4>
+                            el.offsetTop; <span>// return: 75px</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_element_offsetparent.asp" 
+                            target="_blank">offsetParent</a>
+                        </td>   
+                        <td>
+                            <span class="text-red"><i>el</i>.offsetParent</span><br>
+                            return element - the nearest ancestor that has a position other than static.<br>
+                            <div class="note">not exist => &lt;body&gt;</div>
+                        </td>
+                        <td>
+                            <h4> return offsetParent of the element</h4>
+                            el.offsetParent;
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Others</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_html_click.asp" 
+                            target="_blank">click()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>HTMLel</i>.click()</span><br>
+                            simulate a mouse-click on an element.
+                            <div class="note">
+                                can be used to execute as if the user manually clicked on it.
+                            </div>
+                        </td>
+                        <td>
+                            el.onmouseover = (event) => {<br>
+                                &emsp;event.target.<span class="text-red">click()</span>;<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_html_style.asp" 
+                            target="_blank">style</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>HTMLel</i>.style.<i>property</i></span><br>
+                            <span class="text-red"><i>HTMLel</i>.style.<i>property</i></span> = "<i>value</i>"<br>
+                            set or return <a href="DOM CSSStyleDeclaration.html" target="_blank">CSSStyleDeclaration</a> 
+                            - the values of an element's style attribute (inline styles properties)
+                        </td>
+                        <td>
+                            <h4> return the color value</h4>
+                            el.stlye.color;
+                            <h4> set the color value</h4>
+                            el.stlye.color = "green";
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_html_title.asp" 
+                            target="_blank">title</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>HTMLel</i>.title</span><br>
+                            <span class="text-red"><i>HTMLel</i>.title</span> = "<i>text</i>"<br>
+                            set or return string - the value of an element's title attribute.
+                        </td>
+                        <td>
+                            <h4> return the title value</h4>
+                            el.title;
+                            <h4> set the title value</h4>
+                            el.title = "tahbert nguyen";
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_html_tabindex.asp" 
+                            target="_blank">tabIndex</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>HTMLel</i>.tabIndex</span><br>
+                            <span class="text-red"><i>HTMLel</i>.tabIndex</span> = "<i>number</i>"<br>
+                            set or return number - the value of the tabindex attribute
+                        </td>
+                        <td>
+                            <h4> return the tabIndex value</h4>
+                            el.tabIndex;
+                            <h4> set the tabIndex value</h4>
+                            el.tabIndex = "2";
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_html_dir.asp" 
+                            target="_blank">dir</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>HTMLel</i>.dir</span><br>
+                            <span class="text-red"><i>HTMLel</i>.dir</span>= "<span class="text-red">ltr</span>|rtl|auto"<br>
+                            set or return string - dir attribute.
+                        </td>
+                        <td>
+                            <h4> return the dir value</h4>
+                            el.dir;
+                            <h4> set the dir value</h4>
+                            el.dir = "rtl";
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="" 
+                            target="_blank">lang</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>HTMLel</i>.lang</span><br>
+                            <span class="text-red"><i>HTMLel</i>.lang</span> = <i>lang_code</i><br>
+                            set or return string - the value of lang attribute
+                        </td>
+                        <td>
+                            <h4> return the lang value</h4>
+                            el.lang;
+                            <h4> set the lang value</h4>
+                            el.lang = "en";
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon not-recommended fa-solid fa-thumbs-down"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_html_accesskey.asp" 
+                            target="_blank">accessKey</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>HTMLel</i>.accessKey</span><br>
+                            <span class="text-red"><i>HTMLel</i>.accessKey</span> = <i>character</i><br>
+                            set or return string - the accesskey attribute of an element<br>
+                            (specify a shortcut key to activate or focus an element)
+                            <div class="warn">
+                                may conflict with other key standards in the browser.
+                            </div>
+                        </td>
+                        <td>
+                            no need
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Events</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">Event</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onchange.asp" 
+                            target="_blank">change</a>
+                        </td>
+                        <td>
+                            when the value of an element has been changed.<br>
+                            when the checked state has been changed (radio, checkbox)
+                            <ul class="note">differ from <span class="text-red">oninput</span>
+                                <li><span class="text-red">oninput</span> immediately when changing value</li>
+                                <li><span class="text-red">onchange</span> when the element loses focus</li>
+                                <li><span class="text-red">onchange</span> also works on &lt;select&gt;</li>
+                            </ul>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onchange</span> = () => {<br>
+                                &emsp;const x = document.getElementById("mySelect").value;<br>
+                                &emsp;alert("You select: " + x)<br>
+                            }<br>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">InputEvent</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_oninput.asp" 
+                            target="_blank">input</a>
+                        </td>
+                        <td>
+                            when &lt;input&gt; or &lt;textarea&gt; value is modified
+                        </td>
+                        <td>
+                            el.<span class="text-red">oninput</span> = () => {<br>
+                                &emsp;const x = document.getElementById("myInput").value;<br>
+                                &emsp;console.log("You wrote: " + x)<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/beforeinput_event" 
+                            target="_blank">beforeinput</a>
+                        </td>
+                        <td>
+                            when &lt;input&gt; or &lt;textarea&gt; value is about to be modified
+                            <div class="note">
+                                also applies to elements with <span class="text-red">contenteditable</span> enabled<br>
+                                and to any element when <span class="text-red">designMode</span> is turned on.</div>
+                        </td>
+                        <td>
+                            <span class="badge red">later</span>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">DragEvent</span> > Fired on the draggable target</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragstart_event" 
+                            target="_blank">dragstart</a>
+                        </td>
+                        <td>
+                            when the user starts to drag an element or text selection
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.addEventListener("<span class="text-red">dragstart</span>", (event) => {<br>
+                                &emsp;event.target.classList.add("dragging");<br>
+                            });<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drag_event" 
+                            target="_blank">drag</a>
+                        </td>
+                        <td>
+                            when an element or text selection is being dragged
+                            <div class="note">while dragging, fires every 350 milliseconds.</div>
+                        </td>
+                        <td>
+                            el.addEventListener("<span class="text-red">drag</span>", (event) => {<br>
+                                &emsp;console.log("dragging");<br>
+                            });<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragend_event" 
+                            target="_blank">dragend</a>
+                        </td>
+                        <td>
+                            when the user has finished dragging an element or text selection
+                            <div class="warn">
+                                cancelable <i class="icon fa-solid fa-xmark"></i>
+                            </div>
+                        </td>
+                        <td>
+                            el.addEventListener("<span class="text-red">dragend</span>", (event) => {<br>
+                                &emsp;event.target.classList.remove("dragging");<br>
+                            });<br>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">DragEvent</span> > Fired on the drop target</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragenter_event" 
+                            target="_blank">dragenter</a>
+                        </td>
+                        <td>
+                            when a dragged element or text selection enters a valid drop target.
+                            <div class="note">about to enter a drop target.</div>
+                        </td>
+                        <td>
+                            later
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragover_event" 
+                            target="_blank">dragover</a>
+                        </td>
+                        <td>
+                            when an element or text selection is being dragged over a valid drop target 
+                            <div class="note">fires every 350 milliseconds.</div>
+                            <div class="warn">can't be dropped by default => use <span class="text-red">preventDefault()</span></div>
+                        </td>
+                        <td>
+                            later
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragleave_event" 
+                            target="_blank">dragleave</a>
+                        </td>
+                        <td>
+                            when a dragged element or text selection leaves a valid drop target
+                            <div class="note">about to leave a drop target.</div>
+                        </td>
+                        <td>
+                            later
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event" 
+                            target="_blank">drop</a>
+                        </td>
+                        <td>
+                            when an element or text selection is dropped on a valid drop target
+                        </td>
+                        <td>
+                            later
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">ClipboardEvent</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/copy_event" 
+                            target="_blank">copy</a>
+                        </td>
+                        <td>
+                            when the user initiates a copy action through the browser's user interface.
+                        </td>
+                        <td>
+                            el.<span class="text-red">oncopy</span> = (event) => {<br>
+                                &emsp;console.log('copy action initiated');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/cut_event" 
+                            target="_blank">cut</a>
+                        </td>
+                        <td>
+                            when the user initiates a cut action through the browser's user interface.
+                        </td>
+                        <td>
+                            el.<span class="text-red">oncut</span> = (event) => {<br>
+                                &emsp;console.log('cut action initiated');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/paste_event" 
+                            target="_blank">paste</a>
+                        </td>
+                        <td>
+                            when the user initiates a paste action through the browser's user interface.
+                        </td>
+                        <td>
+                            el.<span class="text-red">onpaste</span> = (event) => {<br>
+                                &emsp;console.log('paste action initiated');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

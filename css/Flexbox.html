@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>Flexbox</title>
+    <style>
+        /* default for container and items */
+        .container {
+            display: flex;
+            background: DarkSeaGreen;
+            outline: 0.5px solid black;
+        }
+        .item {
+            padding: 8px 16px;
+            outline: 0.5px solid black;
+            background: wheat;
+        }
+
+        /* relating to container */
+        .container.direction1 {flex-direction: row-reverse;}
+        .container.direction2 {flex-direction: column;}
+        .container.direction3 {flex-direction: column-reverse;}
+        .container.wrap1 {width: 50%; flex-wrap: wrap}
+        .container.wrap2 {width: 50%; flex-wrap: wrap-reverse}
+        .container.justify1 {justify-content: flex-end;}
+        .container.justify2 {justify-content: center;}
+        .container.justify3 {justify-content: space-between;}
+        .container.justify4 {justify-content: space-around;}
+        .container.justify5 {justify-content: space-evenly;}
+
+        [class*=align_items] {height: 60px;}
+        .container.align_items1 {align-items: stretch;}
+        .container.align_items2 {align-items: center;}
+        .container.align_items3 {align-items: flex-start;}
+        .container.align_items4 {align-items: flex-end;}
+        .container.align_items5 {align-items: baseline;}
+        .container.align_items5 .item:first-child {padding: 16px;}
+        .container.align_items5 .item:nth-child(2) {padding: 0;}
+
+        [class*=align_content] {
+            width: 50%; 
+            height: 100px;
+            flex-wrap: wrap
+        }
+        .container.align_content1 {align-content: stretch;}
+        .container.align_content2 {align-content: center;}
+        .container.align_content3 {align-content: flex-start;}
+        .container.align_content4 {align-content: flex-end;}
+        .container.align_content5 {align-content: space-between;}
+        .container.align_content6 {align-content: space-around;}
+        .container.align_content7 {align-content: space-evenly;}
+
+        .container.perfect_center {
+            height: 60px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* relating to items */
+        .container.flex1 .item:first-child {flex: 1 1 200px;}
+        .container.flex1 .item:last-child {flex: 4 4 200px;}
+
+        .container.basis2 .item {flex-basis: 50px;}
+        .container.basis3 .item {flex-basis: 100%;}
+
+        [class*=grow] .item {flex-grow: 1; flex-basis: 100px;}
+        .container.grow0 .item {flex-grow: 0}
+        .container.grow2 .item:first-child {flex-grow: 0}
+        .container.grow3 .item:first-child {flex-grow: 2}
+
+        [class*=shrink] .item {flex-basis: 100px;}
+        .container.shrink2 .item {flex-shrink: 0}
+        .container.shrink3 .item:first-child {flex-shrink: 0}
+        .container.shrink4 .item:first-child {flex-shrink: 2}
+
+        .container.order1 .item:nth-child(1) {order: 2; -webkit-order: 2;}
+        .container.order1 .item:nth-child(2) {order: 1; -webkit-order: 1;}
+        .container.order1 .item:nth-child(3) {order: 3; -webkit-order: 3;}
+
+        .container.align_self1 {height: 60px;}
+        .container.align_self1 .item:last-child {align-self: flex-end;}
+        /* delete soon */
+
+        .test-flex-items {
+            display: flex;
+            width: 400px;
+            height: 120px;
+            background: #04AA6D;
+        }
+        .test-flex-items div {
+            border: 1px solid #333;
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Flexbox</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Flex Container</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>display: flex;</td>
+                        <td>
+                            <div class="note"><span class="badge red">required</span> to make flex-items (direct child elements) flexible</span>
+                        </td>
+                        <td>
+                            <div class="container">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            flex-flow
+                            <span class="badge green">shorthand</span>
+                        </td>
+                        <td>
+                            <code>flex-flow: <i>flex-direction flex-wrap</i>|initial|inherit;</code> (default: row nowrap)<br>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>flex-direction</td>
+                        <td>
+                            <samp>flex-direction: <u>row</u>|row-reverse|column|column-reverse|initial|inherit;</samp>
+                            specify in which direction to stack items<br>
+                        </td>
+                        <td>
+                            <h4>flex-direction: row-reverse;</h4>
+                            <div class="container direction1">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                            </div>
+        
+                            <h4>flex-direction: column;</h4>
+                            <div class="container direction2">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                            </div>
+        
+                            <h4>flex-direction: column-reverse;</h4>
+                            <div class="container direction3">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>flex-wrap</td>
+                        <td>
+                            <samp>flex-wrap: <u>nowrap</u>|wrap|wrap-reverse|initial|inherit;</samp>
+                            specify whether items should wrap or not
+                        </td>
+                        <td>
+                            <h4>width: 50%;  flex-wrap: wrap;</h4>
+                            <div class="container wrap1">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                                <div class="item">6</div>
+                                <div class="item">7</div>
+                                <div class="item">8</div>
+                            </div>
+
+                            <h4>width: 50%; flex-wrap: wrap-reverse;</h4>
+                            <div class="container wrap2">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                                <div class="item">6</div>
+                                <div class="item">7</div>
+                                <div class="item">8</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>justify-content</td>
+                        <td>
+                            <samp>justify-content: <u>flex-start</u>|flex-end|center|space-between|space-around|space-evenly|initial|inherit;</samp>
+                            align items horizontally (vertically if flex-direction: column;)
+                            <div class="note">
+                                when horizontally, no effect if items use all available space
+                            </div>
+                        </td>
+                        <td>
+                            <h4>justify-content: flex-end;</h4>
+                            <div class="container justify1">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                            </div>
+        
+                            <h4>justify-content: center;</h4>
+                            <div class="container justify2">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                            </div>
+        
+                            <h4>justify-content: space-between;</h4>
+                            <div class="container justify3">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                            </div>
+        
+                            <h4>justify-content: space-around;</h4>
+                            <div class="container justify4">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                            </div>
+        
+                            <h4>justify-content: space-evenly;</h4>
+                            <div class="container justify5">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>align-items</td>
+                        <td>
+                            <samp>align-items: <u>stretch</u>|center|flex-start|flex-end|baseline|initial|inherit;</samp>
+                            align items vertically (horizontally if flex-direction: column;)
+                            <div class="note">
+                                when vertically, no effect if no height specified
+                            </div>
+                        </td>
+                        <td>
+                            <h4>align-items: stretch;</h4>
+                            <div class="container align_items1">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                            </div>
+        
+                            <h4>align-items: center;</h4>
+                            <div class="container align_items2">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                            </div>
+        
+                            <h4>align-items: flex-start;</h4>
+                            <div class="container align_items3">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                            </div>
+        
+                            <h4>align-items: flex-end;</h4>
+                            <div class="container align_items4">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                            </div>
+        
+                            <h4 style="display: inline-block;">align-items: baseline; height: 60px;</h4>
+                            <div class="container align_items5">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>align-content</td>
+                        <td>
+                            <samp>align-content: <u>stretch</u>|center|flex-start|flex-end|space-between|space-around|space-evenly|initial|inherit;</samp>
+                            align lines of items vertically<br>
+                            <ul class="note">
+                                <li><span class="badge red">required</span> multiple lines of items</li>
+                                <li>when vertically, no effect if no height specified</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>align-content: stretch;</h4>
+                            <div class="container align_content1">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                                <div class="item">6</div>
+                                <div class="item">7</div>
+                                <div class="item">8</div>
+                            </div>
+
+                            <h4>align-content: center;</h4>
+                            <div class="container align_content2">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                                <div class="item">6</div>
+                                <div class="item">7</div>
+                                <div class="item">8</div>
+                            </div>
+
+                            <h4>align-content: flex-start;</h4>
+                            <div class="container align_content3">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                                <div class="item">6</div>
+                                <div class="item">7</div>
+                                <div class="item">8</div>
+                            </div>
+        
+                            <h4>align-content: flex-end;</h4>
+                            <div class="container align_content4">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                                <div class="item">6</div>
+                                <div class="item">7</div>
+                                <div class="item">8</div>
+                            </div>
+                    
+                            <h4>align-content: space-between;</h4>
+                            <div class="container align_content5">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                                <div class="item">6</div>
+                                <div class="item">7</div>
+                                <div class="item">8</div>
+                            </div>
+                
+                            <h4>align-content: space-around;</h4>
+                            <div class="container align_content6">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                                <div class="item">6</div>
+                                <div class="item">7</div>
+                                <div class="item">8</div>
+                            </div>
+                        
+                            <h4>align-content: space-evenly;</h4>
+                            <div class="container align_content7">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                                <div class="item">6</div>
+                                <div class="item">7</div>
+                                <div class="item">8</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Perfect Center</td>
+                        <td>
+                            <pre>
+                                justify-content: center;
+                                align-items: center;</pre>
+                        </td>
+                        <td>
+                            <div class="container perfect_center">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Flex Items</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            flex 
+                            <span class="badge green">shorthand</span>
+                        </td>
+                        <td>
+                            <code>flex: <i>flex-grow flex-shrink flex-basis</i>|initial|inherit;</code> (default: 0 1 auto)<br>
+                        </td>
+                        <td>
+                            <h4>starting code:</h4>
+                            <pre>
+                                :first-child {flex: 1 1 200px;}
+                                :last-child {flex: 4 4 200px;}</pre>
+                            <div class="container flex1">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                            </div>
+                            <ul class="note">resize window to see different
+                                <li>container width: 400px => 2 items are equal</li>
+                                <li>
+                                    container width: 500px => 100px available space<br>
+                                    => 1st takes up 4/5 (80px) 2nd takes up (20px)
+                                </li>
+                                <li>
+                                    container width: 300px => 100px space losed<br>
+                                    => 1st loses 4/5 (80px) 2nd loses (20px)
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>flex-basis</td>
+                        <td>
+                            <samp>flex-basis: <u>auto</u>|<i>length/%</i>|initial|inherit;</samp>
+                            specify the default length of an item<br>
+                            before manipulated by other properties
+                            <ul class="note">differ from <code>width</code>
+                                <li><code>width</code>: affect horizontally only</li>
+                                <li><code>flex-basis</code>: depending on <code>flex-direction</code></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>flex-basis: auto;</h4>
+                            <div class="container basis1">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                            </div>
+
+                            <h4>flex-basis: 50px</h4>
+                            <div class="container basis2">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                            </div>
+
+                            <h4>flex-basis: 100%</h4>
+                            <div class="container basis3">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>flex-grow</td>
+                        <td>
+                            <code>flex-grow: <i>number</i>|initial|inherit;</code> (default: 0)<br>
+                            specify how much an item grow relative other items to take up space<br>
+                            <ul class="note">
+                                <li>matter of how much an item takes up avaialbe space</li>
+                                <li>not matter of its size when the window expands</li>
+                            </ul>
+                            <ul class="note">
+                                <li>overide <code>flex-basis</code> or <code>width</code> if specified (horizontally)</li>
+                                <li>overide <code>flex-basis</code> or <code>height</code> if specified (vertically)</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>starting code:</h4>
+                            <pre>
+                                flex-basis: 100px;</pre>
+                            <ul class="note">resize window to see different
+                                <li>container width: 400px => no available space</li>
+                                <li>container width: 500px => 100px available space</li>
+                            </ul>
+                            
+                            <h4>flex-grow: 0 (default);</h4>
+                            <div class="container grow0">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                            </div>
+                            <ul class="note">when container width: 500px;
+                                <li>all refuse to take up available space</li>
+                            </ul>
+
+                            <h4>flex-grow: 1; // or any number</h4>
+                            <div class="container grow1">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                            </div>
+                            <ul class="note">when container width: 500px;
+                                <li>each item take up 1/4 available space (25px)</li>
+                            </ul>
+                        
+                            <h4>flex-grow: 1; :first-child {flex-grow: 0;}</h4>
+                            <div class="container grow2">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                            </div>
+                            <ul class="note">when container width: 500px
+                                <li>1st item refuses to take up available space</li>
+                                <li>other items each take up 1/3 available space (33.33px)<br>
+                            </ul>
+                        
+                            <h4>flex-grow: 1; :first-child {flex-grow: 2;}</h4>
+                            <div class="container grow3">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                            </div>
+                            <ul class="note">when container width: 500px
+                                <li>1st item take ups 2/5 available space (40px)</li>
+                                <li>other items each take ups 1/5 available space (20px)</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>flex-shrink</td>
+                        <td>
+                            <code>flex-shrink: <i>number</i>|initial|inherit; </code>(default: 1)<br>
+                            specify how much an item shrink relative to other items
+                            <ul class="note">
+                                <li>matter of how much an item loses its space</li>
+                                <li>not matter of its size when the window collapses</li>
+                            </ul>
+                            <ul class="note">
+                                <li>overide <code>flex-basis</code> or <code>width</code> if specified (horizontally)</li>
+                                <li>overide <code>flex-basis</code> or <code>height</code> if specified (vertically)</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>starting code:</h4>
+                            <pre>
+                                flex-basis: 100px;</pre>
+
+                            <ul class="note">resize window to see different
+                                <li>container width: 400px => no space losed</li>
+                                <li>container width: 300px => 100px space losed</li>
+                            </ul>
+
+                            <h4>flex-shrink: 1; (default or any number)</h4>
+                            <div class="container shrink1">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                            </div>
+                            <ul class="note">when container width: 300px;
+                                <li>each loses 1/4 space (25px)</li>
+                            </ul>
+
+                            <!-- <h4>flex-shrink: 0;</h4>
+                            <div class="container shrink2">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                            </div>
+                            <ul class="note">when container width: 300px;
+                                <li>all refuse to lose space</li>
+                            </ul> -->
+
+                            <h4>:first-child {flex-shrink: 0}</h4>
+                            <div class="container shrink3">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                            </div>
+                            <ul class="note">when container width: 300px
+                                <li>1st refuses to lose space</li>
+                                <li>other each loses 1/3 space (33.33px)<br>
+                            </ul>
+
+                            <h4>:first-child {flex-shrink: 2;}</h4>
+                            <div class="container shrink4">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                                <div class="item">4</div>
+                            </div>
+                            <ul class="note">when container width: 300px
+                                <li>1st loses 2/5 space (40px)</li>
+                                <li>other each loses 1/5 space (20px)</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>order</td>
+                        <td>
+                            <code>order: <i>number</i>|initial|inherit;</code> (default: 0)<br>
+                            specify the items order
+                            <div class="note">-webkit-order /* Safari */</div>
+                        </td>
+                        <td>
+                            <pre>
+                                :nth-child(1) {order: 2;}
+                                :nth-child(2) {order: 1;}
+                                :nth-child(3) {order: 3;}</pre>
+                            <div class="container order1">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>align-self</td>
+                        <td>
+                            <samp>align-self: <u>auto</u>|stretch|center|flex-start|flex-end|baseline|initial|inherit;</samp>
+                            <div class="note">
+                                overide <code>align-items</code>
+                            </div>
+                        </td>
+                        <td>
+                            <h4>:first-child {align-self: flex-end;}</h4>
+                            <div class="container align_self1">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- <div class="section">
+            <h2>Responsive Flexbox</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>Combining with Media Queries: <a target="_blank" href="misc/flexbox-responsive.html">see more</a>
+                            <ul class="note">Option 1: Using <strong>flex-direction</strong>
+                                <li>.flex-container {flex-direction: row;}</li>
+                            </ul>
+                            <ul class="note">Option 2: Using <strong>flex</strong> property
+                                <li>.flex-container {flex-wrap: wrap;} <span class="badge red">required</span></li>
+                                <li>.flex-item {flex: 100%;}</li>
+                            </ul>
+                        </td>
+                        <td style="min-width: 600px;">
+                            <iframe src="misc/flexbox-responsive.html"
+                                style="width: 100%; height: 200px; overflow: auto;"></iframe>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Image Gallery</td>
+                        <td><a target="_blank" href="misc/flexbox-image-gallery.html">see more</a></td>
+                        <td>
+                            <iframe src="misc/flexbox-image-gallery.html"
+                                style="width: 100%; height: 200px; overflow: auto;"></iframe>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Website Example</td>
+                        <td><a target="_blank" href="misc/flexbox-repsonsive-website.html">see more</a></td>
+                        <td>
+                            <iframe src="misc/flexbox-repsonsive-website.html"
+                                style="width: 100%; height: 200px; overflow: auto;"></iframe>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> -->
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

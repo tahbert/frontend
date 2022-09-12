@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../style.css">
     <title>Introduction</title>
 </head>
@@ -16,22 +17,26 @@
 
     <div class="main">
         <div class="section">
-            <h2>Introduction</h2>
+            <div class="section-head">
+                <h2>Introduction</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
             <table>
                 <thead>
                     <tr>
                         <th>Elements</th>
                         <th>Explaination</th>
-                        <th>Visual Code</th>
+                        <th>Example</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>General</td>
                         <td>
-                            Cascading Style Sheets<br>
-                            <span class="note">Cascading: a style applied to a parent element will also apply to all
-                                children elements within the parent</span>
+                            <div class="text-red">Cascading Style Sheets</div>
+                            <div class="note">
+                                cascading: style applied to a parent will also apply to all children
+                            </div>
                         </td>
                         <td></td>
                     </tr>
@@ -43,42 +48,45 @@
                     <tr>
                         <td>Three Ways</td>
                         <td>
-                            External: <span class="badge green">most common</span><br>
-                            Using external file <strong>mystyle.css</strong>
-                        </td>
-                        <td>&lt;link rel="stylesheet" href="<strong>mystyle.css</strong>"&gt;</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            Internal: <span class="note">unique style for one single document</span><br>
-                            Using <strong>&lt;style&gt;&lt;/style&gt;</strong>
+                            external <span class="badge green">most common</span><br>
                         </td>
                         <td>
-                            &lt;head&gt;<br>
-                            &nbsp;&nbsp;<strong>&lt;style&gt;</strong><br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;--- some code here ---<br>
-                            &nbsp;&nbsp;<strong>&lt;/style&gt;</strong><br>
-                            &lt;/head&gt;
+                            &lt;link rel="stylesheet" href="<span class="text-red">mystyle.css</span>"&gt;
                         </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>
-                            Inline: <span class="note">unique style for a single element</span><br>
-                            Using <strong>stype</strong> attribute
+                            internal
+                            <div class="note">unique style for one single document</div><br>
                         </td>
-                        <td>&lt;p <strong>style</strong>="color:red;"&gt;This is a paragraph.&lt;/p&gt;</td>
+                        <td>
+                            &lt;style&gt;<br>
+                            <span class="text-green">&emsp;// some code here</span><br>
+                            &lt;/style&gt;<br>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Comments</td>
-                        <td class="note">/* this is a comment */</td>
+                        <td></td>
+                        <td>
+                            inline
+                            <div class="note">unique style for a single element</div>
+                        </td>
+                        <td>&lt;p <span class="text-red">style</span>="color:red;"&gt;this is a paragraph.&lt;/p&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>Comment</td>
+                        <td>
+                            <span class="text-green">/* comment here */</span>
+                        </td>
                         <td></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+
+    <script src="../script-detail.js"></script>
 </body>
 
 </html>

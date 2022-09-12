@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>Tables</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Tables</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Tables</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Table Border</td>
+                    </tr>
+                    <tr>
+                        <td>border <span class="badge green">shorthand</span></td>
+                        <td>
+                            <strong>border</strong>: <i>border-width border-style border-color</i>|initial|inherit;<br>
+                            Specify all the border properties in one declaration<br>
+                            <span class="text-green">
+                                Added to &lt;table&gt;,&lt;th&gt;,&lt;td&gt;<br>
+                                boder-style <span class="badge red">required</span><br>
+                                border-color: similar to text color if omitted
+                            </span>
+                        </td>
+                        <td>
+                            <a href="misc/tables-without-bootstrap.html#border">see more</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>border-collapse</td>
+                        <td>
+                            <strong>border-collapse</strong>: <span
+                                class="text-danger">separate</span>|collapse|initial|inherit;<br>
+                                Specify whether or not table borders should be collapsed into a single border<br>
+                            <span class="text-green">
+                                Added to &lt;table&gt;<br>
+                                border-collapse: collapse; <span class="badge green">most used</span>
+                            </span>
+                        </td>
+                        <td>
+                            <a href="misc/tables-without-bootstrap.html#border">see more</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>empty-cells</td>
+                        <td>
+                            <strong>empty-cells</strong>: <span class="text-danger">show</span>|hide|initial|inherit;<br>
+                            Specify whether or not to display borders and background on empty cells in a table<br>
+                            <span class="text-green">
+                                Added to &lt;table&gt;<br>
+                                border-collpase: separate; <span class="badge red">required</span><br>
+                            </span>
+                        </td>
+                        <td>
+                            <a href="misc/tables-without-bootstrap.html#emptycells">see more</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>border-spacing</td>
+                        <td>
+                            <strong>border-spacing</strong>: <i>length</i>|initial|inherit;<br>
+                            Specify the distance between the borders of adjacent cells<br>
+                            <span class="text-green">
+                                Added to &lt;table&gt;<br>
+                                border-collpase: separate; <span class="badge red">required</span><br>
+                            </span>
+                        </td>
+                        <td style="white-space: nowrap;">
+                            border-spacing: 15px; <span class="text-green">(x: 15px | y: 15px)</span><br>
+                            border-spacing: 15px 50px; <span class="text-green">(x: 15px | y: 50px)</span><br>
+                            <a href="misc/tables-without-bootstrap.html#borderspacing">see more</a>
+                        </td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Table Size</td>
+                    </tr>
+                    <tr>
+                        <td>width|height</td>
+                        <td>
+                            Specify the <strong>width|height</strong> of the table<br>
+                            <span class="text-green">Added to &lt;table&gt;</span>
+                        </td>
+                        <td>
+                            <a href="misc/tables-without-bootstrap.html#size">see more</a>
+                        </td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Table Alignment</td>
+                    </tr>
+                    <tr>
+                        <td>text-align</td>
+                        <td>
+                            <strong>text-align</strong>: left|right|center|justify|initial|inherit; <span
+                                class="text-danger">(default: left for &lt;td&gt; | center for &lt;th&gt;)</span><br>
+                            Align text horizontally<br>
+                            <span class="text-green">Added to &lt;th&gt;, &lt;td&gt;</span>
+                        </td>
+                        <td rowspan="2"><a href="misc/tables-without-bootstrap.html#align">see more</a></td>
+                    </tr>
+                    <tr>
+                        <td>vertical-align</td>
+                        <td>
+                            <strong>vertical-align</strong>: <span
+                                class="text-danger">baseline</span>|<i>length</i>|sub|super|top|text-top|middle|bottom|text-bottom|initial|inherit;
+                            <br>
+                            Align text vertically<br>
+                            <span class="text-green">Added to &lt;th&gt;, &lt;td&gt;</span>
+                        </td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Table Style</td>
+                    </tr>
+                    <tr>
+                        <td>padding</td>
+                        <td>
+                            Control space between the border and the content in a table<br>
+                            <span class="text-green">Added to &lt;th&gt;, &lt;td&gt;</span>
+                        </td>
+                        <td><a href="misc/tables-without-bootstrap.html#padding">see more</a></td>
+                    </tr>
+                    <tr>
+                        <td>border-bottom</td>
+                        <td>
+                            Make horizontal dividers<br>
+                            <span class="text-green">Added to &lt;th&gt;, &lt;td&gt;</span>
+                        </td>
+                        <td><a href="misc/tables-without-bootstrap.html#divider">see more</a></td>
+                    </tr>
+                    <tr>
+                        <td>:hover</td>
+                        <td>
+                            Make hoverable table<br>
+                            <span class="text-green">Added to &lt;tr&gt;</span>
+                        </td>
+                        <td><a href="misc/tables-without-bootstrap.html#hover">see more</a></td>
+                    </tr>
+                    <tr>
+                        <td>nth-child()</td>
+                        <td>
+                            Make striped table<br>
+                            <span class="text-green">Added to &lt;tr&gt;</span>
+                        </td>
+                        <td><a href="misc/tables-without-bootstrap.html#striped">see more</a></td>
+                    </tr>
+                    <tr>
+                        <td style="white-space: nowrap;">color|background-color</td>
+                        <td>
+                            Specify the table color<br>
+                            <span class="text-green">Added to &lt;table&gt;,&lt;tr&gt;,&lt;th&gt;,&lt;td&gt;</span>
+                        </td>
+                        <td><a href="misc/tables-without-bootstrap.html#colored">see more</a></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Table Responsive</td>
+                    </tr>
+                    <tr>
+                        <td>overflow-x: auto</td>
+                        <td>
+                            Display a horizontal scroll bar if the screen is too small to display the full content<br>
+                            <span class="text-green">Added to a container like &lt;div&gt;</span>
+                        </td>
+                        <td><a href="misc/tables-without-bootstrap.html#responsive">see more</a></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Table Caption</td>
+                    </tr>
+                    <tr>
+                        <td>caption-side</td>
+                        <td>
+                            caption-side: <span class="text=danger">top</span>|bottom|initial|inherit;<br>
+                            Specify the placement of a table caption<br>
+                            <span class="text-green">Added to &lt;table&gt;</span>
+                        </td>
+                        <td><a href="misc/tables-without-bootstrap.html#captionside">see more</a></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Table Layout</td>
+                    </tr>
+                    <tr>
+                        <td>table-layout</td>
+                        <td>
+                            <strong>table-layout</strong>: <span class="text=danger">auto</span>|fixed|initial|inherit;<br>
+                            Specify the algorithm used to lay out table cells, rows, and columns<br>
+                            <span class="text-green">
+                                Added to &lt;table&gt;
+                                <ul>
+                                    <li>auto: The column width is set by the widest unbreakable content in the cells. The
+                                        content will dictate the layout
+                                    </li>
+                                    <li>fixed: The table and column widths are set by the widths of table and col or by the
+                                        width of the first row of cells.
+                                        Cells in other rows do not affect column widths. If no widths are present on the first
+                                        row,
+                                        the column widths are divided equally across the table, regardless of content inside the
+                                        cells.<br>
+                                        Users will see the top of the table while the browser loads and renders rest of the
+                                        table => quicker!
+                                    </li>
+                                </ul>
+                            </span>
+                        </td>
+                        <td><a href="misc/tables-without-bootstrap.html#tablelayout">see more</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

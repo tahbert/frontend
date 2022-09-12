@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>NamedNodeMap</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>NamedNodeMap</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>NamedNodeMap</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>NamedNodeMap</td>
+                        <td>
+                            collection of Attr objects
+                            <ul class="note">
+                                <li>look like an array but not, accessed by name or index</li>
+                                <li>unlike NodeList, objects inside a NamedNodeMap are not in any particular order</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td>not inherite any method or propety</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Methods & Properties</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/prop_namednodemap_length.asp" 
+                            target="_blank">length</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>namednodemap</i>.length</span><br>
+                            return number - the number of attribute nodes in a NamedNodeMap
+                        </td>
+                        <td>
+                            <h4> return how many attributes the element has</h4>
+                            el.attributes.length;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_namednodemap_item.asp" 
+                            target="_blank">item()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>namednodemap</i>.item(<i>index</i>)</span><br>
+                            <span class="text-red"><i>namednodemap</i>.[<i>index</i>]</span><br>
+                            return node - the attribute node at the specified index
+                        </td>
+                        <td>
+                            <h4> return the first attribute</h4>
+                            el.attributes[0];
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_namednodemap_getnameditem.asp" 
+                            target="_blank">getNamedItem()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>namednodemap</i>.getNamedItem(<i>"name"</i>)</span><br>
+                            return node - an attribute node from a NamedNodeMap.
+                            <div>It is easier to use the <span class="text-red">el.getAttribute()</span></div>
+                        </td>
+                        <td>
+                            <h4> get the value of "src" attribute</h4>
+                            el.attributes.<span class="text-red">getNamedItem</span>("src").value;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_namednodemap_setnameditem.asp" 
+                            target="_blank">setNamedItem()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>namednodemap</i>.setNamedItem(<i>"name"</i>)</span><br>
+                            add an attribute node (by name)<br>
+                            return node - the replaced node (if any).<br>
+                            <div class="note">
+                                it's easier to use <span class="text-red">el.setAttribute()</span><br>
+                                already exist => replace, otherwise the return value is null.
+                            </div>
+                        </td>
+                        <td>
+                            <h4> create and set "src" attribute</h4>
+                            const nodeMap = el.attributes;<br>
+                            const node = document.createAttribute("src");<br>
+                            node.value = "avatar.jpg";<br>
+                            nodeMap.<span class="text-red">setNamedItem</span>(node);<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_namednodemap_removenameditem.asp" 
+                            target="_blank">removeNamedItem()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>namednodemap</i>.removeNamedItem(<i>"name"</i>)</span><br>
+                            remove a node (by name)<br>
+                            return node - the removed node
+                            <div class="note">remove input type => type="text" as default</div>
+                        </td>
+                        <td>
+                            <h4> remove the "type" attribute of an input</h4>
+                            el.attributes.removeNamedItem("type")
+                        </td>
+                    </tr>
+                    
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Later</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>getNamedItemNS(), setNamedItemNS(), removeNamedItemNS()</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

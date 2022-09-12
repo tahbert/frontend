@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    
+    <title>Media Queries</title>
+  </head>
+  <body>
+    
+      <div>
+        <h1>Media Queries</h1>
+      </div>
+      <!--Title here------------------------------------------------------------------------------------------------------------>
+      <h2>Media Queries</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>General</td>
+            <td>
+              A CSS technique introduced in CSS3, Media queries can be used to check many things<br>
+              <ul>
+                <li>Width and height of the viewport</li>
+                <li>Width and height of the device</li>
+                <li>Orientation (landscape or portrait)</li>
+                <li>Resolution</li>
+              </ul>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>@media</strong> rule</td>
+            <td>
+              <strong>@media</strong> not|only <i>mediatype</i> and (<i>mediafeature</i> and|or|not <i>mediafeature</i>) {<br>
+                &nbsp;&nbsp;<i>CSS-Code</i>;<br>
+              } 
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Keywords<br>
+              <span class="text-success">(optional)</span>
+            </td>
+            <td colspan="2">
+              <ul>
+                <li><strong>not</strong>: invert the meaning of an entire media query</li>
+                <li><strong>only</strong>: prevent older browsers that do not support media queries with media features from applying the specified styles (no effect on modern browsers)</li>
+                <li><strong>and</strong>: combine a <i>mediafeature</i> with a <i>mediatype</i> or another <i>mediafeature</i></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>Media Types</td>
+            <td>
+              <ul>
+                <li><strong>all</strong>: for all media type devices</li>
+                <li><strong>print</strong>: for printers</li>
+                <li><strong>screen</strong>: for computer screens, tablets, smart-phones etc.</li>
+                <li><strong>speech</strong>: for screenreaders that "reads" the page out loud</li>
+              </ul>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Media Features</td>
+            <td><a target="_blank" href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp">see more</a></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  
+    <script src="../script-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>HTMLCollection</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>HTMLCollection</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>HTMLCollection Object</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/dom_obj_htmlcollection.asp" 
+                            target="_blank">General</a>
+                        </td>
+                        <td>
+                            array-like collection of HTML elements returned by: <br>
+                            <span class="text-red">.getElementsByTagName()</span><br>
+                            <span class="text-red">.getElementsByClassName()</span><br>
+                            <span class="text-red">.children</span><br>
+                            <ul class="warn">
+                                <li>possible to loop through or access items by index</li>
+                                <li>impossible to use array methods like valueOf(), pop(), push(), or join().</li>
+                            </ul>
+                        </td>
+                        <td></td>   
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="badge yellow">not inherit</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Methods & Properties</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_htmlcollection_length.asp" 
+                            target="_blank">length</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>HTMLCollection</i>.length</span><br>
+                            return number - the number of elements
+                            <div class="note">useful to loop through an HTMLCollection</div>
+                        </td>
+                        <td>
+                            <h4> how many elements in a HTMLCollection</h4>
+                            document.getElementsByTagName("p").length;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_htmlcollection_item.asp" 
+                            target="_blank">item()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>HTMLCollection</i>.item(<i>index</i>)</span><br>
+                            <span class="text-red"><i>HTMLCollection</i>[<i>index</i>]</span> <span class="badge green">simple</span><br>
+                            return element - the element by index
+                        </td>
+                        <td>
+                            <h4> access the 1st element in a HTMLCollection</h4>
+                            document.getElementsByTagName("p")[0];
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_htmlcollection_nameditem.asp" 
+                            target="_blank">namedItem()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>HTMLCollection</i>.namedItem(<i>name</i>)</span><br>
+                            <span class="text-red"><i>HTMLCollection</i>[<i>name</i>]</span> <span class="badge green">simple</span><br>
+                            return element - the element by name or id attribute
+                        </td>
+                        <td>
+                            <h4> access the element with id "myFirstPara"</h4>
+                            document.getElementsByTagName("p")["myFirstPara"];
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

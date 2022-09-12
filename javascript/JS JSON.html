@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>JSON</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>JSON</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>JSON</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>JSON</td>
+                        <td>
+                            <span class="text-red">JavaScript Object Notation</span>
+                            a format for storing and transporting data<br>
+                            <ul class="note">
+                                <li>often used when data is sent from a server to a web page</li>
+                                <li>used for many programming languages</li>
+                            </ul>   
+                            <ul class="note"> <span class="badge green">why JSON?</span>
+                                <li>receive pure text from a server and use it as an object</li>
+                                <li>send an object to a server in pure text format</li>
+                                <li>store objects as text</li>
+                                <li>work with data as objects, with no complicated parsing and translations</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>example of a JSON string:</h4>
+                            '{"name":"Tahbert", "age":30, "car":null}'
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Syntax</td>
+                        <td colspan="2">
+                            almost identical to JS objects<br><br>
+                            <table class="sub-table">
+                                <tr>
+                                    <th>Criterion</th>
+                                    <th>JSON</th>
+                                    <th>JS object</th>
+                                </tr>
+                                <tr>
+                                    <td>Example</td>
+                                    <td>{"name":"Tahbert", "age":30, "car":null}</td>
+                                    <td>{name:"Tahbert", age:30, car:null}</td>
+                                </tr>
+                                <tr>
+                                    <td>Key</td>
+                                    <td>string in double quotes</td>
+                                    <td>string, number, or identifier name</td>
+                                </tr>
+                                <tr>
+                                    <td>Value</td>
+                                    <td>string/number/object/array/boolean/null</td>
+                                    <td>string/number/object/array/boolean/null/function/date/undefined</td>
+                                </tr>
+                                <tr>
+                                    <td>String Value</td>
+                                    <td>in double quotes</td>
+                                    <td>in single or double quotes</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>JSON file</td>
+                        <td>
+                            <ul class="note">
+                                <li>file type for JSON file: ".json"</li>
+                                <li>MIME type for JSON text is "application/json"</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JSON vs XML</td>
+                        <td>
+                            Both can be used to receive data from a web server<br>
+                            <ul class="note">JSON is better<br>
+                                <li>JSON is parsed into a ready-to-use JS object</li>
+                                <li>XML is much more difficult to parse than JSON</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Converting and Storing</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>JSON.parse()</td>
+                        <td>
+                            <span class="text-red">JSON.parse(<i>string</i>)</span><br>
+                            <span class="text-red">JSON.parse(<i>string, reviver</i>)</span><br>
+                            convert a string to an object<br>
+                            return object/array
+                            <div class="note">
+                                reviver function: used to transform the result, called for each item
+                            </div>
+                        </td>
+                        <td>
+                            <h4>parse a string to an object</h4>
+                            const text = '{"name":"Tahbert", "age":28}'<br>
+                            const obj = JSON.parse(text);<br>
+                            obj; <span class="text-result" id="parse1"></span><br>
+                            obj.name + " " + obj.age; <span class="text-result" id="parse2"></span><br>
+                            <script>
+                            {
+                                const text = '{"name":"Tahbert", "age":28}'
+                                const obj = JSON.parse(text);
+                                document.getElementById("parse1").innerHTML = obj;
+                                document.getElementById("parse2").innerHTML = obj.name + " " + obj.age;
+                            }
+                            </script>
+
+                            <h4>parse a string to an array</h4>
+                            const text = '["Ford", "BMW", "Audi"]';<br>
+                            const arr = JSON.parse(text ;<br>
+                            arr; <span class="text-result" id="parse3"></span><br>
+                            arr[0]; <span class="text-result" id="parse4"></span><br>
+                            <script>
+                            {
+                                const text = '["Ford", "BMW", "Audi"]';
+                                const arr = JSON.parse(text);
+                                document.getElementById("parse3").innerHTML = arr;
+                                document.getElementById("parse4").innerHTML = arr[0];
+                            }
+                            </script>
+
+                            <h4>use the reviver function</h4>
+                            const text = '{"name":"Tahbert", "age":28}'<br>
+                            const obj = JSON.parse(text, function(key, value){...});<br>
+                            obj; <span class="text-result" id="parse5"></span><br>
+                            <script>
+                            {
+                                const text = '{"name":"Tahbert", "age":28}'
+                                const obj = JSON.parse(text, function(key, value){
+                                    if(key == "name") { return value.toUpperCase();
+                                    } else {return value;}
+                                });
+                                document.getElementById("parse5").innerHTML = obj.name + " " + obj.age;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>JSON.stringify()</td>
+                        <td>
+                            <span class="text-red">JSON.stringify(<i>obj</i>)</span><br>
+                            <span class="text-red">JSON.stringify(<i>obj, replacer</i>)</span><br>
+                            <span class="text-red">JSON.stringify(<i>obj, replacer, space</i>)</span><br>
+                            return string - convert an object or array to a string in JSON format<br>
+                            <ul class="note">
+                                <li>replacer: a func or array to transform the result, called for each item</li>
+                                <li>space: string(max 10 chars) or number (0-10)</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>stringify an object</h4>
+                            const obj = {name: "Tahbert", age: 30};<br>
+                            const text = JSON.stringify(obj);<br>
+                            text; <span class="text-result" id="stringify1"></span><br>
+                            <script>
+                            {
+                                const obj = { name: "Tahbert", age: 30};
+                                const text = JSON.stringify(obj);
+                                document.getElementById("stringify1").innerHTML = text;
+                            }
+                            </script>
+
+                            <h4>stringify an array</h4>
+                            const arr = ["Tahbert", "Peter", "Sally"];<br>
+                            const text = JSON.stringify(arr);<br>
+                            text; <span class="text-result" id="stringify2"></span><br>
+                            <script>
+                            {
+                                const arr = ["Tahbert", "Peter", "Sally"];
+                                const text = JSON.stringify(arr);
+                                document.getElementById("stringify2").innerHTML = text;
+                            }
+                            </script>
+
+                            <h4>use replacer function</h4>
+                            const obj = {name: "Tahbert", age: 30};<br>
+                            const text = JSON.stringify(obj, function (key, value){...}<br>
+                            text; <span class="text-result" id="stringify3"></span><br>
+                            <script>
+                            {
+                                const obj = { name: "Tahbert", age: 30};
+                                const text = JSON.stringify(obj, function (key, value){
+                                    if(key == "name") { return value.toUpperCase();
+                                    } else {return value;}
+                                });
+                                document.getElementById("stringify3").innerHTML = text;
+                            }
+                            </script>
+
+                            <h4>insert 3 spaces for each white space</h4>
+                            const obj = {name:"Tahbert", age:30};<br>
+                            const text = JSON.stringify(obj);<br>
+                            text; <span class="text-result" id="stringify4"></span><br>
+                            <div class="warn">not work because of my own stylesheet</div> 
+                            <script>
+                            {
+                                const obj = {name:"Tahbert", age:30};
+                                const text = JSON.stringify(obj, null, 10);
+                                document.getElementById("stringify4").innerHTML = text;
+                            }
+                            </script>
+                        </td>
+                    <tr>
+                        <td>
+                            <span class="text-green">Storing Data</span>
+                        </td>
+                        <td>possible to store objects as text</td>
+                        <td>
+                            <h4>storing data:</h4>
+                            const obj1 = {name:"Tahbert", age:31};<br>
+                            const text1 = JSON.stringify(obj1);<br>
+                            localStorage.setItem("testJSON", text1);<br>
+
+                            <h4>retrieving data:</h4>
+                            let text2 = localStorage.getItem("testJSON");<br>
+                            let obj2 = JSON.parse(text2);<br>
+                            obj2.name + " " + obj2.age; <span class="text-result" id="store1"></span>
+                            <script>
+                            {
+                                // Storing data:
+                                const obj1 = {name:"Tahbert", age:28};
+                                const text1 = JSON.stringify(obj1);
+                                localStorage.setItem("myData", text1);
+                                // Retrieving data:
+                                let text2 = localStorage.getItem("myData");
+                                let obj2 = JSON.parse(text2);
+                                document.getElementById("store1").innerHTML = obj2.name + " " + obj2.age;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>JSON Object and Array Literal</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>JSON Object Literal</td>
+                        <td>
+                            surrounded by curly braces <span class="text-red">{}</span><br>
+                            <div class="warn">
+                                <span class="badge red">common mistake</span> to call JSON object literal as JSON object
+                            </div>
+                        </td>
+                        <td>
+                            <h4>JSON pure text</h4>
+                            '{"name":"Tahbert", "age":30, "car":null}'
+                            <h4>JSON object literal</h4>
+                            {"name":"Tahbert", "age":30, "car":null}
+                            <h4>JSON object after <span class="text-red">JSON.parse()</span></h4>
+                            {name:"Tahbert", age:30, car:null}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            possible to create an object from JSON object literal<br>
+                            <div class="note">
+                                normally, we create a JS object by parsing a JSON string
+                            </div>
+                        </td>
+                        <td>
+                            const obj = {"name":"Tahbert", "age":30};<br>
+                            obj; <span class="text-result" id="objLiteral1"></span><br>
+                            obj.name; <span class="text-result" id="objLiteral2"></span><br>
+                            obj["name"]; <span class="text-result" id="objLiteral3"></span><br>
+                            <script>
+                            {
+                                const obj = {"name":"Tahbert", "age":30};
+                                document.getElementById("objLiteral1").innerHTML = obj;
+                                document.getElementById("objLiteral2").innerHTML = obj.name;
+                                document.getElementById("objLiteral3").innerHTML = obj["name"];
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>JSON Array Literal</td>
+                        <td>
+                            surrounded by square brackets []<br>
+                        </td>
+                        <td>
+                            <h4>JSON pure text</h4>
+                            '["Ford", "BMW", "Fiat"]'
+                            <h4>JSON array literal</h4>
+                            ["Ford", "BMW", "Fiat"]
+                            <h4>JSON array after <span class="text-red">JSON.parse()</span></h4>
+                            ["Ford", "BMW", "Fiat"]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            possible to create an array from a JSON array literal<br>
+                        </td>
+                        <td>
+                            const arr = ["Ford", "BMW", "Fiat"];<br>
+                            arr; <span class="text-result" id="arrLiteral1"></span><br>
+                            arr[0]; <span class="text-result" id="arrLiteral2"></span><br>
+                            <script>
+                                const arr = ["Ford", "BMW", "Fiat"];
+                                document.getElementById("arrLiteral1").innerHTML = arr;
+                                document.getElementById("arrLiteral2").innerHTML = arr[0];
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Extended</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>JSON Server</td>
+                        <td><span class="text-red">later</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JSON PHP</td>
+                        <td><span class="text-red">later</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JSON HTML</td>
+                        <td><span class="text-red">later</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>JSONP</td>
+                        <td><span class="text-red">later</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

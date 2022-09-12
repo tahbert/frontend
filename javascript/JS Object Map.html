@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>Object Map</title>
+    <script>
+        var r = "// result: "
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Object Map</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Object Map</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            Maps are objects<br>
+                            <ul class="note">
+                                <li>Map holds <span class="text-red">key-value</span> pairs where the keys can be any datatype<br></li>
+                                <li>Map remembers the original insertion order of the keys.<br></li>
+                            </ul>
+                        </td>
+                        <td>
+                            const fruits = new Map([<br>
+                                &ensp;["apples", 500],<br>
+                                &ensp;["bananas", 300],<br>
+                                &ensp;["oranges", 200]<br>
+                            ]);<br>
+                            fruits; <span class="text-blur" id="map1"></span><br>
+                            typeof fruits; <span class="text-blur" id="map2"></span><br>
+                            <script>
+                            {
+                                const fruits = new Map([
+                                    ["apples", 500],
+                                    ["bananas", 300],
+                                    ["oranges", 200]
+                                ]);
+                                document.getElementById("map1").innerHTML = r + fruits;
+                                document.getElementById("map2").innerHTML = r + typeof fruits;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Compare to Object</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th></th>
+                                    <th>Object</th>
+                                    <th>Map</th>
+                                </tr>
+                                <tr>
+                                    <td>Iterable</td>
+                                    <td>not directly iterable</td>
+                                    <td>directly iterable</td>
+                                </tr>
+                                <tr>
+                                    <td>Size</td>
+                                    <td>not have a size property</td>
+                                    <td>have a size property</td>
+                                </tr>
+                                <tr>
+                                    <td>Key Types</td>
+                                    <td>strings or symbols</td>
+                                    <td>any datatype</td>
+                                </tr>
+                                <tr>
+                                    <td>Key Order</td>
+                                    <td>not well ordered</td>
+                                    <td>ordered by insertion</td>
+                                </tr>
+                                <tr>
+                                    <td>Defaults</td>
+                                    <td>have default keys</td>
+                                    <td>not have default keys</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td></td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Properties</td>
+                    </tr>
+                    <tr>
+                        <td>size</td>
+                        <td>
+                            <span class="text-red"><i>map</i>.size</span><br>
+                            return number - the number of elements in a Map</td>
+                        <td>
+                            fruits.size; <span class="text-blur" id="map_size1"></span><br>
+                            <script>
+                                const fruits = new Map([
+                                    ["apples", 500],
+                                    ["bananas", 300],
+                                    ["oranges", 200]
+                                ]);
+                                document.getElementById("map_size1").innerHTML = r + fruits.size;
+                            </script>
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Creating</td>
+                    </tr>
+                    <tr>
+                        <td>new Map()</td>
+                        <td>pass an array to <span class="text-red">new Map()</span></td>
+                        <td>
+                            <h4> create an Map and assign values at the same time</h4>
+                            const fruits = new Map([<br>
+                                &ensp;["apples", 500],<br>
+                                &ensp;["bananas", 300],<br>
+                                &ensp;["oranges", 200]<br>
+                            ]);<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>set()</td>
+                        <td>
+                            <span class="text-red"><i>map</i>.set()</span><br>
+                            assign the Map values
+                        </td>
+                        <td>
+                            <h4> create an empty Map and assign values later</h4>
+                            const fruits = new Map();<br>
+                            fruits.<span class="text-red">set</span>("apples", 500);<br>
+                            fruits.<span class="text-red">set</span>("bananas", 300);<br>
+                            fruits.<span class="text-red">set</span>("oranges", 200);<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span class="text-red"><i>map</i>.set()</span><br>
+                            change the Map values
+                        </td>
+                        <td>
+                            fruits.set("apples", 200);<br>
+                            fruits.get("apples"); <span class="text-blur" id="map_set2"></span><br>
+                            <script>
+                            {
+                                const fruits = new Map([
+                                    ["apples", 500],
+                                    ["bananas", 300],
+                                    ["oranges", 200]
+                                ]);
+                                fruits.set("apples", 200);
+                                document.getElementById("map_set2").innerHTML = r + fruits.get("apples");
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods > Others</td>
+                    </tr>
+                    <tr>
+                        <td>get()</td>
+                        <td>
+                            <span class="text-red"><i>map</i>.get()</span><br>
+                            get the value of a key in a Map
+                        </td>
+                        <td>
+                            fruits.get("apples"); <span class="text-blur" id="map_get1"></span><br>
+                            <script>
+                            {
+                                const fruits = new Map([
+                                    ["apples", 500],
+                                    ["bananas", 300],
+                                    ["oranges", 200]
+                                ]);
+                                document.getElementById("map_get1").innerHTML = r + fruits.get("apples");
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>delete()</td>
+                        <td>
+                            <span class="text-red"><i>map</i>.delete()</span><br>
+                            remove a map element</td>
+                        <td>
+                            fruits.delete("apples");<br>
+                            fruits.get("apples"); <span class="text-blur" id="map_delete1"></span><br>
+                            <script>
+                            {
+                                const fruits = new Map([
+                                    ["apples", 500],
+                                    ["bananas", 300],
+                                    ["oranges", 200]
+                                ]);
+                                fruits.delete("apples");
+                                document.getElementById("map_delete1").innerHTML = r + fruits.get("apples");
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>clear()</td>
+                        <td>
+                            <span class="text-red"><i>map</i>.clear()</span><br>
+                            remove all the elements from a Map</td>
+                        <td>
+                            fruits.clear();<br>
+                            fruits.get("apples"); <span class="text-blur" id="map_clear1"></span><br>
+    
+                            <script>
+                            {
+                                const fruits = new Map([
+                                    ["apples", 500],
+                                    ["bananas", 300],
+                                    ["oranges", 200]
+                                ]);
+                                fruits.clear();
+                                document.getElementById("map_clear1").innerHTML = r + fruits.get("apples");
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>has()</td>
+                        <td>
+                            <span class="text-red"><i>map</i>.has(<i>key</i>)</span><br>
+                            return boolean - true if a key exists in a Map</td>
+                        <td>
+                            fruits.has("apples"); <span class="text-blur" id="map_has1"></span><br>
+                            fruits.has("apples"); <span class="text-blur" id="map_has2"></span><br>
+                            <script>
+                            {
+                                const fruits = new Map([
+                                    ["apples", 500],
+                                    ["bananas", 300],
+                                    ["oranges", 200]
+                                ]);
+                                document.getElementById("map_has1").innerHTML = fruits.has("apples");
+                                document.getElementById("map_has2").innerHTML = fruits.has("mangos");
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>forEach()</td>
+                        <td>
+                            <span class="text-red"><i>map</i>.forEach()</span><br>
+                            call a function (callback) for each key/value pair</td>
+                        <td>
+                            fruits.forEach(function(x, y) {...})<br>
+                            text; <span class="text-blur" id="map_forEach1"></span><br>
+    
+                            <script>
+                            {
+                                const fruits = new Map([
+                                    ["apples", 500],
+                                    ["bananas", 300],
+                                    ["oranges", 200]
+                                ]);
+                                let text = "";
+                                fruits.forEach(function (x, y) { // x = value | y = key
+                                    text += y + "," + x + " ";
+                                })
+                                document.getElementById("map_forEach1").innerHTML = r + text;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>entries()</td>
+                        <td>
+                            <span class="text-red"><i>map</i>.entries()</span><br>
+                            return object - iterator with <span class="text-red">key,values</span> pairs
+                        </td>
+                        <td>
+                            for(const x of fruits.entries()){...}<br>
+                            text; <span class="text-blur" id="map_entries1"></span><br>
+    
+                            <script>
+                            {
+                                const fruits = new Map([
+                                    ["apples", 500],
+                                    ["bananas", 300],
+                                    ["oranges", 200]
+                                ]);
+                                let text = "";
+                                for (const x of fruits.entries()) {
+                                    text += x + " ";
+                                }
+                                document.getElementById("map_entries1").innerHTML = r + text;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>keys()</td>
+                        <td>
+                            <span class="text-red"><i>map</i>.keys()</span><br>
+                            return object - iterator with keys
+                        </td>
+                        <td>
+                            for(const x of fruits.keys()){...}<br>
+                            text; <span class="text-blur" id="map_keys1"></span><br>
+                            <script>
+                            {
+                                const fruits = new Map([
+                                    ["apples", 500],
+                                    ["bananas", 300],
+                                    ["oranges", 200]
+                                ]);
+                                let text = "";
+                                for (const x of fruits.keys()) {
+                                    text += x + " ";
+                                }
+                                document.getElementById("map_keys1").innerHTML = r + text;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>values()</td>
+                        <td>
+                            <span class="text-red"><i>map</i>.values()</span><br>
+                            return object - iterator with values
+                        </td>
+                        <td>
+                            for(const x of fruits.values()){...}<br>
+                            text; <span class="text-blur" id="map_value1"></span><br>
+    
+                            <script>
+                            {
+                                const fruits = new Map([
+                                    ["apples", 500],
+                                    ["bananas", 300],
+                                    ["oranges", 200]
+                                ]);
+                                let text = "";
+                                for (const x of fruits.values()) {
+                                    text += x + " ";
+                                }
+                                document.getElementById("map_value1").innerHTML = r + text;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

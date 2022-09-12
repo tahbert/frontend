@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>Object Accessor</title>
+    <script>
+        var r = "// result: "
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Object Accessor</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Object Accessor</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            <span class="text-red">get</span> and <span class="text-red">set</span> allow to define Object Accessors<br>
+                            <ul>
+                                <li>simpler syntax</li>
+                                <li>allow equal syntax for properties and methods</li>
+                                <li>can secure better data quality</li>
+                                <li>useful for doing things behind-the-scenes</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="text-red">get</span> keyword
+                        </td>
+                        <td>
+                            get the value of an property<br>
+                            (instead of using method as property)
+                        </td>
+                        <td>
+                            <h4> get the value of the language property</h4>
+                            const x = {<br>
+                                &emsp;name: "Tahbert",<br>
+                                &emsp;language: "en",<br>
+                                &emsp;<span class="text-red">get lang()</span> {<br>
+                                    &emsp;&emsp;return this.language;<br>
+                                &emsp;}<br>
+                            };<br>
+                            x.lang; <span class="text-blur" id="get1"></span>
+                            <script>
+                            {
+                                const x = {
+                                    name: "Tahbert",
+                                    language: "en",
+                                    get lang() {
+                                        return this.language;
+                                    }
+                                };
+                                document.getElementById("get1").innerHTML = r + x.lang;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="text-red">set</span> keyword
+                        </td>
+                        <td>
+                            set the value of an property<br>
+                            (instead of using method as property)
+                        </td>
+                        <td>
+                            <h4> set the value of the language property</h4>
+                            const x = {<br>
+                                &emsp;name: "Tahbert",<br>
+                                &emsp;language: "",<br>
+                                &emsp;<span class="text-red">set lang(value)</span> {<br>
+                                    &emsp;&emsp;this.language = value;<br>
+                                &emsp;}<br>
+                            };<br>
+                            x.lang = "en";<br>
+                            x.language; <span class="text-blur" id="setter1"></span>
+                            <script>
+                            {
+                                const x = {
+                                    name: "Tahbert",
+                                    language: "",
+                                    set lang(value) {
+                                        this.language = value;
+                                    }
+                                };
+                                x.lang = "en";
+                                document.getElementById("setter1").innerHTML = r + x.language;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Object.defineProperty()</td>
+                        <td>can be used to add Getters and Setters</td>
+                        <td>
+                            <h4> a counter example</h4>
+                            <p id="oj19id"></p>
+                            <script>
+                                // Define an object
+                                const oj19 = { counter: 0 };
+    
+                                // Define Setters and Getters
+                                Object.defineProperty(oj19, "reset", {
+                                    get: function () { this.counter = 0; }
+                                });
+                                Object.defineProperty(oj19, "increment", {
+                                    get: function () { this.counter++; }
+                                });
+                                Object.defineProperty(oj19, "decrement", {
+                                    get: function () { this.counter--; }
+                                });
+                                Object.defineProperty(oj19, "add", {
+                                    set: function (value) { this.counter += value; }
+                                });
+                                Object.defineProperty(oj19, "subtract", {
+                                    set: function (value) { this.counter -= value; }
+                                });
+    
+                                // Play with counter:
+                                oj19.reset;
+                                oj19.add = 5;
+                                oj19.subtract = 1;
+                                oj19.increment;
+                                oj19.decrement;
+                                document.getElementById("oj19id").innerHTML = oj19.counter;
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

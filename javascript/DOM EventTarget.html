@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>EventTarget</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>EventTarget</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>EventTarget</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            object that can receive events and may have listeners for them
+                            <div class="note">most common: window, document, element and its children</div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">EventTarget</span></td>
+                        <td></td>
+                    </tr>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Methods and Properties</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/js/js_htmldom_eventlistener.asp"
+                            target="_blank">addEventListener()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>EventTarget</i>.addEventListener(<i>event, function, useCapture</i>);</span><br>
+                            attach an event handler without overwriting existing event handlers<br>
+                            <ul class="note"><i class="icon recommended fa-solid fa-thumbs-up"></i> recommended way to register an event listener
+                                <li>allows adding more than one handler for an event</li>
+                                <li>finer-grained control of the phase when the listener is activated (capturing vs. bubbling) in comparation to <span class="text-red">onXYZ</span> property</li>
+                                <li>work on any event target, not just HTML or SVG elements.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4> internal function</h4>
+                            el.<span class="text-red">addEventListener</span>("click", function(){ alert("Hi!"); });<br>
+                            <h4> external function</h4>
+                            el.<span class="text-red">addEventListener</span>("click", myFunction);<br>
+                            funtion myFunction() {<br>
+                                &emsp;alert("Hi!");<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <h3>many to the same</h3>
+                            possible without overwriting existing events
+                        </td>
+                        <td>
+                            el.<span class="text-red">addEventListener</span>("click", myFunction);<br>
+                            el.<span class="text-red">addEventListener</span>("click", mySecondFunction);<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <h3>passing parameters</h3>
+                            using an "anonymous function" that calls the specified function with the parameters:
+                        </td>
+                        <td>
+                            el.<span class="text-red">addEventListener</span>("click", function() {myFunction(p1, p2);});<br>
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_addeventlistener_parameters"
+                            target="_blank">see example</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <h3>useCapture: event propagation</h3>
+                            <ul>define events order
+                                <li><span class="text-red">false</span>: bubbling - inner to outer</li>
+                                <li>true: capturing - outer to inner<br></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4> bubbling as default</h4>
+                            el.<span class="text-red">addEventListener</span>("click", myFunction);<br>
+                            <h4> capturing when set to true</h4>
+                            el.<span class="text-red">addEventListener</span>("click", myFunction, true);<br>
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_addeventlistener_usecapture"
+                            target="_blank">see example</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_addeventlistener_remove"
+                            target="_blank">removeEventListener()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>EventTarget</i>.removeEventListener(<i>event, function, useCapture</i>)</span>;<br>
+                            remove event handlers that have been attached
+                            <div class="warn">
+                                removal of a capturing listener does not affect a non-capturing version of the same listener, and vice versa.
+                                If a listener is registered twice, one with the capture flag set and one without, 
+                                => must remove each one separately</div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">removeEventListener</span>("click", myFunction);<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent" 
+                            target="_blank">dispatchEvent()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>EventTarget</i>.dispatchEvent(<i>event</i>);</span><br>
+                        </td>
+                        <td>
+                            later
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

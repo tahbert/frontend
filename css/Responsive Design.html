@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    
+    <title>Responsive Web Design</title>
+  </head>
+  <body>
+    
+      <div>
+        <h1>Responsive Web Design</h1>
+      </div>
+      <!--Title here------------------------------------------------------------------------------------------------------------>
+      <h2>Responsive Web Design</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Viewport<br>
+              <span class="badge bg-success">always</span>
+            </td>
+            <td>
+              The user's visible area of a web page<br>
+              <span class="text-success">
+                <strong>width=device-width</strong> set the width of the page to follow the screen-width of the device<br>
+                <strong>initial-scale=1.0</strong> set the initial zoom level when the page is first loaded by the browser
+              </span>
+            </td>
+            <td>
+              &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Responsive Text</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Using <strong>vw</strong> unit</td>
+            <td>
+              <div style="background-color: #f8f8f8;">
+                <h2 style="font-size: 5vw;">font-size:10vw;</h2>
+                <p style="font-size: 2vw;">font-size: 5vw;</p>
+                <p>resize the browser to see the effect</p>
+              </div>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Responsive Images</td>
+          </tr>
+          <tr>
+            <td>Option 1</td>
+            <td>
+              Using <strong>width|max-width</strong> property
+              <ul>
+                <li>width: 100%;</li> <span class="text-success">scale up to be larger than its original size if needed</span>
+                <li>max-width: 100%;</li> <span class="text-success">never scale up to be larger than its original size</span>
+                <li>height: auto;</li> <span class="text-success">necessary if you have set the height in &lt;img&gt;</span>
+              </ul>
+            </td>
+            <td>
+              <h6>width: 100%; height: auto;</h6>
+              <img class="responsive-image1" src="imgs/paris.jpg" alt="Paris" width="400" height="300"><br><br>
+              <h6>max-width: 100%; height: auto;</h6>
+              <img class="responsive-image2" src="imgs/paris.jpg" alt="Paris" width="400" height="300">
+
+              <style>
+                .responsive-image1 {
+                  width: 100%;
+                  height: auto;
+                }
+                .responsive-image2 {
+                  max-width: 100%;
+                  height: auto;
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>Option 2</td>
+            <td>
+              Using different Images for different devices or screen sizes<br>
+              <span class="text-success">Useful: reduce bandwidth, various formats support</span>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              1. Using <strong>&lt;img&gt;</strong> and Media Query with <strong>min-width</strong><br>
+              <span class="text-success">Useful: reduce bandwidth</span><br>
+              <span class="text-danger">not work yet</span>
+            </td>
+            <td>
+              <div class="image3" style="height: 300px; background-color: #f8f8f8;"></div>
+              <style>
+                /* For width smaller than 400px: */
+                div.image3 {
+                  background-repeat: no-repeat;
+                  background-image: url('imgs/img_white_flower.jpg'); 
+                }
+                
+                /* For width 400px and larger: */
+                @media only screen and (min-width: 400px) {
+                  div.image3 { 
+                     background-image: url('imgs/img_pink_flowers.jpg'); 
+                  }
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              2. Using <strong>&lt;img&gt;</strong> and Media Query with <strong>min-device-width</strong><br>
+              <span class="text-success">
+                Useful: reduce bandwidth<br>
+                The image will not change when you resize the browser window<br>
+              </span>
+              <span class="text-danger">not work yet</span>
+            </td>
+            <td>
+              <div class="image4" style="height: 300px; background-color: #f8f8f8;"></div>
+              <style>
+                /* For width smaller than 400px: */
+                div.image4 {
+                  background-repeat: no-repeat;
+                  background-image: url('imgs/img_white_flower.jpg'); 
+                }
+                
+                /* For width 400px and larger: */
+                @media only screen and (min-device-width: 400px) {
+                  div.image4 { 
+                     background-image: url('imgs/img_pink_flowers.jpg'); 
+                  }
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              3. Using <strong>&lt;picture&gt;</strong><br>
+              <span class="text-success">Useful: reduce bandwidth, support many formats</span><br>
+            </td>
+            <td>
+              <p>Resize the browser to see the difference</p>
+              <picture>
+                <source media="(min-width:650px)" srcset="imgs/img_pink_flowers.jpg">
+                <source media="(min-width:465px)" srcset="imgs/img_white_flower.jpg">
+                <img src="imgs/img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+              </picture>
+            </td>
+          </tr>
+          <tr>
+            <td>Option 3</td>
+            <td>Using <strong>background-size</strong> property</td>
+            <td>
+              <h6>background-size: 100% 100%;</h6>
+              <div class="bg-size a"></div>
+
+              <h6>background-size: cover;</h6>
+              <div class="bg-size b"></div>
+
+              <h6>background-size: contain;</h6>
+              <div class="bg-size c"></div>
+
+              <style>
+                .bg-size {
+                  max-width: 500px;
+                  height: 300px;
+                  margin-bottom: 10px;
+                  background-color: #f8f8f8;
+                  border: 1px solid #04AA6D;
+                  background-image: url('imgs/img_pink_flowers.jpg');
+                  background-repeat: no-repeat;
+                }
+                .bg-size.a {
+                  background-size: 100% 100%;
+                }
+                .bg-size.b {
+                  background-size: cover;
+                }
+                .bg-size.c {
+                  background-size: contain;
+                }
+              </style>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Responsive Video</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              Using <strong>width|max-width</strong> property
+              <ul>
+                <li>width: 100%;</li> <span class="text-success">scale up to be larger than its original size if needed</span>
+                <li>max-width: 100%;</li> <span class="text-success">never scale up to be larger than its original size</span>
+                <li>height: auto;</li> <span class="text-success">necessary if you have set the height in &lt;img&gt;</span>
+              </ul>
+            </td>
+            <td>
+              <h6>width: 100%; height: auto;</h6>
+              <video class="responsive-video1" width="480" height="270" controls>
+                <source src="media/video_try.mp4" typemp4="video/mp4">
+                <source src="media/video_try.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+              </video><br><br>
+
+              <h6>max-width: 100%; height: auto;</h6>
+              <video class="responsive-video2" width="480" height="270" controls>
+                <source src="media/video_try.mp4" typemp4="video/mp4">
+                <source src="media/video_try.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+              </video><br><br>
+              <style>
+                .responsive-video1 {
+                  width: 100%;
+                  height: auto;
+                }
+                .responsive-video2 {
+                  max-width: 100%;
+                  height: auto;
+                }
+              </style>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Grid View</td>
+          </tr>
+          <tr>
+            <td>Grid View</td>
+            <td>
+              The page is divided into columns, often 12 columns, and total width: 100% => 1 column: 8.33%<br>
+            </td>
+            <td><a target="_blank" href="misc/grid-view.html">see more</a></td>
+          </tr>
+          <tr>
+            <td rowspan="3">Creating Rules</td>
+            <td>All elements should have padding and border included in width</td>
+            <td>
+              * {box-sizing: border-box;}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Make one class for each of the 12 columns, <strong>class="col-"</strong><br>
+              and a number defining how many columns the section should span
+            </td>
+            <td>
+              .col-1 {width: 8.33%;}<br>
+              .col-2 {width: 16.66%;}<br>
+              .col-3 {width: 25%;}<br>
+              .col-4 {width: 33.33%;}<br>
+              .col-5 {width: 41.66%;}<br>
+              .col-6 {width: 50%;}<br>
+              .col-7 {width: 58.33%;}<br>
+              .col-8 {width: 66.66%;}<br>
+              .col-9 {width: 75%;}<br>
+              .col-10 {width: 83.33%;}<br>
+              .col-11 {width: 91.66%;}<br>
+              .col-12 {width: 100%;}<br>
+            </td>
+          </tr>
+          <tr>
+            <td>All columns should be floating to the left, and have a padding of 15px</td>
+            <td>
+              [class*="col-"] { <span class="text-success">/* elements with class attribute and the value containing "col-" */</span><br> 
+                &nbsp;&nbsp;float: left;<br>
+                &nbsp;&nbsp;padding: 15px;<br>
+                &nbsp;&nbsp;border: 1px solid red; <span class="text-success">/* should be removed when completing */</span><br> 
+              }<br>
+            </td>
+          </tr>
+          <tr>
+            <td>Clearfix hack</td>
+            <td>
+              .row::after {<br>
+                &nbsp;&nbsp;content: "";<br>
+                &nbsp;&nbsp;clear: both;<br>
+                &nbsp;&nbsp;display: table;<br>
+              }
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Media Queries</td>
+          </tr>
+          <tr>
+            <td>General</td>
+            <td>
+              A technique in CSS3 used to add breakpoint for different styles on different screens or devices<br>
+              <span class="text-success">
+                Mobile First Design makes the page display faster on smaller devices<br>
+              </span>
+            </td>
+            <td><a target="_blank" href="misc/media-queries-ex.html">see more</a></td>
+          </tr>
+          <tr>
+            <td>Creating Rules</td>
+            <td>For mobile (all .col-)</td>
+            <td>
+              [class*="col-"] { <span class="text-success">/* smaller than 600px */</span><br>
+                &nbsp;&nbsp;width: 100%;<br>
+              }<br>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>For tablets (.col-s-)</td>
+            <td>
+              @media only screen and (min-width: 600px) { <span class="text-success">/* from 600px to 767px */</span><br>
+                &nbsp;&nbsp;.col-s-1 {width: 8.33%;}<br>
+                &nbsp;&nbsp;.col-s-2 {width: 16.66%;}<br>
+                &nbsp;&nbsp;.col-s-3 {width: 25%;}<br>
+                &nbsp;&nbsp;.col-s-4 {width: 33.33%;}<br>
+                &nbsp;&nbsp;.col-s-5 {width: 41.66%;}<br>
+                &nbsp;&nbsp;.col-s-6 {width: 50%;}<br>
+                &nbsp;&nbsp;.col-s-7 {width: 58.33%;}<br>
+                &nbsp;&nbsp;.col-s-8 {width: 66.66%;}<br>
+                &nbsp;&nbsp;.col-s-9 {width: 75%;}<br>
+                &nbsp;&nbsp;.col-s-10 {width: 83.33%;}<br>
+                &nbsp;&nbsp;.col-s-11 {width: 91.66%;}<br>
+                &nbsp;&nbsp;.col-s-12 {width: 100%;}<br>
+              }
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>For desktop (.col-)</td>
+            <td>
+              @media only screen and (min-width: 768px) { <span class="text-success">/* 768px or larger */</span><br>
+                &nbsp;&nbsp;.col-1 {width: 8.33%;}<br>
+                &nbsp;&nbsp;.col-2 {width: 16.66%;}<br>
+                &nbsp;&nbsp;.col-3 {width: 25%;}<br>
+                &nbsp;&nbsp;.col-4 {width: 33.33%;}<br>
+                &nbsp;&nbsp;.col-5 {width: 41.66%;}<br>
+                &nbsp;&nbsp;.col-6 {width: 50%;}<br>
+                &nbsp;&nbsp;.col-7 {width: 58.33%;}<br>
+                &nbsp;&nbsp;.col-8 {width: 66.66%;}<br>
+                &nbsp;&nbsp;.col-9 {width: 75%;}<br>
+                &nbsp;&nbsp;.col-10 {width: 83.33%;}<br>
+                &nbsp;&nbsp;.col-11 {width: 91.66%;}<br>
+                &nbsp;&nbsp;.col-12 {width: 100%;}<br>
+              }
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="5">Typical Breakpoints</td>
+            <td>Extra small devices (small phones) </td>
+            <td>@media only screen and (max-width: 600px) {...}</td>
+          </tr>
+          <tr>
+            <td>Small devices (portrait tablets, large phones)</td>
+            <td>@media only screen and (min-width: 600px) {...}</td>
+          </tr>
+          <tr>
+            <td>Medium devices (landscape tablets)</td>
+            <td>@media only screen and (min-width: 768px) {...}</td>
+          </tr>
+          <tr>
+            <td>Large devices (laptops/desktops)</td>
+            <td>@media only screen and (min-width: 992px) {...}</td>
+          </tr>
+          <tr>
+            <td>Extra large devices (large laptops and desktops)</td>
+            <td>@media only screen and (min-width: 1200px) {...}</td>
+          </tr>
+          <tr>
+            <td>Orientation</td>
+            <td>landscape|portrait<br>
+              <span class="text-success">when the width is larger than the height and vice versa</span>
+            </td>
+            <td>
+              @media only screen and (orientation: landscape) {}<br>
+              @media only screen and (orientation: portrait) {}<br>
+            </td>
+          </tr>
+          <!--Secondary table head-->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Responsive Frameworks</td>
+          </tr>
+          <tr>
+            <td>Frameworks</td>
+            <td>
+              <ul>
+                <li>Bootstrap</li>
+                <li>W3.CSS</li>
+              </ul>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  
+    <script src="../script-detail.js"></script>
+</body>
+</html>

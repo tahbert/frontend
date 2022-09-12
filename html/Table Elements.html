@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <title>Table Elements</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Table Elements</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Table Elements</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&lt;table&gt;&lt;/table&gt;</td>
+                        <td>Define an HTML table</td>
+                        <td rowspan="3">
+                            <table>
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Savings</th>
+                                </tr>
+                                <tr>
+                                    <td>January</td>
+                                    <td>$80</td>
+                                </tr>
+                                <tr>
+                                    <td>February</td>
+                                    <td>$100</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;tr&gt;&lt;/tr&gt;</td>
+                        <td>Define a table row</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;td&gt;&lt;/td&gt;</td>
+                        <td>
+                            Define a table data/cell <span class="note">(Default: regular, left-aligned)<br>
+                                Note: a container that can contain other elements</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>colspan</strong> attribute: Define the number of columns a cell should span<br>
+                            &lt;td <strong>colspan</strong>="number"&gt;
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Savings</th>
+                                </tr>
+                                <tr>
+                                    <td>January</td>
+                                    <td>$80</td>
+                                </tr>
+                                <tr>
+                                    <td>February</td>
+                                    <td>$100</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Sum: $180</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>rowspan</strong> attribute: Define the number of rows a cell should span<br>
+                            &lt;td <strong>rowspan</strong>="number"&gt;
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Savings</th>
+                                    <th>Sum</th>
+                                </tr>
+                                <tr>
+                                    <td>February</td>
+                                    <td>$100</td>
+                                    <td rowspan="2">$180</td>
+                                </tr>
+                                <tr>
+                                    <td>January</td>
+                                    <td>$80</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>headers</strong> attribute <span class="badge yellow">not important</span>: Specify
+                            one or more header cells a table cell is related to<br>
+                            &lt;td <strong>headers</strong>="header_id"&gt;<br>
+                            <span class="note">Useful for screen readers</span>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th id="name">Name</th>
+                                    <th id="email">Email</th>
+                                    <th id="phone">Phone</th>
+                                    <th id="addr">Address</th>
+                                </tr>
+                                <tr>
+                                    <td headers="name">John Doe</td>
+                                    <td headers="email">someone@example.com</td>
+                                    <td headers="phone">+45342323</td>
+                                    <td headers="addr">Rosevn 56,4300 Sandnes,Norway</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;th&gt;&lt;/th&gt;</td>
+                        <td>Define a table header <span class="note">(Default: bold and centered)</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>colspan</strong> attribute <span class="note">(similar to &lt;td&gt;)</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>rowspan</strong> attribute <span class="note">(similar to &lt;td&gt;)</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>headers</strong> attribute <span class="badge yellow">not important</span> <span
+                                class="note">(similar to &lt;td&gt;)</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>abbr</strong> attribute <span class="badge yellow">not important</span>: Specify a
+                            shorter version of the content in a header cell<br>
+                            &lt;th <strong>abbr</strong>="text"&gt;<br>
+                            <span class="note">Useful for screen readers</span>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th abbr="Make">Toy manufacturer</th>
+                                    <th abbr="Model">Vehicle model</th>
+                                </tr>
+                                <tr>
+                                    <td>Bruder Toys</td>
+                                    <td>Cross Country Vehicle</td>
+                                </tr>
+                                <tr>
+                                    <td>Bruder Toys</td>
+                                    <td>DHL Lorry</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>scope</strong> attribute <span class="badge yellow">not important</span>: Specify
+                            whether a header cell is a header for a column, row, or group of columns or rows<br>
+                            &lt;th scope="col|row|colgroup|rowgroup"&gt;<br>
+                            <span class="note">Useful for screen readers</span>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <th></th>
+                                    <th scope="col">Month</th>
+                                    <th scope="col">Savings</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>January</td>
+                                    <td>$100</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>February</td>
+                                    <td>$80</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &lt;thead&gt;&lt;/thead&gt;<br>
+                            &lt;thead&gt;&lt;/thead&gt;<br>
+                            &lt;thead&gt;&lt;/thead&gt;
+                        </td>
+                        <td>
+                            Useful:<br>
+                            1. Enable scrolling of the table body independently of the header and footer<br>
+                            2. Enable the table header and footer to be printed at the top and bottom of each page when
+                            printing a large table that spans multiple pages<br>
+                            <span class="note">(after &lt;caption&gt;, &lt;colgroup&gt;, &lt;col&gt; if
+                                available)</span>
+                        </td>
+                        <td rowspan="2">
+                            <table>
+                                <caption>Monthly savings</caption>
+                                <thead>
+                                    <tr>
+                                        <th>Month</th>
+                                        <th>Savings</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>January</td>
+                                        <td>$100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>February</td>
+                                        <td>$80</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>Sum</td>
+                                        <td>$180</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="white-space: nowrap;">&lt;caption&gt;&lt;/caption&gt;</td>
+                        <td>
+                            Define a table caption
+                            <span class="note">
+                                (Default: center-aligned above a table)<br>
+                                (Immediately after the &lt;table&gt;)
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Grouping for formating</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&lt;colgroup&gt;&lt;/colgroup&gt;</td>
+                        <td>Group of one or more columns in a table for formatting</td>
+                        <td rowspan="3">
+                            <table>
+                                <colgroup>
+                                    <col style="background-color: aquamarine;">
+                                    <col span="2" style="background-color: beige;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>Month</th>
+                                        <th>Savings</th>
+                                        <th>Expenses</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>January</td>
+                                        <td>$100</td>
+                                        <td>$50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>February</td>
+                                        <td>$80</td>
+                                        <td>$30</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>Sum</td>
+                                        <td>$180</td>
+                                        <td>$80</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;col&gt;&lt;/col&gt;</td>
+                        <td>Specify column properties for each column within a &lt;colgroup&gt;<br>
+                            <span class="note">Useful for applying styles to entire columns, instead of repeating
+                                the styles for each cell, for each row</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><strong>span</strong> attribute: Specify the number of columns to span</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

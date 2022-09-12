@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>Operators</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Operators</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Operators</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Arithmetic</td>
+                        <td>
+                            perform an arithmetic operation on numbers
+                            <ul class="note">
+                                <li>operation: (Ex: 2 + 5;)</li>
+                                <li>operand: (Ex: 2, 5)</li>
+                                <li>operator: (Ex: +)</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">
+                            <table class="sub-table">
+                                <tr>
+                                    <th>Arithmetic</th>
+                                    <th>Operator</th>
+                                    <th>Example</th>
+                                </tr>
+                                <tr>
+                                    <td>Addition</td>
+                                    <td>+</td>
+                                    <td>let x = 5 + 2;</td>
+                                </tr>
+                                <tr>
+                                    <td>Subtraction</td>
+                                    <td>-</td>
+                                    <td>let x = 5 - 5;</td>
+                                </tr>
+                                <tr>
+                                    <td>Multiplication</td>
+                                    <td>*</td>
+                                    <td>let x = 5 * 2;</td>
+                                </tr>
+                                <tr>
+                                    <td>Division</td>
+                                    <td>/</td>
+                                    <td>let x = 5 / 2;</td>
+                                </tr>
+                                <tr>
+                                    <td>Modulus</td>    
+                                    <td>%</td>
+                                    <td>
+                                        let x = 5 % 2; <span class="text-blur">// result: 1</span><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Increment</td>
+                                    <td>++</td>
+                                    <td>
+                                        let x = 5; x++; <span class="text-blur">// result: 6</span><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Decrement</td>
+                                    <td>--</td>
+                                    <td>
+                                        let x = 5; x--; <span class="text-blur">// result: 4</span><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Exponentiation</td>
+                                    <td>**</td>
+                                    <td>
+                                        let x = 5 ** 2; <span class="text-blur"> // result: 25</span><br>
+                                        <span class="text-blur"> // the same as Math.pow(x,y)</span><br>
+                                        let x = Math.pow(5,2);<br>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Assignment</td>
+                        <td>assign a value to a variable</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">
+                            <table>
+                                <tr>
+                                    <th>Operator</th>
+                                    <th>Example</th>
+                                    <th>Same As</th>
+                                </tr>
+                                <tr>
+                                    <td>=</td>
+                                    <td>x = y;</td>
+                                    <td>x = y;</td>
+                                </tr>
+                                <tr>
+                                    <td>+=</td>
+                                    <td>x += y;</td>
+                                    <td>x = x + y;</td>
+                                </tr>
+                                <tr>
+                                    <td>-=</td>
+                                    <td>x -= y;</td>
+                                    <td>x = x - y;</td>
+                                </tr>
+                                <tr>
+                                    <td>*=</td>
+                                    <td>x *= y;</td>
+                                    <td>x = x * y;</td>
+                                </tr>
+                                <tr>
+                                    <td>/=</td>
+                                    <td>x /= y;</td>
+                                    <td>x = x / y;</td>
+                                </tr>
+                                <tr>
+                                    <td>%=</td>
+                                    <td>x %= y;</td>
+                                    <td>x = x % y;</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;&lt;=</td>
+                                    <td>x &lt;&lt;= y;</td>
+                                    <td>x = x &lt;&lt; y;</td>
+                                </tr>
+                                <tr>
+                                    <td>&gt;&gt;=</td>
+                                    <td>x &gt;&gt;= y;</td>
+                                    <td>x = x &gt;&gt; y;</td>
+                                </tr>
+                                <tr>
+                                    <td>&gt;&gt;&gt;=</td>
+                                    <td>x &gt;&gt;&gt;= y;</td>
+                                    <td>x = x &gt;&gt;&gt; y;</td>
+                                </tr>
+                                <tr>
+                                    <td>&=</td>
+                                    <td>x &= y;</td>
+                                    <td>x = x & y;</td>
+                                </tr>
+                                <tr>
+                                    <td>^=</td>
+                                    <td>x ^= y;</td>
+                                    <td>x = x ^ y;</td>
+                                </tr>
+                                <tr>
+                                    <td>|=</td>
+                                    <td>x |= y;</td>
+                                    <td>x = x | y;</td>
+                                </tr>
+                                <tr>
+                                    <td>**=</td>
+                                    <td>x **= y;</td>
+                                    <td>x = x ** y;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Concatenation</td>
+                        <td>add (concatenate) strings</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">
+                            <table>
+                                <tr>
+                                    <th>Operator</th>
+                                    <th>Example</th>
+                                </tr>
+                                <tr>
+                                    <td>+</td>
+                                    <td>
+                                        let text1 = "Tahbert";<br>
+                                        let text2 = "Nguyen";<br>
+                                        let text3 = text1 + " " + text2; <span class="text-blur">// result: Tahbert Nguyen</span><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>+=</td>
+                                    <td>
+                                        let text1 = "Tahbert ";<br>
+                                        text1 += "Nguyen"; <span class="text-blur">// result: Tahbert Nguyen</span><br>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Comparison</td>
+                        <td>compare values or variables</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">
+                            <table>
+                                <tr>
+                                    <th>Operator</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                                <tr>
+                                    <td>==</td>
+                                    <td>equal value</td>
+                                    <td>
+                                        let x = 5;<br>
+                                        x == 5; <span class="text-blur">// true</span><br>
+                                        x == "5"; <span class="text-blur">// true</span><br>
+                                        x == 8; <span class="text-blur">// false</span><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>===</td>
+                                    <td>equal value and equal type</td>
+                                    <td>
+                                        let x = 5;<br>
+                                        x === 5; <span class="text-blur">// true</span><br>
+                                        x === "5"; <span class="text-blur">// false</span><br>
+                                        x === "8"; <span class="text-blur">// false</span><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>!=</td>
+                                    <td>not equal value</td>
+                                    <td>
+                                        let x = 5;<br>
+                                        x != 5; <span class="text-blur">// false</span><br>
+                                        x != "5"; <span class="text-blur">// false</span><br>
+                                        x != 8; <span class="text-blur">// true</span><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>!==</td>
+                                    <td>not equal value and equal type</td>
+                                    <td>
+                                        let x = 5;<br>
+                                        x !== 5; <span class="text-blur">// false</span><br>
+                                        x !== "5"; <span class="text-blur">// true</span><br>
+                                        x !== 8; <span class="text-blur">// true</span><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&gt;</td>
+                                    <td>greater than</td>
+                                    <td>
+                                        let x = 5; x &gt; 8; <span class="text-blur">// false</span><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;</td>
+                                    <td>less than</td>
+                                    <td>
+                                        let x = 5; x &lt; 8; <span class="text-blur">// true</span><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&gt;=</td>
+                                    <td>greater than or equal value to</td>
+                                    <td>
+                                        let x = 5;<br>
+                                        x &gt;= 8; <span class="text-blur">// false</span><br>
+                                        x &gt;= 5; <span class="text-blur">// true</span><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;=</td>
+                                    <td>less than or equal value to</td>
+                                    <td>
+                                        let x = 5;<br>
+                                        x &lt;= 8; <span class="text-blur">// true</span><br>
+                                        x &lt;= 5; <span class="text-blur">// true</span><br>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Logical</td>
+                        <td>determine the logic between variables or values</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">
+                            <table>
+                                <tr>
+                                    <th>Operator</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                                <tr>
+                                    <td>&&</td>
+                                    <td>and</td>
+                                    <td>
+                                        let x = 5; x &lt; 10 && x &lt; 1; <span class="text-blur">// false</span><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>||</td>
+                                    <td>or</td>
+                                    <td>
+                                        let x = 5; x &lt; 10 || x &lt; 1; <span class="text-blur">// true</span><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>!</td>
+                                    <td>not</td>
+                                    <td>
+                                        let x = 5; !(x &gt; 10); <span class="text-blur">// false</span><br>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Conditional</td>
+                        <td>assign a value to a variable based on some condition</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">
+                            <table>
+                                <tr>
+                                    <th>Operator</th>
+                                    <th>Example</th>
+                                </tr>
+                                <tr>
+                                    <td><i>variable</i> = (<i>condition</i>) ? <i>value1</i>:<i>value2</i></td>
+                                    <td>
+                                        let age = 28;<br>
+                                        let voteable = (age &lt; 18) ? "Too young":"Old enough"; <span class="text-blur">// result: Old enough</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">
+                            <table>
+                                <tr>
+                                    <th>Operator</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                                <tr>
+                                    <td>typeof</td>
+                                    <td>return the type of a variable</td>
+                                    <td>
+                                        typeof "Tahbert Nguyen"; <span class="text-blur">// result: string</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>instanceof</td>
+                                    <td>return true if an object is an instance of an object type</td>
+                                    <td>
+                                        function Car(make, model, year) {<br>
+                                            &emsp;this.make = make;<br>
+                                            &emsp;this.model = model;<br>
+                                            &emsp;this.year = year;<br>
+                                        }<br>
+                                        const auto = new Car('Honda', 'Accord', 1998);<br>
+                                        console.log(auto instanceof Car); <span class="text-blur">// result: true</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Operator Precedence</td>
+                        <td><a target="_blank" href="https://www.w3schools.com/js/js_arithmetic.asp">see more</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Bitwise</td>
+                        <td>later</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let age = 28;
+        let voteable = (age < 18) ? "Too young":"Old enough";
+        console.log(voteable);
+    </script>
+    
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

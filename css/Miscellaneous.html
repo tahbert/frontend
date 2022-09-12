@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    
+    <title>Properties - miscellaneous</title>
+  </head>
+  <body>
+    
+      <div>
+        <h1>Properties - miscellaneous</h1>
+      </div>
+      <!--Title here------------------------------------------------------------------------------------------------------------>
+      <h2>Properties - miscellaneous</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Elements</th>
+            <th>Explaination</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>all</td>
+            <td>
+              <strong>all</strong>: initial|inherit|unset; <span class="text-danger">default: none</span><br>
+              Reset all properties, apart from unicode-bidi and direction, to their initial or inherited value<br>
+              <span class="text-success">Change all the properties applied to the element or the element's parent: 
+                <ul>
+                  <li>initial: to their initial value</li>
+                  <li>inherit: to their parent value</li>
+                  <li>unset: to their parent value if they are inheritable or to their initial value if not</li>
+                </ul>
+              </span><br>
+            </td>
+            <td>
+              <div class="all-test">
+                <h6>all: not set</h6>
+                <div id="ex1">Some text here</div>
+
+                <h6>all: inherit;</h6>
+                <div id="ex2">Some text here</div>
+
+                <h6>all: initial;</h6>
+                <div id="ex3">Some text here</div>
+
+                <h6>all: unset;</h6>
+                <div id="ex4">Some text here</div>
+              </div>
+
+              <style>
+              div.all-test {
+                font-size: small;
+                color: green;
+              }
+              
+              #ex1 {
+                background-color: yellow;
+                color: red;
+              }
+              
+              #ex2 {
+                background-color: yellow;
+                color: red;
+                all: inherit;
+              }
+              
+              #ex3 {
+                background-color: yellow;
+                color: red;
+                all: initial;
+              }
+              
+              #ex4 {
+                background-color: yellow;
+                color: red;
+                all: unset;
+              }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>box-decoration-break</td>
+            <td>
+              <strong>box-decoration-break</strong>: <span class="text-danger">slice</span>|clone|initial|inherit|unset;<br>
+              Specify how the background, padding, border, border-image, box-shadow, margin, and clip-path<br>
+              of an element is applied when the box for the element is fragmented.<br>
+              <span class="text-success">
+                -webkit-box-decoration-break: clone;<br>
+                -o-box-decoration-break: clone;<br>
+                box-decoration-break: clone;<br>
+              </span><br>
+            </td>
+            <td>
+              <div class="box-break" style="display: inline-block;">
+                <h6>box-decoration-break: slice;</h6>
+                <span class="slice">My name<br> is<br> Tahbert Nguyen</span>
+              </div>
+
+              <div class="box-break" style="display: inline-block;">
+                <h6>box-decoration-break: clone;</h6>
+                <span class="clone">My name<br> is<br> Tahbert Nguyen</span>
+              </div>
+
+              <style>
+                .box-break span {
+                  border: 3px solid #04AA6D;
+                  padding: 0.5em 1em;
+                  line-height: 3;
+                  font-size: 24;
+                  border-radius: 16px;
+                }
+                .box-break span.clone {
+                  -webkit-box-decoration-break: clone;
+                  -o-box-decoration-break: clone;
+                  box-decoration-break: clone;
+                }
+              </style>
+            </td>
+          </tr>
+          <!--Secondary Heading------------------------------------------------------------------------------------------------->
+          <tr style="background-color: lightgray;">
+            <td colspan="3">Breaking <span class="badge bg-warning">not important</span></td>
+          </tr>
+          <tr>
+            <td>break-after</td>
+            <td>
+              <strong>break-after</strong>: <span class="text-danger">auto</span>|all| always| avoid| avoid-column| avoid-page| avoid-region| column| left| page| recto| region| right| verso| initial| inherit;<br>
+              Specify whether or not a page break, column break, or region break should occur after the specified element<br>
+            </td>
+            <td>
+              @media print {<br>
+                &nbsp;&nbsp;footer {<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;break-after: always;<br>
+                  &nbsp;&nbsp;}<br>
+              }<br>
+            </td>
+          </tr>
+          <tr>
+            <td>break-before</td>
+            <td>
+              <strong>break-before</strong>: <span class="text-danger">auto</span>|all| always| avoid| avoid-column| avoid-page| avoid-region| column| left| page| recto| region| right| verso| initial| inherit;<br>
+              Specify whether or not a page break, column break, or region break should occur after the specified element.<br>
+            </td>
+            <td>
+              @media print {<br>
+                &nbsp;&nbsp;h1 {<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;break-before: always;<br>
+                &nbsp;&nbsp;}<br>
+              }
+            </td>
+          </tr>
+          <tr>
+            <td>break-inside</td>
+            <td>
+              <strong>break-inside</strong>: <span class="text-danger">auto</span>|all| always| avoid| avoid-column| avoid-page| avoid-region| column| left| page| recto| region| right| verso| initial| inherit;<br>
+              Specify whether or not a page break, column break, or region break should occur inside the specified element.<br>
+            </td>
+            <td>
+              @media print {<br>
+                &nbsp;&nbsp;img {<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;display: block;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;break-inside: avoid;<br>
+                &nbsp;&nbsp;}<br>
+              }<br>
+            </td>
+          </tr>
+          <tr>
+            <td>caret-color</td>
+            <td>
+              <strong>caret-color</strong>: <span class="text-danger">auto</span>|<i>color</i>|initial|inherit;<br>
+              Specify the color of the cursor (caret) in inputs, textareas, or any element that is editable.<br>
+              <span class="text-success">success</span><br>
+            </td>
+            <td>
+              <form class="caret-color">
+                <input class="default" value="default">
+                <input class="color" value="caret-color: red;">
+                <input class="transparent" value="caret-color: transparent;">
+              </form>
+
+              <style>
+                .caret-color input {
+                  width: 100%;
+                  margin: 10px 0;
+                }
+                .caret-color .color {
+                  caret-color: red;
+                }
+                .caret-color .transparent {
+                  caret-color: transparent;
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>clip-path</td>
+            <td>
+              <strong>clip-path</strong>: <i>clip-source</i>|<i>basic-shape</i>|margin-box|border-box|padding-box|content-box|fill-box|stroke-box|view-box|none|initial|inherit; <span class="text-danger">default: none</span><br>
+              Clip an element to a basic shape or to an SVG source <a href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_clip-path&preval=circle(40%)">play it</a><br>
+              <span class="text-success">Replace the deprecated <strong>clip</strong> property.</span><br>
+              <span class="text-danger">? how to make circle border</span><br>
+            </td>
+            <td>
+              <img src="imgs/tahbert.png" width="100px" style="clip-path: circle(50%);">
+            </td>
+          </tr>
+          <tr>
+            <td>cursor</td>
+            <td>
+              <strong>cursor</strong>: <span class="text-danger">auto</span><i>value</i>;<br>
+              Specify the mouse cursor to be displayed when pointing over an element. <a href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_cursor&preval=alias">play it</a><br>
+              <span class="text-success">Most common: auto| pointer| text</span><br>
+            </td>
+            <td>
+              <div style="cursor: text;">cursor: text;</div>
+            </td>
+          </tr>
+          <tr>
+            <td>hyphens</td>
+            <td>
+              <strong>hyphens</strong>: <span class="text-danger">manual</span>|none|auto|initial|inherit;<br>
+              Define whether hyphenation is allowed to create more soft wrap opportunities within a line of text<br>
+              <span class="text-success">
+                -webkit-hyphens: manual;<br>
+                -ms-hyphens: manual;<br>
+                hyphens: manual;<br>
+              </span>
+            </td>
+            <td>
+              <h6>hyphens: none</h6>
+              <p>No hyphen; overflow if needed.</p>
+              <div class="hyphens a">A veryvery­very long word.</div>
+
+              <h6>hyphens: manual</h6>
+              <p>Hyphen only at &hyphen; or &shy; (soft hyphen) if needed.</p>
+              <div class="hyphens b">A veryvery­very long word.</div>
+
+              <h6>hyphens: auto</h6>
+              <p>Hyphen where the algorithm is deciding (if needed).</p>
+              <div class="hyphens c">A veryvery­very long word.</div>
+            </td>
+
+            <style>
+              div.hyphens { 
+                width: 55px;
+                border: 1px solid black;
+               }
+              div.hyphens.a {
+                -webkit-hyphens: none;
+                -ms-hyphens: none;
+                hyphens: none;
+              }
+              div.hyphens.b {
+                -webkit-hyphens: manual;
+                -ms-hyphens: manual;
+                hyphens: manual;
+              }
+              div.hyphens.c {
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
+              }
+            </style>
+          </tr>
+          <tr>
+            <td>@import rule</td>
+            <td>
+              <strong>@import</strong> <i>url</i>|<i>string list-of-mediaqueries;</i><br>
+              Allow us to import a style sheet into another style sheet.<br>
+              <span class="text-success">Must be at the top of the document but after any <strong>@charset</strong> declaration</span><br>
+            </td>
+            <td>
+              <h6>Using a string</h6>
+              @import "navigation.css" print;<br><br>
+              <h6>Using a url</h6>
+              @import url("navigation.css") screen and (max-width: 768px);
+            </td>
+          </tr>
+          <tr>
+            <td>isolation</td>
+            <td>
+              <strong>isolation</strong>: <span class="text-danger">auto</span>|isolate|initial|inherit;<br>
+              Define whether an element must create a new stacking content.<br>
+              <span class="text-success">Helpful: when used with background-blend-mode or mix-blend-mode</span><br>
+            </td>
+            <td>
+              <div id="b" class="isolasion">
+                <div id="d">
+                <div class="isolasion c">div d: isolation: auto;</div>
+                </div>
+                <div id="e">
+                <div class="isolasion c">div e: isolation: isolate;</div>
+                </div>
+              </div>
+              
+              <style>
+              .isolasion {
+                background-color: lightgreen;
+              }
+              #b {
+                width: 250px;
+                height: 250px;
+              }
+              .isolasion.c {
+                width: 100px;
+                height: 100px;
+                border: 1px solid black;
+                padding: 2px;
+                mix-blend-mode: difference;
+              }
+              #d {
+                isolation: auto;
+              }
+              #e {
+                isolation: isolate;
+              }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>mix-blend-mode</td>
+            <td>
+              <strong>mix-blend-mode</strong>: <span class="text-danger">normal</span>| multiply| screen| overlay| darken| lighten| color-dodge| color-burn| difference| exclusion| hue| saturation| color| luminosity;<br>
+              Specify how an element's content should blend with its direct parent background<br>
+            </td>
+            <td>
+              <h6>mix-blend-mode: screen;</h6>
+              <div class="blend-mode">
+                <div class="text">PARIS</div>
+              </div>
+
+              <style>
+                .blend-mode {
+                  font-family: Arial, Helvetica, sans-serif;
+                  background-image: url("imgs/paris.jpg");
+                  background-size: cover;
+                  position: relative;
+                  height: 300px;
+                }
+                
+                .blend-mode .text {
+                  
+                  color: black;
+                  background-color: white;
+                  font-size: 5vw; 
+                  font-weight: bold;
+                  width: 50%;
+                  margin: 0 auto; /*don't know why*/
+                  text-align: center;
+                  /*position*/
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  
+                  mix-blend-mode: screen;
+                }
+                </style>
+            </td>
+          </tr>
+          <tr>
+            <td>pointer-events</td>
+            <td>
+              <strong>pointer-events</strong>: <span class="text-danger">auto</span>|none|initial|inherit;<br>
+              Define whether or not an element reacts to pointer events.<br>
+            </td>
+            <td>
+              <span class="text-success">Move over the links below to see if the react on pointer events</span><br>
+
+              <div style="display: inline-block; padding-right: 20px;">
+                <h6>pointer-events: auto;</h6>
+                <span>Go to <a href="https://www.w3schools.com/css">CSS Tutorial</a></span><br>
+              </div>
+              <div style="display: inline-block; padding-right: 20px;">
+                <h6>pointer-events: none;</h6>
+                <span style="pointer-events: none;">Go to <a href="https://www.w3schools.com/css">CSS Tutorial</a></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>quotes</td>
+            <td>
+              <strong>quotes</strong>: none|<i>string</i>|initial|inherit; <span class="text-danger">(default: not specified)</span><br>
+              Set the type of quotation marks for quotations <a href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_quotes">play it</a><br>
+            </td>
+            <td>
+              <p><q>This is a default quote.</q></span></p>
+              <p><q>This is a <q>default quote</q> inside a default quote.</q></p>
+              <p><q id="quotes-none">This is a quote.</q> <span class="text-success">quotes: none;</span></p> 
+              <p><q id="quotes-a">This is a quote.</q> <span class="text-success">quotes: "'" "'";</span></p> 
+              <p><q id="quotes-b">This is a <q>quote</q> inside a quote.</q> <span class="text-success">quotes: "„" "“" "‚" "‘";</span></p>
+              <p><q id="quotes-c">This is a <q>quote</q> inside a quote.</q> <span class="text-success">quotes: "«" "»" "‹" "›";</span></p>
+
+              <style>
+              #quotes-none {
+                quotes: none;
+              }
+              #quotes-a {
+                quotes: "'" "'";
+              }
+              #quotes-b {
+                quotes: "„" "“" "‚" "‘";
+              }
+              #quotes-c {
+                quotes: "«" "»" "‹" "›";
+              }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              scroll-behavior<br>
+              <span class="badge bg-success">common</span>
+            </td>
+            <td>
+              <strong>scroll-behavior</strong>: <span class="text-danger">auto</span>|smooth|initial|inherit;<br>
+              Specify whether to smoothly animate the scroll position, instead of a straight jump, when the user clicks on a link within a scrollable box.<br>
+            </td>
+            <td>
+              <div id="scroll1">
+                <h2>Section 1</h2>
+                <p>Click on the link to see the "smooth" scrolling effect.</p>
+                <a href="#scroll2">Click Me to Smooth Scroll to Section 2 Below</a>
+              </div>
+              
+              <div id="scroll2">
+                <h2>Section 2</h2>
+                <a href="#scroll1">Click Me to Smooth Scroll to Section 1 Above</a>
+              </div>
+              
+              <style>
+              html {
+                scroll-behavior: smooth; /* try to change this */
+              }
+              
+              #scroll1 {
+                height: 600px;
+                background-color: pink;
+              }
+              
+              #scroll2 {
+                height: 600px;
+                background-color: yellow;
+              }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>tab-size</td>
+            <td>
+              <strong>tab-size</strong>: <i>number</i>|<i>length</i>|initial|inherit; <span class="text-danger">default: 8</span><br>
+              Specify the width of a tab character<br>
+              <span class="text-success">-moz-tab-size  /*Firefox*/</span><br>
+            </td>
+            <td>
+              <pre style="tab-size: 4; -moz-tab-size: 4; /* Firefox */">
+                I	use	tab-size	4
+              </pre>
+            </td>
+          </tr>
+          <tr>
+            <td>user-select</td>
+            <td>
+              <strong>user-select</strong>: <span class="text-danger">auto</span>|none|text|all;<br>
+              Specify whether the text of an element can be selected.<br>
+              <span class="text-success">
+                -webkit-user-select: none; /* Safari */<br>
+                -ms-user-select: none; /* IE 10 and IE 11 */<br>
+                user-select: none; /* Standard syntax */<br>
+              </span><br>
+            </td>
+            <td>
+              <div class="user-select-none"> user-select: none;</div>
+              <div class="user-select-text"> user-select: text;</div>
+              <div class="user-select-all"> user-select: all;</div>
+
+              <style>
+                .user-select-none {
+                  -webkit-user-select: none;
+                  -ms-user-select: none; 
+                  user-select: none;
+                }
+                .user-select-text {
+                  -webkit-user-select: text;
+                  -ms-user-select: text; 
+                  user-select: text;
+                }
+                .user-select-all {
+                  -webkit-user-select: all;
+                  -ms-user-select: all; 
+                  user-select: all;
+                }
+              </style>
+            </td>
+          </tr>
+          <tr>
+            <td>visibility</td>
+            <td>
+              <strong>visibility</strong>: <span class="text-danger">visible</span>|hidden|collapse|initial|inherit;<br>
+              Specify whether or not an element is visible<br>
+              <span class="text-success">
+                <strong>visibility: hidden;</strong> the element still on the page and takes up space<br>
+                <strong>display: none;</strong> the element is removed from the page, not takes up space<br>
+                <strong>collapse</strong>:  for &lt;tr&gt;, &lt;tbody&gt;, &lt;col&gt;, &lt;colgroup&gt;<br>
+                - remove a row or column, but not affect the table layout<br>
+                - the space taken up by the row or column will be available for other content<br>
+                - If collapse is used on other elements, it renders as "hidden"<br>
+              </span>
+            </td> 
+            <td>
+              <h6>This table have 3 rows</h6>
+              <ul>
+                <li>1st row: the 2nd cell is hidden</li>
+                <li>2nd row: visibility: collapse;</li>
+                <li>3rd row: visibility: visible;</li>
+              </ul>
+              <table style="background: #f2f2f2;" class="table table-bordered">
+                <tr>
+                  <td>visibility: visible;</td>
+                  <td style="visibility: hidden;">visibility: hidden;</td>
+                  <td>visibility: visible;</td>
+                </tr>
+                <tr style="visibility: collapse;">
+                  <td>other cell</td>
+                  <td>other cell</td>
+                  <td>other cell</td>
+                </tr>
+                <tr>
+                  <td>other cell</td>
+                  <td>other cell</td>
+                  <td>other cell</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+  
+    <script src="../script-detail.js"></script>
+</body>
+</html>

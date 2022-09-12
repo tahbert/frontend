@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>Object Prototype</title>
+    <script>
+        var r = "// result: "
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Object Prototype</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Object Prototype</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>all objects inherit methods and properties from a prototype</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td>
+                            <span class="highlight">Object.prototype</span> &lt;= <span class="highlight">Object</span><br>
+
+                            <span class="highlight">Object.prototype</span> &lt;= 
+                            <span class="highlight">Array.prototype</span> &lt;= 
+                            <span class="highlight">Array</span><br>
+
+                            <span class="highlight">Object.prototype</span> &lt;= 
+                            <span class="highlight">Date.prototype</span> &lt;= 
+                            <span class="highlight">Date</span><br>
+
+                            <span class="highlight">Object.prototype</span> &lt;= 
+                            <span class="highlight">Person.prototype</span> &lt;= 
+                            <span class="highlight">Person</span><br>
+
+                            <div class="note">Person represents a constructor function</div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="text-red">prototype</span> property
+                        </td>
+                        <td>
+                            allow to add new properties, methods to constructor<br>
+                            <div class="note">done outide constructor function</div>
+                        </td>
+                        <td>
+                            <h4> add properties and methods to constructor</h4>
+                            Person.<span class="text-red">prototype</span>.nationality = "English"<br>
+                            Person.<span class="text-red">prototype</span>.name = function(){<br>
+                            &ensp;return this.firstName + " " + this.lastName;<br>
+                            }<br>
+                            <h4> access object as normal</h4>
+                            father.nationality(); <span class="text-blur" id="prototype1"></span><br>
+                            mother.nationality(); <span class="text-blur" id="prototype2"></span><br>
+                            father.name(); <span class="text-blur" id="prototype3"></span><br>
+                            mother.name(); <span class="text-blur" id="prototype4"></span><br>
+
+                            <script>
+                            {
+                                function Person(first, last, age) {
+                                    this.fname = first;
+                                    this.lname = last;
+                                    this.age = age;
+                                }
+                                const father = new Person("John", "Doe", 50);
+                                const mother = new Person("Annie", "Sy", 48);
+    
+                                Person.prototype.nationality = "English"
+                                Person.prototype.name = function () {
+                                    return this.fname + " " + this.lname;
+                                }
+                                document.getElementById("prototype1").innerHTML = r + father.nationality;
+                                document.getElementById("prototype2").innerHTML = r + mother.nationality;
+                                document.getElementById("prototype3").innerHTML = r + father.name();
+                                document.getElementById("prototype4").innerHTML = r + mother.name();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>    
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

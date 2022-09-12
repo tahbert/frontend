@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>Node</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Node</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Node Object</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>everthing in an HTML document is a node</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td>
+                            <span class="highlight">EventTarget</span> &lt;= 
+                            <span class="highlight">Node</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Methods & Properties</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Relationship</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_node_parentnode.asp" 
+                            target="_blank">parentNode</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.parentNode</span><br>
+                            returnn node - the parent node
+                            <ul class="note">
+                                <li>return null if no parent node available</li>
+                                <li>more popular than <span class="text-red">parentElement</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4> access to the parent element</h4>
+                            el.parentNode;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_node_parentelement.asp" 
+                            target="_blank">parentElement</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.parentElement</span><br>
+                            return element - the parent element
+                            <ul class="note">
+                                <li>return null if no parent node available<br>
+                                    &nbsp;&emsp;or available but NOT an element node</li>
+                                <li>less popular than <span class="text-red">parentNode</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4> access to the parent element</h4>
+                            el.parentElement;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/prop_node_childnodes.asp" 
+                            target="_blank">childNodes</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.childNodes</span><br>
+                            returnn <a href="DOM NodeList.html" target="_blank">NodeList</a> 
+                            - all elements's child nodes
+                            <div class="note">
+                                <span class="text-red">childNodes[0]</span> is the same as <span class="text-red">firstChild</span>
+                            </div>
+                            <div class="warn">
+                                return nodes: element nodes, text nodes, comment nodes.<br>
+                                whitespace between elements are also text nodes.
+                            </div>
+                        </td>
+                        <td>
+                            <h4> access to the 1st child node</h4>
+                            el.childNodes[0];
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_node_firstchild.asp" 
+                            target="_blank">firstChild</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.firstChild</span><br>
+                            return node - the first child node of a node.
+                            <div class="note">the same as <span class="text-red">childNodes[0]</span></div>
+                            <div class="warn">
+                                return node: element node, text node, and comment node.<br>
+                                whitespace between elements are also text nodes.
+                            </div>
+                        </td>
+                        <td>
+                            <h4> access to the 1st child node</h4>
+                            el.firstChild;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_node_lastchild.asp" 
+                            target="_blank">lastChild</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.lastChild</span><br>
+                            return node - the last child node of a node.
+                            <div class="warn">
+                                return node: element node, text node, and comment node.<br>
+                                whitespace between elements are also text nodes.
+                            </div>
+                        </td>
+                        <td>
+                            <h4> access to the last child node</h4>
+                            el.lastChild;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/prop_node_previoussibling.asp" 
+                            target="_blank">previousSibling</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.previousSibling</span><br>
+                            return node - the previous node on the same tree level
+                            <div class="warn">
+                                return node: element node, text node, and comment node.<br>
+                                whitespace between elements are also text nodes.
+                            </div>
+                        </td>
+                        <td>
+                            <h4> access to the prev sibling node</h4>
+                            el.previousSibling;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://www.w3schools.com/jsref/prop_node_nextsibling.asp" 
+                            target="_blank">nextSibling</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.nextSibling</span><br>
+                            return node - the next node on the same tree level.
+                            <div class="warn">
+                                return node: element node, text node, and comment node.<br>
+                                whitespace between elements are also text nodes.
+                            </div>
+                        </td>
+                        <td>
+                            <h4> access to the next sibling node</h4>
+                            el.nextSibling;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/met_node_haschildnodes.asp" 
+                            target="_blank">hasChildNodes()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.hasChildNodes()</span><br>
+                            return boolean - true if the node has any child nodes
+                            <div class="warn">whitespace between nodes are considered child nodes (text nodes).</div>
+                        </td>
+                        <td>
+                            <h4> check if the element has any child nodes</h4>
+                            el.hasChildNodes();
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_node_contains.asp" 
+                            target="_blank">contains()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.contains(<i>node</i>)</span><br>
+                            return boolean - true if a node is a descendant of aother node
+                        </td>
+                        <td>
+                            <h4> check if the element contains another element</h4>
+                            el1.contains(el2);
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_node_isequalnode.asp" 
+                            target="_blank">isEqualNode()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.isEqualNode(<i>node</i>)</span><br>
+                            return boolean - true if two nodes are equal
+                            <ul class="note"> equal if qualifying all conditions:
+                                <li>same nodeType</li>
+                                <li>same nodeName</li>
+                                <li>same nodeValue</li>
+                                <li>same nameSpaceURI</li>
+                                <li>same childNodes with all the descendants</li>
+                                <li>same attributes and attribute values</li>
+                                <li>same localName and prefix</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4> check if two elements are equal</h4>
+                            el1.isEqualNode(el2);
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_node_issamenode.asp" 
+                            target="_blank">isSameNode()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.isSameNode(<i>node</i>)</span><br>
+                            return boolean - true if the two nodes are the same.
+                            <div class="warn">
+                                <i class="icon notsupported fa-solid fa-phone-slash"></i> 
+                                by Firefox => use "<span class="text-red">===</span>"
+                            </div>
+                        </td>
+                        <td>
+                            <h4> check if two elements are the same</h4>
+                            el1.isSameNode(el2);
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/prop_node_nodename.asp" 
+                            target="_blank">nodeName</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.nodeName</span><br>
+                            return string - the node name
+                        </td>
+                        <td>
+                            <h4> return the node name</h4>
+                            el.nodeName;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i> 
+                            <a href="https://www.w3schools.com/jsref/prop_node_nodetype.asp" 
+                            target="_blank">nodeType</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.nodeType</span><br>
+                            return number - the node type
+                            <ul class="note">
+                                <li>1: element node</li>
+                                <li>2: attribute node</li>
+                                <li>3: text node</li>
+                                <li>8: comment node</li>
+                                <li>9: document node</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4> return the node type</h4>
+                            el.nodeType; <span class="text-blur">// result: 1</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_node_nodevalue.asp" 
+                            target="_blank">nodeValue</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.nodeValue</span><br>
+                            <span class="text-red"><i>node</i>.nodeValue</span> = <i>value</i><br>
+                            set or return string - the node value
+                        </td>
+                        <td>
+                            <h4> change text inside the element</h4>
+                            el.childNodes[0].nodeValue = "changed";
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Insert | Remove | Replace</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_node_appendchild.asp" 
+                            target="_blank">appendChild()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.appendChild(<i>node</i>)</span><br>
+                            return node - append a node as the last child
+                        </td>
+                        <td>
+                            <h4> create an "li" node:</h4>
+                            const node = document.createElement("li");
+                            <h4> create a text node:</h4>
+                            const textnode = document.createTextNode("Water");
+                            <h4> append the text node to the "li" node:</h4>
+                            node.appendChild(textnode);
+                            <h4> append the "li" node to the list:</h4>
+                            document.getElementById("myList").appendChild(node);
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_node_insertbefore.asp" 
+                            target="_blank">insertBefore()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.insertBefore(<i>newnode</i>, <i>existingnode</i>)</span><br>
+                            return node - insert a node before an existing child
+                        </td>
+                        <td>
+                            <h4> create a "li" element:</h4>
+                            const newNode = document.createElement("li");
+                            <h4> create a text node:</h4>
+                            const textNode = document.createTextNode("Water");
+                            <h4> append text node to "li" element:</h4>
+                            newNode.appendChild(textNode);
+                            <h4> insert before the first child:</h4>
+                            const list = document.getElementById("myList");<br>
+                            list.insertBefore(newNode, list.children[0]);
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_node_clonenode.asp" 
+                            target="_blank">cloneNode()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.cloneNode(<i>deep</i>)</span><br>
+                            return node - the clone node
+                            <ul class="note">deep prama: optional
+                                <li><span class="text-red">false</span> - clone only the node and its attributes</li>
+                                <li>true - clone the node, its attributes, and its descendants</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4> copy the last child of myList2 to myList1</h4>
+                            const node = document.getElementById("myList2").lastChild;<br>
+                            const clone = node.cloneNode(true);<br>
+                            document.getElementById("myList1").appendChild(clone);<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_node_removechild.asp" 
+                            target="_blank">removeChild()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.removeChild(<i>node</i>)</span><br>
+                            return node - remove a child node.
+                            <ul class="warn">
+                                <li>the child node is removed from the DOM</li>
+                                <li>return node => can be modified and inserted back into the DOM.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4> remove the last element in myList</h4>
+                            const list = document.getElementById("myList");<br>
+                            const last = list.lastElementChild;<br>
+                            list.removeChild(last);<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_node_replacechild.asp" 
+                            target="_blank">replaceChild()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.replaceChild(<i>newnode</i>, <i>oldnode</i>)</span><br>
+                            return node - replace a child node with a new node
+                        </td>
+                        <td>
+                            <h4> replace 1st child element text of myList</h4>
+                            const el = document.getElementById("myList").children[0];<br>
+                            const textNode = document.createTextNode("Water");<br>
+                            el.replaceChild(textNode, el.childNodes[0]);<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_node_normalize.asp" 
+                            target="_blank">normalize()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.normalize()</span><br>
+                            remove empty text nodes, and join adjacent text nodes.
+                            <div class="note">useful to remove unnecessary existing nodes</div>
+                        </td>
+                        <td>complex</td>
+                    </tr>
+                    
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Return Text</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_node_textcontent.asp" 
+                            target="_blank">textContent</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.textContent</span><br>
+                            <span class="text-red"><i>node</i>.textContent</span> = <i>text</i><br>
+                            set or return string - the node text content (and its descendants)
+                            <div class="note">
+                                including spacing, CSS hidden text, without tags
+                            </div>
+                            <div class="warn">setting will replace all child nodes by 1 text node</div>
+                        </td>
+                        <td>
+                            <h4> change the element text content</h4>
+                            el.textContent = "changed!";
+                        </td>
+                    </tr>
+
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Others</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/prop_node_ownerdocument.asp" 
+                            target="_blank">ownerDocument</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.ownerDocument</span><br>
+                            return Document - the owner document of a node
+                            <div class="note">In HTML, always the HTML document itself</div>
+                        </td>
+                        <td>
+                            <h4> return nodeType of the owner document</h4>
+                            el.ownerDocument.nodeType; <span class="text-blur">// result: 9</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_node_comparedocumentposition.asp" 
+                            target="_blank">compareDocumentPosition()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.compareDocumentPosition(<i>node</i>)</span><br>
+                            return number - indicate where they are positioned in the document
+                            <ul class="note">
+                                <li>1: two nodes do not belong to the same document</li>
+                                <li>2: the 1st is after the 2nd</li>
+                                <li>4: the 1st is before the 2nd</li>
+                                <li>8: the 1st is inside the 2nd</li>
+                                <li>16: the 2nd is inside the 1st</li>
+                                <li>20: the 1st is before the 2nd and the 2nd is inside the 1st</li>
+                                <li>32: two nodes are attributes on the same element</li>
+                            </ul>
+                            <ul class="warn">
+                                <li>return value can also be a combination of values.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4> compare positions of two elements</h4>
+                            el1.compareDocumentPosition(el2);
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/met_node_isdefaultnamespace.asp" 
+                            target="_blank">isDefaultNamespace()</a>
+                        </td>
+                        <td>
+                            <span class="text-red"><i>node</i>.isDefaultNamespace(<i>namespaceURI</i>)</span><br>
+                            return boolean - true if the namespace is default
+                        </td>
+                        <td>
+                            later
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge red">later</span></td>
+                        <td>
+                            baseURI, isConnected<br>
+                            getRootNode(), lookupNamespaceURI(), lookupPrefix()
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

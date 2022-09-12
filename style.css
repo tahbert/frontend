@@ -1,122 +1,316 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Resetting the default ------------------------------------------------------------------------------------------------ */
+/* resetting ------------------------------------------------------------------------------------------------ */
 * {
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 0;
+    margin: 0;
 }
 :root {
-    --green: #04AA6D;
-    --lightgreen: #D9EEE1;
-    --superlightgreen: #F2F9F1;
-    --grey: #ccc;
-    --darkgrey: #282A35;
-    --lightgrey: #F1F1F1;
-    --lightpink: #FFC0C7;
-    --red: #DC3545;
-    --yellow: #FFE162;
-}
-body {
-    margin: 0; padding: 0;
-}
-ul, ol {margin: 0; padding: 0;}
-li {
-    list-style-position: inside;
-}
+    --grey50: #fafafa;
+    --grey100: #f5f5f5;
+    --grey200: #eeeeee;
+    --grey300: #e0e0e0;
+    --grey400: #bdbdbd;
+    --grey500: #9e9e9e;
+    --grey600: #757575;
+    --grey700: #616161;
+    --grey800: #424242;
+    --grey900: #212121;
+    --silver: #C0C0C0;
 
-/* Style some default ------------------------------------------------------------------------------------------------ */
-.note {color: #198754;}
+    --green: #04AA6D;
+    --green100: #c2ead5;
+
+    --limegreen50: #e5f5e4;
+    --limegreen100: #c1e5be;
+    --limegreen600: #1a9c12;
+    --limegreen900: #005b00;
+
+    --red50: #ffe6ea;
+    --red100: #ffc0cb;
+    --red600: #e82d30;
+    --red900: #bb0016;
+
+    --yellow50: #fffde7;
+    --yellow100: #fef9c4;
+    --yellow400: #faec55; 
+    --yellow500: #f7e735; 
+    --yellow600: #f7a727;
+    --yellow900: #f37f19;
+
+    --blue600: #0083ee;
+    --blue100: #b9ddfe;
+    --blue900: #0641aa;
+}
+a {
+    text-decoration: none;
+}
+pre {
+    font-family: 'Consolas', "courier new";
+    background: var(--grey200);
+}
+code {
+    font-family: 'Consolas', "courier new";
+    color: var(--red900);
+    word-break: break-word;
+}
+samp {
+    display: block;
+    font-family: 'Consolas', "courier new";
+    color: var(--red900);
+    word-break: break-word;
+}
+h1 {
+    text-align: center;
+    line-height: 160px;
+    font-family: 'Muslish', sans-serif;
+    font-weight: 600;
+    color: var(--grey900)
+}
+h2 {
+    font-family: 'Inter', sans-serif;
+    color: var(--red900);
+    font-size: 18px;
+    font-weight: 600;
+}
+h3 {
+    line-height: 1.8rem;
+    margin-top: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--limegreen900);
+    background: var(--grey200);
+}
+h4 {
+    line-height: 1.8rem;
+    margin-top: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--limegreen900);
+    background: var(--grey200);
+}
+img {
+    width: 100%;
+}
+a {
+    color: var(--blue900);
+}
+ul, ol {
+    list-style-position: inside;
+    list-style-type: none;
+}
+li:before{
+    content: "- ";
+}
+/* default ------------------------------------------------------------------------------------------------ */
 .badge {
     display: inline-block;
-    color: white; 
-    background: var(--red);
-    font-size: 12px;
+    font-size: 90%;
     padding: 2px 6px;
+    /* color: white;  */
     border-radius: 8px;
 }
 .badge.red {
-    background: var(--red);
+    background: var(--red100);
 }
 .badge.green {
-    background: #198754;
+    background: var(--limegreen100);
 }
 .badge.yellow {
     color: black;
-    background: var(--yellow);
+    background: var(--yellow100);
 }
-.sub-head {
-    background: var(--lightgreen)
+.badge.grey {
+    background: var(--grey100);
 }
-.text-red {color: var(--red)}
-.text-green {color: #198754;}
-.code {
-    font-family: monospace;
-    font-size: 16px;
+
+/* text ---------- */
+.text-red {
+    color: var(--red900)
 }
-/* Style the header ------------------------------------------------------------------------------------------------ */
-.header {
-    height: 160px;
-    background: var(--lightgreen);
+.text-green {
+    color: var(--limegreen900);
 }
-.header h1 {
-    margin: 0;
+.text-blur {
+    color: var(--grey600);
+}
+.text-result {
+    color: var(--grey600);
+}
+/* background ---------- */
+.greyBg {
+    background: var(--grey300);
+}
+.note {
+    background: var(--limegreen50);
+    padding: 4px;
+}
+.warn {
+    background: var(--red50);
+    padding: 4px;
+}
+.highlight {
+    background: var(--yellow50);
+    padding: 4px;
+}
+
+/* icons ---------- */
+.icon:hover {
+    user-select: none;
+    cursor: pointer;
+}
+.icon.arrow {
+    background: var(--grey300);
+    height: 32px; width: 36px;
+    line-height: 32px;  
     text-align: center;
-    line-height: 160px;
-    font-family: "Source San Pro", sans-serif;
-    font-weight: 600;
-    color: var(--darkgrey)
-}   
-/* Style the main ------------------------------------------------------------------------------------------------ */
-.main .section {
-    margin-top: 16px;
-    padding: 16px;
-    background: var(--superlightgreen);
+    border-radius: 8px;
 }
-.main .section h2 {
-    margin: 5px 0;
-    color: var(--red);
-    font-size: 18px;
-    font-weight: 500;
+.icon.arrow:hover {
+    background: var(--grey400);
 }
-.section > table {
+.icon.delete {
+    color: var(--red600);
+}
+.icon.non-standard {
+    color: var(--red600);
+}
+.icon.experiment {
+    color: var(--blue600);
+}
+.icon.read-only {
+    color: var(--red600);
+}
+.icon.notsupported {
+    color: var(--red600);
+}
+.icon.unimportant {
+    color: var(--yellow600);
+}
+.icon.not-recommended {
+    color: var(--red600);
+}
+.icon.recommended {
+    color: var(--limegreen600);
+}
+/* table ---------- */
+table {
     width: 100%;
     border-collapse: collapse;
 }
-.section > table th {
+table.hidden {
+    display: none;
+}
+table th {
     padding: 6px;
-    font-weight: 400;
+    font-weight: 600;
     text-align: left;
     color: white;
     background: var(--green);
 }
-.section table td {
+table td {
+    vertical-align: top;
     padding: 6px;
 }
-.section table td:nth-of-type(1) {
+table td:nth-of-type(1) {
     width: 20%;
 }
-.section table td:nth-of-type(2) {
+table td:nth-of-type(2) {
     width: 40%;
 }
-.section table td:nth-of-type(3) {
+table td:nth-of-type(3) {
     width: 40%;
 }
-.section table tr:not(:last-child) {
-    border-bottom: 2px solid #eee;
+table tr:not(:last-child) {
+    border-bottom: 1px solid var(--grey200);
+}
+.sub-head td {
+    font-weight: 500;
+    background: var(--grey300);
+}
+
+/* sub-table */
+.sub-table {
+    background: var(--grey300);
+}
+.sub-table.equal {
+    table-layout: fixed;
+}
+.sub-table.nowrap td {
+    white-space: nowrap;
+}
+
+/* popup */
+.code_popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+.code_popup.active {
+    display: block;
+}
+.code_content {
+    position: absolute;
+    top: 0; left: 0;
+    width: fit-content; height: 100%;
+    padding: 58px 16px;
+    background: var(--grey200);
+}
+.code_btn, .close {
+    padding: 2px 4px;
+    font-size: 90%;
+    cursor: pointer;
+    background: wheat;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    user-select: none;
+}
+.code_btn {
+    margin-top: 4px;
+}
+.close {
+    position: absolute;
+    top: 16px; right: 16px;
+}
+/* header ------------------------------------------------------------------------------------------------ */
+.header {
+    height: 160px;
+    background: var(--limegreen100);
+}
+/* main ------------------------------------------------------------------------------------------------ */
+.section {
+    margin-top: 16px;
+    padding: 16px;
+    background: var(--grey100);
+}
+.section-head {
+    margin: 0 0 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* background-color: lightcoral; */
 }
 /* Small Devices ------------------------------------------------------------------------------------------------ */
 @media screen and (max-width: 768px) {
     .header {
         height: 100px;
     }
-    .header h1 {
+    h1 {
         line-height: 100px;
     }
     .main .section {
         padding: 8px 0;
     }
-    .main .section h2 {
+    h2 {
         padding-left: 6px;
     }
     .section table th {

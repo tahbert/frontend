@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>Invocation</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Invocation</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>Invocation</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            the func is not executed when <span class="text-red">declared</span><br>
+                            the func is executed when <span class="text-red">invoked</span><br>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Term</td>
+                        <td>
+                            It's common to use the term 
+                            <span class="text-red">call a function</span> instead of 
+                            <span class="text-red">invoke a function</span>,<br>
+                            but a function can be invoked without being called (self-invoked)
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Invoke a Function<br>
+                            as a Function
+                        </td>
+                        <td>
+                            when the function is declared not belong to any owner object<br>
+                            => belong to global object => window function
+                            <div class="warn">
+                                <span class="badge green">common</span> <span class="badge red">not a very good practice</span><br>
+                                something global can easily create name conflicts and bugs
+                            </div>
+                        </td>
+                        <td>
+                            function myFn(a, b) {return a*b;} <span class="text-blur">// window function</span><br>
+                            <h4>invoke a function as a fuction</h4>
+                            myFn(2, 5); <span class="text-result" id="invoke1"></span> 
+                            <h4>the same as window.myFn(2, 5);</h4>
+                            window.myFn(2, 5); <span class="text-result" id="invoke2"></span>
+                            <script>
+                            {
+                                function myFn(a, b) {return a*b;}
+                                document.getElementById("invoke1").innerHTML = myFn(2, 5);
+                                document.getElementById("invoke2").innerHTML = myFn(2, 5);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div class="note">
+                                the value of <span class="text-red">this</span>: window object
+                            </div>
+                            <div class="warn">window object as a variable can easily crash your program.</div>
+                        </td>
+                        <td>
+                            function myFn() {return <span class="text-red">this</span>;}<br>
+                            myFn(); <span class="text-result" id="invoke3"></span><br>
+                            <script>
+                            {
+                                function myFn() {return this;}
+                                document.getElementById("invoke3").innerHTML = myFn();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Invoke a Function<br>
+                            as a Method
+                        </td>
+                        <td>when the function is defined as an object method</td>
+                        <td>
+                            const x = {<br>
+                                &emsp;fname: "Tahbert",<br>
+                                &emsp;lname: "Nguyen",<br>
+                                &emsp;name: <span class="text-red">function</span>() {<br>
+                                    &emsp;&emsp;return this.fname + " " + this.lname;<br>
+                                &emsp;}<br>
+                            }<br>
+                            <h4>invoke a function as a method</h4>
+                            x.name(); <span class="text-result" id="invoke4"></span>
+                            <script>
+                            {
+                                const x = {
+                                    fname: "Tahbert",
+                                    lname: "Nguyen",
+                                    name: function() {
+                                        return this.fname + " " + this.lname;
+                                    }
+                                }
+                                document.getElementById("invoke4").innerHTML = x.name();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div class="note">
+                                the value of <span class="text-red">this</span>: owner object
+                            </div>
+                        </td>
+                        <td>
+                            const x = {<br>
+                                &emsp;fname: "Tahbert",<br>
+                                &emsp;lname: "Nguyen",<br>
+                                &emsp;name: <span class="text-red">function</span>() {return <span class="text-red">this</span>;}<br>
+                            }<br>
+                            x.name(); <span class="text-result" id="fi4id"></span>
+                            <script>
+                            {
+                                const x = {
+                                    fname: "Tahbert",
+                                    lname: "Nguyen",
+                                    name: function() {return this;}
+                                }
+                                document.getElementById("fi4id").innerHTML = x.name();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Invoke a function<br>
+                            with a Constructor
+                        </td>
+                        <td>
+                            looks like creating a new function, <br>
+                            but since functions are objects,<br>
+                            a constructor invocation creates a new object.<br>
+                            <div class="note">
+                                the value of <span class="text-red">this</span>: no value
+                            </div>
+                        </td>
+                        <td>
+                            function Person(fname, lname) { <span class="text-blur">// function constructor</span><br>
+                                &emsp;this.fname = fname;<br>
+                                &emsp;this.lname = lname;<br>
+                            }<br>
+                            <h4>constructor invocation</h4>
+                            const x = new Person("Tahbert", "Nguyen"); <span class="text-result"></span><br> 
+                            x.fname; <span class="text-result" id="invoke5"></span>
+                            <script>
+                            {
+                                function Person(fname, lname) {
+                                    this.fname = fname;
+                                    this.lname = lname;
+                                }
+                                const x = new Person("Tahbert", "Nguyen");
+                                document.getElementById("invoke5").innerHTML = x.fname;
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Methods & Properties (related only)</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elements</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>
+                            <h3>1st argument missed</h3>
+                            <ul>
+                                <li>non-strict mode: <span class="text-red">this</span> refers to window object </li>
+                                <li>strict mode: <span class="text-red">this</span> undefine</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>starting code for 3 following methods</h4>
+                            const Person = {<br>
+                                &emsp;fname: 'Tahbert',<br>
+                                &emsp;lname: 'Nguyen',<br>
+                                &emsp;name: function() {return this.fname + ' ' + this.lname;}<br>
+                            };<br>
+
+                            const myFn1 = function() {return this.name();};<br>
+
+                            const myFn2 = function(age, city) {<br>
+                                &emsp;return this.name() + ' ' + age + ' ' + city;<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>call()</td>
+                        <td>
+                            <span class="text-red"><i>func</i>.call(<i></i>)</span><br>
+                            <span class="text-red"><i>func</i>.call(<i>thisArg</i>)</span><br>
+                            <span class="text-red"><i>func</i>.call(<i>thisArg, arg, arg, etc</i>)</span><br>
+                            invoke the function immediately with <span class="text-red">this</span> referrence changed<br>
+                            <ul class="note">
+                                <li>func: invoked func with <span class="text-red">this</span> referrence changed</li>
+                                <li>thisArg: object or value replacing <span class="text-red">this</span> inside invoked func</li>
+                                <li>arg: arguments passed to invoked function</li>
+                            </ul>
+                            <ul class="note"><span class="badge green">powerful</span> 
+                                <li>invoke a func with a different <span class="text-red">this</span></li>
+                                <li>many objects can use methods of a general object</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>using call(<i>thisArg</i>)</h4>
+                            myFn1.call(Person); <span class="text-result" id="call1"></span><br>
+                            <h4>using call(<i>thisArg, arg, arg, etc</i>)</h4>
+                            myFn2.call(Person, 28, 'Thai Binh'); <span class="text-result" id="call2"></span><br>
+                            <script>
+                            {
+                                const Person = {
+                                    fname: 'Tahbert',
+                                    lname: 'Nguyen',
+                                    name: function() {
+                                        return this.fname + ' ' + this.lname;
+                                    }
+                                };
+
+                                const myFn1 = function() {
+                                    return this.name();
+                                };
+                        
+                                const myFn2 = function(age, city) {
+                                    return this.name() + ' ' + age + ' ' + city;
+                                };
+
+                                document.getElementById("call1").innerHTML = myFn1.call(Person);
+                                document.getElementById("call2").innerHTML = myFn2.call(Person, 28, 'Thai Binh');
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>apply()</td>
+                        <td>
+                            <span class="text-red"><i>func</i>.apply(<i>thisArg</i>)</span><br>
+                            <span class="text-red"><i>func</i>.apply(<i>thisArg, argsArray</i>)</span><br>
+                            <span class="text-red"><i>func</i>.apply(<i>thisArg</i>, arguments)</span><br>
+                            invoke the function immediately with <span class="text-red">this</span> referrence changed<br>
+                            <ul class="note">
+                                <li>func: invoked func with <span class="text-red">this</span> referrence changed</li>
+                                <li>thisArg: object or value replacing <span class="text-red">this</span> inside invoked func</li>
+                                <li>argsArray: array of arguments passed to invoked function</li>
+                                <li><span class="text-red">arguments</span> keyword: useful to take any number of arbitrary arguments</li>
+                            </ul>
+                            <ul class="note"><span class="badge green">powerful</span> 
+                                <li>invoke a func with a different <span class="text-red">this</span></li>
+                                <li>many objects can use methods of a general object</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>using apply(<i>thisArg</i>)</h4>
+                            myFn1.apply(Person); <span class="text-result" id="apply1"></span><br>
+                            <h4>using apply(<i>thisArg, arg, arg, etc</i>)</h4>
+                            myFn2.apply(Person, [28, 'Thai Binh']); <span class="text-result" id="apply2"></span><br>
+                            <script>
+                            {
+                                const Person = {
+                                    fname: 'Tahbert',
+                                    lname: 'Nguyen',
+                                    name: function() {return this.fname + ' ' + this.lname;}
+                                };
+                                const myFn1 = function() {return this.name();};
+                                const myFn2 = function(age, city) {
+                                    return this.name() + ' ' + age + ' ' + city;
+                                };
+                                document.getElementById("apply1").innerHTML = myFn1.apply(Person);
+                                document.getElementById("apply2").innerHTML = myFn2.apply(Person, [28, 'Thai Binh']);
+                            }
+                            </script>
+
+                            <h4>using apply(<i>thisArg</i>, arguments)</h4>
+                            driverFunc(); <span class="text-result" id="apply3"></span><br>
+                            <script>
+                            {
+                                function addUp(){
+                                    // use arguments to capture the arbitrary number of inputs
+                                    const args = Array.from(arguments); 
+                                    this.x = args.reduce((prev, curr) => prev + curr, 0);
+                                    document.getElementById("apply3").innerHTML = "this.x = " + this.x;
+                                }
+                                function driverFunc(){
+                                    const obj = {inps: [1,2,3,4,5,6]}
+                                    addUp.apply(obj, obj.inps);
+                                }
+                                driverFunc();
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <h3>simulate max()/min() on arrays</h3>
+                            <span class="text-red">Math.max()</span> find the max normally<br>
+                            <span class="text-red">Math.max.apply()</span> find the max in an array
+                        </td>
+                        <td>
+                            Math.max(1, 5, 9); <span class="text-result" id="max1"></span><br>
+                            Math.max.apply(null, [1, 5, 9]); <span class="text-result" id="max2"></span><br>
+                            <script>
+                            {
+                                document.getElementById("max1").innerHTML = Math.max(1, 5, 9);
+                                document.getElementById("max2").innerHTML = Math.max.apply(null, [1, 5, 9]);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>bind()</td>
+                        <td>
+                            <span class="text-red"><i>func</i>.bind(<i>thisArg</i>)</span><br>
+                            <span class="text-red"><i>func</i>.bind(<i>thisArg, arg, arg, etc</i>)</span><br>
+                            create a copy of the function with <span class="text-red">this</span> referrence changed<br>
+                            then it can be invoked later
+                            <ul class="note">
+                                <li>func: the invoked func with <span class="text-red">this</span> referrence changed </li>
+                                <li>thisArg: object or value replacing <span class="text-red">this</span> inside the invoked func</li>
+                                <li>arg: arguments passed to the invoked func</li>
+                            </ul>
+                            <ul class="note"><span class="badge green">powerful</span> 
+                                <li>invoke a func with a different <span class="text-red">this</span></li>
+                                <li>many objects can use methods of a general object</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <h4>using bind(<i>thisArg</i>)</h4>
+                            const newFn1 = myFn1.bind(Person); <span class="text-blur">// create a copy</span><br>
+                            newFn1(); <span class="text-result" id="bind1"></span><br>
+                            <h4>using bind(<i>thisArg, arg, arg, etc</i>)</h4>
+                            const newFn2 = myFn2.bind(Person); <span class="text-blur">// create a copy</span><br>
+                            newFn2(28, 'Thai Binh'); <span class="text-result" id="bind2"></span><br>
+                            <script>
+                            {
+                                const Person = {
+                                    fname: 'Tahbert',
+                                    lname: 'Nguyen',
+                                    name: function() {
+                                        return this.fname + ' ' + this.lname;
+                                    }
+                                };
+
+                                const myFn1 = function() {
+                                    return this.name();
+                                };
+                        
+                                const myFn2 = function(age, city) {
+                                    return this.name() + ' ' + age + ' ' + city;
+                                };
+                        
+                                const newFn1 = myFn1.bind(Person);
+                                const newFn2 = myFn2.bind(Person);
+                                document.getElementById("bind1").innerHTML = newFn1();
+                                document.getElementById("bind2").innerHTML = newFn2(28, 'Thai Binh');
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            when a function is used as a callback, <span class="text-red">this</span> is lost<br>
+                            => sometimes <span class="text-red">bind()</span> has to be used to prevent loosing <span class="text-red">this</span>
+                        </td>
+                        <td>
+                            <h4>display a person name after 3 seconds</h4>
+                            let display = P.display.bind(P);<br>
+                            setTimeout(display, 3000); <span class="text-result" id="bind3"></span><br>
+
+                            <script>
+                            {
+                                const P = {
+                                    firstName: "Tahbert",
+                                    lastName: "Nguyen",
+                                    display: function() {
+                                        let x = document.getElementById("bind3");
+                                        x.innerHTML = this.firstName + " " + this.lastName;
+                                    }
+                                }
+                                let display = P.display.bind(P);
+                                setTimeout(display, 3000);
+                            }
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

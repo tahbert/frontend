@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>MediaQueryList</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>MediaQueryList</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>MediaQueryList</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>the object storing information from a media query.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td><span class="highlight">EventTarget</span> &lt;= <span class="highlight">MediaQueryList</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Methods and Properties</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/matches" 
+                            target="_blank">matches</a>
+                        </td>
+                        <td>
+                            <p class="text-red">matchMedia().matches</p>
+                            return boolean - true if the document matches the query
+                        </td>
+                        <td>
+                            <h4> alert tablets viewport</h4>
+                            if (matchMedia("(max-width: 768px)").matches) {<br>
+                                &emsp;alert("Swiched to tablets");<br>
+                            }<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon read-only fa-solid fa-eye"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/media" 
+                            target="_blank">media</a>
+                        </td>
+                        <td>
+                            <p class="text-red">matchMedia().media</p>
+                            return string - the serialized media query
+                        </td>
+                        <td>
+                            <h4> return the serialized media query</h4>
+                            let mql = matchMedia("(max-width: 768px)");<br>
+                            mql.media;<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>

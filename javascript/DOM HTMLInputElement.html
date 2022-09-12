@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/c313c8dbc7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <title>HTMLInputElement</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>HTMLInputElement</h1>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <div class="section-head">
+                <h2>HTMLInputElement Object</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>General</td>
+                        <td>the object representing an &lt;input&gt; element</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Inheritance</td>
+                        <td colspan="2">
+                            <span class="highlight">EventTarget</span> &lt;= 
+                            <span class="highlight">Node</span> &lt;= 
+                            <span class="highlight">Element</span> &lt;= 
+                            <span class="highlight">HTMLElement</span> &lt;= 
+                            <span class="highlight">HTMLInputElement</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Methods and Properties</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>later</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-head">
+                <h2>Events</h2>
+                <i class="icon arrow fa-solid fa-angle-down"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keywords</th>
+                        <th>Explaination</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Secondary table head-->
+                    <tr class="sub-head">
+                        <td colspan="3">Interface: <span class="highlight">Event</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_onselect.asp" 
+                            target="_blank">select</a>
+                        </td>
+                        <td>
+                            after some text has been selected in an element
+                            <div class="note">mostly used on &lt;input type="text"&gt; or &lt;textarea&gt;</div>
+                        </td>
+                        <td>
+                            el.<span class="text-red">onselect</span> = () => {<br>
+                                &emsp;alert('some text has been selected');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://www.w3schools.com/jsref/event_oninvalid.asp" 
+                            target="_blank">invalid</a>
+                        </td>
+                        <td>
+                            when a submittable &lt;input&gt; is invalid.
+                        </td>
+                        <td>
+                            el.<span class="text-red">oninvalid</span> = () => {<br>
+                                &emsp;alert('the field is required');<br>
+                            };<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="icon experiment fa-solid fa-flask"></i>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/selectionchange_event" 
+                            target="_blank">selectionchange</a>
+                        </td>
+                        <td>
+                            when the text selection within an &lt;input&gt; is changed
+                            <div class="warn">
+                                <i class="icon notsupported fa-solid fa-phone-slash"></i> 
+                                by Chrome, Edge, Safari
+                            </div>
+                        </td>
+                        <td>
+                            later
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../script-detail.js"></script>
+</body>
+
+</html>
