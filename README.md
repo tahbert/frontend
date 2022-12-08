@@ -1,2 +1,2 @@
-visit website: 
+preview: 
 https://tahbert.github.io/frontend
